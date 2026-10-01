@@ -23,6 +23,17 @@ https://www.kainexus.com/
 
 ## Healthcare improvement methodology
 
+### SECA — Manual de Bolsillo Lean Healthcare
+
+Official Spanish Lean Healthcare reference supplied for CoraLEAN's knowledge base.
+
+Relevant because it provides healthcare-oriented Lean guidance and practical methodological material that can be cited when CoraLEAN explains or recommends Lean concepts/tools.
+
+Official page:
+https://calidadasistencial.es/manual-de-bolsillo-lean-healthcare/
+
+CoraLEAN should curate/paraphrase the methodological knowledge and preserve source metadata rather than copy the manual wholesale. See ADR-004.
+
 ### AHRQ Practice Facilitation
 
 Relevant to readiness, kickoff, team formation, workflow mapping, root cause analysis, measurement, facilitation and capability building.
@@ -117,6 +128,7 @@ CoraLEAN therefore combines:
 - structured workflow;
 - persistent state;
 - adaptive AI coaching;
-- visual project orientation.
+- visual project orientation;
+- source-backed methodological guidance with visible provenance when relevant.
 
 No external product is being copied as a whole.
