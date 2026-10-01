@@ -161,3 +161,17 @@ Record:
 - disposition.
 
 Do not optimise for positive opinions. Optimise for reduced friction and better project outcomes.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues in this repository, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role triage vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout: root `GLOSSARY.md`, decisions in `docs/decisions/`. See `docs/agents/domain.md`.

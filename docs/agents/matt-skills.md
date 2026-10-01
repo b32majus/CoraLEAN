@@ -51,3 +51,11 @@ After installation, run `setup-matt-pocock-skills` once for this repository befo
 - the `AGENTS.md` skill-routing block.
 
 Recommended initial choices for CoraLEAN are GitHub Issues, default triage labels, and a single-context domain model unless later evidence justifies a multi-context layout.
+
+## Repository setup status
+
+**Configured:** 2026-10-01. The `setup-matt-pocock-skills` skill has been run once with the recommended choices:
+
+- Issue tracker: GitHub Issues — see `docs/agents/issue-tracker.md`.
+- Triage labels: default five-role vocabulary — see `docs/agents/triage-labels.md`.
+- Domain docs: single-context; `GLOSSARY.md` is created lazily by `/domain-modeling`, and `docs/decisions/` remains the canonical ADR location — see `docs/agents/domain.md`.
