@@ -7,6 +7,7 @@ This is the quick index of accepted decisions.
 | ADR-001 | CoraLEAN has an independent Project and GitHub repository; PROMueve is the laboratory | Accepted |
 | ADR-002 | Method-first, ChatGPT Project-first for V0/Alpha | Accepted |
 | ADR-003 | Support both user-owned resource and managed-service distribution models | Accepted as product hypothesis |
+| ADR-004 | Methodological guidance should expose authoritative provenance/citations when relevant | Accepted |
 
 ## Important non-decisions
 
