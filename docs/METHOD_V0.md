@@ -1,5 +1,7 @@
 # CoraLEAN Method v0 — working draft
 
+> **⚠ Estado tras el Core Freeze v0.1 (2026-10-01):** los *Principios* (1–12) siguen vigentes. El *Provisional lifecycle* de 10 fases con gates está **SUPERSEDED** por ADR-006 (modelo híbrido: áreas de razonamiento + momentos de navegación), ADR-007 (las siete áreas) y ADR-012. El «methodological brake» por fase está **SUPERSEDED** por las condiciones de avance de ADR-010 (dos ejes) y el invariante de suficiencia de ADR-008. La sección *Pedagogy* está **SUPERSEDED** por el contrato de comportamiento de ADR-014. Fuente canónica del método: `docs/decisions/` y `docs/CORE_FREEZE_V0.1.md`. Este documento se conserva como registro histórico del razonamiento inicial.
+
 This is a working methodology, not yet a locked clinical/QI standard.
 
 ## Principles

@@ -1,5 +1,7 @@
 # Project State Model
 
+> **⚠ Estado tras el Core Freeze v0.1 (2026-10-01):** la semántica de entidades (Fact, Hypothesis, Evidence, Decision, Action, Artefact) sigue vigente y se amplía en GLOSSARY.md. El esquema YAML mínimo está **SUPERSEDED** por el contrato de ADR-015 (nueve bloques; snapshot + historia material; procedencia en tres trazas; derivados no persistidos — la suficiencia y el momento de navegación se derivan, no se almacenan). «Gate» como condición simple está **SUPERSEDED** por ADR-010 (dos ejes: fuerza × requisito de autorización humana). El event/history model es consistente con ADR-015 (historia material, sin event sourcing completo). Las operaciones MCP futuras siguen siendo futuras. Fuente canónica: ADR-015 + ADR-017 + GLOSSARY.md.
+
 ## Purpose
 
 PROJECT_STATE is the stable contract between:

@@ -1,5 +1,7 @@
 # CoraLEAN Desk — Cockpit concept
 
+> **⚠ Estado tras el Core Freeze v0.1 (2026-10-01):** el propósito y los principios de diseño de este documento siguen vigentes. La pantalla conceptual con el corredor de fases y «DIAGNOSIS 62%» está **SUPERSEDED**: no existen fases como estado primario (ADR-006), no hay porcentajes de progreso (ADR-008), y la semántica visual de símbolos está **aplazada** hasta decidir cómo se representan simultáneamente suficiencia, bloqueos, reaperturas y relevancia (enmienda 2 de ADR-008). El cockpit debe renderizar una **proyección de navegación** derivada del Project State (ADR-012, ADR-017). Rediseño pendiente post-freeze.
+
 ## Purpose
 
 The cockpit exists because conversational interfaces are excellent for reasoning but poor at showing the overall geometry of a long project.

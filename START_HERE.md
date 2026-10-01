@@ -1,7 +1,8 @@
 # START HERE — CoraLEAN
 
-**Last updated:** 2026-09-30
+**Last updated:** 2026-10-01
 **Status:** Phase 0 / current direction accepted for exploration; final architecture not frozen.
+**Core Freeze v0.1:** completado el 2026-10-01. La fuente canónica del Core (contratos, modelo, comportamientos) son los ADRs de `docs/decisions/` y el mapa de `docs/CORE_FREEZE_V0.1.md`.
 
 ## 1. What are we building?
 

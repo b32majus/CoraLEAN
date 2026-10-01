@@ -1,68 +1,59 @@
 # Open questions
 
-These are intentionally unresolved.
+Preguntas con disposición explícita tras el **Core Freeze v0.1** (2026-10-01). Nada se elimina: cada pregunta queda *resuelta* (con ADR), *aplazada* (con motivo) o *abierta*.
 
 ## Method
 
-- What is the smallest robust CoraLEAN lifecycle?
-- Which gates should be hard versus advisory?
-- How should readiness be expressed without creating false precision?
-- How much should CoraLEAN challenge an expert?
-- When should it explain a formal Lean/QI tool?
+- ¿Cuál es el ciclo de vida mínimo robusto? → **Resuelta**: no hay ciclo de fases; modelo híbrido de áreas de razonamiento + momentos de navegación (ADR-006, ADR-007, ADR-012).
+- ¿Qué gates son hard vs advisory? → **Resuelta**: dos ejes, fuerza (estricta/asesorada) × requisito de autorización humana (ADR-010).
+- ¿Cómo expresar readiness sin falsa precisión? → **Resuelta**: condiciones habilitantes del proyecto con criterios proporcionales y estados del proyecto; suficiencia categórica, sin porcentajes (ADR-008, ADR-011).
+- ¿Cuánto debe challenge a un experto? → **Resuelta**: mismo umbral en todos los modos; cambia la forma (ADR-014).
+- ¿Cuándo explica una herramienta formal? → **Resuelta**: dimensión de nomenclatura/explicitación por modo; enseñanza tras/durante el uso en Guiado; reglas de aplicación en tarjetas (ADR-013, ADR-014).
 
 ## Project State
 
-- Markdown vs JSON vs hybrid?
-- Should state be event-sourced from the beginning?
-- Which fields are mandatory?
-- How much provenance is needed?
+- ¿Markdown vs JSON vs híbrido? → **Aplazada y condicionada**: representación candidata = `estado-proyecto.md` + `historia-material.md` en Markdown; la decisión definitiva depende de las pruebas Alpha (ADR-015, ADR-017).
+- ¿Event-sourcing desde el principio? → **Resuelta**: no; snapshot + historia material con eventos de significado de dominio (ADR-015).
+- ¿Qué campos son obligatorios? → **Resuelta**: los nueve bloques de ADR-015.
+- ¿Cuánta procedencia? → **Resuelta**: tres trazas distinguibles (registró / aportó / fuente), cuando aplique (ADR-015).
 
 ## Skills
 
-- Which workflows deserve first-class Skills?
-- What is the minimum fallback when Skills are unavailable?
-- Can a Skill reliably update structured state?
+- ¿Qué flujos merecen Skill? → **Resuelta para v0.1**: criterios de elegibilidad + dos Skills congeladas (Preparar reunión, Procesar reunión); artefactos pendientes de evidencia de piloto (ADR-016).
+- ¿Fallback mínimo sin Skills? → **Resuelta**: equivalencia metodológica desde el Core (ADR-016).
+- ¿Puede una Skill actualizar estado? → **Resuelta**: solo propone; la mutación pasa por el contrato del estado (ADR-015, ADR-016).
+- ¿Skills con código? → **Resuelta para v0.1**: instrucciones + recursos; código futuro solo con necesidad demostrada (ADR-016).
 
 ## Cockpit
 
-- ChatGPT Site versus a small external web app?
-- What must be visible at a glance?
-- Which interactions should open a chat?
-- Should the cockpit ever allow direct editing of state?
+- ¿ChatGPT Site vs app externa? → **Abierta** (post-piloto; ADR-002/017).
+- ¿Qué debe verse de un vistazo? → **Parcialmente resuelta**: el contenido semántico está definido (focos, criterios pendientes, momentos, estados); la representación visual simultánea está aplazada (ADR-008 enmienda 2).
+- ¿Debería permitir edición directa del estado? → **Resuelta**: no; fuera del flujo soportado, con reconciliación si ocurre (ADR-017).
 
 ## Backend
 
-- Neon vs Supabase vs another Postgres option?
-- Authentication model?
-- User/project/organisation permissions?
-- Realtime mechanism?
-- Storage requirements?
-- Backup/export?
-- How should a service operator access multiple projects?
+- ¿Neon vs Supabase vs otro? → **Abierta deliberadamente** (solo si las pruebas Alpha activan la reversal condition de ADR-002; ver BACKEND_STRATEGY.md).
+- Autenticación, permisos, realtime, backup → **Abiertas** (fase 3 del roadmap).
 
 ## MCP
 
-- When is MCP justified?
-- Which domain operations are stable enough to expose?
-- How should confirmation/authorisation work?
-- What happens when an AI write is wrong?
+- ¿Cuándo está justificado? ¿Qué operaciones exponer? → **Abiertas**; la lista de operaciones de dominio de PROJECT_STATE_MODEL se mantiene como referencia futura. Sin implementación antes de que el estado y los permisos sean estables (AGENTS.md).
 
 ## Distribution
 
-- How much can bootstrap automate?
-- What is the minimum technical requirement for a user?
-- How should self-managed and managed modes differ?
+- ¿Cuánto puede automatizar el bootstrap? → **Abierta** (depende de las pruebas Alpha: BOOTSTRAP.md).
+- ¿Requisito técnico mínimo del usuario? → **Abierta** (Alpha: test 3, 10, 11 de ADR-017).
 
 ## Product
 
-- Is CoraLEAN valuable enough without a backend?
-- What percentage of users need the cockpit?
-- Does capability transfer actually improve?
-- What recurring friction deserves software?
+- ¿Vale CoraLEAN sin backend? → **Abierta**: es exactamente lo que las pruebas Alpha y el piloto deben responder (ADR-002/017).
+- ¿Qué porcentaje de usuarios necesita el cockpit? → **Abierta** (post-piloto).
+- ¿Mejora realmente la transferencia de capacidad? → **Abierta con instrumento**: S14 es su prueba directa (ADR-019).
+- ¿Qué fricción recurrente merece software? → **Abierta** (fase 3 del roadmap; FEEDBACK_PROTOCOL.md).
 
 ## Research
 
-- Complete the deeper Simana/Life QI UX autopsy.
-- Continue literature search on AI-supported QI coaching and practice facilitation.
-- Identify evidence on conversational coaching and capability transfer.
-- Verify current OpenAI Skills/Sites availability for the target user population before depending on them.
+- Completar la autopsia UX de Simana/Life QI → **Abierta** (RESEARCH_PLAN, Track A).
+- Literatura de coaching/facilitación QI y transferencia de capacidad → **Abierta** (Track B; incluye verificar AHRQ, cuya página no pudo consultarse el 2026-10-01).
+- Verificar disponibilidad real de Skills/Sites/Work para la población objetivo → **Resuelta como criterio de aceptación**: pasa a ser parte de las 12 pruebas Alpha (ADR-017) y se verifica empíricamente antes de Mérida.
+- Verificar la afirmación de que el A3 de SECA admite estructura variable según el propósito → **Abierta** (afirmación recibida en la sesión de freeze, pendiente de contraste con el manual).

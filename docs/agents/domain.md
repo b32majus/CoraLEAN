@@ -16,6 +16,21 @@ Decision records live in `docs/decisions/` with the naming pattern `ADR-00X-<slu
 - `ADR-002-method-first-chatgpt-project-first.md`
 - `ADR-003-backend-service-vs-resource.md`
 - `ADR-004-source-backed-guidance-and-citations.md`
+- `ADR-005-primary-user-project-lead-and-modes-as-scaffolding.md`
+- `ADR-006-hybrid-model-areas-navigation-artefacts.md`
+- `ADR-007-core-v01-reasoning-areas.md`
+- `ADR-008-derived-maturity-architecture.md`
+- `ADR-009-lengua-canonica-espanol.md`
+- `ADR-010-taxonomia-condiciones-de-avance.md`
+- `ADR-011-condiciones-habilitantes-del-proyecto.md`
+- `ADR-012-momentos-de-navegacion.md`
+- `ADR-013-arquitectura-de-conocimiento.md`
+- `ADR-014-contrato-de-comportamiento.md`
+- `ADR-015-contrato-del-project-state.md`
+- `ADR-016-skill-map-v01.md`
+- `ADR-017-runtime-contract-v0.md`
+- `ADR-018-criterios-estructura-semilla-evolucion.md`
+- `ADR-019-acceptance-scenarios-v01.md`
 
 When a skill says "record an ADR", write it into `docs/decisions/` following the numbering and style of the existing records. Do not create or migrate to `docs/adr/`.
 

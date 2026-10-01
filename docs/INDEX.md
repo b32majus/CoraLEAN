@@ -3,6 +3,7 @@
 ## Start
 
 - [START_HERE.md](../START_HERE.md) — canonical orientation document.
+- [CORE_FREEZE_V0.1.md](CORE_FREEZE_V0.1.md) — canonical map of the Core v0.1 freeze (which document governs each contract).
 - [AGENTS.md](../AGENTS.md) — rules for agents/contributors working in the repository.
 - [README.md](../README.md) — public repository overview.
 
