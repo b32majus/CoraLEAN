@@ -1,6 +1,6 @@
-# Alpha Runtime Verification v0 — Plan de verificación empírica del Runtime Contract v0
+# Verificación Alpha del Runtime v0 — plan de verificación empírica del Runtime Contract (Alpha Runtime Verification v0)
 
-**Título:** Alpha Runtime Verification v0 — plan ejecutable de las 12 pruebas Alpha (ADR-017)
+**Título:** Verificación Alpha del Runtime v0 — plan ejecutable de las 12 pruebas Alpha (ADR-017) (Alpha Runtime Verification v0)
 **Fecha:** 2026-10-04
 **Estado:** `plan v0 — pendiente de ejecución`
 **Unidad:** C-084 · `work/alpha-runtime-c084-20261004` · base `e20c90d`
@@ -65,6 +65,23 @@ Un **único fixture sintético**, pequeño y totalmente inventado, es usado por 
    9. Procedencia: tres trazas separadas para `E2`, `HP1` y `D1` (ADR-015).
 2. `historia-material.md` — log de **solo adición** de eventos materiales, cada uno con actor, efecto y razón. Eventos ficticios: activación del proyecto; `H1`; `HP1`; `E1`; `E2` (refuta `HP1`); reapertura `R1` de «Comprensión causal»; `HP1′`; `D1`; `A1`; autorización ficticia del Patrocinador/a.
 
+**Eventos materiales del fixture (`Evento | Actor | Efecto | Razón`):** actores ficticios canónicos `R. Ficticia` (Responsable local), `F. Ficticia` (Facilitador/a), `P. Ficticia` (Patrocinador/a) y `CoraLEAN` (registro/propuesta, no persona). El campo `Actor` nombra a la persona que ejecuta el evento material (intervención humana, ADR-015); el registro y las trazas de procedencia se detallan en el bloque 9 y en `fixture-esperado.md`.
+
+| Evento | Actor | Efecto | Razón |
+|---|---|---|---|
+| Activación del proyecto | `F. Ficticia` | Estado `En preparación` → `Activo` | Condiciones habilitantes declaradas (autoridad, acceso a recuentos, tiempo protegido) |
+| `H1` (Hecho) | `R. Ficticia` | Registra el Hecho `H1` (faltantes del carro) | Recuento ficticio de reposición aplicado al foco Comprensión causal |
+| `HP1` (Hipótesis) | `R. Ficticia` (aportada; propuesta por `CoraLEAN`) | `HP1` en prueba: falta de doble chequeo explica los faltantes | Explica `H1`; fuente `sesión ficticia S-01` |
+| `E1` (Evidencia) | `R. Ficticia` | `E1` soporta `HP1` | Fuente `hoja ficticia FC-01` (reposición sin incidencias donde hubo doble chequeo) |
+| `E2` (Evidencia) | `R. Ficticia` | `E2` refuta `HP1` → `HP1` pasa a `refutada` | Fuente `hoja ficticia FC-02` (hubo doble chequeo y aun así faltantes) |
+| Reapertura `R1` | `F. Ficticia` | Reabre el área «Comprensión causal» | La refutación (`E2`) obliga a reexaminar la causa |
+| `HP1′` (Hipótesis reformulada) | `R. Ficticia` (propuesta por `CoraLEAN`) | `HP1′` reformulada: la variabilidad del proveedor explica los faltantes | Nueva causa candidata tras `E2`/`R1` |
+| `D1` (Decisión) | `F. Ficticia` | Registra `D1` (cambio reversible del punto de reposición; no sobrescribe decisión previa) | Decisión de bajo riesgo dentro del alcance declarado; fuente `minuta ficticia MT-01` |
+| `A1` (Acción) | `R. Ficticia` (recomendación de `CoraLEAN` aceptada) | `A1` (recomendación aceptada → entidad Acción) | El siguiente paso aceptado se convierte en entidad Acción (ADR-015) |
+| Autorización del Patrocinador/a | `P. Ficticia` | Autoriza el experimento/cambio de bajo riesgo | Transición con requisito de autorización humana (ADR-015) |
+
+**Recuentos base del fixture (referencia para `RT-08`):** el fixture base contiene **11 entidades transversales** (bloque 6: `H1`, `HP1`, `HP1′`, `E1`, `E2`, `D1`, `A1`, `M1`, `AR1`, `L1`, `Q1`) y **10 eventos materiales** (`historia-material.md`, tabla anterior). Las variantes escaladas `V×N` se definen como N× esos recuentos.
+
 **Cobertura requerida del fixture** (debe ser suficiente para ejercitar exactamente lo que exige el handoff):
 
 | Elemento a ejercitar | Dónde vive en el fixture |
@@ -77,6 +94,16 @@ Un **único fixture sintético**, pequeño y totalmente inventado, es usado por 
 | Procedencia (tres trazas, ADR-015) | `E2` (registró CoraLEAN / aportó `R. Ficticia` / fuente `hoja ficticia FC-02`), `HP1` (registró CoraLEAN / aportó `R. Ficticia` / fuente `sesión ficticia S-01`) y `D1` (registró `R. Ficticia` / aportó `F. Ficticia` / fuente `minuta ficticia MT-01`) |
 
 **Instrumentos repo-side que NO forman parte del fixture cargado:** `fixture-esperado.md` (clave de respuestas esperadas para comparar), variantes escaladas para RT-08, copias divergentes para RT-04/RT-07 y snapshot corrupto para RT-06. Son instrumentos de evaluación, no estado del Project.
+
+**Contenido requerido de `fixture-esperado.md`** (clave de respuestas repo-side; no se carga al Project). Debe fijar los valores esperados por bloque de ADR-015 que usan las comparaciones de `RT-01`, `RT-02`, `RT-05`, `RT-06` y `RT-08`:
+
+- **estado del proyecto:** `Activo`.
+- **foco principal:** `Foco 1` (Comprensión causal).
+- **siguiente paso + razón:** el siguiente paso esperado y su razón derivada (ADR-015: derivado, no verdad primaria).
+- **cuestión abierta:** `Q1`.
+- **estatus de hipótesis:** `HP1` = `refutada`; `HP1′` = `reformulada`.
+- **trazas de procedencia (tres por entidad):** `E2` (registró `CoraLEAN` / aportó `R. Ficticia` / fuente `hoja ficticia FC-02`), `HP1` (registró `CoraLEAN` / aportó `R. Ficticia` / fuente `sesión ficticia S-01`), `D1` (registró `R. Ficticia` / aportó `F. Ficticia` / fuente `minuta ficticia MT-01`).
+- **checklist del foco principal (para `RT-08`):** entidades `H1`, `HP1`, `HP1′`, `E1`, `E2`, `D1` (total 6), usadas para calcular `omisiones(V) = entidades del checklist ausentes / 6`.
 
 **Preparación y carga:** el fixture se **prepara y versiona del lado del repo** (artefactos `estado-proyecto.md` y `historia-material.md`) y se **carga manualmente en el ChatGPT Project** por Silvia. En esta unidad **no se materializan ni se comitean** los ficheros del fixture: solo se especifican aquí; su creación es una tarea repo-side previa a la primera corrida (sección 10).
 
@@ -127,7 +154,7 @@ Un apartado por hipótesis de ADR-017. El campo `Resultado observado` es `PENDIE
   5. Repo-side: contrastar la respuesta con `fixture-esperado.md`.
 - **Resultado esperado:** la respuesta nombra el estado del proyecto, el foco principal correcto, el siguiente paso con su razón y al menos una cuestión abierta; no inventa entidades.
 - **Resultado observado:** `PENDIENTE`
-- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** PASS si los 4 criterios (estado / foco / siguiente paso + razón / cuestión abierta) son correctos y no hay entidades inventadas. PARTIAL si 1–3 criterios correctos y 0 entidades inventadas. FAIL si inventa entidades o contradice el estado explícito en foco o siguiente paso. BLOCKED si el chat nuevo no recibe las fuentes o el Project no arranca.
+- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** se aplica en este orden y asigna un único veredicto a toda observación. BLOCKED si el chat nuevo no recibe las fuentes o el Project no arranca. FAIL si inventa entidades, o contradice el estado explícito en foco o siguiente paso, o no acierta ninguno de los 4 criterios (0 de 4) sin inventar entidades. PARTIAL si acierta 1–3 de los 4 criterios, no inventa entidades y no contradice el estado explícito en foco o siguiente paso. PASS si acierta los 4 criterios (estado / foco / siguiente paso + razón / cuestión abierta), no inventa entidades y no contradice el estado explícito.
 - **Evidencia requerida:** captura de la respuesta íntegra; `fixture-esperado.md`; captura de la configuración del Project (instrucciones y fuentes).
 - **Implicación:** valida la premisa básica de ADR-017/ADR-015 (estado explícito reconstruible en frío). Un fallo repetido tensa la reversal condition de ADR-002; un fallo aislado es una limitación de runtime, no una contradicción del Core.
 - **Siguiente acción:** si PASS, continuar con `RT-03`; si FAIL/PARTIAL, revisar instrucciones delgadas y representación antes de tocar semántica del Core.
@@ -197,7 +224,7 @@ Un apartado por hipótesis de ADR-017. El campo `Resultado observado` es `PENDIE
   4. Comparar con la traza esperada del fixture.
 - **Resultado esperado:** las tres trazas se conservan separadas y distinguen propuesta de confirmación.
 - **Resultado observado:** `PENDIENTE`
-- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** PASS si las tres trazas son recuperables y correctas para `E2` y `HP1`. PARTIAL si recupera 1–2 trazas o colapsa alguna. FAIL si no distingue propuesta de confirmación o atribuye mal la autoría. BLOCKED si el mecanismo de registro no preserva autoría.
+- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** se aplica en este orden y asigna un único veredicto a toda observación. BLOCKED si el mecanismo de registro no preserva autoría. FAIL si no se recupera ninguna de las tres entidades (`E2`, `HP1`, `D1`), o no se distingue propuesta de confirmación, o alguna autoría recuperada es incorrecta. PARTIAL si se recuperan 1–2 de las tres entidades o alguna de sus trazas aparece colapsada, y ninguna autoría recuperada es incorrecta. PASS si las tres trazas separadas (quién registró / quién aportó / fuente evidencial) son recuperables y correctas para `E2`, `HP1` y `D1`.
 - **Evidencia requerida:** estado con las trazas; transcripción del intercambio; captura del chat de verificación.
 - **Implicación:** valida ADR-015 (procedencia) en runtime; es prerequisito de la auditoría del estado.
 - **Siguiente acción:** usar la evidencia como insumo de `RT-12`.
@@ -240,18 +267,19 @@ Un apartado por hipótesis de ADR-017. El campo `Resultado observado` es `PENDIE
 ### RT-08 — Tamaño (ADR-017 §8)
 
 - **Hipótesis:** existe un umbral de tamaño de las fuentes a partir del cual la recuperación empieza a omitir información relevante.
-- **Precondiciones:** `RT-01`/`RT-02`; generador repo-side de variantes escaladas del fixture.
+- **Precondiciones:** `RT-01`/`RT-02`; generador repo-side de variantes escaladas del fixture; copia limpia del Project por variante.
 - **Procedimiento reproducible:**
-  1. Repo-side: generar variantes escaladas del fixture (p. ej. ×2, ×5, ×10 de entidades/eventos ficticios).
-  2. Para cada variante, pedir la reconstrucción en frío.
-  3. Medir omisiones de entidades relevantes del foco principal.
-- **Resultado esperado:** se identifica el punto donde empiezan las omisiones; por debajo de él, fidelidad total sobre las entidades del foco.
+  1. Repo-side: a partir de los recuentos base del fixture (sección 2: 11 entidades transversales y 10 eventos materiales), generar tres variantes isomorfas del fixture: `V×2` (22 entidades, 20 eventos), `V×5` (55 entidades, 50 eventos) y `V×10` (110 entidades, 100 eventos), replicando la estructura de entidades y eventos con identificadores sufijados.
+  2. Silvia: cargar cada variante en el ChatGPT Project (una a una, sobre copia limpia) y ejecutar la reconstrucción en frío con el prompt fijado «¿Dónde estamos y qué toca ahora?»; capturar la respuesta íntegra de cada variante.
+  3. Repo-side: contrastar cada respuesta con el checklist de entidades del foco principal de `fixture-esperado.md` (`H1`, `HP1`, `HP1′`, `E1`, `E2`, `D1`; total 6) y calcular `omisiones(V) = entidades del checklist ausentes / 6`.
+  4. Repetir cada variante en dos pasadas y registrar `omisiones(V)` por pasada.
+- **Resultado esperado:** se identifica el tamaño a partir del cual aparecen omisiones reproducibles; por debajo del umbral, `omisiones = 0/6`.
 - **Resultado observado:** `PENDIENTE`
-- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** PASS si se identifica un umbral reproducible con criterio observable (qué se omite y a partir de qué tamaño). PARTIAL si hay variabilidad sin umbral claro. FAIL si no puede medirse la fidelidad. BLOCKED si el runtime trunca sin poder preparar variantes.
-- **Evidencia requerida:** variantes usadas; respuestas; registro de omisiones por tamaño.
+- **Regla de veredicto (PASS / FAIL / PARTIAL / BLOCKED):** se aplica en este orden y asigna un único veredicto a toda observación. BLOCKED si el runtime trunca o no permite cargar las variantes. FAIL si no puede medirse la fidelidad (faltan capturas o el checklist no puede evaluarse en ninguna variante). PARTIAL si hay omisiones medidas pero el patrón no es estable entre las dos pasadas, o si todas las variantes dan `0/6` o todas `>0/6` (no se delimita umbral). PASS si existe al menos una variante con `omisiones = 0/6` y otra con `omisiones > 0/6`, y el patrón es estable en las dos pasadas de cada variante, declarando el umbral como la frontera entre el mayor tamaño con `0/6` y el menor con `>0/6`.
+- **Evidencia requerida:** variantes generadas y sus recuentos; prompts y respuestas íntegras por variante; registro de omisiones por tamaño y pasada.
 - **Implicación:** define límites operativos del fixture/Starter Kit; no cambia el Core.
 - **Siguiente acción:** fijar el tamaño máximo soportado para el piloto.
-- **Paso manual o preparable:** repo genera variantes y mide; Silvia ejecuta cada reconstrucción.
+- **Paso manual o preparable:** mixto: repo/VPS-OpenCode genera las variantes, prepara el checklist y calcula `omisiones(V)` comparando; Silvia carga cada variante y ejecuta/captura cada reconstrucción dentro del ChatGPT Project. El repo nunca observa ni ejecuta la reconstrucción.
 
 ### RT-09 — Voice → estado (ADR-017 §9)
 
@@ -289,9 +317,9 @@ Un apartado por hipótesis de ADR-017. El campo `Resultado observado` es `PENDIE
 ### RT-11 — Skills ausentes (ADR-017 §11)
 
 - **Hipótesis:** el protocolo completo funciona solo con Core + archivos, sin Skills.
-- **Precondiciones:** `RT-01`; copia limpia del fixture; forma verificable de deshabilitar Skills o demostrar su ausencia.
+- **Precondiciones:** `RT-01`; copia limpia del fixture; forma verificable de deshabilitar Skills o demostrar su ausencia (la verifica Silvia en el Project).
 - **Procedimiento reproducible:**
-  1. Configurar el Project sin Skills (o no invocarlas).
+  1. Silvia: deshabilitar o verificar la ausencia de Skills en el Project (o demostrar que no se invocan).
   2. Ejecutar una interacción material completa con el fixture (inicio: consultar estado; cierre: extraer cambios durables), según ADR-017 decisión 4.
   3. Comparar el comportamiento con la equivalencia metodológica exigida por el GLOSSARY (sin la Skill, el procedimiento debe ejecutarse con equivalencia desde el Core).
 - **Resultado esperado:** el protocolo se ejecuta con equivalencia metodológica sin Skills.
@@ -300,7 +328,7 @@ Un apartado por hipótesis de ADR-017. El campo `Resultado observado` es `PENDIE
 - **Evidencia requerida:** configuración del Project; transcripción de la interacción material; estado resultante.
 - **Implicación:** confirma que Skills son aceleradores y no fundamento obligatorio (`START_HERE.md` §3; ADR-016).
 - **Siguiente acción:** si FAIL, registrar la dependencia oculta detectada.
-- **Paso manual o preparable:** repo prepara la configuración y la copia; Silvia ejecuta y captura.
+- **Paso manual o preparable:** Silvia deshabilita/verifica la ausencia de Skills en el ChatGPT Project y ejecuta la interacción (BLOCKED si no puede deshabilitarlas ni demostrar su ausencia); repo prepara la copia limpia del fixture, el guion de interacción de referencia y la comparación.
 
 ### RT-12 — Memoria del Project vs estado explícito (ADR-017 §12)
 
@@ -334,10 +362,10 @@ Mapeo uno a uno y en orden con las hipótesis empíricas de ADR-017. `tipo de pa
 | RT-05 | §5 Procedencia | 5 | Silvia/manual en ChatGPT Project |
 | RT-06 | §6 Recuperación | 6 | mixto (repo corrompe · Silvia ejecuta) |
 | RT-07 | §7 Concurrencia | 8 | Silvia/manual en ChatGPT Project |
-| RT-08 | §8 Tamaño | 9 | repo/VPS-OpenCode |
+| RT-08 | §8 Tamaño | 9 | mixto (repo genera/contrasta · Silvia ejecuta) |
 | RT-09 | §9 Voice → estado | 10 | Silvia/manual en ChatGPT Project |
 | RT-10 | §10 Work disponible/no disponible | 12 | mixto (repo documenta · Silvia configura) |
-| RT-11 | §11 Skills ausentes | 7 | mixto (repo deshabilita · Silvia ejecuta) |
+| RT-11 | §11 Skills ausentes | 7 | mixto (repo prepara copia/guion · Silvia deshabilita y verifica) |
 | RT-12 | §12 Memoria del Project vs estado explícito | 11 | Silvia/manual en ChatGPT Project |
 
 ---
@@ -373,10 +401,10 @@ Tabla resumen por prueba:
 | RT-05 | manual | proponer/confirmar, verificar trazas, capturar | preparar traza esperada; comparar |
 | RT-06 | mixto | pedir reconstrucción y capturar | corromper snapshot; diff |
 | RT-07 | manual | ejecutar dos sesiones concurrentes, capturar | registrar línea temporal |
-| RT-08 | repo | ejecutar reconstrucción de cada variante | generar variantes escaladas; medir omisiones |
+| RT-08 | mixto | cargar cada variante y ejecutar/capturar la reconstrucción | generar variantes escaladas; preparar checklist; calcular omisiones |
 | RT-09 | manual | interacción por Voice, capturar | comparar con estado esperado |
 | RT-10 | mixto | alternar configuración Work, capturar | documentar y comparar |
-| RT-11 | mixto | ejecutar interacción sin Skills, capturar | deshabilitar Skills; preparar copia limpia |
+| RT-11 | mixto | deshabilitar/verificar la ausencia de Skills, ejecutar la interacción, capturar | preparar copia limpia y guion de interacción; comparar |
 | RT-12 | manual | sembrar memoria, abrir chat de prueba, capturar | preparar estado contradictorio |
 
 ---
