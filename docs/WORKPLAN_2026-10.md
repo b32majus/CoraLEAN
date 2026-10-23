@@ -1,3 +1,5 @@
+<!-- HISTORICAL PLAN (written before October runtime delays). Does not assert implementation or test completion. Active post-audit execution schedule: docs/execution/ROADMAP_VALIDACION_2026-10-23.md. -->
+
 # CoraLEAN — Workplan to 26 October 2026
 
 ## Objective

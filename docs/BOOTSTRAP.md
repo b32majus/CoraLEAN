@@ -1,3 +1,5 @@
+<!-- CANDIDATE ONLY (23 Oct 2026). Automatic Project setup is not verified; manual RT-01 uses the exact documented two-source Project setup. See docs/runtime/fixtures/alpha-v0/instrucciones-project-rt01.md and the active roadmap. -->
+
 # CoraLEAN Bootstrap concept
 
 ## Goal

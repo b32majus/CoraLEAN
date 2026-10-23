@@ -1,8 +1,12 @@
 # START HERE — CoraLEAN
 
-**Last updated:** 2026-10-01
-**Status:** Phase 0 / current direction accepted for exploration; final architecture not frozen.
-**Core Freeze v0.1:** completado el 2026-10-01. La fuente canónica del Core (contratos, modelo, comportamientos) son los ADRs de `docs/decisions/` y el mapa de `docs/CORE_FREEZE_V0.1.md`.
+**Last updated:** 2026-10-23 (post-freeze orientation only).
+**Status:** Core Freeze v0.1 conservado; runtime Alpha aún no validado. La arquitectura final del producto no está implementada ni seleccionada.
+**Core Freeze v0.1:** los ADR-001…019 y `docs/CORE_FREEZE_V0.1.md` mandan sobre metodología y gobernanza congeladas.
+
+**Para retomar el proyecto hoy:** [dirección post-auditorías](docs/strategy/DICTAMEN_DIRECCION_2026-10-23.md) → [roadmap vigente y pruebas](docs/execution/ROADMAP_VALIDACION_2026-10-23.md) → [instrumentos Alpha](docs/runtime/ALPHA_RUNTIME_VERIFICATION_V0.md). Los informes de auditoría son antecedentes, no decisiones ni evidencias de producto.
+
+**Distinción fundamental:** ChatGPT Project fue elegido como **hipótesis de ejecución v0 / laboratorio** (ADR-002/017), no como licencia o plataforma obligatoria para usuarios finales. Dirección post-freeze de producto: método y estado portables, interfaces potencialmente web/Microsoft/ChatGPT. Implementación de estado externo, backend y MCP pendiente de decisión basada en pruebas.
 
 ## 1. What are we building?
 

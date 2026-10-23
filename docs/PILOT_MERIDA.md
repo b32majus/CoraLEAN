@@ -1,3 +1,5 @@
+<!-- 2026-10-23: the original Oct 1–23 timeline below is historical planning, not evidence of completed tests. For operational decisions before 26-Oct and measurement rules, see docs/execution/ROADMAP_VALIDACION_2026-10-23.md. No institutional approval or patient-data processing is inferred. -->
+
 # Pilot — PROMueve Extremadura · Mérida
 
 ## Purpose
@@ -33,7 +35,7 @@ CoraLEAN should help Silvia prepare and conduct the project while also helping t
 
 ### Method
 
-- Does the lifecycle make sense?
+- Are the reasoning areas, decision foci and derived navigation moment useful?
 - Does Coraline know what to ask?
 - Does it prevent premature solutions?
 - Does it identify missing evidence?
@@ -67,6 +69,8 @@ CoraLEAN should help Silvia prepare and conduct the project while also helping t
 ## Success criterion
 
 The pilot is not primarily successful if the team likes the tool.
+
+**Execution guardrail (23 Oct):** until runtime is validated, Silvia operates any CoraLEAN assistance and the local lead answers first. Baseline, interventions by Silvia vs AI, critical reasoning errors and follow-up **without the tool** should be recorded separately. This is exploratory evidence, not verified effectiveness.
 
 It is successful if CoraLEAN contributes to **capability transfer**:
 

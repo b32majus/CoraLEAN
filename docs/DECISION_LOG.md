@@ -39,3 +39,11 @@ These are deliberately **not** frozen:
 - diseño visual final.
 
 The project should resist turning these into architecture commitments prematurely.
+
+
+## Direction after 23 October 2026 (NOT an accepted Core ADR)
+
+- Human-approved **documentary consolidation** of two external-AI audit packages, the executive disposition and an active validation plan. See [dictamen](strategy/DICTAMEN_DIRECCION_2026-10-23.md) and [roadmap](execution/ROADMAP_VALIDACION_2026-10-23.md).
+- **Product direction to investigate:** portable method and state independent of the conversational provider; web as a possible independent entry; Microsoft and ChatGPT as optional clients; ChatGPT Project as Alpha laboratory.
+- **No change to ADR-002/017's Alpha test hypothesis** and no acceptance of a new implementation architecture: external database, API/MCP, UI, security architecture, costs and institutional authorisation all remain undecided. Any actual change to a frozen contract requires its own explicit reviewed decision.
+- Auditors' preferences and unverified claims are not promoted to product requirements without evidence.
