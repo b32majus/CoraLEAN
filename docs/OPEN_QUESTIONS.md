@@ -57,3 +57,14 @@ Preguntas con disposición explícita tras el **Core Freeze v0.1** (2026-10-01).
 - Literatura de coaching/facilitación QI y transferencia de capacidad → **Abierta** (Track B; incluye verificar AHRQ, cuya página no pudo consultarse el 2026-10-01).
 - Verificar disponibilidad real de Skills/Sites/Work para la población objetivo → **Resuelta como criterio de aceptación**: pasa a ser parte de las 12 pruebas Alpha (ADR-017) y se verifica empíricamente antes de Mérida.
 - Verificar la afirmación de que el A3 de SECA admite estructura variable según el propósito → **Abierta** (afirmación recibida en la sesión de freeze, pendiente de contraste con el manual).
+
+
+## Post-freeze product direction — 23-oct-2026
+
+- **Proveedor de IA obligatorio:** descartado como requisito de producto; ChatGPT Project se mantiene como laboratorio Alpha de ADR-002/017. [Dictamen de dirección](strategy/DICTAMEN_DIRECCION_2026-10-23.md).
+- **Backend externo de estado:** abierto; decidir con E1/E2/E3/E4 (6-nov) si se necesita registro mínimo/web, preservando los contratos de dominio y prueba; proveedor sin elegir.
+- **Vía Microsoft (Teams/Copilot):** abierta por licencia, permisos, tenant y gobernanza; no se presume habilitada con Copilot Chat básico.
+- **Modo sin IA y aprendizaje 'primero tú':** hipótesis pendientes de evaluación, consentimiento y retirada reversible de apoyo, sin inferir puntuaciones de rendimiento laboral.
+- **Criterios estructurales vs juicio:** ensayo propuesto sobre ADR-008/018, no nueva regla canónica aceptada.
+- **Verificación del valor diferencial:** comparación A3 + IA genérica / CoraLEAN / estructura sin IA, tarea sin herramienta y evaluación ciega cuando sea factible; n pequeño = exploración.
+- **Seguridad y uso institucional:** cuentas, entrenamiento, datos permitidos y autorización del centro pendientes de comprobar; límite actual sin datos identificativos de paciente.

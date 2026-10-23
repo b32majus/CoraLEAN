@@ -1,3 +1,5 @@
+<!-- Post-freeze reconciliation 2026-10-23: 'momento_navegacion' is a derived observation (ADR-012), not a persisted phase. Use ADR-015 for state. -->
+
 # CoraLEAN Feedback Protocol
 
 ## Principle
@@ -12,7 +14,7 @@ date:
 project:
 user_type:
 mode:
-phase:
+momento_navegacion:
 intent:
 expected:
 actual:
@@ -36,7 +38,7 @@ status:
 - state becomes inconsistent;
 - user bypasses method;
 - wrong methodological intervention;
-- wrong phase recommendation;
+- incorrect derived navigation moment;
 - cockpit not representative;
 - meeting preparation insufficient;
 - evidence/hypothesis distinction unclear;

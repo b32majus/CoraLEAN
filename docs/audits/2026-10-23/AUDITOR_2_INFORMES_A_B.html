@@ -1,0 +1,2205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Informes A y B · CoraLEAN</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>:root{--paper:#f2f5f4; --surface:#ffffff; --ink:#172120; --muted:#55635f; --line:#d2dbd8; --code:#eaf0ee;--a:#2a4b98; --b:#9b2e3a; --c:#0c6f60;--dem:#b42318; --rie:#9a5600; --fort:#23704a; --pref:#674a99; --h:#2a4b98; --hip:#7f6400; --r:#0c6f60;--good:#23704a; --mid:#9a5600; --bad:#b42318;--shadow:0 1px 2px rgba(20,40,36,.06),0 6px 24px rgba(20,40,36,.06);--font-display:"IBM Plex Sans Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;--font-body:"Literata",Georgia,"Times New Roman",serif;--font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--topbar:56px;}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#101615; --surface:#172020; --ink:#e1e9e6; --muted:#96a5a1; --line:#2a3634; --code:#1c2726;--a:#91abf1; --b:#ee8c96; --c:#55c6b0;--dem:#ff8b80; --rie:#f0b35b; --fort:#74ca96; --pref:#bba2ec; --h:#91abf1; --hip:#e3c55c; --r:#55c6b0;--good:#74ca96; --mid:#f0b35b; --bad:#ff8b80; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 24px rgba(0,0,0,.25); color-scheme:dark}}:root[data-theme="dark"]{--paper:#101615; --surface:#172020; --ink:#e1e9e6; --muted:#96a5a1; --line:#2a3634; --code:#1c2726;--a:#91abf1; --b:#ee8c96; --c:#55c6b0;--dem:#ff8b80; --rie:#f0b35b; --fort:#74ca96; --pref:#bba2ec; --h:#91abf1; --hip:#e3c55c; --r:#55c6b0;--good:#74ca96; --mid:#f0b35b; --bad:#ff8b80; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 24px rgba(0,0,0,.25); color-scheme:dark}*,*::before,*::after{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar) + env(safe-area-inset-top,0px) + 16px)}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.65;margin:0;-webkit-text-size-adjust:100%}body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}a{color:var(--rep,var(--c));text-underline-offset:.18em;text-decoration-thickness:1px}a:hover{text-decoration-thickness:2px}:focus-visible{outline:2px solid var(--c);outline-offset:2px;border-radius:3px}code{font-family:var(--font-mono);font-size:.84em;background:var(--code);padding:.08em .32em;border-radius:4px;overflow-wrap:anywhere}.rep-r{--rep:var(--c)} .rep-a{--rep:var(--a)} .rep-b{--rep:var(--b)}.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--surface);border-bottom:1px solid var(--line);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.topbar-in{max-width:1320px;margin:0 auto;height:var(--topbar);display:flex;align-items:center;gap:14px}.brand{font-family:var(--font-display);font-weight:700;font-size:1.02rem;letter-spacing:.01em;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{color:var(--muted);font-weight:500}.seg{display:flex;gap:4px;margin-left:auto;font-family:var(--font-display);font-size:.9rem}.seg a{text-decoration:none;color:var(--muted);padding:.32rem .7rem;border-radius:999px;border:1px solid transparent;font-weight:600}.seg a.on{color:var(--surface);background:var(--rep)}.seg a[data-k="r"]{--rep:var(--c)} .seg a[data-k="a"]{--rep:var(--a)} .seg a[data-k="b"]{--rep:var(--b)}.seg a:not(.on):hover{border-color:var(--line);color:var(--ink)}.menu-btn{display:none;font:600 .9rem var(--font-display);background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.35rem .7rem;cursor:pointer}.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}.progress i{display:block;height:100%;width:0;background:var(--rep,var(--c));transition:width .1s linear}.shell{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:290px minmax(0,1fr);gap:56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 96px}.toc{position:sticky;top:calc(var(--topbar) + env(safe-area-inset-top,0px));align-self:start;max-height:calc(100vh - var(--topbar) - env(safe-area-inset-top,0px));overflow:auto;padding-block:24px 40px;font-family:var(--font-display);font-size:.9rem;line-height:1.3;scrollbar-width:thin}.toc ul{list-style:none;margin:0;padding:0}.tg{padding-block:6px 14px;border-bottom:1px solid var(--line);margin-bottom:12px}.tg-r{--rep:var(--c)} .tg-a{--rep:var(--a)} .tg-b{--rep:var(--b)}.tg-h{display:block;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;color:var(--rep);text-decoration:none;margin-bottom:6px}.t2>a{display:block;padding:.3rem .5rem;border-radius:6px;color:var(--ink);text-decoration:none;font-weight:500}.t3l{display:none;margin:2px 0 6px 10px!important;border-left:1px solid var(--line)}.t2.open>.t3l{display:block}.t3>a{display:block;padding:.22rem .6rem;color:var(--muted);text-decoration:none;font-size:.84rem}.toc a:hover{background:color-mix(in srgb,var(--rep) 8%,transparent)}.toc a.cur{color:var(--rep);background:color-mix(in srgb,var(--rep) 11%,transparent);font-weight:600}main{min-width:0;padding-top:28px}.part{padding-block:8px 40px}.part + .part{border-top:2px solid var(--line);margin-top:48px;padding-top:40px}.prose{max-width:74ch}.prose > *{max-width:74ch}h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;text-wrap:balance;color:var(--ink)}.prose h1{font-size:2rem;font-weight:700;margin:1.2em 0 .5em}.prose h2{font-size:1.62rem;font-weight:700;margin:2.4em 0 .6em;padding-top:.9em;border-top:1px solid var(--line);display:flex;gap:.6rem;align-items:baseline}.prose h2::before{content:attr(data-k);flex:none;font-size:.62em;font-weight:700;color:var(--surface);background:var(--rep);border-radius:4px;padding:.12em .42em;transform:translateY(-.12em)}.prose h3{font-size:1.24rem;font-weight:600;color:var(--rep);margin:2em 0 .5em}.prose h4{font-size:1.05rem;font-weight:600;margin:1.6em 0 .4em}.prose p{margin:.75em 0}.prose ul,.prose ol{padding-left:1.35em;margin:.6em 0}.prose li{margin:.28em 0}.prose li::marker{color:var(--rep)}.prose strong{font-weight:600}.prose hr{border:0;border-top:1px dashed var(--line);margin:2.4em 0}.prose blockquote{margin:1.2em 0;padding:.6em 1em;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}.callout{border-color:color-mix(in srgb,var(--c) 40%,var(--line))!important;background:color-mix(in srgb,var(--c) 7%,var(--surface))!important}.callout-k{font:700 .72rem var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-right:.4em}.eyebrow{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;font-weight:600;color:var(--muted);margin:0 0 .5rem}.tw{overflow-x:auto;margin:1.2em 0;border:1px solid var(--line);border-radius:10px;background:var(--surface);max-width:100%!important;-webkit-overflow-scrolling:touch}.prose .tw{max-width:none}.tw table{border-collapse:collapse;width:100%;font-size:.88rem;line-height:1.45}.tw.wide table{min-width:820px}.tw th,.tw td{padding:.6rem .75rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}.tw tr:last-child td{border-bottom:0}.tw th{font-family:var(--font-display);font-weight:600;font-size:.86rem;background:color-mix(in srgb,var(--rep) 8%,var(--surface));color:var(--ink);position:sticky;top:0}.tw td:first-child{font-weight:600}.tw tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--ink) 2.5%,transparent)}.prose:has(.tw.wide){max-width:none}pre{font-family:var(--font-mono);font-size:.74rem;line-height:1.32;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;overflow-x:auto;max-width:100%;margin:1.2em 0;color:var(--ink)}pre code{background:none;padding:0;font-size:inherit;overflow-wrap:normal}.prose pre{max-width:none}.lb{display:inline-flex;align-items:baseline;gap:.35em;font:600 .7rem/1.5 var(--font-mono);letter-spacing:.02em;padding:.04em .45em;border-radius:4px;vertical-align:.12em;color:var(--lbc);background:color-mix(in srgb,var(--lbc) 13%,transparent);border:1px solid color-mix(in srgb,var(--lbc) 35%,transparent);white-space:nowrap}.lb-x{font-weight:400;font-family:var(--font-display);font-size:1.05em;white-space:normal}.lb-h{--lbc:var(--h)} .lb-hip{--lbc:var(--hip)} .lb-r{--lbc:var(--r)} .lb-dem{--lbc:var(--dem)} .lb-rie{--lbc:var(--rie)} .lb-pref{--lbc:var(--pref)} .lb-fort{--lbc:var(--fort)}.hero{padding-block:28px 12px;max-width:none}.hero-t{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,4rem);font-weight:700;letter-spacing:-.01em;line-height:1;margin:.1em 0 .25em}.hero-lead{font-size:1.12rem;max-width:62ch;color:var(--ink);margin:0 0 1.4rem}.verdict{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px;margin-bottom:16px}.verdict>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}.vd-main{border-color:color-mix(in srgb,var(--c) 45%,var(--line))!important}.vd-k{font:700 .72rem var(--font-display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}.verdict p{margin:.3em 0 0;font-size:1.02rem}.vd-main b{color:var(--c)} .vd-date b{color:var(--b)}.map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.map-i{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:border-color .15s,transform .15s}.map-i:hover{border-color:var(--rep);transform:translateY(-1px)}.map-r{--rep:var(--c)} .map-a{--rep:var(--a)} .map-b{--rep:var(--b)}.map-l{flex:none;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font:700 1.5rem var(--font-display);color:var(--surface);background:var(--rep)}.map-b{display:flex;flex-direction:column;min-width:0}.map-b b{font-family:var(--font-display);font-weight:600;font-size:1rem;line-height:1.25}.map-b small{color:var(--muted);font-family:var(--font-display);font-size:.8rem;margin-top:2px}.cover{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;padding:28px 0 8px;margin-bottom:8px}.cover-l{font:700 clamp(4.5rem,11vw,7.5rem)/0.82 var(--font-display);color:var(--rep);letter-spacing:-.04em}.cover h1{font-size:clamp(1.6rem,3.2vw,2.3rem);margin:.15em 0 .45em;color:var(--ink)}.cover-m{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-family:var(--font-display);font-size:.92rem;color:var(--muted)}.cover-m li::before{content:"— ";color:var(--rep)}.cover-note{font:600 .78rem var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--rep);margin:.9rem 0 0}.vis{margin:1.8em 0;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;max-width:none!important}.vis figcaption{font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.3}.vis-k{display:inline-block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--surface);background:var(--c);border-radius:4px;padding:.1em .45em;margin-right:.45em;vertical-align:.15em}.vis-note{font-family:var(--font-display);font-size:.84rem;color:var(--muted);margin:14px 0 0}.key{display:inline-flex;align-items:center;gap:.3em;margin-right:.6em}.key::before{content:"";width:.7em;height:.7em;border-radius:50%;background:var(--q)}.q-good{--q:var(--good)} .q-mid{--q:var(--mid)} .q-bad{--q:var(--bad)}.hm{display:flex;flex-direction:column;gap:6px;font-family:var(--font-display)}.hm-row{display:grid;grid-template-columns:minmax(150px,1.1fr) repeat(3,minmax(0,1fr));gap:6px}.hm-h{padding:6px 10px;border-radius:8px;color:var(--surface);display:flex;flex-direction:column;line-height:1.15}.hm-h b{font-size:1.1rem} .hm-h span{font-size:.76rem;opacity:.92}.hm-a{background:var(--a)} .hm-b{background:var(--b)} .hm-c{background:var(--c)}.hm-name{font-weight:600;font-size:.88rem;padding:8px 4px;align-self:center}.hm-cell{display:flex;gap:.5em;align-items:flex-start;font-size:.84rem;line-height:1.3;padding:8px 10px;border-radius:8px;background:color-mix(in srgb,var(--q) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--q) 35%,transparent)}.hm-dot{flex:none;width:.62em;height:.62em;border-radius:50%;background:var(--q);margin-top:.35em}.lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}.lane{background:color-mix(in srgb,var(--ink) 3%,var(--surface));border:1px solid var(--line);border-radius:12px;padding:10px;min-width:0}.lane-h{margin:2px 4px 10px;font-size:.86rem;display:flex;justify-content:space-between;gap:.5em;color:var(--ink)}.lane-h span{font-family:var(--font-mono);color:var(--muted)}.lane-0 .lane-h{color:var(--b)}.lane-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.rc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-family:var(--font-display)}.lane-0 .rc{border-color:color-mix(in srgb,var(--b) 40%,var(--line))}.rc-top{display:flex;justify-content:space-between;gap:.5em;align-items:baseline}.rc-n{font:700 .95rem var(--font-mono);color:var(--b)}.rc-u{font-size:.72rem;color:var(--muted);text-align:right}.rc-t{font-size:.9rem;line-height:1.35;margin:.35em 0 .55em;font-weight:500}.rc-d{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:.76rem}.rc-d dt{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:.62rem;font-weight:600}.rc-d dd{margin:0;line-height:1.3}.rc-risk{grid-column:1/-1}.lv{display:inline;font-weight:600}.lv-hi{color:var(--fort)} .lv-mh{color:var(--fort)} .lv-md{color:var(--rie)} .lv-lo{color:var(--dem)}.am{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.am-col{border-radius:12px;padding:12px;border:1px solid var(--line);background:color-mix(in srgb,var(--q) 6%,var(--surface));min-width:0}.am-keep{--q:var(--good)} .am-simp{--q:var(--c)} .am-chg{--q:var(--mid)} .am-del{--q:var(--bad)}.am-col h4{margin:0 0 10px;font-size:.92rem;display:flex;justify-content:space-between;color:var(--q)}.am-col h4 span{font-family:var(--font-mono);color:var(--muted)}.am-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-family:var(--font-display);font-size:.82rem;line-height:1.3}.am-col li{display:flex;flex-direction:column;gap:2px;padding:6px 8px;background:var(--surface);border-radius:8px;border:1px solid var(--line)}.am-col li code{background:none;padding:0;font-size:.74rem;color:var(--q);font-weight:600}.arch{display:flex;flex-direction:column;align-items:stretch;gap:6px;font-family:var(--font-display)}.arch b{display:block;font-weight:700;font-size:.95rem}.arch span{display:block;font-size:.82rem;color:var(--muted);line-height:1.35}.ar-spec,.ar-core,.ar-surf>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)}.ar-spec{border-style:dashed;border-color:var(--c)}.ar-arrow{text-align:center;color:var(--c);font-size:1.2rem;line-height:1}.ar-core{border:2px solid var(--c);background:color-mix(in srgb,var(--c) 6%,var(--surface))}.ar-core-h{font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:.74rem;color:var(--c);margin-bottom:8px}.ar-core-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.ar-core-g>div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0;overflow-wrap:anywhere}.ar-note{font-size:.8rem;color:var(--muted);margin:8px 0 0}.ar-surf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.ar-later{border-style:dashed!important}.ar-web{border-color:var(--c)!important}.ar-flow{display:flex;gap:8px;list-style:none;padding:0;margin:8px 0 0;counter-reset:f;flex-wrap:wrap}.ar-flow li{counter-increment:f;flex:1 1 180px;font-size:.84rem;padding:8px 10px;border-radius:8px;background:color-mix(in srgb,var(--c) 10%,var(--surface))}.ar-flow li::before{content:counter(f);font:700 .78rem var(--font-mono);color:var(--surface);background:var(--c);border-radius:50%;width:1.45em;height:1.45em;display:inline-grid;place-items:center;margin-right:.5em}.tl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.tl{display:block;width:100%;min-width:680px;height:auto;font-family:var(--font-display)}.tl-grid{stroke:var(--line);stroke-width:1}.tl-tick{fill:var(--muted);font-size:12px}.tl-sec{fill:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.tl-lab{fill:var(--ink);font-size:13px}.tl-d{fill:var(--muted);font-size:11px;font-family:var(--font-mono)}.tl-bar{fill:color-mix(in srgb,var(--a) 70%,transparent)}.tl-m-a{fill:var(--b)}.tl-gap{fill:color-mix(in srgb,var(--muted) 30%,transparent)}.tl-today{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 3}.tl-session{stroke:var(--b);stroke-width:2.5}.tl-flag{font-size:12px;font-weight:700}.tl-today-t{fill:var(--muted)} .tl-session-t{fill:var(--b)}.lc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.lc-g{min-width:0}.lc-h{margin:0 0 8px;font-size:.95rem} .lc-a{color:var(--a)} .lc-b{color:var(--b)}.lc-r{display:grid;grid-template-columns:3.6em minmax(0,9em) minmax(0,1fr) 2.2em;gap:8px;align-items:center;font-family:var(--font-display);font-size:.84rem;margin:5px 0}.lc-name{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lc-bar{height:12px;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:3px;overflow:hidden}.lc-fill{display:block;height:100%;border-radius:3px}.lc-h.lc-fill,.lc-fill.lc-h{background:var(--h)} .lc-fill.lc-hip{background:var(--hip)} .lc-fill.lc-r{background:var(--r)} .lc-fill.lc-dem{background:var(--dem)} .lc-fill.lc-rie{background:var(--rie)} .lc-fill.lc-fort{background:var(--fort)} .lc-fill.lc-pref{background:var(--pref)}.lc-v{font-family:var(--font-mono);font-variant-numeric:tabular-nums;text-align:right}.totop{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;font:600 .85rem var(--font-display);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:.5rem .9rem;box-shadow:var(--shadow);cursor:pointer;text-decoration:none}.resume{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:26;display:flex;gap:8px;align-items:center;font:500 .88rem var(--font-display);background:var(--ink);color:var(--paper);border-radius:12px;padding:.55rem .6rem .55rem 1rem;box-shadow:var(--shadow);max-width:calc(100vw - 32px)}.resume button{font:600 .84rem var(--font-display);border:0;border-radius:8px;padding:.4rem .7rem;cursor:pointer}.resume .go{background:var(--paper);color:var(--ink)} .resume .x{background:transparent;color:var(--paper)}.resume span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:44}@media (max-width:1100px){.lanes,.am{grid-template-columns:repeat(2,minmax(0,1fr))}.ar-core-g,.ar-surf{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:960px){.shell{grid-template-columns:minmax(0,1fr);gap:0}.menu-btn{display:inline-block}.toc{position:fixed;z-index:45;top:0;left:0;bottom:0;width:min(86vw,340px);max-height:none;background:var(--surface);border-right:1px solid var(--line);padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px)) calc(16px + env(safe-area-inset-left,0px));transform:translateX(-102%);transition:transform .2s ease;box-shadow:var(--shadow)}.toc.show{transform:none}.verdict,.map{grid-template-columns:minmax(0,1fr)}}@media (max-width:640px){body{font-size:16px}.seg a{padding:.3rem .5rem}.brand span{display:none}.lanes,.am,.lc{grid-template-columns:minmax(0,1fr)}.hm-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)}.hm-row .hm-name{grid-column:1/-1;padding:10px 2px 0}.hm-headrow .hm-name{display:none}.cover{grid-template-columns:minmax(0,1fr);gap:4px}.prose h2{font-size:1.4rem}.lc-r{grid-template-columns:3.6em minmax(0,1fr) 2.2em}.lc-name{display:none}}@media print{.topbar,.toc,.totop,.resume,.scrim{display:none!important}.shell{display:block}body{background:#fff;color:#000;font-size:11pt}.tw.wide table{min-width:0}}</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<button class="menu-btn" id="menu-btn" aria-controls="toc" aria-expanded="false">Índice</button>
+<a class="brand" href="#inicio">Informes A·B <span>· CoraLEAN</span></a>
+<nav class="seg" aria-label="Ir a"><a href="#resumen" data-k="r" class="on">Resumen</a><a href="#informe-a" data-k="a">A</a><a href="#informe-b" data-k="b">B</a></nav>
+</div><div class="progress" aria-hidden="true"><i></i></div></div>
+<div class="scrim" id="scrim" hidden></div>
+<div class="shell">
+<nav class="toc" id="toc" aria-label="Índice"><div class="tg tg-r"><a class="tg-h" href="#resumen">Resumen comparado</a><ul class="t2l"><li class="t2"><a href="#r-los-dos-informes-en-una-frase" data-id="r-los-dos-informes-en-una-frase">Los dos informes en una frase</a></li><li class="t2"><a href="#r-veredicto" data-id="r-veredicto">Veredicto</a></li><li class="t2"><a href="#r-tesis-principales" data-id="r-tesis-principales">Tesis principales</a></li><li class="t2"><a href="#r-convergencias-independientes-entre-a-y-coralean" data-id="r-convergencias-independientes-entre-a-y-coralean">Convergencias independientes entre A y CoraLEAN</a></li><li class="t2"><a href="#r-donde-gana-cada-uno" data-id="r-donde-gana-cada-uno">Dónde gana cada uno</a></li><li class="t2"><a href="#r-lo-urgente-antes-del-26-de-octubre" data-id="r-lo-urgente-antes-del-26-de-octubre">Lo urgente antes del 26 de octubre</a></li><li class="t2"><a href="#r-mapa-de-decisiones-sobre-los-adr-segun-informe-b-4-2-4-5" data-id="r-mapa-de-decisiones-sobre-los-adr-segun-informe-b-4-2-4-5">Mapa de decisiones sobre los ADR (según Informe B §4.2–4.5)</a></li><li class="t2"><a href="#r-arquitectura-recomendada-c-en-diagrama" data-id="r-arquitectura-recomendada-c-en-diagrama">Arquitectura recomendada (C), en diagrama</a></li><li class="t2"><a href="#r-calendario-del-piloto-lo-previsto-frente-a-lo-que-muestra-el" data-id="r-calendario-del-piloto-lo-previsto-frente-a-lo-que-muestra-el">Calendario del piloto: lo previsto frente a lo que muestra el repositorio</a></li><li class="t2"><a href="#r-leyenda-de-etiquetas" data-id="r-leyenda-de-etiquetas">Leyenda de etiquetas</a></li></ul></div><div class="tg tg-a"><a class="tg-h" href="#informe-a">Informe A</a><ul class="t2l"><li class="t2"><a href="#a-1-diagnostico-ejecutivo" data-id="a-1-diagnostico-ejecutivo">1. Diagnóstico ejecutivo</a></li><li class="t2"><a href="#a-2-critica-del-problema-y-oportunidad" data-id="a-2-critica-del-problema-y-oportunidad">2. Crítica del problema y oportunidad</a><ul class="t3l"><li class="t3"><a href="#a-2-1-es-un-problema-importante-y-bien-definido" data-id="a-2-1-es-un-problema-importante-y-bien-definido">2.1 ¿Es un problema importante y bien definido?</a></li><li class="t3"><a href="#a-2-2-hace-falta-una-herramienta-nueva" data-id="a-2-2-hace-falta-una-herramienta-nueva">2.2 ¿Hace falta una herramienta nueva?</a></li><li class="t3"><a href="#a-2-3-donde-aporta-valor-la-ia-y-donde-introduce-riesgo" data-id="a-2-3-donde-aporta-valor-la-ia-y-donde-introduce-riesgo">2.3 Dónde aporta valor la IA y dónde introduce riesgo</a></li><li class="t3"><a href="#a-2-4-hipotesis-del-planteamiento-que-cuestiono" data-id="a-2-4-hipotesis-del-planteamiento-que-cuestiono">2.4 Hipótesis del planteamiento que cuestiono</a></li></ul></li><li class="t2"><a href="#a-3-propuesta-funcional-ideal" data-id="a-3-propuesta-funcional-ideal">3. Propuesta funcional ideal</a><ul class="t3l"><li class="t3"><a href="#a-3-1-principios-de-diseno" data-id="a-3-1-principios-de-diseno">3.1 Principios de diseño</a></li><li class="t3"><a href="#a-3-2-objetos-centrales-el-lenguaje-del-producto" data-id="a-3-2-objetos-centrales-el-lenguaje-del-producto">3.2 Objetos centrales (el lenguaje del producto)</a></li><li class="t3"><a href="#a-3-3-interfaz-y-navegacion" data-id="a-3-3-interfaz-y-navegacion">3.3 Interfaz y navegación</a></li><li class="t3"><a href="#a-3-4-recorridos-solicitados" data-id="a-3-4-recorridos-solicitados">3.4 Recorridos solicitados</a></li><li class="t3"><a href="#a-3-5-el-papel-del-mentor" data-id="a-3-5-el-papel-del-mentor">3.5 El papel del mentor</a></li></ul></li><li class="t2"><a href="#a-4-arquitectura-propuesta-desde-cero" data-id="a-4-arquitectura-propuesta-desde-cero">4. Arquitectura propuesta desde cero</a><ul class="t3l"><li class="t3"><a href="#a-4-1-reparto-de-responsabilidades" data-id="a-4-1-reparto-de-responsabilidades">4.1 Reparto de responsabilidades</a></li><li class="t3"><a href="#a-4-2-diagrama" data-id="a-4-2-diagrama">4.2 Diagrama</a></li><li class="t3"><a href="#a-4-3-componentes" data-id="a-4-3-componentes">4.3 Componentes</a></li></ul></li><li class="t2"><a href="#a-5-comparacion-de-alternativas" data-id="a-5-comparacion-de-alternativas">5. Comparación de alternativas</a></li><li class="t2"><a href="#a-6-mvp-recomendado" data-id="a-6-mvp-recomendado">6. MVP recomendado</a></li><li class="t2"><a href="#a-7-hoja-de-ruta" data-id="a-7-hoja-de-ruta">7. Hoja de ruta</a></li><li class="t2"><a href="#a-8-riesgos-y-debilidades-auditoria-adversarial" data-id="a-8-riesgos-y-debilidades-auditoria-adversarial">8. Riesgos y debilidades (auditoría adversarial)</a><ul class="t3l"><li class="t3"><a href="#a-8-1-las-diez-mayores-debilidades-o-riesgos" data-id="a-8-1-las-diez-mayores-debilidades-o-riesgos">8.1 Las diez mayores debilidades o riesgos</a></li><li class="t3"><a href="#a-8-2-supuestos-que-podrian-ser-falsos" data-id="a-8-2-supuestos-que-podrian-ser-falsos">8.2 Supuestos que podrían ser falsos</a></li><li class="t3"><a href="#a-8-3-situaciones-en-que-fracasaria" data-id="a-8-3-situaciones-en-que-fracasaria">8.3 Situaciones en que fracasaría</a></li><li class="t3"><a href="#a-8-4-riesgos-de-adopcion-institucional" data-id="a-8-4-riesgos-de-adopcion-institucional">8.4 Riesgos de adopción institucional</a></li><li class="t3"><a href="#a-8-5-riesgos-de-depender-demasiado-de-la-ia" data-id="a-8-5-riesgos-de-depender-demasiado-de-la-ia">8.5 Riesgos de depender demasiado de la IA</a></li><li class="t3"><a href="#a-8-6-decisiones-arquitectonicas-dificiles-de-revertir" data-id="a-8-6-decisiones-arquitectonicas-dificiles-de-revertir">8.6 Decisiones arquitectónicas difíciles de revertir</a></li><li class="t3"><a href="#a-8-7-las-diez-preguntas-que-hay-que-responder-antes-de-invert" data-id="a-8-7-las-diez-preguntas-que-hay-que-responder-antes-de-invert">8.7 Las diez preguntas que hay que responder antes de invertir más</a></li></ul></li><li class="t2"><a href="#a-9-propuestas-de-mejora-y-diferenciacion" data-id="a-9-propuestas-de-mejora-y-diferenciacion">9. Propuestas de mejora y diferenciación</a></li><li class="t2"><a href="#a-10-conclusion-y-decisiones-prioritarias" data-id="a-10-conclusion-y-decisiones-prioritarias">10. Conclusión y decisiones prioritarias</a><ul class="t3l"><li class="t3"><a href="#a-fuentes" data-id="a-fuentes">Fuentes</a></li></ul></li></ul></div><div class="tg tg-b"><a class="tg-h" href="#informe-b">Informe B</a><ul class="t2l"><li class="t2"><a href="#b-0-alcance-acceso-y-convenciones" data-id="b-0-alcance-acceso-y-convenciones">0. Alcance, acceso y convenciones</a></li><li class="t2"><a href="#b-1-diagnostico-ejecutivo" data-id="b-1-diagnostico-ejecutivo">1. Diagnóstico ejecutivo</a></li><li class="t2"><a href="#b-2-auditoria-del-diseno-actual" data-id="b-2-auditoria-del-diseno-actual">2. Auditoría del diseño actual</a><ul class="t3l"><li class="t3"><a href="#b-2-1-objetivos-claridad-y-pertinencia" data-id="b-2-1-objetivos-claridad-y-pertinencia">2.1 Objetivos: claridad y pertinencia</a></li><li class="t3"><a href="#b-2-2-calidad-del-modelo-metodologico" data-id="b-2-2-calidad-del-modelo-metodologico">2.2 Calidad del modelo metodológico</a></li><li class="t3"><a href="#b-2-3-areas-criterios-y-suficiencia" data-id="b-2-3-areas-criterios-y-suficiencia">2.3 Áreas, criterios y suficiencia</a></li><li class="t3"><a href="#b-2-4-prevencion-de-errores-metodologicos" data-id="b-2-4-prevencion-de-errores-metodologicos">2.4 Prevención de errores metodológicos</a></li><li class="t3"><a href="#b-2-5-modelo-de-estado-evidencia-y-trazabilidad" data-id="b-2-5-modelo-de-estado-evidencia-y-trazabilidad">2.5 Modelo de estado, evidencia y trazabilidad</a></li><li class="t3"><a href="#b-2-6-complejidad-del-core-y-riesgo-de-burocratizacion" data-id="b-2-6-complejidad-del-core-y-riesgo-de-burocratizacion">2.6 Complejidad del Core y riesgo de burocratización</a></li><li class="t3"><a href="#b-2-7-separacion-entre-metodologia-e-infraestructura" data-id="b-2-7-separacion-entre-metodologia-e-infraestructura">2.7 Separación entre metodología e infraestructura</a></li><li class="t3"><a href="#b-2-8-arquitectura-de-conocimiento" data-id="b-2-8-arquitectura-de-conocimiento">2.8 Arquitectura de conocimiento</a></li><li class="t3"><a href="#b-2-9-experiencia-de-usuario-y-accesibilidad" data-id="b-2-9-experiencia-de-usuario-y-accesibilidad">2.9 Experiencia de usuario y accesibilidad</a></li><li class="t3"><a href="#b-2-10-escalabilidad-y-viabilidad-comercial" data-id="b-2-10-escalabilidad-y-viabilidad-comercial">2.10 Escalabilidad y viabilidad comercial</a></li><li class="t3"><a href="#b-2-11-compatibilidad-real-con-organizaciones-microsoft" data-id="b-2-11-compatibilidad-real-con-organizaciones-microsoft">2.11 Compatibilidad real con organizaciones Microsoft</a></li><li class="t3"><a href="#b-2-12-portabilidad-entre-llm-y-plataformas" data-id="b-2-12-portabilidad-entre-llm-y-plataformas">2.12 Portabilidad entre LLM y plataformas</a></li><li class="t3"><a href="#b-2-13-seguridad-y-gobernanza" data-id="b-2-13-seguridad-y-gobernanza">2.13 Seguridad y gobernanza</a></li><li class="t3"><a href="#b-2-14-viabilidad-del-mvp-y-estrategia-de-validacion" data-id="b-2-14-viabilidad-del-mvp-y-estrategia-de-validacion">2.14 Viabilidad del MVP y estrategia de validación</a></li><li class="t3"><a href="#b-2-15-contradicciones-internas" data-id="b-2-15-contradicciones-internas">2.15 Contradicciones internas</a></li><li class="t3"><a href="#b-2-16-redundancias" data-id="b-2-16-redundancias">2.16 Redundancias</a></li><li class="t3"><a href="#b-2-17-decisiones-prematuras-y-decisiones-aplazadas-que-no-deb" data-id="b-2-17-decisiones-prematuras-y-decisiones-aplazadas-que-no-deb">2.17 Decisiones prematuras y decisiones aplazadas que no deberían estarlo</a></li></ul></li><li class="t2"><a href="#b-3-contraste-obligatorio-a-frente-a-b-frente-a-c" data-id="b-3-contraste-obligatorio-a-frente-a-b-frente-a-c">3. Contraste obligatorio: A frente a B frente a C</a></li><li class="t2"><a href="#b-4-rediseno-contrafactual" data-id="b-4-rediseno-contrafactual">4. Rediseño contrafactual</a><ul class="t3l"><li class="t3"><a href="#b-4-1-construiria-coralean-como-lo-habeis-disenado" data-id="b-4-1-construiria-coralean-como-lo-habeis-disenado">4.1 ¿Construiría CoraLEAN como lo habéis diseñado?</a></li><li class="t3"><a href="#b-4-2-decisiones-que-conservaria-intactas" data-id="b-4-2-decisiones-que-conservaria-intactas">4.2 Decisiones que conservaría intactas</a></li><li class="t3"><a href="#b-4-3-decisiones-que-simplificaria" data-id="b-4-3-decisiones-que-simplificaria">4.3 Decisiones que simplificaría</a></li><li class="t3"><a href="#b-4-4-decisiones-que-cambiaria" data-id="b-4-4-decisiones-que-cambiaria">4.4 Decisiones que cambiaría</a></li><li class="t3"><a href="#b-4-5-decisiones-que-eliminaria" data-id="b-4-5-decisiones-que-eliminaria">4.5 Decisiones que eliminaría</a></li><li class="t3"><a href="#b-4-6-capacidades-importantes-que-faltan" data-id="b-4-6-capacidades-importantes-que-faltan">4.6 Capacidades importantes que faltan</a></li><li class="t3"><a href="#b-4-7-experimentos-antes-de-decidir" data-id="b-4-7-experimentos-antes-de-decidir">4.7 Experimentos antes de decidir</a></li><li class="t3"><a href="#b-4-8-diseno-final-recomendado-mi-mejor-solucion" data-id="b-4-8-diseno-final-recomendado-mi-mejor-solucion">4.8 Diseño final recomendado (mi mejor solución)</a></li></ul></li><li class="t2"><a href="#b-5-priorizacion-ejecutiva" data-id="b-5-priorizacion-ejecutiva">5. Priorización ejecutiva</a><ul class="t3l"><li class="t3"><a href="#b-plan-concreto-de-ejecucion" data-id="b-plan-concreto-de-ejecucion">Plan concreto de ejecución</a></li><li class="t3"><a href="#b-fuentes-externas" data-id="b-fuentes-externas">Fuentes externas</a></li></ul></li></ul></div></nav>
+<main id="main">
+<header class="hero" id="inicio">
+<p class="eyebrow">23 de octubre de 2026 · CoraLEAN Core v0.1 · PROMueve Extremadura, Mérida</p>
+<h1 class="hero-t">Informes A y B</h1>
+<p class="hero-lead">El diseño independiente de una herramienta para facilitar proyectos de mejora sanitaria y la auditoría adversarial de CoraLEAN, completos y sin resumir. Al principio hay un resumen comparado para orientarse.</p>
+<div class="verdict">
+<div class="vd-main"><span class="vd-k">Veredicto del Informe B</span><p>La solución híbrida <b>C</b> supera a A y a CoraLEAN v0.1: la semántica de CoraLEAN ejecutada sobre un registro mínimo determinista.</p></div>
+<div class="vd-date"><span class="vd-k">Próxima fecha crítica</span><p><b>26 oct 2026</b> · sesión real de Mérida, tres días después de los informes</p></div>
+</div>
+<nav class="map" aria-label="Partes del documento">
+<a class="map-i map-r" href="#resumen"><span class="map-l">∑</span><span class="map-b"><b>Resumen comparado</b><small>Complemento · 10 apartados con visuales · 1.039 palabras</small></span></a>
+<a class="map-i map-a" href="#informe-a"><span class="map-l">A</span><span class="map-b"><b>Diseño independiente desde cero</b><small>Texto íntegro · 10 apartados · 6.450 palabras · unos 32 min</small></span></a>
+<a class="map-i map-b" href="#informe-b"><span class="map-l">B</span><span class="map-b"><b>Auditoría adversarial y comparación</b><small>Texto íntegro · 6 apartados · 7.116 palabras · unos 36 min</small></span></a>
+</nav>
+</header>
+<section class="part rep-r" id="resumen" data-k="r"><div class="prose"><h1 id="r-resumen-comparado-complemento-de-lectura">Resumen comparado (complemento de lectura)</h1>
+<blockquote class="callout"><p><span class="callout-k">Nota</span> Este resumen es un <strong>complemento</strong> para orientarse. No sustituye ni modifica el texto de los informes, que se reproduce <strong>íntegro y sin cambios</strong> en las partes A y B de este archivo.</p>
+</blockquote>
+<h2 id="r-los-dos-informes-en-una-frase" data-k="∑">Los dos informes en una frase</h2>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>Informe</th>
+<th>Pregunta que responde</th>
+<th>Material de partida</th>
+<th>Conclusión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A — Diseño independiente desde cero</strong></td>
+<td>¿Qué herramienta diseñaríamos para que profesionales sanitarios lideren proyectos de mejora, sin conocer vuestra solución?</td>
+<td>Solo el encargo, la literatura (PubMed) y documentación pública de Microsoft y OpenAI</td>
+<td>Un <strong>multiplicador de la mentoría</strong>: método determinista, registro tipado como fuente de verdad, IA que solo propone y pregunta, canales sustituibles y validación con un servicio &quot;concierge&quot; antes de programar</td>
+</tr>
+<tr>
+<td><strong>B — Auditoría adversarial de CoraLEAN v0.1</strong></td>
+<td>¿Está bien diseñado CoraLEAN y cómo se compara con A?</td>
+<td>Repositorio <code>b32majus/CoraLEAN</code>: <code>main</code> en <code>c485ec6</code> (freeze, 2026-10-02) y rama <code>work/alpha-runtime-c084-20261004</code> en <code>0a6d992</code> (2026-10-04)</td>
+<td>El Core metodológico es en varios puntos <strong>mejor que A</strong>, pero se ejecuta con un runtime que no puede hacerlo cumplir. <strong>La solución híbrida C supera a las dos</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="r-veredicto" data-k="∑">Veredicto</h2>
+<ul>
+<li><strong>¿Construiría CoraLEAN tal como está diseñado?</strong> No. Conservaría aproximadamente el 70 % de la semántica del Core y cambiaría el runtime, el mecanismo pedagógico y el plan de validación.</li>
+<li><strong>La mejor opción es C:</strong> la semántica de CoraLEAN ejecutada sobre un registro mínimo determinista, con ChatGPT, Copilot o la web como superficies intercambiables y un programa de mentoría como modelo de negocio.</li>
+<li><strong>Lo urgente:</strong> la sesión de Mérida es el <strong>26 de octubre de 2026</strong>. Recomendación: no exponer a la farmacéutica a un runtime sin verificar; que Silvia opere CoraLEAN en modo &quot;mago de Oz&quot;.</li>
+</ul>
+<h2 id="r-tesis-principales" data-k="∑">Tesis principales</h2>
+<p><strong>Informe A</strong></p>
+<ol>
+<li>El problema es real, pero la mayoría de los fracasos son organizativos, no metodológicos.</li>
+<li>La referencia que hay que superar es &quot;plantilla A3 + asistente genérico&quot;, no la ausencia de herramientas.</li>
+<li>La IA hace de secretario estructurador e interlocutor socrático. La metodología es determinista y las decisiones son humanas.</li>
+<li>La transferencia de capacidad exige frenar deliberadamente la ayuda de la IA (&quot;primero tú&quot;).</li>
+<li>MVP: concierge + aplicación web ligera como sistema de registro. Objetivo: núcleo sin interfaz propia con canales web, Teams, Copilot y ChatGPT.</li>
+</ol>
+<p><strong>Informe B</strong></p>
+<ol>
+<li>El Core supera a A en experimentar ≠ adoptar, suficiencia para la decisión, condiciones en dos ejes, condiciones habilitantes y procedencia de las intervenciones.</li>
+<li>Inversión arquitectónica: reglas pensadas para ejecutarse de forma determinista, ejecutadas por un LLM sobre Markdown.</li>
+<li>La estrella polar (transferencia de capacidad) es lo que menos mecanismo tiene: solo el modo.</li>
+<li>La validación es excelente en el papel, pero no se ha ejecutado y está sesgada (Silvia diseña, ejecuta y evalúa).</li>
+<li>El calendario va retrasado frente a <code>WORKPLAN_2026-10.md</code> y Mérida es el 26 de octubre.</li>
+<li>No hay ninguna mención a Microsoft ni a gobernanza de datos, y el estado en Markdown choca con las restricciones del encargo.</li>
+</ol>
+<h2 id="r-convergencias-independientes-entre-a-y-coralean" data-k="∑">Convergencias independientes entre A y CoraLEAN</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Informe A</th>
+<th>CoraLEAN v0.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciclo central de trabajo</td>
+<td>Preparar → Celebrar → Consolidar la reunión</td>
+<td>Skills <em>Preparar reunión</em> y <em>Procesar reunión</em> (ADR-016)</td>
+</tr>
+<tr>
+<td>Orientación</td>
+<td>Pantalla &quot;Ahora&quot;: siguiente paso y su porqué</td>
+<td>&quot;Siguiente paso + razón&quot; siempre recuperable (ADR-014) y seis momentos (ADR-012)</td>
+</tr>
+<tr>
+<td>Fuente de verdad</td>
+<td>El registro es la verdad; la conversación es efímera</td>
+<td>El estado es la verdad; la conversación es la superficie (ADR-015)</td>
+</tr>
+<tr>
+<td>Papel de la IA</td>
+<td>Propone; una persona confirma</td>
+<td>Procesar reunión propone y nunca modifica el estado directamente (ADR-016)</td>
+</tr>
+<tr>
+<td>Falsa precisión</td>
+<td>Sin porcentajes; color según la madurez</td>
+<td>Sin porcentajes; suficiencia categórica (ADR-006/008)</td>
+</tr>
+<tr>
+<td>Interfaz MCP</td>
+<td>Servidor MCP como adaptador de canales</td>
+<td>Operaciones MCP de dominio listadas en <code>AGENTS.md</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="r-donde-gana-cada-uno" data-k="∑">Dónde gana cada uno</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>CoraLEAN (B) supera a A en…</th>
+<th>A supera a CoraLEAN (B) en…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modelo metodológico no lineal con reapertura como evento</td>
+<td>Cumplimiento real (determinista) de las reglas</td>
+</tr>
+<tr>
+<td>Proporcionalidad (condiciones habilitantes, condiciones en dos ejes)</td>
+<td>Adopción institucional (Teams, Entra, Copilot, modo sin IA)</td>
+</tr>
+<tr>
+<td>Procedencia que distingue la intervención humana de la de CoraLEAN</td>
+<td>Gobernanza de datos y cuentas</td>
+</tr>
+<tr>
+<td>Procedencia de la guía (fuente / síntesis / evidencia local)</td>
+<td>Mecanismo pedagógico (&quot;primero tú&quot;, retirada de ayuda por competencia)</td>
+</tr>
+<tr>
+<td>Honestidad epistémica (ADR-017 separa capacidad, decisión y supuesto)</td>
+<td>Aspectos específicos del PDSA (predicción, datos en el tiempo)</td>
+</tr>
+<tr>
+<td>Validación más falsable (S1–S14, RT-01…RT-12)</td>
+<td>Diseño de la medición y viabilidad del modelo de servicio</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="vis" id="vis-matriz">
+<figcaption><span class="vis-k">Visual</span> Comparación A · B · C (Informe B, apartado 3)</figcaption>
+<div class="hm" role="table" aria-label="Comparación de las tres soluciones">
+<div class="hm-row hm-headrow"><div class="hm-name"></div><div class="hm-h hm-a"><b>A</b><span>Diseño independiente</span></div><div class="hm-h hm-b"><b>B</b><span>CoraLEAN v0.1</span></div><div class="hm-h hm-c"><b>C</b><span>Híbrido</span></div></div><div class="hm-row"><div class="hm-name">Complejidad funcional</div><div class="hm-cell q-mid" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Media</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Alta (unos 45 conceptos)</div><div class="hm-cell q-mid" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Media-alta</div></div><div class="hm-row"><div class="hm-name">Complejidad técnica</div><div class="hm-cell q-mid" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Media</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Baja aparente, alta real</div><div class="hm-cell q-mid" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Media; empieza pequeño</div></div><div class="hm-row"><div class="hm-name">Facilidad de uso para sanitarios</div><div class="hm-cell q-good" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Alta en la web; una cuenta más</div><div class="hm-cell q-mid" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Alta para conversar; baja para mantener el estado</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Alta</div></div><div class="hm-row"><div class="hm-name">Dependencia de proveedores</div><div class="hm-cell q-good" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Baja</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Muy alta</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Baja</div></div><div class="hm-row"><div class="hm-name">Integración y adopción hospitalaria</div><div class="hm-cell q-good" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Media-alta</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Baja</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Media-alta</div></div><div class="hm-row"><div class="hm-name">Riesgo de fallos metodológicos</div><div class="hm-cell q-mid" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Medio</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Medio-alto</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Bajo</div></div><div class="hm-row"><div class="hm-name">Infraestructura propia</div><div class="hm-cell q-mid" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Sí, desde el MVP</div><div class="hm-cell q-mid" data-col="B"><span class="hm-dot" aria-hidden="true"></span>No (aparente)</div><div class="hm-cell q-mid" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Sí, mínima</div></div><div class="hm-row"><div class="hm-name">Coste de desarrollo y operación</div><div class="hm-cell q-mid" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Medio</div><div class="hm-cell q-mid" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Muy bajo en código; alto en horas de Silvia</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Bajo-medio</div></div><div class="hm-row"><div class="hm-name">Mantenibilidad y evolución</div><div class="hm-cell q-good" data-col="A"><span class="hm-dot" aria-hidden="true"></span>Buena</div><div class="hm-cell q-bad" data-col="B"><span class="hm-dot" aria-hidden="true"></span>Frágil</div><div class="hm-cell q-good" data-col="C"><span class="hm-dot" aria-hidden="true"></span>Buena</div></div></div>
+<p class="vis-note">El texto de cada celda resume el nivel que da la tabla del apartado 3 del Informe B. El color es una lectura de ese nivel, no una puntuación nueva: <span class="key q-good">favorable</span><span class="key q-mid">intermedio</span><span class="key q-bad">desfavorable</span> <br><a href="#b-3-contraste-obligatorio-a-frente-a-b-frente-a-c">Ver la tabla completa</a>.</p>
+</figure>
+<h2 id="r-lo-urgente-antes-del-26-de-octubre" data-k="∑">Lo urgente antes del 26 de octubre</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Acción</th>
+<th>Coste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>Sesión operada por Silvia; la farmacéutica no usa directamente un runtime sin verificar</td>
+<td>Bajo</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Materializar el fixture y ejecutar RT-01 cinco veces (determinismo) y RT-03 midiendo el tiempo de guardado</td>
+<td>½–1 día</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Comprobar la cuenta y los datos: plan, entrenamiento desactivado, sin nombres de pacientes</td>
+<td>1 h</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Medición basal de la farmacéutica, rúbrica y evaluador independiente</td>
+<td>½ día</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>Quitar «phase» de <code>FEEDBACK_PROTOCOL.md</code> antes de usarlo en el piloto</td>
+<td>2 h</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="vis" id="vis-prioridades">
+<figcaption><span class="vis-k">Visual</span> Las 14 recomendaciones del Informe B (apartado 5), agrupadas por urgencia</figcaption>
+<div class="lanes"><section class="lane lane-0"><h4 class="lane-h">Antes del 26 de octubre <span>5</span></h4><ul class="lane-l"><li class="rc">
+<div class="rc-top"><span class="rc-n">R1</span><span class="rc-u">Antes del 26-oct</span></div>
+<p class="rc-t">No exponer a la farmacéutica a un runtime sin verificar el 26; sesión operada por Silvia (E6)</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (todas las pruebas pendientes)</dd></div>
+<div><dt>Coste</dt><dd>Bajo</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Fricción, pérdida de confianza y datos del piloto contaminados</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R2</span><span class="rc-u">Antes del 26-oct</span></div>
+<p class="rc-t">Materializar el fixture y ejecutar RT-01, E1 (determinismo) y E2 (RT-03 + carga)</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte</dd></div>
+<div><dt>Coste</dt><dd>½–1 día</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Decidir el runtime sin datos</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R3</span><span class="rc-u">Antes del 26-oct</span></div>
+<p class="rc-t">Comprobar cuentas y datos: plan, entrenamiento desactivado, sin nombres de pacientes en las notas</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (documentación de OpenAI; ausencia en el repositorio)</dd></div>
+<div><dt>Coste</dt><dd>1 h</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Incidente de protección de datos en la primera sesión real</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R4</span><span class="rc-u">Antes del 26-oct</span></div>
+<p class="rc-t">Medición basal de la farmacéutica, rúbrica y evaluador independiente</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (n = 1 y observadora implicada)</dd></div>
+<div><dt>Coste</dt><dd>½ día</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>El piloto no podrá demostrar la transferencia</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R13</span><span class="rc-u">Antes del 26-oct (al menos <code>FEEDBACK_PROTOCOL</code>)</span></div>
+<p class="rc-t">Reconciliar <code>AGENTS.md</code>, <code>FEEDBACK_PROTOCOL.md</code> y <code>PILOT_MERIDA.md</code>; archivar documentos superados</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-md">Medio (los instrumentos del piloto)</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte</dd></div>
+<div><dt>Coste</dt><dd>2 h</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Medir fases que no existen</dd></div>
+</dl></li></ul></section><section class="lane lane-1"><h4 class="lane-h">Ya, en paralelo <span>2</span></h4><ul class="lane-l"><li class="rc">
+<div class="rc-top"><span class="rc-n">R12</span><span class="rc-u">En paralelo, ya</span></div>
+<p class="rc-t">Modelo de negocio: programa de mentoría con software; panel de la mentora</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto (viabilidad)</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-md">Moderada</dd></div>
+<div><dt>Coste</dt><dd>Conversaciones</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Producto sin comprador</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R14</span><span class="rc-u">Ya</span></div>
+<p class="rc-t">Congelar la producción de ADR nuevos (salvo R7, R8, R10 y R11) y reducir la orquestación multiagente</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-md">Medio</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (23.000 palabras frente a 0 artefactos de runtime)</dd></div>
+<div><dt>Coste</dt><dd>Ninguno</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Seguir diseñando en lugar de validar</dd></div>
+</dl></li></ul></section><section class="lane lane-2"><h4 class="lane-h">Antes de construir <span>6</span></h4><ul class="lane-l"><li class="rc">
+<div class="rc-top"><span class="rc-n">R5</span><span class="rc-u">Antes de construir</span></div>
+<p class="rc-t">E3: precisión de Procesar reunión frente a una referencia humana</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-md">Moderada</dd></div>
+<div><dt>Coste</dt><dd>½ día</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Hechos inventados en el estado sin detectarlos</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R6</span><span class="rc-u">Antes de construir</span></div>
+<p class="rc-t">E4: comparación con la referencia en S1–S14</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-md">Moderada</dd></div>
+<div><dt>Coste</dt><dd>1–2 días</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Invertir en complejidad que no aporta</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R7</span><span class="rc-u">Antes de construir</span></div>
+<p class="rc-t">Dividir criterios en estructurales y de juicio; tabla fija por tipo de decisión</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (criterios no observables en ADR-018)</dd></div>
+<div><dt>Coste</dt><dd>1–2 días de diseño</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-md">Media</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Suficiencia irreproducible</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R8</span><span class="rc-u">Antes de construir (probar a mano el 26)</span></div>
+<p class="rc-t">Mecanismo de aprendizaje: &quot;primero tú&quot; y retirada por competencia (ADR nuevo)</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-md">Moderada (literatura y ausencia en el Core)</dd></div>
+<div><dt>Coste</dt><dd>2–3 días de diseño</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-md">Media</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>La estrella polar sin mecanismo</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R9</span><span class="rc-u">Antes de construir</span></div>
+<p class="rc-t">Criterios de PDSA (predicción, iteración, datos en el tiempo) y de implicación del equipo</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-mh">Medio-alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (Taylor 2014; Knudsen 2019; Dixon-Woods 2012)</dd></div>
+<div><dt>Coste</dt><dd>1 día</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Proyectos &quot;suficientes&quot; con método defectuoso</dd></div>
+</dl></li><li class="rc">
+<div class="rc-top"><span class="rc-n">R10</span><span class="rc-u">Decidir tras R2, R5 y R6</span></div>
+<p class="rc-t">Estado canónico fuera del LLM (servicio mínimo con MCP)</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-hi">Alto</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-mh">Moderada-fuerte (ADR-017 reconoce los límites)</dd></div>
+<div><dt>Coste</dt><dd>4–6 semanas [Hip]</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-lo">Media-baja (la elección de tecnología es lo difícil de revertir; la semántica se conserva)</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Concurrencia, sin supervisión de la mentora, dependencia de ChatGPT</dd></div>
+</dl></li></ul></section><section class="lane lane-3"><h4 class="lane-h">Antes de una segunda organización <span>1</span></h4><ul class="lane-l"><li class="rc">
+<div class="rc-top"><span class="rc-n">R11</span><span class="rc-u">Antes de una segunda organización</span></div>
+<p class="rc-t">ADR de vía Microsoft y modo sin IA</p>
+<dl class="rc-d">
+<div><dt>Impacto</dt><dd class="lv lv-md">Medio</dd></div>
+<div><dt>Evidencia</dt><dd class="lv lv-hi">Fuerte (ausencia total)</dd></div>
+<div><dt>Coste</dt><dd>1 día de diseño</dd></div>
+<div><dt>Reversibilidad</dt><dd class="lv lv-hi">Alta</dd></div>
+<div class="rc-risk"><dt>Riesgo de no actuar</dt><dd>Mercado excluido</dd></div>
+</dl></li></ul></section></div>
+<p class="vis-note">Datos literales de la tabla de priorización del Informe B. <a href="#b-5-priorizacion-ejecutiva">Ver la tabla y el plan de ejecución</a>.</p>
+</figure>
+<h2 id="r-mapa-de-decisiones-sobre-los-adr-segun-informe-b-4-2-4-5" data-k="∑">Mapa de decisiones sobre los ADR (según Informe B §4.2–4.5)</h2>
+<figure class="vis" id="vis-adr">
+<figcaption><span class="vis-k">Visual</span> Qué hacer con cada decisión del freeze (Informe B, apartados 4.2–4.5)</figcaption>
+<div class="am"><div class="am-col am-keep"><h4>Conservar intactas <span>12</span></h4><ul><li><code>ADR-001</code><span>Independencia de PROMueve</span></li><li><code>ADR-004</code><span>Fuente / síntesis / evidencia local</span></li><li><code>ADR-005</code><span>Responsable local; rol ≠ modo</span></li><li><code>ADR-006</code><span>Artefactos como proyecciones; sin %</span></li><li><code>ADR-007</code><span>Siete áreas; experimentar ≠ adoptar</span></li><li><code>ADR-009</code><span>Español canónico</span></li><li><code>ADR-010</code><span>Dos ejes; prohibir impulsar, no idear</span></li><li><code>ADR-011</code><span>Condiciones habilitantes</span></li><li><code>ADR-012</code><span>Seis momentos; siguiente paso</span></li><li><code>ADR-015</code><span>Principios del estado</span></li><li><code>ADR-016</code><span>Preparar y Procesar reunión</span></li><li><code>ADR-019</code><span>Escenarios S1–S14</span></li></ul></div><div class="am-col am-simp"><h4>Simplificar <span>6</span></h4><ul><li><code>ADR-008 · 018</code><span>Criterios estructurales y de juicio</span></li><li><code>ADR-012</code><span>Un foco principal</span></li><li><code>ADR-013</code><span>Verificar por afirmación solo si se cita</span></li><li><code>ADR-014</code><span>Reabrir las siete dimensiones</span></li><li><code>ADR-015</code><span>Procedencia automática</span></li><li><code>Docs</code><span>Archivar superados; reconciliar AGENTS.md</span></li></ul></div><div class="am-col am-chg"><h4>Cambiar <span>5</span></h4><ul><li><code>ADR-002 · 017</code><span>Estado canónico fuera del LLM</span></li><li><code>ADR-014</code><span>Mecanismo de aprendizaje</span></li><li><code>ADR-019 · piloto</code><span>Basal, evaluador independiente, referencia</span></li><li><code>ADR nuevo</code><span>Gobernanza de cuentas y datos</span></li><li><code>ADR nuevo</code><span>Vía Microsoft y modo sin IA</span></li></ul></div><div class="am-col am-del"><h4>Eliminar <span>5</span></h4><ul><li><code>BOOTSTRAP</code><span>Coraline configura el Project</span></li><li><code>BACKEND Path A</code><span>GitHub o BD gestionados por el usuario</span></li><li><code>ADR-002</code><span>Sites como cockpit</span></li><li><code>RT-04/06/07/08</code><span>Si el estado sale del LLM</span></li><li><code>Proceso</code><span>Orquestación de 19 agentes</span></li></ul></div></div>
+<p class="vis-note"><a href="#b-4-2-decisiones-que-conservaria-intactas">Ver el razonamiento completo de cada decisión</a>.</p>
+</figure>
+<h2 id="r-arquitectura-recomendada-c-en-diagrama" data-k="∑">Arquitectura recomendada (C), en diagrama</h2>
+<figure class="vis" id="vis-arquitectura">
+<figcaption><span class="vis-k">Visual</span> Arquitectura recomendada C (Informe B, apartado 4.8)</figcaption>
+<div class="arch">
+<div class="ar-spec"><b>Especificación del método</b><span>Datos versionados derivados de los ADR 006–019: áreas · criterios estructurales y de juicio · matriz de decisiones (ADR-010) · regla de momentos (ADR-012) · competencias y retirada de ayuda (nuevo)</span></div>
+<div class="ar-arrow" aria-hidden="true">↓</div>
+<div class="ar-core"><div class="ar-core-h">Núcleo mínimo</div>
+<div class="ar-core-g">
+<div><b>Registro</b><span>Entidades ADR-015 e historia material (eventos)</span></div>
+<div><b>Motor</b><span>Comprobaciones estructurales, invariantes y puertas, en código</span></div>
+<div><b>Derivados</b><span>Suficiencia, momento y siguiente paso: calculados, nunca guardados</span></div>
+<div><b>API / MCP</b><span>get_project_state · record_evidence · add_hypothesis · record_decision · create_action · propose_update</span></div>
+</div>
+<p class="ar-note">Procedencia automática. Aviso de datos personales antes de enviar texto a un LLM.</p></div>
+<div class="ar-arrow" aria-hidden="true">↕</div>
+<div class="ar-surf">
+<div><b>ChatGPT</b><span>App o Project con acción · MCP</span></div>
+<div class="ar-later"><b>Copilot</b><span>Agente declarativo · MCP · más adelante</span></div>
+<div class="ar-web"><b>Web mínima</b><span>Ahora · Revisar propuestas · Registro · Panel de la mentora</span></div>
+<div><b>Sin IA</b><span>Web y plantillas</span></div>
+</div>
+<ol class="ar-flow"><li>El LLM <b>propone</b> (Procesar reunión)</li><li>Una persona <b>confirma</b> en la web</li><li>Se escribe en el <b>registro</b></li></ol>
+</div>
+<p class="vis-note">El diagrama original en texto, completo, está en el <a href="#b-4-8-diseno-final-recomendado-mi-mejor-solucion">apartado 4.8 del Informe B</a>.</p>
+</figure>
+<h2 id="r-calendario-del-piloto-lo-previsto-frente-a-lo-que-muestra-el" data-k="∑">Calendario del piloto: lo previsto frente a lo que muestra el repositorio</h2>
+<figure class="vis" id="vis-calendario">
+<figcaption><span class="vis-k">Visual</span> Calendario del piloto: lo previsto en <code>WORKPLAN_2026-10.md</code> frente a la actividad del repositorio (octubre de 2026)</figcaption>
+<div class="tl-wrap"><svg viewBox="0 0 960 314" class="tl" role="img" aria-label="Línea temporal de octubre de 2026"><line x1="220.0" y1="26" x2="220.0" y2="280" class="tl-grid"/><text x="220.0" y="300" class="tl-tick" text-anchor="middle">1 oct</text><line x1="315.5" y1="26" x2="315.5" y2="280" class="tl-grid"/><text x="315.5" y="300" class="tl-tick" text-anchor="middle">5 oct</text><line x1="434.8" y1="26" x2="434.8" y2="280" class="tl-grid"/><text x="434.8" y="300" class="tl-tick" text-anchor="middle">10 oct</text><line x1="554.1" y1="26" x2="554.1" y2="280" class="tl-grid"/><text x="554.1" y="300" class="tl-tick" text-anchor="middle">15 oct</text><line x1="673.5" y1="26" x2="673.5" y2="280" class="tl-grid"/><text x="673.5" y="300" class="tl-tick" text-anchor="middle">20 oct</text><line x1="792.8" y1="26" x2="792.8" y2="280" class="tl-grid"/><text x="792.8" y="300" class="tl-tick" text-anchor="middle">25 oct</text><line x1="936.0" y1="26" x2="936.0" y2="280" class="tl-grid"/><text x="936.0" y="300" class="tl-tick" text-anchor="middle">31 oct</text><text x="8" y="20" class="tl-sec">Plan (WORKPLAN_2026-10)</text><text x="8" y="51" class="tl-lab">Método y fundamentos</text><rect x="216.0" y="38" width="103.5" height="18" rx="3" class="tl-bar"/><text x="325.5" y="51" class="tl-d">1–5</text><text x="8" y="81" class="tl-lab">Alpha</text><rect x="335.3" y="68" width="151.2" height="18" rx="3" class="tl-bar"/><text x="492.5" y="81" class="tl-d">6–12</text><text x="8" y="111" class="tl-lab">Uso interno por Silvia</text><rect x="502.4" y="98" width="127.3" height="18" rx="3" class="tl-bar"/><text x="635.7" y="111" class="tl-d">13–18</text><text x="8" y="141" class="tl-lab">Piloto con farmacéutica</text><rect x="645.6" y="128" width="103.5" height="18" rx="3" class="tl-bar"/><text x="755.1" y="141" class="tl-d">19–23</text><text x="8" y="171" class="tl-lab">Freeze operativo</text><rect x="764.9" y="158" width="31.9" height="18" rx="3" class="tl-bar"/><text x="802.8" y="171" class="tl-d">24–25</text><text x="8" y="198" class="tl-sec">Repositorio</text><text x="8" y="223" class="tl-lab">Freeze del Core v0.1 · c485ec6</text><circle cx="243.9" cy="219" r="6" class="tl-m-a"/><text x="8" y="253" class="tl-lab">Último commit · plan Alpha · 0a6d992</text><circle cx="291.6" cy="249" r="6" class="tl-m-a"/><text x="8" y="283" class="tl-lab">Sin commits nuevos</text><rect x="291.6" y="275" width="453.5" height="8" class="tl-gap"/><line x1="745.1" y1="28" x2="745.1" y2="280" class="tl-today"/><text x="739.1" y="20" class="tl-flag tl-today-t" text-anchor="end">Informes · 23 oct</text><line x1="816.7" y1="28" x2="816.7" y2="280" class="tl-session"/><text x="822.7" y="32" class="tl-flag tl-session-t" text-anchor="start">Sesión real · 26 oct</text></svg></div>
+<p class="vis-note">Fechas del plan y de los commits tal como aparecen en el repositorio. El trabajo hecho fuera del repositorio no se ve aquí (Informe B, apartado 0).</p>
+</figure>
+<h2 id="r-leyenda-de-etiquetas" data-k="∑">Leyenda de etiquetas</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Informe</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong></td>
+<td>A</td>
+<td>Hecho verificado, con fuente</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong></td>
+<td>A y B</td>
+<td>Hipótesis o juicio experto todavía no verificado</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-r" title="Recomendación">R</span></strong></td>
+<td>A</td>
+<td>Recomendación</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong></td>
+<td>B</td>
+<td>Defecto demostrado: se ve directamente en los documentos</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong></td>
+<td>B</td>
+<td>Riesgo hipotético: plausible, pero no observado</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-pref" title="Preferencia de diseño">PREF</span></strong></td>
+<td>B</td>
+<td>Preferencia de diseño: discutible</td>
+</tr>
+<tr>
+<td><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong></td>
+<td>B</td>
+<td>Fortaleza</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="vis" id="vis-etiquetas">
+<figcaption><span class="vis-k">Visual</span> Cuántas veces aparece cada etiqueta en el texto de cada informe</figcaption>
+<div class="lc"><div class="lc-g"><h4 class="lc-h lc-a">Informe A</h4><div class="lc-r"><span class="lb lb-h">H</span><span class="lc-name">Hecho verificado</span><span class="lc-bar"><span class="lc-fill lc-h" style="width:26.5%"></span></span><span class="lc-v">9</span></div><div class="lc-r"><span class="lb lb-hip">Hip</span><span class="lc-name">Hipótesis</span><span class="lc-bar"><span class="lc-fill lc-hip" style="width:41.2%"></span></span><span class="lc-v">14</span></div><div class="lc-r"><span class="lb lb-r">R</span><span class="lc-name">Recomendación</span><span class="lc-bar"><span class="lc-fill lc-r" style="width:47.1%"></span></span><span class="lc-v">16</span></div></div><div class="lc-g"><h4 class="lc-h lc-b">Informe B</h4><div class="lc-r"><span class="lb lb-dem">DEM</span><span class="lc-name">Defecto demostrado</span><span class="lc-bar"><span class="lc-fill lc-dem" style="width:100.0%"></span></span><span class="lc-v">34</span></div><div class="lc-r"><span class="lb lb-rie">RIE</span><span class="lc-name">Riesgo hipotético</span><span class="lc-bar"><span class="lc-fill lc-rie" style="width:23.5%"></span></span><span class="lc-v">8</span></div><div class="lc-r"><span class="lb lb-fort">FORT</span><span class="lc-name">Fortaleza</span><span class="lc-bar"><span class="lc-fill lc-fort" style="width:47.1%"></span></span><span class="lc-v">16</span></div><div class="lc-r"><span class="lb lb-pref">PREF</span><span class="lc-name">Preferencia de diseño</span><span class="lc-bar"><span class="lc-fill lc-pref" style="width:8.8%"></span></span><span class="lc-v">3</span></div><div class="lc-r"><span class="lb lb-hip">Hip</span><span class="lc-name">Hipótesis</span><span class="lc-bar"><span class="lc-fill lc-hip" style="width:5.9%"></span></span><span class="lc-v">2</span></div></div></div>
+<p class="vis-note">Recuento automático sobre el texto íntegro, sin contar los diagramas. Las etiquetas con un añadido (por ejemplo «[Hip: verificar…]») cuentan en su tipo.</p>
+</figure>
+</div></section>
+<section class="part rep-a" id="informe-a" data-k="a"><div class="prose"><header class="cover">
+<div class="cover-l" aria-hidden="true">A</div>
+<div class="cover-t"><p class="eyebrow">Informe A · Diseño independiente desde cero</p>
+<h1 id="a-informe-a-diseno-independiente-desde-cero">INFORME A — DISEÑO INDEPENDIENTE DESDE CERO</h1>
+<ul class="cover-m"><li>Sin documentación previa del proyecto</li><li>Literatura en PubMed y documentación pública de Microsoft y OpenAI</li><li>Etiquetas: <span class="lb lb-h">H</span> <span class="lb lb-hip">Hip</span> <span class="lb lb-r">R</span></li><li>6.450 palabras · unos 32 min de lectura · 10 apartados</li></ul>
+<p class="cover-note">Texto íntegro, tal como se entregó.</p></div>
+</header>
+<p><strong>Cómo leer este informe:</strong> cada afirmación importante lleva una etiqueta.</p>
+<ul>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> Hecho verificado, con fuente.</li>
+<li><strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> Hipótesis o juicio experto todavía no verificado.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Recomendación.</li>
+</ul>
+<p>He consultado literatura en PubMed y documentación pública de Microsoft y OpenAI. Las limitaciones de esas fuentes se indican donde corresponde.</p>
+<hr />
+<h2 id="a-1-diagnostico-ejecutivo" data-k="A">1. Diagnóstico ejecutivo</h2>
+<ol>
+<li>
+<p><strong>El problema existe y está documentado, pero el encargo lo describe de forma incompleta.</strong> La literatura confirma que muchos proyectos de mejora aplican mal el método. Sin embargo, las principales causas de fracaso documentadas son organizativas y sociales: tiempo, mandato, datos, implicación del equipo y sostenibilidad. La falta de saber &quot;qué hacer y en qué orden&quot; es solo una parte. Un producto que resuelva únicamente lo metodológico puede quedarse en una mejora pequeña del problema real.</p>
+</li>
+<li>
+<p><strong>La referencia a superar no es &quot;no tener nada&quot;.</strong> Hay dos referencias reales:</p>
+<ul>
+<li><strong>(a) Un mentor humano experto.</strong> Es lo que funciona, pero es escaso y caro.</li>
+<li><strong>(b) Una plantilla A3 junto con un asistente genérico</strong> (un GPT personalizado o un agente de Copilot con buenas instrucciones). Es casi gratis y estará disponible en meses.</li>
+</ul>
+<p>El producto tiene que demostrar que supera claramente a (b) y que amplía el alcance de (a). Si no lo consigue, no merece la pena construirlo.</p>
+</li>
+<li>
+<p><strong>La IA no debe ser el facilitador.</strong> Su papel correcto es doble: hacer de <strong>secretario estructurador</strong>, que convierte notas desordenadas en elementos tipados, y de <strong>interlocutor socrático</strong>, que pregunta y no responde. La metodología (fases, comprobaciones, puertas de avance) debe ser <strong>determinista y auditable</strong>. Las decisiones deben ser <strong>siempre humanas y nominales</strong>.</p>
+</li>
+<li>
+<p><strong>La transferencia de capacidad es lo que diferencia al producto, y también su mayor riesgo.</strong> Hay evidencia experimental de que la IA generativa sin salvaguardas mejora el rendimiento mientras se usa, pero <strong>empeora el aprendizaje</strong> cuando se retira. Si el objetivo es crear autonomía, el diseño debe frenar deliberadamente la ayuda de la IA.</p>
+</li>
+<li>
+<p><strong>Recomendaciones de arquitectura:</strong></p>
+<ul>
+<li><strong>MVP:</strong> un servicio de mentoría acompañado de una aplicación web ligera que actúe como <strong>sistema de registro</strong>, con un motor metodológico de reglas y un LLM opcional y sustituible.</li>
+<li><strong>Arquitectura objetivo:</strong> un <strong>núcleo sin interfaz propia (API + motor + registro)</strong> con varios canales de acceso: web, pestaña de Teams, agente de Copilot y app de ChatGPT, los tres últimos a través de un único servidor MCP. Incluiría un modo sin IA y otro con el modelo de la propia organización.</li>
+<li><strong>Lo que no recomiendo:</strong> construir el producto <em>dentro</em> de Copilot o de ChatGPT como sistema principal.</li>
+</ul>
+</li>
+<li>
+<p><strong>Antes de escribir código:</strong> dedicar de 4 a 6 semanas a un piloto &quot;concierge&quot;, con un mentor humano que hace de motor y un cuaderno estructurado. Debe compararse explícitamente con la referencia &quot;plantilla + asistente genérico&quot;.</p>
+</li>
+</ol>
+<hr />
+<h2 id="a-2-critica-del-problema-y-oportunidad" data-k="A">2. Crítica del problema y oportunidad</h2>
+<h3 id="a-2-1-es-un-problema-importante-y-bien-definido">2.1 ¿Es un problema importante y bien definido?</h3>
+<p><strong>Es importante.</strong> Lo que muestra la literatura:</p>
+<ul>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> En una revisión sistemática de 73 artículos con PDSA, menos del 20 % documentó ciclos iterativos completos. Solo el 15 % usó datos cuantitativos mensuales o más frecuentes para decidir el siguiente ciclo (Taylor et al., <em>BMJ Qual Saf</em> 2014, <a href="https://doi.org/10.1136/bmjqs-2013-001862" target="_blank" rel="noopener">DOI</a>).</li>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> En 120 proyectos PDSA publicados en 2015–2016, el 98 % declaró haber mejorado. Pero solo el 27 % tenía un objetivo cuantitativo concreto y lo alcanzó, y solo 3 de 72 (4 %) cumplían los cuatro rasgos metodológicos clave (Knudsen et al., <em>BMC Health Serv Res</em> 2019, <a href="https://doi.org/10.1186/s12913-019-4482-6" target="_blank" rel="noopener">DOI</a>).</li>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> El PDSA suele tratarse como una herramienta sencilla, cuando en realidad exige competencias, tiempo y apoyo organizativo (Reed &amp; Card, <em>BMJ Qual Saf</em> 2016, <a href="https://doi.org/10.1136/bmjqs-2015-005076" target="_blank" rel="noopener">DOI</a>).</li>
+</ul>
+<p>Estos datos proceden de proyectos <em>publicados</em>. Los no publicados probablemente están peor <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong>.</p>
+<p><strong>Está mal acotado en un punto clave.</strong> La evaluación de los programas de la Health Foundation identificó diez retos principales (Dixon-Woods et al., <em>BMJ Qual Saf</em> 2012, <a href="https://doi.org/10.1136/bmjqs-2011-000760" target="_blank" rel="noopener">DOI</a>):</p>
+<ul>
+<li>convencer de que el problema existe;</li>
+<li>convencer de que la solución es la correcta;</li>
+<li>conseguir los datos;</li>
+<li>el exceso de ambición y de &quot;proyectitis&quot;;</li>
+<li>la cultura;</li>
+<li>el tribalismo;</li>
+<li>el liderazgo;</li>
+<li>los incentivos;</li>
+<li>la sostenibilidad;</li>
+<li>las consecuencias no deseadas.</li>
+</ul>
+<p><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> Solo uno o dos de esos retos son estrictamente de &quot;método&quot;.</p>
+<p><strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> El encargo atribuye a la falta de saber hacer un fracaso que en buena parte se debe a falta de <em>poder hacer</em>: tiempo protegido, patrocinio y acceso a datos.</p>
+<p><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Redefinir el problema así: <em>&quot;Profesionales con un problema real y algo de margen de acción no consiguen convertirlo en un aprendizaje validado y sostenido. Les faltan, en este orden: estructura de razonamiento, acompañamiento oportuno, una forma de mover al equipo y una forma de demostrar el resultado.&quot;</em> Las dos últimas carencias deben estar en el alcance del producto, no fuera.</p>
+<h3 id="a-2-2-hace-falta-una-herramienta-nueva">2.2 ¿Hace falta una herramienta nueva?</h3>
+<p><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> La mentoría en mejora de la calidad tiene evidencia favorable, aunque de certeza baja o muy baja:</p>
+<ul>
+<li>Una revisión sistemática de 23 ensayos aleatorizados por conglomerados encontró un efecto probablemente beneficioso sobre los indicadores de proceso (Ballengee et al., <em>J Gen Intern Med</em> 2022, <a href="https://doi.org/10.1007/s11606-021-07217-2" target="_blank" rel="noopener">DOI</a>).</li>
+<li>En un ensayo del sistema sanitario de veteranos de EE. UU. (VA), los centros con mentoría hicieron proyectos más complejos y rigurosos y desarrollaron más capacidades que los que solo tenían el kit de herramientas. Al cabo de 18 meses, solo los centros con mentoría seguían adaptando y extendiendo sus proyectos (Penney et al., <em>BMC Health Serv Res</em> 2021, <a href="https://doi.org/10.1186/s12913-021-06850-1" target="_blank" rel="noopener">DOI</a>).</li>
+</ul>
+<p><strong>Consecuencia:</strong> <em>un kit de herramientas sin acompañamiento rinde claramente menos que el kit con acompañamiento</em>. Esto apoya la necesidad de algo más que plantillas. No demuestra que el software pueda sustituir a la mentoría.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Alternativa sin producto nuevo</th>
+<th>Qué resuelve</th>
+<th>Qué no resuelve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formación (cursos de Lean o de mejora)</td>
+<td>Conocimiento declarativo</td>
+<td>La aplicación en el momento en que se necesita; el olvido; la falta de oportunidad para practicar</td>
+</tr>
+<tr>
+<td>Facilitación humana</td>
+<td>Casi todo</td>
+<td>No escala; es cara; depende de la persona</td>
+</tr>
+<tr>
+<td>Herramientas de gestión de proyectos de mejora (Life QI, KaiNexus u otras) <strong><span class="lb lb-hip" title="Hipótesis">Hip<span class="lb-x">verificar sus funciones actuales</span></span></strong></td>
+<td>Registro, cartera de proyectos, gráficos</td>
+<td>La guía pedagógica sobre <em>qué pensar ahora</em></td>
+</tr>
+<tr>
+<td>Plantilla + asistente genérico de IA</td>
+<td>Borradores y explicaciones</td>
+<td>Estado del proyecto, rigor exigible, trazabilidad y aprendizaje; además hace el trabajo por el usuario</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><span class="lb lb-r" title="Recomendación">R</span></strong> La herramienta tiene sentido como <strong>multiplicador de la mentoría</strong>: lograr que un mentor atienda bien a 5–10 veces más proyectos y que el profesional piense mejor entre sesión y sesión. No tiene sentido como sustituto del mentor. Esto cambia el producto, el comprador y el precio.</p>
+<h3 id="a-2-3-donde-aporta-valor-la-ia-y-donde-introduce-riesgo">2.3 Dónde aporta valor la IA y dónde introduce riesgo</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Aporta valor diferencial</th>
+<th>Introduce riesgo o complejidad innecesaria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Convertir notas o transcripciones de reuniones en elementos tipados <em>propuestos</em> (hecho, supuesto, decisión, acción)</td>
+<td>Generar causas raíz o soluciones: suplanta el pensamiento del equipo y produce una falsa sensación de rigor</td>
+</tr>
+<tr>
+<td>Detectar patrones erróneos en el lenguaje natural (por ejemplo, una solución escondida en el enunciado del problema, o culpabilización)</td>
+<td>Decidir si se avanza de fase: eso debe hacerlo una regla con la decisión explícita de una persona</td>
+</tr>
+<tr>
+<td>Hacer preguntas socráticas adaptadas al contexto</td>
+<td>Calcular estadísticas o evaluar resultados: lo hace mejor una regla determinista</td>
+</tr>
+<tr>
+<td>Reformular, resumir y preparar borradores de agendas</td>
+<td>Ser la memoria del proyecto: la memoria debe ser el registro, no la conversación</td>
+</tr>
+<tr>
+<td>Explicar conceptos con ejemplos del propio servicio</td>
+<td>Usarse como interfaz principal en forma de chat libre: genera dependencia, dispersión y documentación inconsistente</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> En un experimento de campo con cerca de mil estudiantes, el acceso a un asistente tipo ChatGPT sin salvaguardas mejoró el rendimiento en la práctica. Pero, al retirarlo, esos alumnos obtuvieron un 17 % peor nota que el grupo sin acceso. Un tutor con salvaguardas pedagógicas mitigó en gran parte ese efecto (Bastani et al., <em>PNAS</em> 2025, <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education" target="_blank" rel="noopener">resumen Wharton</a>, <a href="https://papers.ssrn.com/abstract=4895486" target="_blank" rel="noopener">SSRN</a>).</p>
+<ul>
+<li><strong>Límite de esta evidencia:</strong> se trata de matemáticas en secundaria, no de profesionales adultos en mejora de procesos. Aun así, el mecanismo es directamente pertinente: delegar el pensamiento reduce el aprendizaje.</li>
+</ul>
+<h3 id="a-2-4-hipotesis-del-planteamiento-que-cuestiono">2.4 Hipótesis del planteamiento que cuestiono</h3>
+<ol>
+<li><em>&quot;El cuello de botella es saber qué hacer.&quot;</em> Puede que lo sea el tiempo, el patrocinio o el acceso a los datos. <strong>Debe medirse.</strong></li>
+<li><em>&quot;El proyecto es la unidad adecuada.&quot;</em> Muchas mejoras no deberían ser un proyecto: necesitan un &quot;hazlo ya&quot;, una ronda de mejora rápida o gestión diaria (reuniones breves de equipo y paneles de mejora). Un producto que convierte todo en un A3 de seis meses genera burocracia.</li>
+<li><em>&quot;Los usuarios registrarán información con regularidad.&quot;</em> La carga de documentación es la causa más probable de abandono. <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong></li>
+<li><em>&quot;Hay una metodología.&quot;</em> Cada organización tiene su variante (Lean, el Modelo de Mejora del IHI, Seis Sigma o una metodología propia). Si se impone una sola, el producto choca con las unidades de calidad.</li>
+<li><em>&quot;El usuario es una persona.&quot;</em> La mejora es social. El usuario real es <strong>un equipo con un líder, un mentor y un patrocinador</strong>.</li>
+<li><em>&quot;La IA es necesaria.&quot;</em> Esto debe ponerse a prueba con una versión sin IA. Si esa versión aporta el 80 % del valor, cambia la economía del producto.</li>
+<li><em>&quot;Los mentores adoptarán la herramienta.&quot;</em> Los mentores expertos tienen sus propios métodos y pueden verla como una amenaza o como trabajo extra.</li>
+</ol>
+<hr />
+<h2 id="a-3-propuesta-funcional-ideal" data-k="A">3. Propuesta funcional ideal</h2>
+<h3 id="a-3-1-principios-de-diseno">3.1 Principios de diseño</h3>
+<ol>
+<li><strong>Primero tú.</strong> En cada paso de razonamiento (enunciar el problema, proponer causas, hacer una predicción), el usuario escribe su respuesta <em>antes</em> de ver cualquier sugerencia. La IA critica o completa, pero no empieza ella.</li>
+<li><strong>El registro es la verdad.</strong> Todo lo que importa es un elemento tipado con su procedencia. La conversación es efímera.</li>
+<li><strong>Rigor proporcional.</strong> Al inicio, un triaje determina si el caso necesita un &quot;hazlo ya&quot;, una mejora rápida (de 2 a 4 semanas) o un proyecto completo. La herramienta también puede decir <em>&quot;esto no necesita un proyecto&quot;</em>.</li>
+<li><strong>Organizado en torno a la reunión y a la semana, no al chat.</strong> El ritmo natural es este: preparar la reunión, celebrarla, consolidar lo tratado y dedicar unos 15 minutos semanales.</li>
+<li><strong>Puertas que preparan, no que bloquean.</strong> Las comprobaciones avisan de lo que falta. El usuario puede avanzar justificándolo, y la justificación queda registrada. Bloquear genera abandono; avisar con trazabilidad genera aprendizaje.</li>
+<li><strong>La ayuda se retira de forma progresiva y visible.</strong> Cada competencia tiene un nivel de asistencia que baja cuando el usuario demuestra dominio.</li>
+<li><strong>Debe ahorrar más trabajo del que añade.</strong> Si registrar una reunión cuesta más de 5 minutos, el diseño ha fallado.</li>
+</ol>
+<h3 id="a-3-2-objetos-centrales-el-lenguaje-del-producto">3.2 Objetos centrales (el lenguaje del producto)</h3>
+<ul>
+<li><strong>Proyecto.</strong> Tiene una escala (rápida o completa), un equipo, un patrocinador y un mentor.</li>
+<li><strong>Problema.</strong> Incluye la brecha medible, a quién afecta, dónde y cuándo, y el impacto.</li>
+<li><strong>Elementos epistémicos:</strong>
+<ul>
+<li><strong>Hecho</strong>, siempre con fuente y fecha.</li>
+<li><strong>Supuesto.</strong></li>
+<li><strong>Hipótesis causal</strong>, vinculada a hechos que la apoyan o la contradicen.</li>
+<li><strong>Pregunta abierta.</strong></li>
+</ul>
+</li>
+<li><strong>Medida:</strong> definición operativa, fuente, frecuencia y línea base.</li>
+<li><strong>Idea aparcada:</strong> soluciones propuestas antes de tiempo. No se reprimen, se guardan para la fase adecuada.</li>
+<li><strong>Ciclo de prueba (PDSA):</strong> cambio, <strong>predicción obligatoria</strong>, escala, medida, resultado y aprendizaje.</li>
+<li><strong>Decisión:</strong> qué se decide, <strong>quién decide (persona y rol)</strong>, alternativas descartadas, evidencias en las que se apoya y fecha.</li>
+<li><strong>Acción:</strong> responsable, fecha y estado.</li>
+<li><strong>Autorización:</strong> quién autoriza, qué autoriza y con qué alcance.</li>
+<li><strong>Sesión:</strong> una reunión, con su preparación, notas originales, elementos consolidados y acuerdos.</li>
+<li><strong>Aprendizaje:</strong> lo que se transfiere a otros proyectos.</li>
+</ul>
+<h3 id="a-3-3-interfaz-y-navegacion">3.3 Interfaz y navegación</h3>
+<p>Hay cuatro vistas y un flujo transversal:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────┐
+│ [Ahora]  [A3 vivo]  [Registro]  [Equipo]          Proyecto ▾     │
+├──────────────────────────────────────────────────────────────────┤
+│ AHORA                                                            │
+│  Estás en: Entender la situación actual (semana 3)               │
+│  ▸ Siguiente paso recomendado: Definir cómo medirás el retraso   │
+│    Por qué: tienes 3 hipótesis causales y ningún dato de base.   │
+│    [Hacerlo ahora · 10 min]  [Preparar reunión para esto]        │
+│  ▸ Te falta (2): línea base · validar supuesto S4 con admisión   │
+│  ▸ Pendiente del equipo: 2 acciones vencidas (Ana, Luis)         │
+│  ▸ Ideas aparcadas: 4  (se recuperarán en &quot;Diseñar cambios&quot;)     │
+└──────────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Ahora:</strong> una pantalla para alguien que tiene 10 minutos. Muestra el siguiente paso, el porqué, lo que falta y lo que está pendiente.</li>
+<li><strong>A3 vivo:</strong> el proyecto en una sola página. Cada sección tiene un color según su madurez: vacía, borrador, apoyada en evidencias o validada por el mentor. Se puede imprimir, porque muchas reuniones se celebran con papel o pizarra.</li>
+<li><strong>Registro:</strong> línea temporal filtrable de hechos, decisiones, acciones y autorizaciones, con su procedencia.</li>
+<li><strong>Equipo:</strong> roles, compromisos y quién debe aportar qué.</li>
+<li><strong>Flujo de sesión:</strong> Preparar → Celebrar → Consolidar (véase el apartado 3.4).</li>
+</ul>
+<p>El chat existe solo como <strong>panel lateral contextual</strong> (&quot;pregúntame sobre este paso&quot;). No es la pantalla principal.</p>
+<h3 id="a-3-4-recorridos-solicitados">3.4 Recorridos solicitados</h3>
+<p><strong>Primer proyecto.</strong></p>
+<ul>
+<li>Incorporación de unos 10 minutos con un caso de ejemplo, en el que el usuario ve un proyecto bien hecho.</li>
+<li>Triaje con 6 preguntas: ¿se conoce la causa?, ¿la solución es obvia y reversible?, ¿afecta a varios servicios?, ¿hay datos?, ¿quién debe autorizar?, ¿hay un patrocinador?</li>
+<li>Resultado: &quot;hazlo ya&quot;, mejora rápida o proyecto completo, con explicación.</li>
+<li>Se piden el patrocinador y el mentor desde el principio. Sin patrocinador, la herramienta lo marca como riesgo; no impide continuar.</li>
+</ul>
+<p><strong>Explicar un problema.</strong></p>
+<ul>
+<li>El usuario lo cuenta con sus palabras, por texto o por voz.</li>
+<li>La herramienta devuelve un enunciado estructurado que el usuario edita.</li>
+<li>Unos detectores (reglas y LLM) señalan problemas típicos:
+<ul>
+<li>una solución escondida (&quot;falta un protocolo de...&quot;);</li>
+<li>culpabilización (&quot;enfermería no...&quot;);</li>
+<li>vaguedad (&quot;hay retrasos&quot;);</li>
+<li>ausencia de magnitud.</li>
+</ul>
+</li>
+<li>Cada señal viene con una pregunta, no con una corrección: <em>&quot;¿Cuánto es el retraso hoy y cómo lo sabes?&quot;</em></li>
+</ul>
+<p><strong>Aprender a investigar sin precipitarse.</strong></p>
+<ul>
+<li>Las soluciones que aparecen pronto van al <strong>aparcamiento de ideas</strong>, con el mensaje visible <em>&quot;buena idea, la guardamos para cuando sepamos la causa&quot;</em>.</li>
+<li>La fase de comprensión propone un <strong>plan de observación en el lugar de trabajo</strong> (qué mirar, a quién preguntar, una hoja de recogida sencilla) y un mapa SIPOC o de proceso <strong>solo si el triaje lo justifica</strong>.</li>
+<li>Una regla impide pasar a &quot;diseñar cambios&quot; sin al menos una medida con línea base y dos hechos verificados que apoyen la hipótesis principal. Se puede saltar con una justificación registrada.</li>
+</ul>
+<p><strong>Preparar una reunión.</strong></p>
+<ul>
+<li>El usuario elige el objetivo de la reunión: entender, decidir, priorizar, revisar una prueba o comprometer recursos.</li>
+<li>La herramienta genera, a partir del estado del proyecto: agenda con tiempos, preguntas clave, decisiones que se buscan, información que debe traer cada persona y una técnica de facilitación sugerida (por ejemplo, 1-2-4-todos o votación por puntos).</li>
+<li>Exporta un documento de una página para imprimir o compartir en Teams.</li>
+</ul>
+<p><strong>Incorporar las notas.</strong></p>
+<ul>
+<li>El usuario pega las notas o la transcripción de Teams, o sube una foto de la pizarra.</li>
+<li>La IA <strong>propone</strong> elementos tipados. Cada uno es una tarjeta con las opciones aceptar, editar o descartar, y muestra el fragmento original del que sale.</li>
+<li>Nada entra en el registro sin confirmación humana.</li>
+<li>Las decisiones exigen nombrar a quien decide.</li>
+<li>Antes de enviar texto al modelo de lenguaje, un detector de datos personales avisa si aparecen nombres de pacientes o datos de salud.</li>
+</ul>
+<p><strong>Registrar evidencias y decisiones.</strong> Siempre con procedencia: sesión, persona y documento. Las decisiones enlazan las evidencias en que se basan y las alternativas descartadas.</p>
+<p><strong>Entender qué falta.</strong> Un <strong>análisis determinista de huecos</strong> por fase, por ejemplo: &quot;tienes hipótesis sin evidencias&quot;, &quot;una medida sin definición operativa&quot; o &quot;una decisión sin responsable&quot;. Siempre explica <em>por qué importa</em>.</p>
+<p><strong>Orientación sobre qué hacer ahora.</strong> El motor de reglas prioriza el siguiente paso según la fase, los huecos, las acciones vencidas y la próxima reunión. La IA solo redacta la explicación en lenguaje natural.</p>
+<p><strong>Probar un cambio.</strong></p>
+<ul>
+<li>La ficha de prueba exige una <strong>predicción escrita antes de empezar</strong> (regla dura), una escala pequeña (una cama, un turno o un día), la medida y el período.</li>
+<li>Un gráfico de evolución recoge la línea base y los datos nuevos, introducidos a mano o desde una hoja de cálculo.</li>
+</ul>
+<p><strong>Evaluar resultados.</strong></p>
+<ul>
+<li>Las reglas de los gráficos de evolución (desplazamientos, tendencias, rachas) se calculan de forma determinista. Si hay pocos puntos, se advierte explícitamente.</li>
+<li>La comparación entre predicción y resultado es obligatoria.</li>
+<li>La decisión de adoptar, adaptar o abandonar la toman personas con nombre propio.</li>
+<li>La IA solo explica el gráfico en lenguaje llano y plantea preguntas.</li>
+</ul>
+<p><strong>Reanudar tras varias semanas.</strong></p>
+<ul>
+<li>Un resumen de &quot;dónde lo dejaste&quot; en 5 líneas, construido a partir del registro: fase, última decisión, acciones abiertas, lo que cambió y el siguiente paso.</li>
+<li>Un &quot;test de recuperación&quot; opcional de 3 preguntas, que sirve a la vez como métrica.</li>
+</ul>
+<p><strong>Autonomía progresiva.</strong></p>
+<ul>
+<li>Un mapa de unas 10 competencias (enunciar problemas, separar hechos de supuestos, definir medidas, preparar reuniones, diseñar pruebas con predicción, interpretar gráficos de evolución, gestionar decisiones, sostener la mejora, entre otras).</li>
+<li>Cuatro niveles de asistencia por competencia:
+<ul>
+<li><strong>N1 Mostrar:</strong> ejemplo resuelto.</li>
+<li><strong>N2 Guiar:</strong> preguntas y estructura parcial.</li>
+<li><strong>N3 Revisar:</strong> el usuario hace el trabajo y la herramienta lo critica.</li>
+<li><strong>N4 Autónomo:</strong> la herramienta calla salvo que detecte un error claro.</li>
+</ul>
+</li>
+<li>Se pasa de nivel según <strong>comportamientos observables en el registro</strong>, por ejemplo tres enunciados de problema sin solución escondida.</li>
+<li>El usuario puede pedir más ayuda; esa petición queda registrada y no penaliza.</li>
+<li>Este marco sigue el modelo de aprendizaje cognitivo en la práctica, con ayuda que se retira progresivamente <strong><span class="lb lb-hip" title="Hipótesis">Hip<span class="lb-x">aplicabilidad a este dominio no verificada</span></span></strong>.</li>
+</ul>
+<h3 id="a-3-5-el-papel-del-mentor">3.5 El papel del mentor</h3>
+<p>El mentor tiene un panel con todos sus proyectos, ordenados por <strong>riesgo metodológico</strong> y por <strong>inactividad</strong>. Desde ahí puede:</p>
+<ul>
+<li>validar secciones del A3;</li>
+<li>comentar elementos concretos;</li>
+<li>decidir el nivel de asistencia de cada persona.</li>
+</ul>
+<p><strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> Con esto, una revisión asíncrona de 15 minutos podría sustituir a una reunión de una hora.</p>
+<hr />
+<h2 id="a-4-arquitectura-propuesta-desde-cero" data-k="A">4. Arquitectura propuesta desde cero</h2>
+<h3 id="a-4-1-reparto-de-responsabilidades">4.1 Reparto de responsabilidades</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Determinista (reglas y código)</th>
+<th>IA (LLM, siempre como propuesta)</th>
+<th>Juicio humano (obligatorio)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fases, comprobaciones y huecos; prioridad del siguiente paso</td>
+<td>Pasar texto libre a elementos tipados propuestos</td>
+<td>Qué problema abordar y con qué alcance</td>
+</tr>
+<tr>
+<td>Triaje de rigor (árbol de decisión)</td>
+<td>Detectar patrones erróneos en lenguaje natural (complementa a las reglas)</td>
+<td>Validar si algo es un hecho o un supuesto</td>
+</tr>
+<tr>
+<td>Puertas: predicción previa a la prueba, responsable de cada decisión</td>
+<td>Preguntas socráticas contextuales</td>
+<td>Elegir hipótesis y cambios</td>
+</tr>
+<tr>
+<td>Reglas de gráficos de evolución y cálculos</td>
+<td>Borradores de agenda, resumen y explicación</td>
+<td>Adoptar, adaptar o abandonar</td>
+</tr>
+<tr>
+<td>Niveles de asistencia y criterios de progresión</td>
+<td>Explicar conceptos con ejemplos del caso</td>
+<td>Autorizaciones y recursos</td>
+</tr>
+<tr>
+<td>Permisos, auditoría y versiones</td>
+<td>Reformular para distintos públicos (dirección o equipo)</td>
+<td>Validación del mentor</td>
+</tr>
+<tr>
+<td>Detección de datos personales por patrones</td>
+<td>Segunda capa de detección de datos personales (si está permitida)</td>
+<td>Decidir qué se comparte fuera del equipo</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Regla de oro:</strong> el LLM <strong>nunca escribe directamente en el registro</strong> ni cambia la fase. Solo produce propuestas que una persona confirma.</p>
+<h3 id="a-4-2-diagrama">4.2 Diagrama</h3>
+<pre><code>                     CANALES (interfaces sustituibles)
+ ┌───────────┐ ┌──────────────┐ ┌────────────────┐ ┌──────────────┐
+ │ Web (PWA) │ │ Pestaña Teams│ │ Agente Copilot │ │ App ChatGPT  │
+ │ principal │ │ (misma web + │ │ (declarativo)  │ │ (workspace)  │
+ │           │ │  SSO Entra)  │ │                │ │              │
+ └─────┬─────┘ └──────┬───────┘ └───────┬────────┘ └──────┬───────┘
+       │ HTTPS/API    │                 └──────┬──────────┘
+       │              │                  ┌─────▼──────────┐
+       │              │                  │ Servidor MCP   │  (herramientas: leer estado,
+       │              │                  │ (adaptador)    │   proponer elementos, siguiente paso)
+       │              │                  └─────┬──────────┘
+ ┌─────▼──────────────▼────────────────────────▼──────────────────┐
+ │                         NÚCLEO (API)                           │
+ │  ┌──────────────────┐  ┌────────────────┐  ┌────────────────┐  │
+ │  │ Motor            │  │ Registro del   │  │ Pedagogía      │  │
+ │  │ metodológico     │  │ proyecto       │  │ (competencias, │  │
+ │  │ (reglas          │◄─┤ (eventos solo  │  │ niveles,       │  │
+ │  │ versionadas,     │  │ de añadido +   │  │ retirada de    │  │
+ │  │ especificación   │  │ vistas)        │  │ ayuda)         │  │
+ │  │ del método)      │  └────────────────┘  └────────────────┘  │
+ │  └──────────────────┘                                          │
+ │  ┌──────────────────┐  ┌────────────────┐  ┌────────────────┐  │
+ │  │ Identidad/roles  │  │ Auditoría      │  │ Pasarela de    │  │
+ │  │ (OIDC: Entra /   │  │ (quién, qué,   │  │ IA: datos      │  │
+ │  │ enlace mágico)   │  │ cuándo, origen)│  │ personales,    │  │
+ │  └──────────────────┘  └────────────────┘  │ plantillas     │  │
+ │                                            │ versionadas,   │  │
+ │                                            │ evaluaciones,  │  │
+ │                                            │ registro       │  │
+ │                                            └───────┬────────┘  │
+ └────────────────────────────────────────────────────┼───────────┘
+                                                      │ (opcional, por organización)
+                      ┌───────────────────────────────┼────────────────────┐
+                      ▼                               ▼                    ▼
+              LLM en nube UE              LLM de la propia        SIN IA (modo
+              (proveedor gestionado)      organización (Azure     completo con
+                                          OpenAI en su entorno     reglas y
+                                          o modelo local con API   plantillas)
+                                          compatible)
+ Persistencia: PostgreSQL (seguridad por fila por organización) + almacenamiento de
+ adjuntos + copias de seguridad cifradas. Exportación completa en JSON y PDF/DOCX.
+</code></pre>
+<h3 id="a-4-3-componentes">4.3 Componentes</h3>
+<p><strong>Motor metodológico.</strong></p>
+<ul>
+<li>El método se escribe como <strong>especificación declarativa versionada</strong> (YAML o JSON): fases, comprobaciones, puertas, preguntas, criterios de progresión.</li>
+<li>Lo interpreta un motor de reglas sencillo escrito en código propio. No hace falta un motor de reglas empresarial <strong><span class="lb lb-r" title="Recomendación">R</span></strong>.</li>
+<li>Ventajas: auditable; adaptable a la variante de cada organización sin tocar código; comprobable con proyectos de prueba.</li>
+<li>Es el <strong>activo principal</strong> del producto, junto con el contenido pedagógico.</li>
+</ul>
+<p><strong>El papel y los límites del LLM.</strong></p>
+<ul>
+<li>Tareas acotadas con salida en formato estructurado y validada contra un esquema.</li>
+<li>Plantillas de instrucciones versionadas, con una <strong>batería de evaluación</strong> (unos 50 casos reales anonimizados) que se ejecuta cada vez que se cambia de modelo o de plantilla.</li>
+<li>Sin memoria propia: el contexto se construye en cada llamada a partir del registro.</li>
+<li>Sin acceso a internet ni a herramientas que escriban.</li>
+<li>Coste estimado <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong>: unos pocos euros por proyecto al mes con modelos de gama media. No es la principal fuente de coste.</li>
+</ul>
+<p><strong>Modelo de estado.</strong></p>
+<ul>
+<li><strong>Registro de eventos de solo añadido</strong>, del tipo &quot;elemento propuesto&quot;, &quot;elemento confirmado&quot;, &quot;decisión tomada&quot;, &quot;fase avanzada&quot;, &quot;puerta superada con justificación&quot;...</li>
+<li>Sobre él se construyen <strong>vistas</strong> (el A3 vivo, el panel Ahora, el panel del mentor).</li>
+<li>Así se obtienen trazabilidad, versionado y &quot;cómo estaba el proyecto el día X&quot; sin desarrollo adicional.</li>
+<li>No hace falta un framework de <em>event sourcing</em>: basta una tabla de eventos en PostgreSQL y vistas materializadas <strong><span class="lb lb-r" title="Recomendación">R</span></strong>.</li>
+</ul>
+<p><strong>Persistencia, versionado y recuperación.</strong></p>
+<ul>
+<li>Copias de seguridad diarias cifradas, con recuperación a un momento dado.</li>
+<li><strong>Exportación completa</strong> en JSON (portabilidad) y en PDF/DOCX (para los archivos de calidad y para auditorías de acreditación).</li>
+<li>La especificación del método está versionada: cada proyecto sabe con qué versión se evaluó.</li>
+</ul>
+<p><strong>Trazabilidad y autorizaciones.</strong></p>
+<ul>
+<li>Cada elemento guarda: autor, procedencia (sesión, documento o propuesta de la IA), quién lo confirmó y cuándo.</li>
+<li>Las <strong>decisiones y autorizaciones</strong> van ligadas a una persona y su rol; no basta con &quot;el equipo&quot;.</li>
+<li>Una propuesta de la IA confirmada sin editar queda marcada como tal. También es una señal de aprendizaje: aceptar sin revisar es un mal indicio.</li>
+</ul>
+<p><strong>Usuarios, roles y colaboración.</strong></p>
+<ul>
+<li>Roles: Líder, Miembro, Mentor (puede pertenecer a otra organización), Patrocinador (decide y autoriza), Observador y Administrador de la organización.</li>
+<li>Colaboración asíncrona con comentarios sobre elementos.</li>
+<li>La edición simultánea en tiempo real queda fuera del MVP.</li>
+</ul>
+<p><strong>Aislamiento entre organizaciones.</strong></p>
+<ul>
+<li>Cada organización es un inquilino, con seguridad por fila en PostgreSQL.</li>
+<li>Opción de base de datos dedicada para quien lo exija.</li>
+<li>El mentor externo accede mediante una <strong>invitación explícita por proyecto</strong>, con alcance y fecha de caducidad, que queda en el registro de auditoría.</li>
+</ul>
+<p><strong>Seguridad y gobernanza sanitaria.</strong> Lo que sigue tiene el contexto español en mente; <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> requiere revisión legal.</p>
+<ul>
+<li>Alojamiento en la UE.</li>
+<li>RGPD: evaluación de impacto si entran datos de profesionales; contratos de encargado del tratamiento con el proveedor del LLM, con cláusula de no entrenamiento.</li>
+<li>Esquema Nacional de Seguridad (ENS): probablemente categoría MEDIA para dar servicio a centros públicos. Esto tiene coste de certificación y es una barrera real de venta.</li>
+<li><strong>Ley de IA de la UE:</strong>
+<ul>
+<li>El sistema no parece de alto riesgo mientras <strong>no se use para evaluar el desempeño de trabajadores</strong>. Las competencias se registrarían, y si la dirección las usara para evaluar personal podría entrar en el Anexo III, apartado 4 (empleo). <strong><span class="lb lb-r" title="Recomendación">R</span></strong> Las competencias deben ser del profesional, no de la organización. Solo se agregan de forma anónima.</li>
+<li>La obligación de alfabetización en IA (art. 4) ya es aplicable.</li>
+</ul>
+</li>
+<li>No es producto sanitario mientras no tenga una finalidad clínica sobre pacientes concretos.</li>
+</ul>
+<p><strong>Microsoft Copilot y Teams.</strong></p>
+<ul>
+<li>La integración más barata y robusta es una <strong>pestaña de Teams</strong> que carga la web con inicio de sesión único de Entra ID.</li>
+<li>La transcripción de las reuniones de Teams puede ser una fuente de &quot;Consolidar&quot;, vía Graph API o simplemente copiando y pegando. <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> La vía Graph depende de licencias y del consentimiento del administrador.</li>
+<li>Para usar Copilot como canal conversacional: un <strong>agente declarativo</strong> que llama al servidor MCP del núcleo.
+<ul>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H<span class="lb-x">con cautela</span></span></strong> La hoja de ruta de Microsoft situaba la disponibilidad general del soporte MCP en agentes declarativos en junio de 2026, con descubrimiento dinámico de herramientas en despliegue hasta julio de 2026 (<a href="https://mc.merill.net/message/RM564606" target="_blank" rel="noopener">RM564606</a>, <a href="https://app.cloudscout.one/evergreen-item/mc1330889/" target="_blank" rel="noopener">MC1330889</a>).</li>
+<li>Son fechas de hoja de ruta: hay que verificar el estado real en cada organización.</li>
+</ul>
+</li>
+</ul>
+<p><strong>ChatGPT (opcional).</strong></p>
+<ul>
+<li><strong><span class="lb lb-h" title="Hecho verificado">H</span></strong> OpenAI indica que las apps con soporte MCP completo están disponibles en los planes Business y Enterprise/Edu, publicadas por el administrador del espacio de trabajo (<a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-apps-in-chatgpt" target="_blank" rel="noopener">OpenAI Help</a>).</li>
+<li>El <strong>mismo servidor MCP</strong> sirve para Copilot y ChatGPT: un solo adaptador, dos canales.</li>
+<li>No se exige a ningún usuario una suscripción personal.</li>
+</ul>
+<p><strong>Experiencia web independiente.</strong> Una aplicación web instalable, accesible desde el navegador del hospital, sin instalación. Es el canal de referencia; los demás son secundarios.</p>
+<p><strong>Organizaciones que no autorizan servicios externos.</strong> Tres niveles:</p>
+<ol>
+<li><strong>Modo sin IA:</strong> completamente funcional. Las reglas, las plantillas, las preguntas fijas y las comprobaciones funcionan igual.</li>
+<li><strong>Modelo de la propia organización:</strong> su Azure OpenAI o un modelo local con API compatible con la de OpenAI.</li>
+<li><strong>Puente manual:</strong> la herramienta genera la instrucción y el usuario la pega en el asistente que su organización ya tiene aprobado (Copilot, por ejemplo), y luego pega la respuesta. Es poco elegante, pero cuesta cero y funciona desde el primer día.</li>
+</ol>
+<p>El despliegue en las instalaciones del hospital (contenedor) se deja para más adelante y solo con un contrato que lo pague.</p>
+<p><strong>Dependencia de proveedores y portabilidad.</strong></p>
+<ul>
+<li>Interfaz de LLM abstraída, con la batería de evaluación como contrato.</li>
+<li>Estándares: OIDC para identidad, MCP para canales y JSON para exportar.</li>
+<li>La metodología como especificación propia, no metida dentro de las instrucciones al modelo.</li>
+</ul>
+<p><strong>Coste y complejidad de mantenimiento.</strong></p>
+<ul>
+<li>Un monolito modular, con una base de datos, un despliegue y un equipo de 1 o 2 personas desarrolladoras.</li>
+<li>Lo que más cuesta mantener no es el código, sino: <strong>contenido metodológico, evaluaciones de calidad de la IA, seguridad y cumplimiento normativo, y soporte</strong>.</li>
+</ul>
+<hr />
+<h2 id="a-5-comparacion-de-alternativas" data-k="A">5. Comparación de alternativas</h2>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>A. Kit sin software propio</strong> (plantillas en M365 o Google + biblioteca de instrucciones + mentor)</th>
+<th><strong>B. Nativo de Copilot o ChatGPT</strong> (agente + listas de SharePoint como estado)</th>
+<th><strong>C. Núcleo propio + canales</strong> (lo descrito en el apartado 4)</th>
+<th><strong>D. Servicio de mentoría con soporte de software</strong> (concierge que evoluciona hacia C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ventajas</td>
+<td>Coste casi nulo; inmediato; sin homologación</td>
+<td>Está donde ya trabaja el usuario; sin inicio de sesión nuevo; aprovecha licencias existentes</td>
+<td>Estado fiable, trazabilidad, pedagogía controlada, independiente del canal, modo sin IA</td>
+<td>Valida valor y precio antes de construir; aprende el método real; genera ingresos pronto</td>
+</tr>
+<tr>
+<td>Debilidades</td>
+<td>Sin estado ni reglas; trazabilidad manual; depende de la disciplina; no escala la mentoría</td>
+<td>Estado frágil; comportamiento distinto en cada organización y versión; sin vista transversal para el mentor; difícil controlar la pedagogía</td>
+<td>Coste de construcción; homologación de seguridad (ENS); un inicio de sesión más</td>
+<td>No escala sin software; depende de personas clave</td>
+</tr>
+<tr>
+<td>Coste relativo</td>
+<td>Muy bajo</td>
+<td>Bajo–medio (y repetido en cada organización)</td>
+<td>Medio</td>
+<td>Bajo en tecnología, alto en horas de mentor</td>
+</tr>
+<tr>
+<td>Complejidad</td>
+<td>Baja</td>
+<td>Media, dispersa entre organizaciones</td>
+<td>Media, concentrada</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td>Dependencia tecnológica</td>
+<td>Baja</td>
+<td><strong>Muy alta</strong> (Microsoft u OpenAI y sus cambios de plataforma)</td>
+<td>Baja–media</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td>Facilidad de adopción</td>
+<td>Alta, pero con abandono rápido <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong></td>
+<td>Alta donde hay Copilot; nula donde no</td>
+<td>Media; mejora con la pestaña de Teams</td>
+<td>Alta, porque la conduce un humano</td>
+</tr>
+<tr>
+<td>Escalabilidad</td>
+<td>Baja</td>
+<td>Media</td>
+<td>Alta</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td>Riesgos</td>
+<td>Es &quot;lo que ya existe&quot; y no cambia nada</td>
+<td>Bloqueo por proveedor; la IA acaba siendo el facilitador por diseño</td>
+<td>Sobreingeniería; construir antes de validar</td>
+<td>Confundir el valor del mentor con el del software</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><span class="lb lb-r" title="Recomendación">R</span> MVP:</strong> <strong>D con un núcleo C mínimo</strong>, con A como grupo de comparación.</p>
+<p><strong><span class="lb lb-r" title="Recomendación">R</span> Arquitectura objetivo:</strong> <strong>C</strong>, con los canales Copilot y ChatGPT a través de MCP.</p>
+<p><strong>Cuándo evolucionar:</strong></p>
+<ul>
+<li>Pasar de D a C mínimo cuando el concierge muestre ventaja frente a A en calidad metodológica y en horas de mentor.</li>
+<li>Añadir canales MCP cuando al menos 2 organizaciones clientes los pidan y el uso web sea estable.</li>
+<li>Ofrecer despliegue en las instalaciones solo con un contrato que lo financie.</li>
+</ul>
+<p><strong><span class="lb lb-r" title="Recomendación">R</span></strong> B se descarta como sistema de registro. Encaja como canal secundario.</p>
+<hr />
+<h2 id="a-6-mvp-recomendado" data-k="A">6. MVP recomendado</h2>
+<p><strong>Construir primero:</strong></p>
+<ol>
+<li>Registro tipado con procedencia y confirmación humana.</li>
+<li>Especificación del método v0: unas 6 fases y unas 25 comprobaciones, más el triaje de rigor.</li>
+<li>Las vistas &quot;Ahora&quot; y &quot;A3 vivo&quot;, con exportación imprimible.</li>
+<li>Flujo de sesión: Preparar y Consolidar (pegar notas, recibir propuestas tipadas, confirmar).</li>
+<li>Ficha PDSA con predicción obligatoria y gráfico de evolución con reglas deterministas.</li>
+<li>Panel del mentor: riesgo e inactividad, comentarios y validación de secciones.</li>
+<li>Resumen de &quot;dónde lo dejaste&quot;.</li>
+<li>Niveles de asistencia fijados manualmente por el mentor. La progresión automática se deja para más adelante.</li>
+<li>Modo sin IA y puente manual. Un solo proveedor de LLM en la UE para quien lo admita.</li>
+</ol>
+<p><strong>Eliminar, aunque parezca interesante:</strong></p>
+<ul>
+<li>Sistemas multiagente.</li>
+<li>Editor gráfico de VSM o de diagramas de Ishikawa (basta una lista estructurada o una foto de la pizarra).</li>
+<li>IA que propone causas o soluciones.</li>
+<li>Chat como interfaz principal.</li>
+<li>Gamificación.</li>
+<li>Aplicación móvil nativa.</li>
+<li>Edición en tiempo real.</li>
+<li>Integración con la historia clínica o los sistemas de información del hospital.</li>
+<li>Estadística avanzada de control de procesos.</li>
+<li>Mercado de plantillas.</li>
+<li>Agente de Copilot o app de ChatGPT en la v1.</li>
+<li>Puntuación automática de competencias que pueda leer la dirección.</li>
+</ul>
+<p><strong>Reutilizar:</strong></p>
+<ul>
+<li>Identidad: Entra ID mediante OIDC y enlace mágico.</li>
+<li>Teams como canal de reunión y fuente de transcripciones.</li>
+<li>PostgreSQL.</li>
+<li>Una librería de gráficos.</li>
+<li>Un framework web estándar.</li>
+<li>La API de un proveedor de LLM.</li>
+<li>La literatura existente sobre criterios de calidad del PDSA (Taylor 2014) como base de la rúbrica.</li>
+</ul>
+<p><strong>Desarrollar específicamente:</strong> la especificación del método, el modelo del registro, el flujo de consolidación, la priorización del siguiente paso, los detectores de errores y el contenido pedagógico.</p>
+<p><strong>Pruebas antes de escribir código:</strong></p>
+<ol>
+<li><strong>Auditoría de 10–20 A3 o proyectos pasados</strong> de una organización con la rúbrica. Así se obtienen la <strong>línea base</strong> y una <strong>taxonomía real de fallos</strong>: ¿son metodológicos u organizativos?</li>
+<li><strong>Entrevistas</strong> a 8–12 líderes de proyecto y 3–4 mentores. La pregunta central: ¿dónde os atascasteis y por qué?</li>
+<li><strong>Concierge con un &quot;mago de Oz&quot;:</strong> 4–6 proyectos reales con un cuaderno estructurado. El mentor hace de motor, enviando &quot;Ahora&quot; y &quot;lo que falta&quot; cada semana a mano.</li>
+<li><strong>Comparación directa</strong> con la referencia &quot;plantilla + Copilot o GPT con buenas instrucciones&quot; en otros 3–4 proyectos.</li>
+<li><strong>Prueba de usabilidad con prototipo navegable</strong> (Ahora, A3 vivo, Consolidar) con 5 usuarios.</li>
+<li><strong>Prueba de seguridad y compras:</strong> preguntar a 2 departamentos de sistemas de hospital qué exigirían. Es posible que esto mate la idea antes que el usuario.</li>
+</ol>
+<hr />
+<h2 id="a-7-hoja-de-ruta" data-k="A">7. Hoja de ruta</h2>
+<p><strong>Semanas 1–6: validación</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Semana</th>
+<th>Actividad</th>
+<th>Entregable o criterio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Entrevistas; recogida de proyectos pasados; primera versión de la rúbrica</td>
+<td>Taxonomía de fallos; reparto entre causas metodológicas y organizativas</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Puntuar proyectos pasados (2 evaluadores, sin saber de qué grupo son); especificación del método v0 en documento</td>
+<td>Línea base de calidad; acuerdo entre evaluadores</td>
+</tr>
+<tr>
+<td>2–5</td>
+<td>Concierge con 4–6 proyectos y grupo de referencia (plantilla + IA genérica) con 3–4</td>
+<td>Registro de horas de mentor, puertas, errores detectados y corregidos</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>Prototipo navegable + 5 pruebas de usabilidad</td>
+<td>¿Encuentra el siguiente paso en menos de 30 s? ¿Consolida una reunión en menos de 5 min?</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td>Conversaciones con sistemas de información y compras de 2 organizaciones</td>
+<td>Requisitos (ENS, protección de datos, alojamiento); vía de contratación</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Decisión</td>
+<td><strong>Decidir entre seguir, reorientar o abandonar</strong> según los criterios siguientes</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Criterios para seguir (fijarlos antes de empezar):</strong></p>
+<ul>
+<li>Los proyectos con concierge superan al grupo de referencia en la rúbrica por un margen preacordado.</li>
+<li>Al menos el 70 % de los proyectos siguen activos en la semana 5.</li>
+<li>Consolidar una reunión cuesta menos de 5 minutos.</li>
+<li>Al menos una organización está dispuesta a pagar el piloto.</li>
+<li>No hay un bloqueo de seguridad insalvable.</li>
+</ul>
+<p><strong>Después, condicionado a resultados:</strong></p>
+<ul>
+<li><strong>Meses 2–4:</strong> construcción del MVP (apartado 6) y piloto con 2 organizaciones y 10–15 proyectos.</li>
+<li><strong>Meses 5–7:</strong> progresión automática de niveles; prueba de transferencia (segundo proyecto con menos ayuda); pestaña de Teams.</li>
+<li><strong>Meses 8–12:</strong> servidor MCP para Copilot y ChatGPT si hay demanda; opción de modelo propio de la organización; trámites para el ENS si el mercado público lo exige.</li>
+<li><strong>Más adelante:</strong> despliegue en las instalaciones; métricas agregadas de cartera para unidades de calidad; aprendizaje entre proyectos de distintas organizaciones, con consentimiento.</li>
+</ul>
+<hr />
+<h2 id="a-8-riesgos-y-debilidades-auditoria-adversarial" data-k="A">8. Riesgos y debilidades (auditoría adversarial)</h2>
+<h3 id="a-8-1-las-diez-mayores-debilidades-o-riesgos">8.1 Las diez mayores debilidades o riesgos</h3>
+<ol>
+<li><strong>Resolver la causa menor.</strong> El fracaso real es organizativo (tiempo, patrocinio, datos) y el producto ataca lo metodológico.</li>
+<li><strong>La referencia &quot;plantilla + IA genérica&quot; es suficiente</strong> para la mayoría de usuarios, y el diferencial no justifica el coste.</li>
+<li><strong>Carga de documentación:</strong> el registro se abandona y el proyecto vuelve a Word o WhatsApp.</li>
+<li><strong>Pérdida de capacidades:</strong> la IA hace el trabajo y la &quot;transferencia de capacidad&quot; se invierte.</li>
+<li><strong>Ciclo de venta y homologación</strong> (ENS, protección de datos, compras públicas) más largo que la financiación disponible.</li>
+<li><strong>Dependencia de pocas personas clave:</strong> el valor está en el mentor fundador y no en el producto.</li>
+<li><strong>Rigidez metodológica:</strong> choca con la metodología propia de cada organización.</li>
+<li><strong>Rigor ficticio:</strong> proyectos que &quot;pasan las puertas&quot; con justificaciones vacías y producen documentos impecables sin mejora real.</li>
+<li><strong>Fuga de datos personales:</strong> las notas de reunión contienen nombres y anécdotas de pacientes aunque el piloto diga &quot;sin datos identificativos&quot;.</li>
+<li><strong>Imposible medir el impacto</strong> con muestras de 5–15 proyectos. Esto puede llevar a sobrevender resultados.</li>
+</ol>
+<h3 id="a-8-2-supuestos-que-podrian-ser-falsos">8.2 Supuestos que podrían ser falsos</h3>
+<ul>
+<li>Que los profesionales tienen tiempo protegido para el proyecto.</li>
+<li>Que quieren liderar en lugar de cumplir con un encargo.</li>
+<li>Que el mentor aceptará trabajar de forma asíncrona.</li>
+<li>Que existen datos de proceso accesibles para construir líneas base.</li>
+<li>Que la dirección quiere proyectos rigurosos y no solo &quot;proyectos presentados para la acreditación&quot;.</li>
+<li>Que el usuario volverá a usar la herramienta tras el primer proyecto.</li>
+</ul>
+<h3 id="a-8-3-situaciones-en-que-fracasaria">8.3 Situaciones en que fracasaría</h3>
+<ul>
+<li>Proyectos impuestos desde arriba sin margen de decisión.</li>
+<li>Servicios con alta rotación de personal.</li>
+<li>Problemas de cultura o de conflicto entre estamentos disfrazados de problemas de proceso.</li>
+<li>Organizaciones sin ninguna persona de referencia en mejora.</li>
+<li>Proyectos cuyo cambio exige sistemas de información que no controla el equipo.</li>
+<li>Un usuario que solo quiere &quot;el documento A3 para entregar&quot;.</li>
+</ul>
+<h3 id="a-8-4-riesgos-de-adopcion-institucional">8.4 Riesgos de adopción institucional</h3>
+<ul>
+<li>Los sistemas de información bloquean por ser un proveedor nuevo o por usar IA externa.</li>
+<li>La unidad de calidad lo percibe como competencia.</li>
+<li>Las compras públicas exigen licitación.</li>
+<li>No hay un &quot;propietario&quot; interno del producto.</li>
+<li>Si el piloto depende de un campeón y este se marcha, muere.</li>
+<li><strong>Oportunidad no aprovechada:</strong> vincularlo a la <strong>formación continuada acreditada</strong> y a los <strong>procesos de acreditación de calidad</strong> (EFQM, ISO, modelos autonómicos), que ya exigen proyectos documentados <strong><span class="lb lb-hip" title="Hipótesis">Hip<span class="lb-x">verificar en cada mercado</span></span></strong>.</li>
+</ul>
+<h3 id="a-8-5-riesgos-de-depender-demasiado-de-la-ia">8.5 Riesgos de depender demasiado de la IA</h3>
+<ul>
+<li>Pérdida de aprendizaje.</li>
+<li>Alucinación de &quot;hechos&quot; que entran en el registro.</li>
+<li>Variación de comportamiento al cambiar de modelo.</li>
+<li>Falsa autoridad: &quot;lo dijo la herramienta&quot;.</li>
+<li>Coste de evaluación continua.</li>
+<li>Exposición regulatoria si algún día se puntúa a las personas.</li>
+</ul>
+<h3 id="a-8-6-decisiones-arquitectonicas-dificiles-de-revertir">8.6 Decisiones arquitectónicas difíciles de revertir</h3>
+<ol>
+<li>Dónde vive el estado: núcleo propio frente al entorno de Microsoft del cliente.</li>
+<li>El modelo de datos epistémico (tipos de elementos y procedencia).</li>
+<li>El modelo de multiinquilino y el acceso de mentores entre organizaciones.</li>
+<li>Codificar la metodología dentro de las instrucciones al modelo en lugar de en una especificación.</li>
+<li>Posicionarse como &quot;herramienta de IA&quot; o como &quot;programa de capacitación&quot;.</li>
+<li>Usar los datos de competencias para cualquier fin distinto del aprendizaje propio.</li>
+<li>La licencia del contenido metodológico.</li>
+</ol>
+<h3 id="a-8-7-las-diez-preguntas-que-hay-que-responder-antes-de-invert">8.7 Las diez preguntas que hay que responder antes de invertir más</h3>
+<ol>
+<li>En proyectos reales de vuestras organizaciones, ¿qué porcentaje de fracasos es metodológico y qué porcentaje organizativo?</li>
+<li>¿Supera un concierge con cuaderno estructurado a &quot;plantilla + IA genérica&quot;, según una rúbrica evaluada por personas que no saben qué proyecto es de qué grupo?</li>
+<li>¿Quién paga (calidad, formación, dirección, una fundación) y con qué presupuesto y vía de contratación?</li>
+<li>¿Cuántas horas de mentor por proyecto cuesta hoy, y cuántas podría ahorrar la herramienta?</li>
+<li>¿Cuál es el coste máximo de registro por semana que un líder de proyecto acepta antes de abandonar?</li>
+<li>¿Qué exigirán sistemas de información y protección de datos para el piloto y para la producción?</li>
+<li>¿Hasta qué punto hay que adaptar el método a cada organización, y puede hacerse con configuración?</li>
+<li>¿Cómo se demostrará la transferencia de capacidad (segundo proyecto, menos ayuda, misma calidad) y en qué plazo?</li>
+<li>¿Qué parte del valor desaparece sin IA? Es decir, ¿es la IA esencial o un acelerador?</li>
+<li>¿Qué haría la referencia gratuita (Copilot o ChatGPT con buenas instrucciones) dentro de 12 meses, y qué seguiría siendo diferencial?</li>
+</ol>
+<hr />
+<h2 id="a-9-propuestas-de-mejora-y-diferenciacion" data-k="A">9. Propuestas de mejora y diferenciación</h2>
+<ol>
+<li><strong>El valor está en el método, no en el chat.</strong> Una especificación metodológica versionada y configurable es difícil de copiar; las instrucciones a un modelo no lo son.</li>
+<li><strong>Triaje de rigor proporcional.</strong> Ninguna herramienta conocida dice &quot;esto no necesita un proyecto&quot; <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong>. Reduce burocracia y genera confianza.</li>
+<li><strong>Aparcamiento de ideas.</strong> Responde al error número uno (saltar a la solución) sin frustrar al usuario.</li>
+<li><strong>Predicción obligatoria antes de cada prueba.</strong> Es una regla barata con alto valor de aprendizaje, y ataca exactamente el déficit que documentan Taylor y Knudsen.</li>
+<li><strong>&quot;Primero tú&quot; y retirada visible de la ayuda.</strong> La autonomía se convierte en una característica medible del producto.</li>
+<li><strong>Rúbrica pública de calidad del proyecto.</strong> Sirve como herramienta pedagógica, como métrica de impacto y como argumento de venta.</li>
+<li><strong>Vendido como un programa</strong> (cohortes con mentor, créditos de formación continuada, entregables útiles para la acreditación), no como licencias de software.</li>
+<li><strong>Panel del mentor centrado en riesgo e inactividad.</strong> Esta es la palanca económica: más proyectos por mentor.</li>
+<li><strong>Biblioteca de aprendizajes entre proyectos</strong>, con consentimiento: &quot;otros servicios que atacaron X probaron Y&quot;. A largo plazo es una ventaja difícil de copiar.</li>
+</ol>
+<hr />
+<h2 id="a-10-conclusion-y-decisiones-prioritarias" data-k="A">10. Conclusión y decisiones prioritarias</h2>
+<p><strong>Conclusión.</strong></p>
+<ul>
+<li>El problema es real y la literatura apoya que la mentoría marca la diferencia.</li>
+<li>La oportunidad no está en un &quot;facilitador de IA&quot;, sino en <strong>hacer escalable la mentoría y medible el aprendizaje</strong>, con una metodología determinista y auditable, y una IA limitada a estructurar y preguntar.</li>
+<li>El mayor peligro no es técnico. Hay tres: construir un producto que resuelve la causa menor del fracaso, construir algo que no supera a un asistente genérico gratuito, o construir algo que, por ser demasiado útil, impide que el usuario aprenda.</li>
+</ul>
+<p><strong>Decisiones prioritarias:</strong></p>
+<ol>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> No escribir código del producto durante 4–6 semanas. Hacer primero la auditoría de proyectos pasados, el concierge y la comparación con la referencia.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Fijar <em>ahora</em> los criterios para seguir o abandonar y la rúbrica de calidad.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Decidir que el estado vive en un núcleo propio y que los canales (Teams, Copilot, ChatGPT) son interfaces sustituibles.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Decidir que el LLM solo propone y que la metodología es una especificación determinista. Mantener un modo sin IA completo.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Decidir que los datos de competencias pertenecen al profesional y nunca se usan para evaluar su desempeño.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Definir el modelo de negocio como programa con mentoría antes de definir funcionalidades.</li>
+<li><strong><span class="lb lb-r" title="Recomendación">R</span></strong> Incluir en el alcance al menos una palanca organizativa (patrocinador y autorizaciones explícitas desde el primer día), no solo lo metodológico.</li>
+</ol>
+<hr />
+<h3 id="a-fuentes">Fuentes</h3>
+<p>Literatura recuperada de <strong>PubMed</strong>:</p>
+<ul>
+<li>Taylor MJ et al. <em>BMJ Qual Saf</em> 2014;23:290-8 — <a href="https://doi.org/10.1136/bmjqs-2013-001862" target="_blank" rel="noopener">DOI</a></li>
+<li>Knudsen SV et al. <em>BMC Health Serv Res</em> 2019;19:683 — <a href="https://doi.org/10.1186/s12913-019-4482-6" target="_blank" rel="noopener">DOI</a></li>
+<li>Reed JE, Card AJ. <em>BMJ Qual Saf</em> 2016;25:147-52 — <a href="https://doi.org/10.1136/bmjqs-2015-005076" target="_blank" rel="noopener">DOI</a></li>
+<li>Dixon-Woods M et al. <em>BMJ Qual Saf</em> 2012;21:876-84 — <a href="https://doi.org/10.1136/bmjqs-2011-000760" target="_blank" rel="noopener">DOI</a></li>
+<li>Ballengee LA et al. <em>J Gen Intern Med</em> 2022;37:885-99 — <a href="https://doi.org/10.1007/s11606-021-07217-2" target="_blank" rel="noopener">DOI</a></li>
+<li>Penney LS et al. <em>BMC Health Serv Res</em> 2021;21:817 — <a href="https://doi.org/10.1186/s12913-021-06850-1" target="_blank" rel="noopener">DOI</a></li>
+</ul>
+<p>Otras fuentes:</p>
+<ul>
+<li>Bastani H et al. <em>PNAS</em> 2025 — <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education" target="_blank" rel="noopener">Wharton</a>, <a href="https://chibe.upenn.edu/publications/generative-ai-without-guardrails-can-harm-learning-evidence-from-high-school-mathematics" target="_blank" rel="noopener">CHIBE</a>, <a href="https://papers.ssrn.com/abstract=4895486" target="_blank" rel="noopener">SSRN</a></li>
+<li>Microsoft 365 Roadmap / Message Center: <a href="https://mc.merill.net/message/RM564606" target="_blank" rel="noopener">RM564606</a>, <a href="https://app.cloudscout.one/evergreen-item/mc1330889/" target="_blank" rel="noopener">MC1330889</a>, <a href="https://mc.merill.net/message/RM501585" target="_blank" rel="noopener">RM501585</a></li>
+<li>OpenAI Help Center: <a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-apps-in-chatgpt" target="_blank" rel="noopener">Apps y MCP en ChatGPT</a></li>
+</ul>
+<p><strong>Límites de las fuentes:</strong></p>
+<ul>
+<li>La evidencia sobre PDSA viene de proyectos publicados.</li>
+<li>La evidencia sobre mentoría es de certeza baja y procede sobre todo de atención primaria en EE. UU.</li>
+<li>El estudio sobre IA y aprendizaje es de secundaria.</li>
+<li>La información de Microsoft y OpenAI son hojas de ruta o documentación cambiante; debe comprobarse en el momento de decidir.</li>
+<li>Las afirmaciones sobre la Ley de IA, el ENS y la contratación pública son mi interpretación <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> y requieren revisión jurídica.</li>
+<li>No he verificado las funciones actuales de Life QI ni de KaiNexus.</li>
+</ul>
+</div></section>
+<section class="part rep-b" id="informe-b" data-k="b"><div class="prose"><header class="cover">
+<div class="cover-l" aria-hidden="true">B</div>
+<div class="cover-t"><p class="eyebrow">Informe B · Auditoría adversarial y comparación de arquitecturas</p>
+<h1 id="b-informe-b-auditoria-adversarial-y-comparacion-de-arquitectur">INFORME B — AUDITORÍA ADVERSARIAL Y COMPARACIÓN DE ARQUITECTURAS</h1>
+<ul class="cover-m"><li>Repositorio <code>b32majus/CoraLEAN</code>: <code>main</code> en <code>c485ec6</code> y rama Alpha en <code>0a6d992</code></li><li>El Informe A se conserva como línea base</li><li>Etiquetas: <span class="lb lb-dem">DEM</span> <span class="lb lb-rie">RIE</span> <span class="lb lb-pref">PREF</span> <span class="lb lb-fort">FORT</span></li><li>7.116 palabras · unos 36 min de lectura · 6 apartados</li></ul>
+<p class="cover-note">Texto íntegro, tal como se entregó.</p></div>
+</header>
+<h2 id="b-0-alcance-acceso-y-convenciones" data-k="B">0. Alcance, acceso y convenciones</h2>
+<p><strong>Qué he revisado.</strong> Cloné <code>b32majus/CoraLEAN</code> en un directorio temporal, solo para leer. No he editado nada, ni hecho commits, ni tocado ningún ADR. Revisé dos puntos del repositorio:</p>
+<ul>
+<li><code>main</code> en <code>c485ec6</code>, con tag <code>core-freeze-v0.1</code> y fecha 2026-10-02;</li>
+<li>la rama <code>work/alpha-runtime-c084-20261004</code> en <code>0a6d992</code>, con fecha 2026-10-04.</li>
+</ul>
+<p>Leí íntegros: <code>START_HERE.md</code>, <code>AGENTS.md</code>, <code>README.md</code>, <code>GLOSSARY.md</code> (lo relevante), <code>docs/PRODUCT_VISION.md</code>, <code>docs/CORE_FREEZE_V0.1.md</code>, ADR-001 a ADR-019, <code>BACKEND_STRATEGY</code>, <code>PILOT_MERIDA</code>, <code>OPEN_QUESTIONS</code>, <code>DECISION_LOG</code>, <code>ROADMAP</code>, <code>WORKPLAN_2026-10</code>, <code>RESEARCH_*</code>, <code>BOOTSTRAP</code> y <code>FEEDBACK_PROTOCOL</code>. En la rama leí además <code>docs/runtime/ALPHA_RUNTIME_VERIFICATION_V0.md</code>, los dos documentos de traspaso de la carpeta <code>docs/handoffs/</code>, <code>CONTEXT.md</code>, <code>CODING_STANDARDS.md</code> y el documento de reconciliación C-084. Pude acceder a todos los documentos pedidos.</p>
+<p><strong>Límite importante.</strong> Solo veo lo que está en el repositorio. Si hay trabajo hecho dentro de un ChatGPT Project que no está versionado (instrucciones, pruebas ejecutadas, sesiones con Silvia), no puedo verlo. Cuando digo que algo &quot;no existe&quot;, quiero decir que <strong>no hay rastro en el repositorio</strong>.</p>
+<p><strong>Etiquetas que uso:</strong></p>
+<ul>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> Defecto demostrado: se ve directamente en los documentos.</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> Riesgo hipotético: es plausible, pero no está observado.</li>
+<li><strong><span class="lb lb-pref" title="Preferencia de diseño">PREF</span></strong> Preferencia de diseño: es discutible.</li>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Fortaleza.</li>
+</ul>
+<p><strong>Línea base.</strong> El Informe A se mantiene como referencia independiente y no lo modifico. Donde CoraLEAN supera al Informe A, lo digo expresamente.</p>
+<hr />
+<h2 id="b-1-diagnostico-ejecutivo" data-k="B">1. Diagnóstico ejecutivo</h2>
+<ol>
+<li>
+<p><strong>El Core v0.1 es, en lo metodológico, mejor que mi diseño A en varios puntos importantes.</strong> Lo es la distinción estructural entre experimentar y adoptar (ADR-007). También la suficiencia &quot;para la decisión actual&quot; (ADR-008), las condiciones de avance en dos ejes (ADR-010), las condiciones habilitantes proporcionales (ADR-011) y la procedencia que separa la intervención de la facilitadora de la de CoraLEAN (ADR-005/015). Este último es indispensable para medir la transferencia de capacidad, y el diseño A no lo tenía.</p>
+</li>
+<li>
+<p><strong>El problema central es una inversión arquitectónica <span class="lb lb-dem" title="Defecto demostrado">DEM</span>.</strong> El Core está escrito como una especificación pensada para cumplirse de forma determinista: suficiencia <em>derivada</em>, invariantes, condiciones estrictas, derivados que nunca se guardan. Pero quien la ejecuta es un LLM, que funciona de forma probabilística, leyendo y reescribiendo dos ficheros Markdown dentro de un ChatGPT Project. Los propios ADR lo reconocen:</p>
+<ul>
+<li>ADR-008, en sus consecuencias negativas: un runtime que permita al agente «poner» la suficiencia violaría el contrato «en silencio».</li>
+<li>ADR-017, decisión 6: la concurrencia no se resuelve.</li>
+<li>ADR-017, decisión 2: no está garantizado que se pueda actualizar el fichero en su sitio.</li>
+</ul>
+<p>En resumen: <strong>las reglas más precisas se ejecutan con el mecanismo menos fiable.</strong></p>
+</li>
+<li>
+<p><strong>La estrella polar (la transferencia de capacidad) es la parte con menos mecanismo <span class="lb lb-dem" title="Defecto demostrado">DEM</span>.</strong> Hay 19 ADR. El único dispositivo pedagógico es el <strong>modo</strong> (Guiado, Colaborativo o Experto), que elige la propia persona y que cambia <em>cuánto explica CoraLEAN</em>, pero no <em>quién piensa primero</em> (ADR-014). En modo Guiado, CoraLEAN propone más reuniones, preguntas y artefactos. Es decir, el modo pensado para el novato es el que más trabajo cognitivo hace por él.</p>
+</li>
+<li>
+<p><strong>La validación está bien diseñada en el papel, pero no se ha ejecutado y está sesgada <span class="lb lb-dem" title="Defecto demostrado">DEM</span>.</strong> Los 14 escenarios (ADR-019) y las 12 pruebas Alpha tienen reglas de aprobado y suspenso (PASS/FAIL) que se pueden refutar. Es de lo mejor del repositorio. Sin embargo:</p>
+<ul>
+<li>Todas las pruebas Alpha están en <code>PENDIENTE</code>.</li>
+<li>El fixture de RT-01 no se ha materializado: solo existe el documento de traspaso que lo encarga.</li>
+<li>No hay hallazgos de fricción en <code>docs/feedback/</code>.</li>
+<li>Silvia diseña el método, facilita el proyecto, ejecuta las pruebas y es la referencia con la que se mide la autonomía (&quot;menos dependencia de Silvia&quot;).</li>
+</ul>
+</li>
+<li>
+<p><strong>Calendario <span class="lb lb-dem" title="Defecto demostrado">DEM</span>.</strong> <code>WORKPLAN_2026-10.md</code> preveía tener la Alpha entre el 6 y el 12 de octubre, el uso interno por Silvia del 13 al 18 y el piloto con la farmacéutica del 19 al 23. El último commit del repositorio es del 4 de octubre. La sesión real de Mérida es el <strong>26 de octubre, dentro de tres días</strong>.</p>
+</li>
+<li>
+<p><strong>Hay huecos frente a las restricciones que me disteis en el encargo A <span class="lb lb-dem" title="Defecto demostrado">DEM</span>:</strong></p>
+<ul>
+<li>No hay <strong>ninguna</strong> mención a Microsoft, Copilot ni Teams.</li>
+<li>No hay <strong>ninguna</strong> mención a RGPD, evaluación de impacto, ENS, tipo de plan de ChatGPT ni a la configuración de entrenamiento con los datos.</li>
+<li>La representación canónica del estado es Markdown que mantiene el usuario a través de ChatGPT. Esto choca con «no podemos exigir Markdown ni una suscripción personal».</li>
+</ul>
+</li>
+</ol>
+<p><strong>Respuesta corta a la pregunta contrafactual:</strong> <strong>no</strong> construiría CoraLEAN como está diseñado.</p>
+<ul>
+<li><strong>Conservaría</strong> aproximadamente el 70 % de la semántica del Core.</li>
+<li><strong>Cambiaría</strong> el runtime: el estado canónico debe estar fuera del LLM.</li>
+<li><strong>Cambiaría</strong> el mecanismo pedagógico.</li>
+<li><strong>Simplificaría</strong> la maquinaria de suficiencia para la v0.</li>
+<li><strong>Rediseñaría</strong> el plan de validación.</li>
+<li><strong>Para el 26 de octubre</strong>, no expondría a la farmacéutica a un runtime sin verificar.</li>
+</ul>
+<hr />
+<h2 id="b-2-auditoria-del-diseno-actual" data-k="B">2. Auditoría del diseño actual</h2>
+<h3 id="b-2-1-objetivos-claridad-y-pertinencia">2.1 Objetivos: claridad y pertinencia</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> La estrella polar es explícita y se puede comprobar: «A visually impressive app without capability transfer is not success» (<code>START_HERE.md</code> §9; <code>PILOT_MERIDA.md</code> «Success criterion»). La regla «optimise for reduced friction, not positive opinions» (<code>AGENTS.md</code>, «Feedback») evita confundir satisfacción con impacto.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> Objetivos que compiten dentro del piloto.</strong> <code>PILOT_MERIDA.md</code> («Pilot hypothesis») plantea a la vez «help Silvia prepare and conduct the project» y «help the pharmacist progressively learn». Si CoraLEAN potencia a Silvia, Silvia hace más y la farmacéutica menos. Las dos metas tiran en direcciones opuestas, y no hay ninguna regla que diga cuál gana cuando chocan.
+<ul>
+<li><em>Consecuencia:</em> el piloto puede tener éxito como proyecto y fracasar como transferencia sin que nadie lo detecte.</li>
+<li><em>Alternativa verificable:</em> fijar como prioridad la transferencia y registrar cada sesión con un reparto de autoría: qué produjo la farmacéutica sola, qué con CoraLEAN y qué con Silvia. Para eso ya existe el evento de intervención humana de ADR-015.</li>
+</ul>
+</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> El criterio de éxito no se puede evaluar tal como está definido.</strong> «Decreasing support from Silvia» (<code>START_HERE.md</code> §9) depende de Silvia, que decide cuándo intervenir. Con n = 1, sin medición basal y sin evaluador independiente, el resultado depende de cómo lo interprete la propia diseñadora.</li>
+</ul>
+<h3 id="b-2-2-calidad-del-modelo-metodologico">2.2 Calidad del modelo metodológico</h3>
+<p><strong>Fortalezas:</strong></p>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Siete áreas no lineales, con la reapertura tratada como evento (ADR-006/007/008). Es mejor que mi &quot;A3 vivo&quot; con fases, porque representa con naturalidad que una evidencia nueva haga volver atrás.</li>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> «Prohibir impulsar, no idear» (ADR-010, matriz; ADR-014, regla invariante 4). Es una formulación más fina que mi «aparcamiento de ideas» y resuelve el mismo problema.</li>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Experimentar ≠ adoptar, y la adopción exige evidencia proporcional y validación humana (ADR-007, ADR-010). Ataca directamente el error de &quot;escalar tras un PDSA débil&quot; (escenario S6).</li>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Las condiciones habilitantes son proporcionales y no universales (ADR-011). Responden a mi crítica principal del Informe A, la de que el fracaso suele ser organizativo, mejor que mi propia propuesta («patrocinador marcado como riesgo»).</li>
+</ul>
+<p><strong>Carencias:</strong></p>
+<ul>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> Faltan los rasgos del PDSA cuyo incumplimiento está mejor documentado.</strong> En el repositorio no aparecen «predicción», «iteración de ciclos» ni «datos en el tiempo» (gráfico de evolución): la búsqueda devuelve cero resultados. Los criterios X1 y X2 (ADR-018) solo piden registrar el <em>alcance</em> de la evidencia.
+<ul>
+<li>Según PubMed, menos del 20 % de los PDSA publicados documentan ciclos iterativos y solo el 15 % usa datos al menos mensuales (Taylor et al., <em>BMJ Qual Saf</em> 2014, <a href="https://doi.org/10.1136/bmjqs-2013-001862" target="_blank" rel="noopener">DOI</a>).</li>
+<li>Solo el 4 % cumple los cuatro rasgos clave: iteración, datos continuos, pequeña escala y base teórica (Knudsen et al., <em>BMC Health Serv Res</em> 2019, <a href="https://doi.org/10.1186/s12913-019-4482-6" target="_blank" rel="noopener">DOI</a>).</li>
+<li><em>Consecuencia:</em> CoraLEAN puede dar por &quot;Suficiente&quot; un área de Experimentación con pruebas que no cumplen el método.</li>
+<li><em>Alternativa:</em> añadir tres criterios semilla (predicción escrita antes de la prueba, escala pequeña declarada, al menos N mediciones en el tiempo) y someterlos al tribunal de S5 y S6.</li>
+</ul>
+</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> La implicación del equipo no tiene criterio propio.</strong> El principio 5 de <code>METHOD_V0.md</code> («Involve the people who actually perform the work») sigue vigente según su banner, pero no se ha trasladado a ningún criterio de ADR-018 ni a las condiciones habilitantes de ADR-011, que cubren autoridad, tiempo, datos y observación. La literatura sobre por qué fracasan los programas de mejora sitúa &quot;convencer a la gente&quot;, el tribalismo y la falta de implicación entre los diez retos principales (Dixon-Woods et al., <em>BMJ Qual Saf</em> 2012, <a href="https://doi.org/10.1136/bmjqs-2011-000760" target="_blank" rel="noopener">DOI</a>).
+<ul>
+<li><em>Alternativa:</em> añadir un criterio, por ejemplo «S4 — quienes hacen el trabajo han validado la representación de la situación actual». S1 lo roza al pedir que la representación sea «reconocida como creíble por el equipo», pero hay que hacerlo explícito.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-2-3-areas-criterios-y-suficiencia">2.3 Áreas, criterios y suficiencia</h3>
+<ul>
+<li>
+<p><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> &quot;Derivada&quot; solo garantiza algo si los criterios se pueden comprobar, y la mayoría de los 17 criterios semilla son de juicio, no de observación.</strong> Por ejemplo:</p>
+<ul>
+<li>S3: «información <strong>suficientemente fiable</strong> para la decisión»;</li>
+<li>C2: «justificación <strong>suficiente</strong> … proporcionalidad»;</li>
+<li>S1: «reconocido como <strong>creíble</strong>»;</li>
+<li>E2: comparación «<strong>de forma razonada</strong>».</li>
+</ul>
+<p>ADR-008 define el criterio como «condición observable y explicable», pero estos criterios no son observables. Los evalúa el LLM.</p>
+<ul>
+<li>
+<p><em>Consecuencia práctica:</em> la &quot;suficiencia derivada&quot; es en realidad <strong>la opinión del LLM con una justificación</strong>, y además variable entre conversaciones. El contrato promete explicabilidad («qué criterios están cumplidos y por qué»), pero no reproducibilidad.</p>
+</li>
+<li>
+<p><em>Alternativa verificable:</em> dividir cada criterio en dos partes:</p>
+<ol>
+<li>una <strong>comprobación estructural</strong> que se puede automatizar, por ejemplo «existe al menos una medida con definición operativa» o «la hipótesis activa tiene al menos una evidencia enlazada»;</li>
+<li>un <strong>juicio</strong> que confirma una persona (la responsable local o la facilitadora), quedando registrado.</li>
+</ol>
+<p>Así la suficiencia se deriva de hechos comprobables y de juicios atribuidos a alguien, nunca de una inferencia del modelo.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> La complejidad combinatoria de la derivación.</strong> La etiqueta de un área depende de:</p>
+<ul>
+<li>los criterios;</li>
+<li>la clasificación de cada criterio (estrictamente necesario u ordinario), que además es <strong>relativa a cada decisión</strong> (ADR-015);</li>
+<li>la relevancia como dimensión aparte (ADR-008, enmienda 2);</li>
+<li>el estado de cada criterio (cumplido / pendiente / no obtenible, con razón);</li>
+<li>el estatus de las entidades;</li>
+<li>los focos activos, que pueden ser varios (ADR-012).</li>
+</ul>
+<p>En software esto es una función. En un LLM que lee Markdown es una cadena larga de inferencias <strong>que ninguna de las 12 pruebas Alpha comprueba</strong>. RT-01 solo contrasta el foco y el siguiente paso con la clave de respuestas, y únicamente RT-03 y RT-08 repiten la prueba dos veces.</p>
+<ul>
+<li><em>Alternativa:</em> una <strong>prueba de determinismo</strong>. Consiste en hacer 5 lecturas en frío del mismo estado y medir la concordancia en momento de navegación, siguiente paso y suficiencia por área. Cuesta unas 2 horas y responde a la pregunta crítica.</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="lb lb-pref" title="Preferencia de diseño">PREF</span></strong> La escala de tres niveles más la relevancia está bien pensada. Para la v0, mantener varios focos de decisión con un foco principal (ADR-012) me parece prematuro. Bastaría con un foco principal y una lista de decisiones abiertas.</p>
+</li>
+</ul>
+<h3 id="b-2-4-prevencion-de-errores-metodologicos">2.4 Prevención de errores metodológicos</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> S1 (solución llevada de antemano), S4 (refutación), S5 (efecto aguas abajo), S6 (estandarizar tras una prueba débil) y S7 (degradación) cubren los errores clásicos. Están mejor especificados que en mi diseño A.</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> Toda la prevención depende de que el LLM respete un núcleo de 8 reglas invariables más 7 dimensiones por 3 modos, dentro de las instrucciones de un Project. La fuerza de esas reglas es la del cumplimiento de instrucciones del modelo de cada momento.
+<ul>
+<li><em>Alternativa:</em> convertir en comprobaciones de código las que lo permitan: nada pasa de &quot;propuesta&quot; a &quot;registrado&quot; sin confirmación; las decisiones de adopción tienen que tener evidencia enlazada. El LLM se queda con la detección en lenguaje natural.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-2-5-modelo-de-estado-evidencia-y-trazabilidad">2.5 Modelo de estado, evidencia y trazabilidad</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Varios principios de ADR-015 son exactamente los del diseño A: el estado es la fuente de verdad y la conversación solo la superficie; las decisiones no se sobrescriben; los derivados no se guardan; la procedencia distingue tres trazas; la intervención humana es un tipo de evento.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> El mecanismo es frágil por construcción, y ADR-017 lo reconoce:
+<ul>
+<li>no hay atomicidad;</li>
+<li>no hay control de concurrencia (decisión 6);</li>
+<li>no hay garantía de escritura en el sitio (decisión 2);</li>
+<li>la distinción entre cambio &quot;material&quot; y &quot;editorial&quot; la decide el LLM (ADR-015, consecuencias negativas);</li>
+<li>la edición manual queda «fuera del flujo soportado» (ADR-017, decisión 3).</li>
+</ul>
+</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> Si RT-03 confirma que solo se puede &quot;guardar como fuente nueva&quot; o &quot;proponer y que la persona confirme a mano&quot;, entonces <strong>la farmacéutica tendrá que gestionar versiones de ficheros Markdown</strong> después de cada interacción importante. Esa carga es la causa de abandono más probable que identifiqué en el Informe A.
+<ul>
+<li><em>Umbral de abandono propuesto:</em> si persistir el estado tras una sesión le lleva más de 5 minutos a una persona no experta, el runtime falla.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-2-6-complejidad-del-core-y-riesgo-de-burocratizacion">2.6 Complejidad del Core y riesgo de burocratización</h3>
+<ul>
+<li>
+<p><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span> Volumen y velocidad:</strong></p>
+<ul>
+<li><code>GLOSSARY.md</code> define unos 45 términos canónicos.</li>
+<li>Los ADR-005 a ADR-019 (15 decisiones) llevan todos fecha <strong>2026-10-01</strong>; el freeze se hizo el 2 de octubre, unas 48 horas después de crear el repositorio y <strong>antes de cualquier contacto con usuarios</strong>.</li>
+<li>La documentación de producto suma unas 23.000 palabras, frente a cero artefactos de runtime: no hay instrucciones del Project, ni Starter Kit, ni tarjetas de conocimiento, ni fixture.</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> Hay infraestructura de proceso desproporcionada para un repositorio de documentación:</p>
+<ul>
+<li>dos copias completas de 37 skills (en <code>.agents/skills</code> y en <code>.pi/skills</code>);</li>
+<li>19 agentes <code>atenea-*</code>, con enrutado por coste y catálogo de modelos gratuitos (rama: <code>.opencode/</code>, <code>docs/ATENEA_*</code>).</li>
+</ul>
+<p>No es un defecto del producto, pero sí indica dónde se está invirtiendo el tiempo.</p>
+</li>
+<li>
+<p><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> El riesgo de burocracia <strong>para el usuario</strong> está bien contenido en el diseño: la regla anti-ceremonia de ADR-018, S2 sin ceremonia, criterios proporcionales.</p>
+</li>
+<li>
+<p><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> La complejidad no desaparece: pasa al LLM. Puede aparecer como verbosidad, explicaciones de la maquinaria interna («este criterio es estrictamente necesario para la decisión…») o derivaciones inconsistentes.</p>
+</li>
+</ul>
+<h3 id="b-2-7-separacion-entre-metodologia-e-infraestructura">2.7 Separación entre metodología e infraestructura</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Es excelente en lo conceptual. Los ADR-015 y ADR-016 son independientes del formato. La regla «una Skill no adquiere autoridad» y la de fallback con equivalencia metodológica son muy sólidas. Las operaciones MCP de <code>AGENTS.md</code> (get_project_state, record_evidence…) son prácticamente la API que yo propondría.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> En lo operativo, la separación se rompe: el runtime elegido traslada la infraestructura (ficheros, versiones, concurrencia) <strong>al usuario final</strong>.</li>
+</ul>
+<h3 id="b-2-8-arquitectura-de-conocimiento">2.8 Arquitectura de conocimiento</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> La distinción entre guía respaldada por una fuente, síntesis de CoraLEAN y evidencia local (ADR-004), junto con la prohibición de inventar páginas o secciones, es una diferenciación real que el diseño A no tenía. Recomiendo conservarla.</li>
+<li><strong><span class="lb lb-pref" title="Preferencia de diseño">PREF</span></strong> Verificar a nivel de afirmación, con tres niveles (fuente / afirmación / tarjeta, ADR-013), es correcto en teoría pero prematuro: <strong>todavía no existe ninguna tarjeta</strong> en el repositorio.
+<ul>
+<li><em>Alternativa:</em> tarjetas con una lista de fuentes, y verificación por afirmación solo para las que se citen literalmente ante el usuario.</li>
+</ul>
+</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> En un ChatGPT Project, recuperar el contenido de las tarjetas y citarlo depende de la búsqueda interna en ficheros y del modelo. S13 lo pone a prueba, lo cual está bien, pero todavía no se ha ejecutado.</li>
+</ul>
+<h3 id="b-2-9-experiencia-de-usuario-y-accesibilidad">2.9 Experiencia de usuario y accesibilidad</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Las intenciones de trabajo en lenguaje humano (<code>START_HERE.md</code> §6), el vocabulario cerrado de seis momentos (ADR-012) y el principio de que «siguiente paso + razón» se pueda recuperar siempre (ADR-014, regla 7) coinciden con mi pantalla &quot;Ahora&quot;.</li>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Preparar reunión y Procesar reunión (ADR-016) son exactamente el ciclo central del diseño A. Es una convergencia independiente, y eso aumenta la confianza en ambas propuestas.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> No hay interfaz definida: el cockpit está aplazado (ADR-008, enmienda 2) y <code>COCKPIT.md</code> está superado. No se trata la accesibilidad. El &quot;bootstrap&quot; supone que «Coraline configures the Project» (<code>BOOTSTRAP.md</code>), una capacidad que nadie ha verificado (RT-03 y RT-10 están pendientes).</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> La experiencia del usuario es la de una conversación. La orientación visual que <code>PRODUCT_VISION.md</code> considera necesaria («state is difficult to visualise») no existe en la v0.</li>
+</ul>
+<h3 id="b-2-10-escalabilidad-y-viabilidad-comercial">2.10 Escalabilidad y viabilidad comercial</h3>
+<ul>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> No hay modelo de negocio, ni comprador, ni precio: buscar «precio», «licencia» o «pago» en el repositorio no da resultados relevantes. ADR-003 define dos modelos de distribución, pero no quién paga.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> El modelo &quot;recurso&quot; de <code>BACKEND_STRATEGY.md</code> (Path A, niveles 2 y 3) contempla un <strong>GitHub o una base de datos gestionados por el propio usuario sanitario</strong>. Esto contradice las restricciones del encargo.</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> El modelo de servicio, con Silvia entrando en el proyecto, es el más viable comercialmente según mi análisis A, y es precisamente el que la v0 <strong>no puede soportar</strong>. ADR-005 lo deja fuera del Core v0.1.</li>
+</ul>
+<h3 id="b-2-11-compatibilidad-real-con-organizaciones-microsoft">2.11 Compatibilidad real con organizaciones Microsoft</h3>
+<ul>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> No hay ninguna mención a Microsoft, Copilot, Teams ni Entra en todo el repositorio.</li>
+<li>Las 12 pruebas Alpha son específicas de ChatGPT: Projects, memoria, Work, Voice y Skills. Si una organización solo tiene Copilot, ese trabajo de verificación no se puede reutilizar.</li>
+</ul>
+<h3 id="b-2-12-portabilidad-entre-llm-y-plataformas">2.12 Portabilidad entre LLM y plataformas</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> La semántica del Core es portable: está en español, no depende de un formato y separa Core, Playbook y Skill.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> El runtime, el bootstrap y las pruebas dependen de funciones de producto de ChatGPT. Portarlo supone rehacer la verificación entera para cada plataforma.</li>
+</ul>
+<h3 id="b-2-13-seguridad-y-gobernanza">2.13 Seguridad y gobernanza</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> La frontera &quot;sin datos de pacientes&quot; se repite de forma coherente (ADR-001, <code>AGENTS.md</code> «Privacy», <code>BACKEND_STRATEGY.md</code>).</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> No se trata qué cuenta usa cada profesional, qué plan ni con qué configuración de datos. Esto es lo que dice OpenAI:
+<ul>
+<li>En los planes personales (Free, Plus, Pro), las conversaciones <strong>pueden usarse para entrenar modelos por defecto</strong> salvo que el usuario lo desactive. En Business, Enterprise y la API no se usan por defecto (<a href="https://help.openai.com/en/articles/8983130-what-if-i-want-to-keep-my-history-on-but-disable-model-training" target="_blank" rel="noopener">OpenAI Help 8983130</a>).</li>
+<li>Los proyectos compartidos están disponibles en todos los planes, con límites de colaboradores (<a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">OpenAI Help 10169521</a>). Silvia y la farmacéutica <em>pueden</em> compartir un proyecto técnicamente, pero probablemente lo harían con cuentas personales.</li>
+</ul>
+</li>
+<li><strong><span class="lb lb-rie" title="Riesgo hipotético">RIE</span></strong> Las notas de las reuniones contendrán nombres de profesionales y, con alta probabilidad, anécdotas sobre pacientes, aunque el piloto sea &quot;de proceso&quot;. Ni Procesar reunión (ADR-016) ni el protocolo de interacción (ADR-017, decisión 4) incluyen un paso para detectar o filtrar datos personales.
+<ul>
+<li><em>Alternativa:</em> añadir esa comprobación al protocolo de cierre y una regla explícita sobre la cuenta: plan de organización, o al menos entrenamiento desactivado y verificado antes del 26.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-2-14-viabilidad-del-mvp-y-estrategia-de-validacion">2.14 Viabilidad del MVP y estrategia de validación</h3>
+<ul>
+<li><strong><span class="lb lb-fort" title="Fortaleza">FORT</span></strong> Las reglas PASS/FAIL/PARTIAL/BLOCKED, la clasificación de hallazgos en tres vías (fallo de runtime / necesidad de fallback / contradicción del Core, en la sección 9 del plan Alpha) y la regla de STOP son de muy buena calidad.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> No se ha ejecutado nada: las 12 pruebas Alpha están en <code>PENDIENTE</code>, el fixture no está materializado y <code>docs/feedback/</code> está vacío.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> Silvia es a la vez quien observa y quien ejecuta todo (sección 7 del plan Alpha: «Silvia ejecuta» en las 12 pruebas). Eso es sesgo de observador, y además Silvia está ocupada en la semana del piloto.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> <strong>No hay grupo de comparación.</strong> Ningún documento compara CoraLEAN con &quot;ChatGPT más un prompt de una página&quot;. Sin esa comparación no se sabe qué aportan los 19 ADR.</li>
+<li><strong><span class="lb lb-dem" title="Defecto demostrado">DEM</span></strong> Las pruebas Alpha comprueban que el runtime <strong>conserva el estado</strong>, no que el LLM lo <strong>construya bien</strong>. Por ejemplo, qué porcentaje de las frases ambiguas de una reunión se clasifican como hipótesis y no como hechos. Esto último es el valor central de &quot;Procesar reunión&quot; y no tiene una prueba cuantitativa.</li>
+</ul>
+<h3 id="b-2-15-contradicciones-internas">2.15 Contradicciones internas</h3>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Contradicción</th>
+<th>Documentos</th>
+<th>Tipo</th>
+<th>Consecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Las reglas operativas siguen hablando de fases y gates: «State should distinguish… phase; gate», y las operaciones MCP <code>check_gate</code>, <code>update_phase</code>. La tabla de reconciliación del freeze <strong>no incluye</strong> <code>AGENTS.md</code></td>
+<td><code>AGENTS.md</code> («State discipline», «MCP discipline») frente a ADR-006/012 y <code>CORE_FREEZE_V0.1.md</code> §4</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>Los agentes que leen <code>AGENTS.md</code> (es lectura obligatoria) recibirán un modelo de fases ya superado</td>
+</tr>
+<tr>
+<td>2</td>
+<td>La jerarquía de fuentes pone «user decisions in the CoraLEAN Project <strong>conversation</strong>» por encima de los ADR</td>
+<td><code>AGENTS.md</code> «Source-of-truth hierarchy» frente a ADR-015 «Principio»</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>Contradice que el estado sea la verdad; permite cambiar el Core por conversación</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La protocolo de feedback y el piloto siguen preguntando por &quot;phase&quot;, «wrong phase recommendation» y «Does the lifecycle make sense?»</td>
+<td><code>FEEDBACK_PROTOCOL.md</code>, <code>PILOT_MERIDA.md</code> frente a ADR-006</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>Los instrumentos del piloto miden un modelo que ya no existe</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La supervisión compartida «no debe contaminar el Core v0.1», pero el éxito del piloto exige que Silvia observe y reduzca sus intervenciones sobre el proyecto de la farmacéutica</td>
+<td>ADR-005 frente a <code>START_HERE.md</code> §9, <code>PILOT_MERIDA.md</code>, ADR-017 (consecuencias negativas)</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>El piloto necesita una capacidad que la v0 excluye</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ADR-008 dice que el runtime hará cumplir la derivación de la suficiencia; ADR-017 no la hace cumplir ni la prueba</td>
+<td>ADR-008 (consecuencias negativas) frente a ADR-017 y el plan Alpha §6</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>El invariante principal no tiene ni mecanismo ni prueba</td>
+</tr>
+<tr>
+<td>6</td>
+<td>El nombre «Coraline» se usa en ADR-014/015/016 y en el glosario, pero la decisión sobre el nombre está «pendiente»</td>
+<td><code>CORE_FREEZE_V0.1.md</code> §6.4</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span>, menor</td>
+<td>Ruido de vocabulario</td>
+</tr>
+<tr>
+<td>7</td>
+<td>El bootstrap supone que Coraline configura el Project, algo que el runtime no ha verificado</td>
+<td><code>BOOTSTRAP.md</code> frente a ADR-017 (hipótesis 3 y 10)</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span>, menor</td>
+<td>El Starter Kit depende de una capacidad no probada</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Las restricciones del encargo («sin Markdown», «sin suscripción personal», «Copilot, ChatGPT o servicios restringidos») frente a un runtime ChatGPT-first con estado en Markdown</td>
+<td>Encargo del Informe A frente a ADR-002/017</td>
+<td><span class="lb lb-dem" title="Defecto demostrado">DEM</span></td>
+<td>El diseño actual no responde al problema tal como me lo planteasteis. Puede que las restricciones sean posteriores a los ADR; si es así, son los ADR los que hay que reabrir</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="b-2-16-redundancias">2.16 Redundancias</h3>
+<p>Ninguna es grave, pero suman carga:</p>
+<ul>
+<li>Hay tres descripciones de los modelos de distribución: ADR-003, <code>BACKEND_STRATEGY.md</code> y <code>PRODUCT_VISION.md</code>.</li>
+<li>Se mantienen tres documentos superados en la ruta principal de lectura, con aviso: <code>METHOD_V0</code>, <code>COCKPIT</code> y <code>PROJECT_STATE_MODEL</code>.</li>
+<li><code>DECISION_LOG.md</code> y <code>CORE_FREEZE_V0.1.md</code> duplican el mapa de autoridad.</li>
+<li>Hay dos árboles de skills idénticos.</li>
+</ul>
+<h3 id="b-2-17-decisiones-prematuras-y-decisiones-aplazadas-que-no-deb">2.17 Decisiones prematuras y decisiones aplazadas que no deberían estarlo</h3>
+<p><strong>Prematuras:</strong></p>
+<ul>
+<li>Congelar 15 ADR en un día, sin evidencia de usuarios.</li>
+<li>Cerrar el conjunto de siete dimensiones de andamiaje: «cualquier dimensión nueva exige revisar este ADR» (ADR-014). Esto bloquea justo la dimensión que falta, la de aprendizaje.</li>
+<li>Tres trazas de procedencia mantenidas a mano.</li>
+<li>Verificación por afirmación antes de que exista ninguna tarjeta.</li>
+<li>Varios focos de decisión simultáneos.</li>
+</ul>
+<p><strong>Aplazada que no debería estarlo:</strong> el <strong>estado compartido</strong>. Se aplaza a la «reversal condition», pero el piloto lo necesita desde el primer día (ver la contradicción 4).</p>
+<hr />
+<h2 id="b-3-contraste-obligatorio-a-frente-a-b-frente-a-c" data-k="B">3. Contraste obligatorio: A frente a B frente a C</h2>
+<p><strong>Las tres soluciones:</strong></p>
+<ul>
+<li><strong>A — Mi diseño independiente</strong> (Informe A, sin modificar). Núcleo propio con un motor de reglas determinista, un registro tipado y un LLM opcional que solo propone. Canales web, Teams y MCP. Modo sin IA. Validación primero con un servicio de mentoría (&quot;concierge&quot;) y comparación con una referencia.</li>
+<li><strong>B — CoraLEAN Core v0.1 y su runtime.</strong> Semántica rica (ADR-005 a ADR-019), ejecutada en un ChatGPT Project, con el estado en <code>estado-proyecto.md</code> y <code>historia-material.md</code> mantenidos por el LLM, sin backend y validada con 12 pruebas Alpha y 14 escenarios.</li>
+<li><strong>C — Híbrido propuesto.</strong> La <strong>semántica de B</strong> (áreas, condiciones de dos ejes, condiciones habilitantes, procedencia, intervención humana como evento, procedencia de las fuentes) aplicada con la <strong>arquitectura de A</strong>: estado canónico en un servicio mínimo; criterios divididos en comprobaciones de código y juicios humanos; superficies conversacionales intercambiables a través de las operaciones MCP que ya aparecen en <code>AGENTS.md</code>. Se añaden el mecanismo pedagógico de A y una validación con referencia de comparación.</li>
+</ul>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>A (Informe A)</th>
+<th>B (CoraLEAN v0.1)</th>
+<th>C (Híbrido)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Objetivos que satisface mejor</strong></td>
+<td>Continuidad, trazabilidad fiable, adopción en organizaciones Microsoft o restringidas, medición</td>
+<td>Rigor metodológico, gestión de la incertidumbre, procedencia de la guía, rapidez para empezar a experimentar</td>
+<td>Los de A más el rigor de B; es la única que hace cumplir los invariantes de B</td>
+</tr>
+<tr>
+<td><strong>Necesidades sin resolver</strong></td>
+<td>Metodología menos fina (fases simples, sin distinguir experimentar de adoptar ni la proporcionalidad)</td>
+<td>Concurrencia, determinismo, supervisión de la mentora, Microsoft, gobernanza, mecanismo de aprendizaje, modelo de negocio</td>
+<td>Coste de construcción; homologación de seguridad si se escala al sector público</td>
+</tr>
+<tr>
+<td><strong>Complejidad funcional</strong></td>
+<td>Media</td>
+<td>Alta (unos 45 conceptos), aunque oculta tras la conversación</td>
+<td>Media-alta: la semántica de B simplificada (sección 4)</td>
+</tr>
+<tr>
+<td><strong>Complejidad técnica</strong></td>
+<td>Media (aplicación web, PostgreSQL, motor de reglas)</td>
+<td>Baja aparente y alta real: la complejidad pasa al LLM y al usuario</td>
+<td>Media; se puede empezar muy pequeño (sección 4)</td>
+</tr>
+<tr>
+<td><strong>Facilidad de uso para sanitarios</strong></td>
+<td>Alta en la web; requiere una cuenta más</td>
+<td>Alta para conversar; <strong>baja</strong> para mantener el estado si RT-03 no da escritura en el sitio</td>
+<td>Alta: se conversa donde se quiera y el estado no se gestiona a mano</td>
+</tr>
+<tr>
+<td><strong>Dependencia de proveedores</strong></td>
+<td>Baja (LLM sustituible, modo sin IA)</td>
+<td><strong>Muy alta</strong> (funciones de ChatGPT: Projects, memoria, Work, Skills, Voice)</td>
+<td>Baja; ChatGPT y Copilot son clientes</td>
+</tr>
+<tr>
+<td><strong>Integración y adopción hospitalaria</strong></td>
+<td>Media-alta (pestaña de Teams, Entra, modelo propio de la organización)</td>
+<td>Baja: cuentas personales, nada de Microsoft, sin gobernanza documentada</td>
+<td>Media-alta</td>
+</tr>
+<tr>
+<td><strong>Riesgo de fallos metodológicos</strong></td>
+<td>Medio (método más simple, pero las puertas se cumplen siempre)</td>
+<td>Medio-alto (método excelente, cumplimiento probabilístico y no reproducible)</td>
+<td><strong>Bajo</strong>: método de B con cumplimiento determinista de lo estructural</td>
+</tr>
+<tr>
+<td><strong>Infraestructura propia</strong></td>
+<td>Sí, desde el MVP</td>
+<td>No (aparente)</td>
+<td>Sí, mínima: una base de datos, una API y un servidor MCP</td>
+</tr>
+<tr>
+<td><strong>Coste de desarrollo y operación</strong></td>
+<td>Medio</td>
+<td>Muy bajo en código y <strong>alto en horas de Silvia</strong> y en redacción y verificación de instrucciones</td>
+<td>Bajo-medio. Estimo <strong><span class="lb lb-hip" title="Hipótesis">Hip</span></strong> 4–6 semanas de una persona para el registro, la vista &quot;Ahora&quot;, la revisión de propuestas y el servidor MCP</td>
+</tr>
+<tr>
+<td><strong>Mantenibilidad y evolución</strong></td>
+<td>Buena</td>
+<td>Frágil: cada cambio de modelo o de producto en ChatGPT obliga a repetir las pruebas</td>
+<td>Buena: la especificación del método se versiona; las superficies se pueden cambiar</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>En qué gana B a A (debo reconocerlo):</strong> el modelo metodológico, la proporcionalidad, la procedencia que separa intervención humana de la de la IA, la procedencia de las fuentes, la honestidad sobre lo que no se sabe (ADR-017 separa capacidad documentada, decisión y supuesto) y una validación más falsable que la mía.</p>
+<p><strong>En qué gana A a B:</strong> el cumplimiento real de las reglas, la adopción institucional, la gobernanza, el mecanismo pedagógico, los aspectos específicos del PDSA, el diseño de la medición y la viabilidad del modelo de servicio.</p>
+<p><strong>Veredicto:</strong> <strong>C supera a las dos.</strong> No es un término medio: es lo que se obtiene al ejecutar la especificación de B con el tipo de runtime para el que en realidad está escrita.</p>
+<hr />
+<h2 id="b-4-rediseno-contrafactual" data-k="B">4. Rediseño contrafactual</h2>
+<h3 id="b-4-1-construiria-coralean-como-lo-habeis-disenado">4.1 ¿Construiría CoraLEAN como lo habéis diseñado?</h3>
+<p><strong>No.</strong> Mantendría la tesis («método, estado, condiciones y guía visual alrededor de la IA»; <code>PRODUCT_VISION.md</code>) y la mayor parte de la semántica. Cambiaría lo que sigue.</p>
+<h3 id="b-4-2-decisiones-que-conservaria-intactas">4.2 Decisiones que conservaría intactas</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Decisión</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADR-001 Independencia de PROMueve</td>
+<td>Evita acoplarse a un solo cliente</td>
+</tr>
+<tr>
+<td>ADR-004 Tres categorías: guía con fuente / síntesis / evidencia local</td>
+<td>Diferenciación real y protección frente a alucinaciones</td>
+</tr>
+<tr>
+<td>ADR-005 El usuario es el responsable local; rol ≠ modo; intervención humana distinguible</td>
+<td>Hace medible la transferencia</td>
+</tr>
+<tr>
+<td>ADR-006 Artefactos como proyecciones; sin porcentajes</td>
+<td>Evita la falsa precisión</td>
+</tr>
+<tr>
+<td>ADR-007 Siete áreas; experimentar ≠ adoptar</td>
+<td>Superior a mi A3 por fases</td>
+</tr>
+<tr>
+<td>ADR-009 Español como lengua canónica</td>
+<td>Coherente con la población usuaria</td>
+</tr>
+<tr>
+<td>ADR-010 Dos ejes; «prohibir impulsar, no idear»; experimentos exploratorios acotados</td>
+<td>Precisa y aplicable en código</td>
+</tr>
+<tr>
+<td>ADR-011 Condiciones habilitantes proporcionales y estados del proyecto</td>
+<td>Cubre el fracaso organizativo</td>
+</tr>
+<tr>
+<td>ADR-012 Seis momentos y &quot;siguiente paso + razón&quot;</td>
+<td>Interfaz mínima de orientación</td>
+</tr>
+<tr>
+<td>ADR-015 Principios: estado como verdad, sin sobrescribir decisiones, derivados no guardados, intervención humana como evento</td>
+<td>Son los mismos del diseño A</td>
+</tr>
+<tr>
+<td>ADR-016 Dos skills: Preparar y Procesar reunión; las skills no adquieren autoridad</td>
+<td>El ciclo central, confirmado de forma independiente</td>
+</tr>
+<tr>
+<td>ADR-019 Escenarios S1–S14 como batería de pruebas</td>
+<td>Se convierten en pruebas automáticas en C</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="b-4-3-decisiones-que-simplificaria">4.3 Decisiones que simplificaría</h3>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>Decisión</th>
+<th>Simplificación</th>
+<th>Problema que resuelve</th>
+<th>Cómo verificarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADR-008 y ADR-018 (suficiencia derivada de criterios de juicio)</td>
+<td>Dividir cada criterio en <strong>comprobación estructural</strong> (código) y <strong>juicio confirmado por una persona</strong>. La clasificación estricta u ordinaria se toma de una <strong>tabla fija por tipo de decisión</strong>, que ya existe en la matriz de ADR-010, no se decide caso por caso</td>
+<td>La suficiencia deja de ser la opinión del LLM y se vuelve reproducible</td>
+<td>La misma entrada da la misma etiqueta 5 de 5 veces</td>
+</tr>
+<tr>
+<td>ADR-012 (varios focos de decisión)</td>
+<td>Un foco principal y una lista de decisiones abiertas</td>
+<td>Menos ambigüedad en &quot;¿qué hago ahora?&quot;</td>
+<td>S11 sigue pasando</td>
+</tr>
+<tr>
+<td>ADR-013 (verificación por afirmación)</td>
+<td>Tarjetas con su lista de fuentes; verificación por afirmación solo para lo que se cita</td>
+<td>Se puede empezar a escribir tarjetas ya</td>
+<td>S13 sigue pasando con 10–15 tarjetas</td>
+</tr>
+<tr>
+<td>ADR-014 (siete dimensiones cerradas)</td>
+<td>Reabrir el conjunto para añadir la dimensión de aprendizaje (4.4)</td>
+<td>Hoy el ADR bloquea la mejora más necesaria</td>
+<td>—</td>
+</tr>
+<tr>
+<td>ADR-015 (tres trazas a mano)</td>
+<td>Mantener los campos, pero que el sistema rellene «quién registró»</td>
+<td>En software no cuesta nada; en Markdown es una fuente de errores</td>
+<td>RT-05 se vuelve trivial</td>
+</tr>
+<tr>
+<td>Documentación</td>
+<td>Archivar los documentos superados; eliminar el árbol de skills duplicado; reconciliar <code>AGENTS.md</code>, <code>FEEDBACK_PROTOCOL.md</code> y <code>PILOT_MERIDA.md</code> con el freeze</td>
+<td>Elimina las contradicciones 1–3</td>
+<td>Una búsqueda de «phase|gate» en documentos vigentes no da resultados</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="b-4-4-decisiones-que-cambiaria">4.4 Decisiones que cambiaría</h3>
+<ol>
+<li>
+<p><strong>Runtime (ADR-002 y ADR-017).</strong> Cambiaría «ChatGPT Project con Markdown mantenido por el LLM como estado canónico» por «<strong>servicio mínimo de estado como fuente canónica, y cualquier superficie de LLM como cliente</strong>».</p>
+<ul>
+<li><em>Problema que resuelve:</em> las contradicciones 4 y 5, la concurrencia, la supervisión de Silvia y la dependencia de un proveedor.</li>
+<li><em>Por qué no hace falta esperar a las 12 pruebas:</em> ADR-017 ya sabe que dos ficheros Markdown no tienen ni atomicidad ni concurrencia («resuelven el almacenamiento, no la concurrencia»). RT-04, RT-06 y RT-07 miden cuánto falla algo que falla por construcción.</li>
+<li><em>Lo que sí debe decidirse con evidencia:</em> si la <em>superficie conversacional</em> de ChatGPT es adecuada (RT-01, RT-09 y RT-12, más la prueba de determinismo).</li>
+</ul>
+</li>
+<li>
+<p><strong>Mecanismo de transferencia de capacidad (ADR-014; ADR nuevo).</strong></p>
+<ul>
+<li>Principio de <strong>&quot;primero tú&quot;</strong>: en los momentos de razonamiento (enunciar el problema, proponer hipótesis, predecir el resultado de una prueba, decidir el siguiente paso), la persona escribe primero y CoraLEAN critica o completa después.</li>
+<li><strong>Retirada de la ayuda por competencia</strong>, no por un modo global, según comportamientos observables en el registro.</li>
+<li>Las competencias pertenecen a la persona y no se usan para evaluarla. Así se evita el riesgo, señalado en el Informe A, de entrar en la categoría de evaluación de trabajadores del Anexo III de la Ley de IA.</li>
+<li><em>Evidencia que lo apoya:</em> un tutor generativo sin salvaguardas mejoró el rendimiento durante la práctica, pero empeoró el aprendizaje un 17 % al retirarlo; un tutor con salvaguardas pedagógicas lo mitigó (Bastani et al., <em>PNAS</em> 2025, <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education" target="_blank" rel="noopener">resumen Wharton</a>). Es un estudio en otro contexto, pero el mecanismo es el mismo.</li>
+<li><em>Cómo verificarlo:</em> en S14, el porcentaje de elementos del registro creados primero por la responsable local debe aumentar entre sesiones.</li>
+</ul>
+</li>
+<li>
+<p><strong>Diseño de validación (ADR-019 y piloto).</strong> Añadir:</p>
+<ul>
+<li>una <strong>medición basal</strong> de la farmacéutica antes de la sesión del 26;</li>
+<li>un <strong>evaluador independiente</strong>, con una rúbrica, que no sepa qué proyecto viene de qué condición;</li>
+<li>una <strong>comparación con la referencia</strong> (ChatGPT con un prompt de una página) en S1–S14;</li>
+<li>una <strong>prueba cuantitativa de Procesar reunión</strong> contra una clasificación de referencia hecha por una persona.</li>
+</ul>
+<p>Silvia deja de ser a la vez quien diseña, ejecuta y evalúa.</p>
+</li>
+<li>
+<p><strong>Gobernanza (ADR nuevo).</strong> Política de cuentas: plan de organización o entrenamiento desactivado y verificado. Comprobación de datos personales en el protocolo de cierre. Evaluación de impacto ligera antes de pasar a una segunda organización.</p>
+</li>
+<li>
+<p><strong>Vía Microsoft y vía sin IA (ADR nuevo).</strong> Con el estado canónico fuera del LLM, Copilot (agente declarativo con MCP) y el modo sin IA son canales adicionales, no reescrituras.</p>
+</li>
+</ol>
+<h3 id="b-4-5-decisiones-que-eliminaria">4.5 Decisiones que eliminaría</h3>
+<ul>
+<li>El <strong>bootstrap</strong> en el que «Coraline configura el Project» (<code>BOOTSTRAP.md</code>).</li>
+<li>El modelo &quot;recurso&quot; con <strong>GitHub o base de datos gestionados por el usuario</strong> (<code>BACKEND_STRATEGY.md</code>, Path A, niveles 2 y 3).</li>
+<li><strong>Sites</strong> como candidato a cockpit (ADR-002): introduce otra dependencia de una función de ChatGPT.</li>
+<li>Las <strong>pruebas RT-04, RT-06, RT-07 y RT-08</strong>, si se adopta el cambio 4.4.1. Sus resultados dejan de importar.</li>
+<li>La <strong>orquestación multiagente de 19 agentes</strong> para producir documentación. No es producto, pero consume la capacidad del equipo.</li>
+</ul>
+<h3 id="b-4-6-capacidades-importantes-que-faltan">4.6 Capacidades importantes que faltan</h3>
+<ol>
+<li>Criterios de PDSA: predicción, iteración, escala y datos en el tiempo, con un gráfico de evolución sencillo.</li>
+<li>Criterio de implicación del equipo y de las personas que hacen el trabajo.</li>
+<li>Mecanismo de aprendizaje: &quot;primero tú&quot; y retirada de ayuda por competencia.</li>
+<li>Panel de la mentora: proyectos ordenados por riesgo e inactividad. Es el producto del modelo de servicio.</li>
+<li>Gobernanza: cuentas, datos personales, evaluación de impacto.</li>
+<li>Vía Microsoft y modo sin IA.</li>
+<li>Comprador y modelo de negocio. Sugiero un programa de mentoría con software, posiblemente vinculado a formación continuada acreditada.</li>
+<li>Métrica de reanudación: tiempo hasta reconstruir correctamente el estado tras varias semanas. S10 la cubre en lo cualitativo; falta un número.</li>
+<li>Exportación completa, por portabilidad y para las auditorías de acreditación.</li>
+</ol>
+<h3 id="b-4-7-experimentos-antes-de-decidir">4.7 Experimentos antes de decidir</h3>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Experimento</th>
+<th>Coste</th>
+<th>Decide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td><strong>Determinismo</strong>: 5 lecturas en frío del fixture; concordancia en momento, siguiente paso y suficiencia por área</td>
+<td>Unas 2 h (requiere materializar el fixture: unas 2–3 h)</td>
+<td>Si el LLM puede <em>derivar</em> el estado o solo <em>leerlo</em></td>
+</tr>
+<tr>
+<td>E2</td>
+<td><strong>RT-03 (actualización física) + carga de mantenimiento</strong>: tiempo que tarda una persona no experta en guardar el estado tras una sesión</td>
+<td>Unas 2 h</td>
+<td>Si la v0 es viable para la farmacéutica (umbral: 5 min)</td>
+</tr>
+<tr>
+<td>E3</td>
+<td><strong>Precisión de Procesar reunión</strong>: 3 conjuntos de notas sintéticas realistas, clasificación de referencia hecha por Silvia, más medición de hechos inventados y de hipótesis tratadas como hechos</td>
+<td>½ día</td>
+<td>El valor central del producto</td>
+</tr>
+<tr>
+<td>E4</td>
+<td><strong>Comparación con la referencia</strong>: S1–S14 con CoraLEAN frente a ChatGPT con un prompt de una página, evaluado a ciegas por un experto externo en mejora</td>
+<td>1–2 días</td>
+<td>Qué aportan realmente los 19 ADR</td>
+</tr>
+<tr>
+<td>E5</td>
+<td><strong>Consulta institucional</strong>: TI y delegado de protección de datos del área. ¿Qué herramienta de IA está autorizada? ¿Hay Copilot? ¿Con qué plan?</td>
+<td>1–2 semanas de espera, 1 h de trabajo</td>
+<td>La viabilidad del canal</td>
+</tr>
+<tr>
+<td>E6</td>
+<td><strong>Mérida en modo &quot;mago de Oz&quot;</strong>: Silvia opera CoraLEAN; la farmacéutica recibe salidas impresas o compartidas y produce primero sus propias respuestas</td>
+<td>Coste de la propia sesión</td>
+<td>Comprueba la semántica y la pedagogía sin arriesgar el runtime</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="b-4-8-diseno-final-recomendado-mi-mejor-solucion">4.8 Diseño final recomendado (mi mejor solución)</h3>
+<p><strong>CoraLEAN = el Core metodológico de B + un registro mínimo determinista + superficies conversacionales intercambiables + un programa de mentoría.</strong></p>
+<pre><code> ESPECIFICACIÓN DEL MÉTODO (versionada, en datos: YAML/JSON derivado de los ADR 006–019)
+   áreas · criterios {estructural | juicio} · matriz de decisiones (ADR-010)
+   · regla de momentos (ADR-012) · competencias y retirada de ayuda (nuevo)
+                │
+ ┌──────────────▼────────────────────────────────────────────────┐
+ │ NÚCLEO (servicio mínimo)                                       │
+ │  Registro: entidades ADR-015 + historia material (eventos)     │
+ │  Motor: comprobaciones estructurales, invariantes, puertas    │
+ │         (código)                                               │
+ │  Derivados: suficiencia (estructural + juicios confirmados),   │
+ │             momento, siguiente paso — calculados, nunca        │
+ │             guardados                                          │
+ │  Procedencia automática; datos personales: aviso antes de      │
+ │  enviar texto a un LLM                                         │
+ │  API = las operaciones ya listadas en AGENTS.md                │
+ │        (get_project_state, record_evidence, add_hypothesis,    │
+ │         record_decision, create_action, propose_update…)       │
+ └───────┬───────────────┬─────────────────┬──────────────┬───────┘
+         │ MCP           │ MCP             │ HTTPS        │
+   ChatGPT (app o   Copilot (agente   Web mínima:      Sin IA:
+   Project con      declarativo,      Ahora · Revisar  web y
+   acción)          más adelante)     propuestas ·     plantillas
+                                      Registro ·
+                                      Panel mentora
+         └─ el LLM PROPONE (Procesar reunión) ─► una persona CONFIRMA en la web ─► registro
+</code></pre>
+<ul>
+<li><strong>Para el piloto:</strong> basta <strong>una</strong> superficie conversacional (la que ya usáis) y la web mínima.</li>
+<li><strong>Pedagogía:</strong> &quot;primero tú&quot; en los momentos de razonamiento, más retirada de ayuda por competencia, y la intervención humana como evento (ADR-015) para medir la transferencia.</li>
+<li><strong>Negocio:</strong> servicio de mentoría (Silvia, con su panel) más software. El modelo de recurso de autoservicio se deja para después.</li>
+</ul>
+<hr />
+<h2 id="b-5-priorizacion-ejecutiva" data-k="B">5. Priorización ejecutiva</h2>
+<p><strong>Cómo leer las columnas</strong> (son criterios explícitos, no puntuaciones):</p>
+<ul>
+<li><strong>Impacto.</strong> <em>Alto</em>: afecta a la validez del piloto o a la estrella polar. <em>Medio</em>: afecta a la calidad o al coste. <em>Bajo</em>: higiene.</li>
+<li><strong>Evidencia.</strong> <em>Fuerte</em>: demostrado en documentos o en la literatura. <em>Moderada</em>: inferencia sólida del diseño. <em>Débil</em>: hipótesis.</li>
+<li><strong>Reversibilidad.</strong> Lo fácil que es deshacer la acción. <em>Alta</em>: se deshace sin coste.</li>
+<li><strong>Urgencia.</strong> <em>Antes del 26-oct</em>, <em>Antes de construir</em> o <em>Tras el piloto</em>.</li>
+</ul>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Recomendación</th>
+<th>Impacto</th>
+<th>Evidencia</th>
+<th>Riesgo de no actuar</th>
+<th>Coste</th>
+<th>Reversibilidad</th>
+<th>Urgencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>No exponer a la farmacéutica a un runtime sin verificar el 26; sesión operada por Silvia (E6)</td>
+<td>Alto</td>
+<td>Fuerte (todas las pruebas pendientes)</td>
+<td>Fricción, pérdida de confianza y datos del piloto contaminados</td>
+<td>Bajo</td>
+<td>Alta</td>
+<td>Antes del 26-oct</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Materializar el fixture y ejecutar RT-01, E1 (determinismo) y E2 (RT-03 + carga)</td>
+<td>Alto</td>
+<td>Fuerte</td>
+<td>Decidir el runtime sin datos</td>
+<td>½–1 día</td>
+<td>Alta</td>
+<td>Antes del 26-oct</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Comprobar cuentas y datos: plan, entrenamiento desactivado, sin nombres de pacientes en las notas</td>
+<td>Alto</td>
+<td>Fuerte (documentación de OpenAI; ausencia en el repositorio)</td>
+<td>Incidente de protección de datos en la primera sesión real</td>
+<td>1 h</td>
+<td>Alta</td>
+<td>Antes del 26-oct</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Medición basal de la farmacéutica, rúbrica y evaluador independiente</td>
+<td>Alto</td>
+<td>Fuerte (n = 1 y observadora implicada)</td>
+<td>El piloto no podrá demostrar la transferencia</td>
+<td>½ día</td>
+<td>Alta</td>
+<td>Antes del 26-oct</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>E3: precisión de Procesar reunión frente a una referencia humana</td>
+<td>Alto</td>
+<td>Moderada</td>
+<td>Hechos inventados en el estado sin detectarlos</td>
+<td>½ día</td>
+<td>Alta</td>
+<td>Antes de construir</td>
+</tr>
+<tr>
+<td>R6</td>
+<td>E4: comparación con la referencia en S1–S14</td>
+<td>Alto</td>
+<td>Moderada</td>
+<td>Invertir en complejidad que no aporta</td>
+<td>1–2 días</td>
+<td>Alta</td>
+<td>Antes de construir</td>
+</tr>
+<tr>
+<td>R7</td>
+<td>Dividir criterios en estructurales y de juicio; tabla fija por tipo de decisión</td>
+<td>Alto</td>
+<td>Fuerte (criterios no observables en ADR-018)</td>
+<td>Suficiencia irreproducible</td>
+<td>1–2 días de diseño</td>
+<td>Media</td>
+<td>Antes de construir</td>
+</tr>
+<tr>
+<td>R8</td>
+<td>Mecanismo de aprendizaje: &quot;primero tú&quot; y retirada por competencia (ADR nuevo)</td>
+<td>Alto</td>
+<td>Moderada (literatura y ausencia en el Core)</td>
+<td>La estrella polar sin mecanismo</td>
+<td>2–3 días de diseño</td>
+<td>Media</td>
+<td>Antes de construir (probar a mano el 26)</td>
+</tr>
+<tr>
+<td>R9</td>
+<td>Criterios de PDSA (predicción, iteración, datos en el tiempo) y de implicación del equipo</td>
+<td>Medio-alto</td>
+<td>Fuerte (Taylor 2014; Knudsen 2019; Dixon-Woods 2012)</td>
+<td>Proyectos &quot;suficientes&quot; con método defectuoso</td>
+<td>1 día</td>
+<td>Alta</td>
+<td>Antes de construir</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Estado canónico fuera del LLM (servicio mínimo con MCP)</td>
+<td>Alto</td>
+<td>Moderada-fuerte (ADR-017 reconoce los límites)</td>
+<td>Concurrencia, sin supervisión de la mentora, dependencia de ChatGPT</td>
+<td>4–6 semanas <span class="lb lb-hip" title="Hipótesis">Hip</span></td>
+<td>Media-baja (la elección de tecnología es lo difícil de revertir; la semántica se conserva)</td>
+<td>Decidir tras R2, R5 y R6</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>ADR de vía Microsoft y modo sin IA</td>
+<td>Medio</td>
+<td>Fuerte (ausencia total)</td>
+<td>Mercado excluido</td>
+<td>1 día de diseño</td>
+<td>Alta</td>
+<td>Antes de una segunda organización</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>Modelo de negocio: programa de mentoría con software; panel de la mentora</td>
+<td>Alto (viabilidad)</td>
+<td>Moderada</td>
+<td>Producto sin comprador</td>
+<td>Conversaciones</td>
+<td>Alta</td>
+<td>En paralelo, ya</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>Reconciliar <code>AGENTS.md</code>, <code>FEEDBACK_PROTOCOL.md</code> y <code>PILOT_MERIDA.md</code>; archivar documentos superados</td>
+<td>Medio (los instrumentos del piloto)</td>
+<td>Fuerte</td>
+<td>Medir fases que no existen</td>
+<td>2 h</td>
+<td>Alta</td>
+<td>Antes del 26-oct (al menos <code>FEEDBACK_PROTOCOL</code>)</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>Congelar la producción de ADR nuevos (salvo R7, R8, R10 y R11) y reducir la orquestación multiagente</td>
+<td>Medio</td>
+<td>Fuerte (23.000 palabras frente a 0 artefactos de runtime)</td>
+<td>Seguir diseñando en lugar de validar</td>
+<td>Ninguno</td>
+<td>Alta</td>
+<td>Ya</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="b-plan-concreto-de-ejecucion">Plan concreto de ejecución</h3>
+<p><strong>1. Validar inmediatamente (23–26 de octubre)</strong></p>
+<ul>
+<li>Materializar el fixture de RT-01, que ya está especificado en el traspaso <code>docs/handoffs/RT01_FIXTURE_MATERIALIZATION_20261004.md</code>.</li>
+<li>Ejecutar RT-01 cinco veces (E1: determinismo) y RT-03 midiendo el tiempo de guardado (E2).</li>
+<li>Comprobar la cuenta y los datos con los que trabajará la farmacéutica (R3).</li>
+<li>Antes de la sesión, pedir a la farmacéutica, sin ayuda, que escriba: un enunciado del problema, qué sabe y qué supone, y cuál cree que es el siguiente paso y por qué. Eso es la medición basal (R4). Fijar la rúbrica y un evaluador que no sea Silvia.</li>
+<li>El 26, Silvia opera CoraLEAN. La farmacéutica responde <strong>antes</strong> de ver las propuestas, y Silvia registra cada intervención como evento (ADR-015).</li>
+<li>Adaptar al freeze las preguntas de <code>FEEDBACK_PROTOCOL.md</code>: quitar «phase» y preguntar por momentos y siguiente paso.</li>
+</ul>
+<p><strong>2. Rediseñar antes de desarrollar</strong></p>
+<ul>
+<li>R7: criterios estructurales frente a criterios de juicio, y tabla de decisiones.</li>
+<li>R8: mecanismo de aprendizaje, con un ADR que reabra ADR-014.</li>
+<li>R9: criterios de PDSA y de implicación del equipo.</li>
+<li>R10: decisión sobre el runtime, con los datos de E1, E2, E3 y E4. Mi recomendación anticipada es el servicio mínimo.</li>
+<li>R11: ADR de gobernanza, de vía Microsoft y de modo sin IA.</li>
+</ul>
+<p><strong>3. Lo que se puede construir con seguridad, porque es útil con cualquier runtime y fácil de revertir</strong></p>
+<ul>
+<li>La especificación del método <strong>como datos</strong> (YAML o JSON), traducida de los ADR-006 a ADR-019.</li>
+<li>El conjunto de pruebas de Procesar reunión: notas sintéticas con su clasificación de referencia.</li>
+<li>Las salidas de Preparar reunión en formato de una página imprimible.</li>
+<li>Entre 10 y 15 tarjetas del núcleo mínimo de conocimiento, con sus fuentes.</li>
+<li>El esquema de tablas de ADR-015 (entidades y eventos), aunque al principio solo lo rellene Silvia.</li>
+<li>Los escenarios S1–S14 como guiones de prueba repetibles.</li>
+</ul>
+<p><strong>4. Lo que debe esperar a la evidencia de usuarios reales</strong></p>
+<ul>
+<li>El diseño visual del cockpit y su simbología.</li>
+<li>El proveedor de backend definitivo, más allá del mínimo.</li>
+<li>Copilot y ChatGPT como canales simultáneos (empezar con uno).</li>
+<li>Skills con código y skills de artefactos (A3, plan de medición).</li>
+<li>Varios focos de decisión.</li>
+<li>La optimización de Voice.</li>
+<li>Automatizar el bootstrap.</li>
+<li>La distribución a través de SanitarIA.</li>
+<li>El precio definitivo. Esto no impide empezar ya las conversaciones con compradores.</li>
+</ul>
+<p><strong>5. Lo que deberíais dejar de hacer</strong></p>
+<ul>
+<li>Escribir ADR nuevos sin evidencia de usuarios (salvo R7, R8, R10 y R11).</li>
+<li>Invertir en RT-04, RT-06, RT-07 y RT-08 si se adopta R10.</li>
+<li>Que Silvia sea a la vez diseñadora, facilitadora, ejecutora de las pruebas y referencia de la medición.</li>
+<li>Mantener una orquestación de 19 agentes y dos árboles de skills para un repositorio de documentación.</li>
+<li>Plantear un modelo de &quot;recurso&quot; en el que un sanitario gestione GitHub o una base de datos.</li>
+<li>Tratar la «reversal condition» como algo por descubrir cuando ADR-017 ya describe sus causas.</li>
+</ul>
+<hr />
+<h3 id="b-fuentes-externas">Fuentes externas</h3>
+<ul>
+<li>Según PubMed: Taylor MJ et al., <em>BMJ Qual Saf</em> 2014;23:290-8 — <a href="https://doi.org/10.1136/bmjqs-2013-001862" target="_blank" rel="noopener">DOI</a>; Knudsen SV et al., <em>BMC Health Serv Res</em> 2019;19:683 — <a href="https://doi.org/10.1186/s12913-019-4482-6" target="_blank" rel="noopener">DOI</a>; Dixon-Woods M et al., <em>BMJ Qual Saf</em> 2012;21:876-84 — <a href="https://doi.org/10.1136/bmjqs-2011-000760" target="_blank" rel="noopener">DOI</a>.</li>
+<li>Bastani H et al., <em>PNAS</em> 2025 — <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education" target="_blank" rel="noopener">Wharton</a>, <a href="https://papers.ssrn.com/abstract=4895486" target="_blank" rel="noopener">SSRN</a>.</li>
+<li>OpenAI Help Center: <a href="https://help.openai.com/en/articles/8983130-what-if-i-want-to-keep-my-history-on-but-disable-model-training" target="_blank" rel="noopener">entrenamiento y controles de datos</a>; <a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">Projects y proyectos compartidos</a>. Es documentación que cambia: hay que comprobarla en el momento de decidir.</li>
+<li>Las fechas de hoja de ruta de Microsoft (MCP en agentes declarativos) están citadas en el Informe A y siguen siendo hojas de ruta, no confirmaciones.</li>
+</ul>
+</div></section>
+</main></div>
+<a class="totop" href="#inicio">↑ Arriba</a>
+<div class="resume" id="resume" role="status" hidden><span></span><button class="go" type="button">Ir</button><button class="x" type="button" aria-label="Cerrar">✕</button></div>
+<script>
+(function(){
+  var heads=[].slice.call(document.querySelectorAll('main h2[id], main h3[id]'));
+  var links={}; [].slice.call(document.querySelectorAll('.toc a[data-id]')).forEach(function(a){links[a.getAttribute('data-id')]=a});
+  var bar=document.querySelector('.progress i'), segs=[].slice.call(document.querySelectorAll('.seg a'));
+  var parts=[].slice.call(document.querySelectorAll('.part'));
+  var toc=document.getElementById('toc'), scrim=document.getElementById('scrim'), btn=document.getElementById('menu-btn');
+  var cur=null, key='informes-ab-ultimo';
+  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function update(){
+    var y=window.scrollY, h=document.documentElement.scrollHeight-window.innerHeight;
+    if(bar) bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+    var off=110, found=null;
+    for(var i=0;i<heads.length;i++){ if(heads[i].getBoundingClientRect().top<off) found=heads[i]; else break; }
+    var part=null; parts.forEach(function(p){ if(p.getBoundingClientRect().top<off) part=p; });
+    var pk=part?part.getAttribute('data-k'):'r';
+    document.documentElement.style.setProperty('--rep','var(--'+(pk==='r'?'c':pk)+')');
+    segs.forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-k')===pk); });
+    if(found!==cur){
+      if(cur&&links[cur.id]) links[cur.id].classList.remove('cur');
+      [].slice.call(document.querySelectorAll('.t2.open')).forEach(function(li){li.classList.remove('open')});
+      cur=found;
+      if(cur&&links[cur.id]){
+        var a=links[cur.id]; a.classList.add('cur');
+        var li=a.closest('.t2'); if(li) li.classList.add('open');
+        if(!toc.classList.contains('show')){ var r=a.getBoundingClientRect(), tr=toc.getBoundingClientRect(); if(r.top<tr.top+40||r.bottom>tr.bottom-40){ toc.scrollTop+= (r.top-tr.top)-tr.height/3; } }
+        store(key,cur.id);
+      }
+    }
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ticking=false;update();}); } },{passive:true});
+  window.addEventListener('resize',update);
+  function closeToc(){ toc.classList.remove('show'); scrim.hidden=true; btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click',function(){ var s=!toc.classList.contains('show'); toc.classList.toggle('show',s); scrim.hidden=!s; btn.setAttribute('aria-expanded',String(s)); });
+  scrim.addEventListener('click',closeToc);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeToc(); });
+  toc.addEventListener('click',function(e){ if(e.target.closest('a')&&window.matchMedia('(max-width:960px)').matches) closeToc(); });
+  heads.forEach(function(h){ var p=h.closest('.part'); if(p&&h.tagName==='H2') h.setAttribute('data-k',p.getAttribute('data-k')==='r'?'∑':p.getAttribute('data-k').toUpperCase()); });
+  var saved=load(key), target=saved&&document.getElementById(saved), box=document.getElementById('resume');
+  if(target && !location.hash && saved!==heads[0].id){
+    box.querySelector('span').textContent='Continuar en: '+target.textContent;
+    box.hidden=false;
+    box.querySelector('.go').addEventListener('click',function(){ target.scrollIntoView(); box.hidden=true; });
+    box.querySelector('.x').addEventListener('click',function(){ box.hidden=true; });
+    setTimeout(function(){box.hidden=true},12000);
+  }
+  if(location.hash){ var t=document.getElementById(location.hash.slice(1)); if(t) setTimeout(function(){t.scrollIntoView()},30); }
+  update();
+})();
+</script>
+</body>
+</html>

@@ -7,6 +7,14 @@
 - [AGENTS.md](../AGENTS.md) — rules for agents/contributors working in the repository.
 - [README.md](../README.md) — public repository overview.
 
+## Dirección y ejecución actuales (23-oct-2026)
+
+- [Dictamen de dirección tras auditorías](strategy/DICTAMEN_DIRECCION_2026-10-23.md) — disposiciones y límites, **no ADR aceptada**.
+- [Roadmap de validación (23 oct–30 nov)](execution/ROADMAP_VALIDACION_2026-10-23.md) — única planificación operativa vigente con criterios de decisión.
+- [Auditorías 1 y 2 (informes completos)](audits/2026-10-23/README.md) — antecedentes de IA, no evidencias empíricas.
+- [Plan Alpha](runtime/ALPHA_RUNTIME_VERIFICATION_V0.md) — especificación RT-01…RT-12, sin resultados registrados.
+- [Fixture RT-01](runtime/fixtures/alpha-v0/instrucciones-project-rt01.md) — guía; **cargar solo snapshot e historia** en el Project.
+
 ## Product
 
 - [Product Vision](PRODUCT_VISION.md)
@@ -28,8 +36,8 @@
 
 ## Product development
 
-- [Roadmap](ROADMAP.md)
-- [Workplan to 26 October](WORKPLAN_2026-10.md)
+- [Roadmap](ROADMAP.md) — índice hacia el plan vigente.
+- [Workplan to 26 October](WORKPLAN_2026-10.md) — histórico, no evidencia de ejecución.
 - [Feedback Protocol](FEEDBACK_PROTOCOL.md)
 - [Feedback index](feedback/README.md)
 - [Open Questions](OPEN_QUESTIONS.md)
@@ -45,10 +53,10 @@
 
 If you need to know **what CoraLEAN is**, start with START_HERE.
 
-If you need to know **how CoraLEAN should behave**, read METHOD_V0 and AGENTS.md.
+If you need to know **how CoraLEAN should behave**, read the accepted ADRs via CORE_FREEZE_V0.1 and the repository rules in AGENTS.md. METHOD_V0 contains legacy sections explicitly superseded.
 
 If you need to know **why a major choice was made**, read the ADRs.
 
-If you need to know **what we are testing now**, read PILOT_MERIDA and WORKPLAN_2026-10.
+If you need to know **what we are testing now**, read ROADMAP_VALIDACION_2026-10-23 and the Alpha plan; PILOT_MERIDA gives context and WORKPLAN_2026-10 is historical.
 
 If you need to know **what remains uncertain**, read OPEN_QUESTIONS.

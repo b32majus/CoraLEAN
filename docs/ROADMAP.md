@@ -1,115 +1,21 @@
-# CoraLEAN Roadmap
+# CoraLEAN Roadmap — punto de entrada vigente
 
-## Phase 0 — Discovery / method
+**Actualizado 23/10/2026.** El antiguo roadmap de fases de producto se conserva [como planificación histórica](history/ROADMAP_2026-10-01_HISTORICAL.md): no confirma trabajos ejecutados.
 
-**Current.**
+**Plan operativo y criterios de avance:** [ROADMAP_VALIDACION_2026-10-23.md](execution/ROADMAP_VALIDACION_2026-10-23.md).
 
-Outputs:
+**Dirección del producto y disposición de recomendaciones:** [DICTAMEN_DIRECCION_2026-10-23.md](strategy/DICTAMEN_DIRECCION_2026-10-23.md).
 
-- product vision;
-- method v0.1;
-- Project State model;
-- AGENTS.md;
-- Starter Kit design;
-- research baseline;
-- pilot design.
+**Auditorías (fuentes consultivas, no autoridad):** [índice de informes](audits/2026-10-23/README.md).
 
-## Phase 1 — CoraLEAN Alpha
+El `core-freeze-v0.1` sigue siendo la autoridad del método: [mapa de contratos](CORE_FREEZE_V0.1.md). Las hipótesis de runtime viven en ADR-002/017 y su [plan Alpha](runtime/ALPHA_RUNTIME_VERIFICATION_V0.md); aún no se han ejecutado las pruebas.
 
-Target: before 26 October 2026.
+## Secuencia de decisiones
 
-Expected:
+1. **23–25 octubre:** RT-01 de lectura en frío, replicabilidad E1, RT-03 de mutación física, entorno autorizado, feedback y rúbrica basal.
+2. **26 octubre:** sesión de Mérida asistida por Silvia, si se mantiene, sin exponer a la responsable a runtime no validado.
+3. **30 octubre:** E3 — precisión de Procesar reunión ante ambigüedad.
+4. **6 noviembre:** E4 — A3+IA genérica vs CoraLEAN conversacional vs estructura sin IA; evaluación de autonomía posterior sin ayuda; decisión de runtime.
+5. **9–30 noviembre:** prototipo web/registro mínimo *solo si* las pruebas justifican su construcción.
 
-- working ChatGPT Project configuration;
-- Project instructions;
-- AGENTS.md;
-- initial Skills where available;
-- bootstrap;
-- structured Project State;
-- minimal cockpit concept;
-- Mérida pilot.
-
-No commitment yet to a production backend.
-
-## Phase 2 — Pilot learning
-
-Use:
-
-- Silvia;
-- Mérida pharmacist;
-- small external users.
-
-Measure:
-
-- friction;
-- methodological errors;
-- state failures;
-- unnecessary explanation;
-- missing guidance;
-- capability transfer;
-- need for human intervention.
-
-## Phase 3 — Decide what deserves software
-
-Possible outcomes:
-
-### Outcome A
-
-ChatGPT Project + CoraLEAN Method is sufficient.
-
-No major platform required.
-
-### Outcome B
-
-A lightweight cockpit is clearly useful.
-
-Build CoraLEAN Desk.
-
-### Outcome C
-
-Shared state is repeatedly needed.
-
-Build backend + API.
-
-### Outcome D
-
-AI-to-state synchronisation is the main friction.
-
-Evaluate MCP.
-
-### Outcome E
-
-All of the above are needed at scale.
-
-Build a fuller CoraLEAN platform.
-
-The project must remain willing to stop at Outcome A or B.
-
-## Distribution evolution
-
-### Resource
-
-CoraLEAN Starter Kit → user-owned Project.
-
-### Managed service
-
-CoraLEAN provisions backend + cockpit → Silvia can support the project.
-
-### Platform
-
-Only if validated by repeated demand and friction.
-
-## SanitarIA
-
-Potential future role:
-
-- build-in-public / case-based education;
-- training;
-- onboarding;
-- public beta;
-- community feedback;
-- product/service distribution.
-
-## PROMueve
-
-Continues as the first and most important real-world laboratory.
+**No implica** autorización de desplegar servicios institucionales, elegir una base de datos, construir MCP ni reescribir el freeze.

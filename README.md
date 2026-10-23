@@ -2,9 +2,9 @@
 
 **CoraLEAN** is a methodology-first project to design and validate a conversational improvement coach for Lean Healthcare / Quality Improvement.
 
-The initial product hypothesis is **not** a standalone SaaS platform. The first version will run primarily inside a ChatGPT Project using Project instructions, AGENTS.md, reusable Skills where available, Chat/Voice/Work, structured project state and a visual cockpit. PROMueve Extremadura — beginning with the Mérida Rheumatology–Pharmacy project — is the first real-world laboratory.
+ChatGPT Project is the **initial Alpha laboratory**, not a requirement of the product or a mandatory end-user subscription. The post-freeze product direction is a provider-independent method and canonical state, with possible web/Microsoft/ChatGPT interfaces; the storage technology, backend and MCP are **not yet implementation decisions**. PROMueve Extremadura — starting with Mérida Rheumatology–Pharmacy — is the first real-world laboratory.
 
-The long-term architecture may add a shared backend, a cockpit, MCP integration and eventually a standalone platform. Those are hypotheses to validate, not commitments.
+**Current work:** [strategic disposition after two AI audits](docs/strategy/DICTAMEN_DIRECCION_2026-10-23.md), [active validation roadmap](docs/execution/ROADMAP_VALIDACION_2026-10-23.md), [audit originals and caveats](docs/audits/2026-10-23/README.md). The frozen Core is mapped in [Core Freeze v0.1](docs/CORE_FREEZE_V0.1.md); the experimental runtime remains unverified.
 
 ## Start here
 

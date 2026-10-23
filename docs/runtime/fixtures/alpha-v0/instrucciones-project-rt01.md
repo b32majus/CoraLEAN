@@ -17,15 +17,17 @@
 
 ### Condiciones de la prueba
 
-- Project temporal y limpio, sin conversaciones previas.
-- Sin Skills activas.
-- Chat nuevo.
+- Project temporal y limpio, sin conversaciones previas, con memoria **Project-only** desde su creación.
+- Sin Skills activas ni otros conectores/fuentes dentro de este Project.
+- Chat normal nuevo (no Work, Voice ni chat local).
+- Para el experimento adicional E1 de concordancia: cuatro **Projects temporales adicionales e independientes** con idéntica configuración y fuentes, no cuatro chats en el mismo Project.
+- Registrar captura de la opción de memoria junto a las demás evidencias de configuración.
 - Prompt exacto a enviar: `¿Dónde estamos y qué toca ahora?`.
 
 ### Evidencia que Silvia debe copiar de vuelta
 
 - La respuesta íntegra del chat.
-- Una captura de la configuración del Project (instrucciones y fuentes).
+- Una captura de la configuración del Project (instrucciones, fuentes y Project-only memory).
 - **No consultar `fixture-esperado.md` durante la prueba.**
 
 ## B. Texto literal de las instrucciones del Project

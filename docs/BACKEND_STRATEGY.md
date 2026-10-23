@@ -1,3 +1,5 @@
+<!-- POST-FREEZE DIRECTION (23 Oct 2026): provider-independent Core/state is the product target; ChatGPT remains an Alpha laboratory. No backend, API, vendor, MCP or institutional deployment is approved. See docs/strategy/DICTAMEN_DIRECCION_2026-10-23.md and docs/execution/ROADMAP_VALIDACION_2026-10-23.md. The models below remain candidate options. -->
+
 # Backend strategy
 
 ## Why a backend may become necessary
