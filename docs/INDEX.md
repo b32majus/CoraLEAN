@@ -13,7 +13,7 @@
 - [Roadmap de validación (23 oct–30 nov)](execution/ROADMAP_VALIDACION_2026-10-23.md) — única planificación operativa vigente con criterios de decisión.
 - [Auditorías 1 y 2 (informes completos)](audits/2026-10-23/README.md) — antecedentes de IA, no evidencias empíricas.
 - [Plan Alpha](runtime/ALPHA_RUNTIME_VERIFICATION_V0.md) — especificación RT-01…RT-12, sin resultados registrados.
-- [Fixture RT-01](runtime/fixtures/alpha-v0/instrucciones-project-rt01.md) — guía; **cargar solo snapshot e historia** en el Project.
+- [Fixture RT-01: protocolo vigente y hashes](runtime/fixtures/alpha-v0/VERSION.md) — `RT01-alpha-v0.1-pm1` con guía de configuración; **cargar solo snapshot e historia** en el Project.
 
 ## Product
 

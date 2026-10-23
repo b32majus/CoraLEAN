@@ -1,5 +1,7 @@
 # Instrucciones del Project — RT-01
 
+**Versión de protocolo vigente: `RT01-alpha-v0.1-pm1` (2026-10-23).** Véase [manifest con SHA-256](VERSION.md). No alterar las instrucciones literales del apartado B durante RT-01/E1.
+
 > Guía de configuración manual para Silvia. **No es una fuente de estado** y **no se carga al Project**. Solo `estado-proyecto.md` y `historia-material.md` se cargan como fuentes del Project. Este documento y `fixture-esperado.md` permanecen repo-side.
 
 ## A. Guía de configuración manual

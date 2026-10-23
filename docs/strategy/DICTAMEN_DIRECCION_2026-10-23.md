@@ -12,7 +12,7 @@
 5. **No descartar la IA conversacional:** someter a prueba el valor pedagógico frente a dos referencias: sin IA y A3 + IA genérica. Evitar confundir buena ejecución asistida con aprendizaje.
 
 ## 2. Correcciones aceptadas del Auditor 2
-- Fixture RT-01 **sí materializado** en worktree local, commit 81f9216, pendiente de push; RT-01 no ejecutado.
+- Fixture RT-01 **sí materializado** en worktree local, commit original `81f9216`, **publicado** en `origin/work/alpha-runtime-c084-20261004`; RT-01 **no ejecutado**. El protocolo vigente es `RT01-alpha-v0.1-pm1` (manifest en `docs/runtime/fixtures/alpha-v0/VERSION.md`), con instrucciones Project-only posteriores al commit original.
 - R10 = decidir servicio de estado **después** de R2/R5/R6, no construirlo inmediatamente.
 - Con cambio de almacenamiento, sustituir pruebas manuales de conflictos/recuperación/concurrencia/escala por pruebas automatizadas; conservar sus objetivos.
 - Retirada de ayuda sin puntuaciones de competencia: conductas observables y decisión reversible del aprendiz.
@@ -21,14 +21,15 @@
 ## 3. Acciones anteriores a Mérida — responsables y criterios
 | Fecha límite | Acción | Dueño | Criterio de cierre |
 |---|---|---|---|
-| 24-oct-2026 | RT-01 canónico (una ejecución) + replicabilidad E1 (cuatro ejecuciones adicionales) | Silvia / ChatGPT Project | 5 proyectos temporales **independientes** con memoria solo del Project, idénticas instrucciones y dos fuentes; capturas y respuestas íntegras, oracle oculto; 4 criterios RT-01 sin entidades inventadas y 5/5 concordancia en los elementos críticos. Registrar todos los fallos, no ajustar instrucciones entre réplicas. |
-| 24-oct-2026 | RT-03: mecanismo físico y fricción | Silvia / ChatGPT Project | 2 intentos independientes, registrar si sobrescribe, crea fuente o solo propone; medir minutos hasta estado actualizado verificable; umbral provisional de uso por novato: ≤5 minutos. No probar RT-02 si no se obtiene versión verificable. |
-| 24-oct-2026 | Cuentas, superficie aprobada, datos permitidos | Silvia + responsable institucional | Confirmar plan, memoria/entrenamiento, permisos, si el uso de herramientas externas está aprobado, límites de datos; no incluir identificadores de pacientes ni transcripciones sin depurar. Si no se autoriza, ejecutar solo sin IA externa y con material sintético. |
+| 24-oct-2026 | **RT-01 canónico primero:** una ejecución | Silvia / ChatGPT Project | Un Project limpio con Project-only memory, dos fuentes y protocolo fijado `RT01-alpha-v0.1-pm1`; respuesta íntegra y capturas; 4 criterios RT-01, sin invenciones. No consultar oracle durante la prueba. |
+| 24–25-oct-2026 | **RT-03 segundo, tras RT-01:** mecanismo físico y fricción | Silvia / ChatGPT Project | Si RT-01 PASS, registrar si sobrescribe, crea fuente o solo propone; medir minutos hasta estado actualizado verificable; umbral provisional para una persona novata ≤5 min. No probar RT-02 sin versión verificable. |
+| 25–30-oct-2026 | **E1 tercero:** cuatro réplicas de lectura en frío, sin bloquear Mérida | Silvia / ChatGPT Project | Cuatro Projects adicionales independientes, mismas dos fuentes, instrucciones y protocolo congelado, memoria Project-only; valorar concordancia 5/5 junto con RT-01. Registrar todos los resultados aunque no haya unanimidad. |
+| Antes de uso institucional, idealmente 26-oct | Cuentas, superficie aprobada, datos permitidos | Silvia + interlocución institucional cuando esté disponible | Verificar autorización, cuentas/plan, entrenamiento, permisos y datos. **No presuponer respuesta institucional en fin de semana**: sin autorización previa, en Mérida solo material sintético y sin IA externa; RT-01 de laboratorio puede usar ChatGPT únicamente con fixture totalmente sintético. Sin identificadores de pacientes ni notas no depuradas. |
 | 25-oct-2026 | Reconciliar formulario de feedback con Core | Desarrollo/documentación | Sustituir campo 'phase' por 'momento_navegacion' (derivado, no fase) y categoría 'wrong phase recommendation' por 'momento de navegación incorrecto'; conservar resto. Antes de usarlo, verificar que no aparece el concepto antiguo. |
 | Antes de la sesión del 26-oct-2026 | Medición basal, guía «primero tú» y rúbrica | Silvia + evaluador distinto si disponible | Responsable local responde **antes** de ver sugerencias: problema y alcance, hecho/supuesto/hipótesis, siguiente paso y porqué. Registrar intervenciones de Silvia/IA por separado y recoger evaluación metodológica ciega cuando sea factible. |
 | 26-oct-2026 | Sesión de Mérida sin exponer a runtime no validado | Silvia | Facilitación humana; la responsable propone primero; estado/decisiones se documentan de forma controlada y sin identificadores de pacientes. No presentarlo como piloto de autonomía ya demostrado. |
 
-**Precisión de RT-01:** cinco chats dentro de un mismo Project no son cinco lecturas en frío independientes si existe memoria del Project; usar cinco Projects limpios aislados o un protocolo de reseteo cuyo aislamiento pueda demostrarse. La batería original define un solo RT-01; las cuatro réplicas son el experimento adicional E1, no una modificación retroactiva de su veredicto.
+**Precisión de RT-01:** orden de prioridad **RT-01 → RT-03 → E1**, con E1 posponible. Cinco chats de un mismo Project no son cinco lecturas independientes si comparten memoria. El resultado canónico de RT-01 y las cuatro réplicas E1 se registran por separado. **Protocolo vigente:** `RT01-alpha-v0.1-pm1` (manifest/hash; versión de instrucciones publicada inicialmente en rama documental `3530db5`, ahora tras reconstrucción del PR). No ajustar prompts/fixture entre las réplicas.
 
 ## 4. Experimentos posteriores — decidir, no prometer
 | Fecha de decisión | Experimento | Criterio de decisión |
@@ -39,5 +40,5 @@
 
 ## 5. Semáforo de trabajo
 - **Permitido preparar ahora:** fixtures, rúbrica, resultados y corrección documental acotada; preservar evidencia original.
-- **No autorizado por este documento:** push/PR/merge/deploy, reabrir ADR, cambiar producto, activar datos personales o presentar un piloto de IA como institucionalmente aprobado.
+- **No autorizado por este documento:** **merge/deploy** (el push y la apertura del PR documental ya se realizaron con autorización anterior), reabrir ADR, cambiar producto, activar datos personales o presentar un piloto de IA como institucionalmente aprobado.
 - **Único objetivo de dirección próximo:** decidir con evidencia si la interacción conversacional enseña a razonar y qué mínimo almacenamiento necesita para mantener continuidad.

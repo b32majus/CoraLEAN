@@ -18,13 +18,14 @@ Hipótesis separadas:
 
 | Límite | Acción | Evidencia y condición de cierre | Responsable |
 |---|---|---|---|
-| 24-oct | **RT-01**: una lectura en frío canónica del fixture sintético congelado y **E1**: cuatro réplicas adicionales en Projects limpios e independientes, con memoria solo del Project | 5 respuestas completas + captura de instrucciones/fuentes/memoria; la ejecución canónica se evalúa según la regla original PASS/PARTIAL/FAIL/BLOCKED (estado, foco, siguiente paso y razón, cuestión abierta; cero entidades inventadas). E1 informa concordancia en variables críticas; no reescribir oracle ni prompts tras observar | Silvia en UI; evaluación con oracle reservado del repo |
-| 24-oct | **RT-03**: actualización física y carga manual; **solo después RT-02** si se obtiene versión verificable | Dos intentos, mecanismo observado (in-place / nueva fuente / propuesta / solo texto); capturas, identificador/hash antes/después, minutos de intervención manual; hipótesis provisional de viabilidad ≤5 min para persona novata. RT-02 compara nuevo chat con nueva versión | Silvia en UI; soporte del repo |
-| 24-oct | Asegurar entorno y fuentes permitidas | Comprobar cuenta/plan, configuración de memoria y datos, uso institucional autorizado, separación de materiales y ausencia de identificadores de paciente; si no hay aprobación, usar solamente material sintético sin servicio externo | Responsable de la sesión + responsable institucional |
+| 24-oct | **RT-01 (prioridad 1):** una lectura en frío canónica con protocolo `RT01-alpha-v0.1-pm1` | Respuesta íntegra, Project limpio, memoria Project-only, captura de dos fuentes e instrucciones; veredicto original PASS/PARTIAL/FAIL/BLOCKED sobre estado, foco, siguiente paso y razón, cuestión abierta; cero entidades inventadas. Oracle nunca visible durante la prueba | Silvia en UI; evaluación posterior con oracle del repo |
+| 24–25-oct | **RT-03 (prioridad 2):** actualización física y carga manual tras RT-01 PASS; **RT-02** solo si resulta una versión verificable | Dos intentos si procede; mecanismo observado (in-place / nueva fuente / propuesta / solo texto); capturas, identificador/hash antes/después, minutos de intervención; umbral provisional ≤5 min para persona novata | Silvia en UI; soporte del repo |
+| 25–30-oct | **E1 (prioridad 3):** cuatro lecturas adicionales independientes | Cuatro Projects distintos, Project-only, mismas dos fuentes y protocolo `RT01-alpha-v0.1-pm1`; registrar respuestas y concordancia con RT-01. **No bloquear Mérida por carga de trabajo del fin de semana** | Silvia; evaluación posterior |
+| Antes de uso institucional | Comprobar cuentas y datos permitidos | Plan, memoria/entrenamiento, permisos y autorización institucional. **No exigir respuesta institucional en fin de semana**: si no existe autorización previa, Mérida se trabaja solo con material sintético **y sin IA externa**. RT-01 del laboratorio utiliza exclusivamente fixture sintético | Silvia y responsable institucional cuando sea posible |
 | 25-oct | Instrumentos coherentes con freeze | `FEEDBACK_PROTOCOL.md` utiliza *momento de navegación* y no *fase*; preparar rúbrica basal, registro de intervenciones humanas/IA y revisión por persona distinta de Silvia cuando sea posible | Equipo CoraLEAN |
 | 26-oct | Mérida: sesión metodológica asistida, **si se mantiene la fecha** | La farmacéutica propone primero problema, hechos/supuestos y próximo paso; Silvia facilita y registra intervenciones separadas; no exponer un runtime no validado a la persona ni introducir información identificable | Silvia + responsable local |
 
-**Nota operativa:** una réplica E1 no comparte memoria con otra; cinco chats en un mismo Project no son cinco cold-starts independientes. Se conserva RT-01 original como prueba única; E1 es evaluación añadida, no un cambio de oracle.
+**Nota operativa y versión:** **RT-01 → RT-03 → E1**. E1 puede continuar tras el 26 sin invalidar la sesión metodológica asistida. Cinco chats en un mismo Project no son cinco cold-starts independientes. El protocolo vigente es `RT01-alpha-v0.1-pm1` (archivo [VERSION.md](../runtime/fixtures/alpha-v0/VERSION.md)); dos fuentes y oracle sin cambios, instrucciones Project-only de la revisión de octubre. No mezclar resultados de variantes.
 
 ## 3. Experimentos de producto y decisión arquitectónica
 
@@ -43,9 +44,11 @@ Hipótesis separadas:
 - Probar predicción previa, escala y medición temporal en ciclos PDSA, implicación de quienes realizan el trabajo, riesgos de adopción prematura; las nuevas reglas son candidatas, no Core aceptado.
 - Con un estado externo, reemplazar pruebas manuales de colisión/recuperación/escala por controles automatizados equivalentes; **no eliminar los requisitos** de versión, integridad y recuperación.
 
+**Reclutamiento E4 (pendiente, no bloquea RT-01):** antes del **30-oct-2026** registrar participantes, responsable de coordinación, persona evaluadora distinta de Silvia y disponibilidad de dos casos equivalentes con orden contrabalanceado. Si no se consiguen, E4 se registra como **no concluyente** el 6-nov; no declarar valor diferencial probado con n=1 y evaluación de la propia mentora.
+
 ## 5. Dependencias, STOP y trazabilidad
 
-1. **No ejecutar RT-01 sin Project limpio, dos fuentes, Project-only memory y oracle fuera.** Si el entorno no permite cumplir condiciones, registrar BLOCKED (sin fingir PASS).
+1. **No ejecutar RT-01 sin Project limpio, dos fuentes, Project-only memory, protocolo fijado por manifest y oracle fuera.** Si el entorno no permite cumplir condiciones, registrar BLOCKED (sin fingir PASS).
 2. **No modificar el fixture/oracle después de ver respuestas.** Los cambios al protocolo deben versionarse y diferenciar nueva cohorte.
 3. **No afirmar fiabilidad de persistencia** por haber obtenido texto correcto; exigir prueba física de versión y recuperación entre chats.
 4. **No utilizar datos identificables**, ni inferir que una suscripción consumer o Copilot básico satisfaga permisos institucionales.
@@ -58,7 +61,7 @@ Hipótesis separadas:
 | Asunto | Estado |
 |---|---|
 | 12 casos Alpha y S1–S14 | Diseño preparado, resultados PENDIENTE |
-| Fixture RT-01 | Commit local `81f9216` preparado para publicación en rama; no confundir con prueba ejecutada |
+| Fixture RT-01 | Publicado en la rama Alpha mediante `81f9216`. La revisión **vigente del protocolo** es `RT01-alpha-v0.1-pm1` (instrucciones de la rama documental, manifest con hashes). **No se ha ejecutado** RT-01. |
 | Pedagogía «primero tú» y retirada reversible | Candidato a validar; posible ADR posterior |
 | Criterios estructurales vs juicio humano | Candidato a validar; no sustituir sin evidencia ADR-008/018 |
 | Identidad institucional, permisos, RGPD/ENS, Microsoft | Requisitos de investigación y autorización; no se declara cumplimiento |

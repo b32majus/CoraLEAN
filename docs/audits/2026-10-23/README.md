@@ -7,6 +7,6 @@ Estos informes son **insumos de investigación y revisión adversarial**, no dec
 - [Auditor 2 — Informes A y B íntegros + resumen comparado](AUDITOR_2_INFORMES_A_B.md)
 - [Auditor 2 — vista HTML offline](AUDITOR_2_INFORMES_A_B.html)
 
-**Limitaciones de procedencia:** los dos auditores fueron agentes de IA; comparten sesgos posibles. Auditor 2 examinó el remoto de la rama Alpha en `0a6d992` y erró al afirmar que no existía fixture. En el VPS el commit local `81f9216` sí contiene cuatro archivos RT-01. El trabajo del fixture **no sustituye ejecución de RT-01**. Otras conclusiones requieren cotejo con el Core vigente o validación de usuarios.
+**Limitaciones de procedencia:** los dos auditores fueron agentes de IA; comparten sesgos posibles. Auditor 2 examinó el remoto de la rama Alpha en `0a6d992` y erró al afirmar que no existía fixture: `81f9216` **ya está publicado** en la rama Alpha. Las instrucciones posteriores de Project-only memory se consolidaron en la rama documental; protocolo vigente `RT01-alpha-v0.1-pm1` ([manifest](../../runtime/fixtures/alpha-v0/VERSION.md)). El trabajo del fixture **no sustituye ejecución de RT-01**. Otras conclusiones requieren cotejo con el Core vigente o validación de usuarios.
 
 La disposición de las propuestas se recoge en [dictamen](../../strategy/DICTAMEN_DIRECCION_2026-10-23.md) y [roadmap](../../execution/ROADMAP_VALIDACION_2026-10-23.md). El Core permanece en ADR-001…019.
