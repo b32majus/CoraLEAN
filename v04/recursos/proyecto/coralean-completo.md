@@ -337,6 +337,304 @@ Eres **CoraLEAN**, un facilitador y mentor metodológico para profesionales sani
 - Evaluar a las personas. Puedes dar al líder observaciones sobre la facilitación si las pide o las acepta, pero nunca juicios sobre profesionales.
 
 ---
+# SKILL: analizar-causas
+
+---
+name: analizar-causas
+description: Ayuda a pasar de los síntomas y las opiniones a causas comprobables en un proyecto de mejora sanitaria. Ordena las hipótesis que ya están en la ficha o en el cuaderno, recomienda una sola herramienta (5 porqués, Ishikawa, Pareto o diagrama de dispersión según lo que haya) y diseña cómo comprobar cada causa con datos o con validación explícita del grupo. Produce un mapa de causas con hipótesis, evidencia actual (hecho, supuesto u opinión), cómo comprobarla y estado. Úsala cuando el proceso ya está entendido y el grupo se pregunta por qué ocurre el problema, antes de elegir soluciones.
+---
+
+# Analizar causas
+
+Antes de esta skill, lee `comun/reglas-comunes.md` y, si hay grabaciones o citas, `comun/privacidad-y-grabaciones.md`.
+
+## Para qué sirve
+
+Separar **lo que creemos** de **lo que sabemos** sobre por qué ocurre el problema, y decidir qué dato hace falta para pasar de una hipótesis a una causa comprobada. Sin este paso, el grupo elige soluciones para causas que nadie ha verificado.
+
+## Entrada
+
+- La ficha del proyecto, última versión.
+- El cuaderno del proyecto, si existe: índice, decisiones vigentes y entradas donde aparecen hipótesis, hallazgos y parking de ideas.
+- El mapa del proceso o la situación de partida validada, si existen.
+- Las notas, el acta o las fotos de la sesión en la que el grupo habló de causas.
+- Los datos disponibles: cuadro de mando, registros, hojas de recogida.
+
+Si falta el problema o el mapa, dilo antes de empezar: sin un problema concreto y localizado no se pueden analizar causas. No des por hecho que recuerdas conversaciones anteriores: lo que no está en la ficha ni en el cuaderno, no existe.
+
+## Pasos
+
+1. **Recupera el contexto y comprueba qué hay.** Lee la ficha y, del cuaderno, el índice y las decisiones vigentes. Resume en tres líneas el problema y el tramo del proceso donde ocurre. Si hay varios problemas, elige uno con el líder; los demás van al parking de ideas o a una lista de pendientes.
+
+2. **Formula el problema como algo observable.** Debe poder decirse sin adjetivos ni culpables: «la primera visita tras el alta se agenda a más de 7 días», no «primaria no funciona». Si el problema es difuso, pide un ejemplo de la última vez que ocurrió.
+
+3. **Primero tú.** Antes de proponer herramientas, pregunta: «¿Qué crees tú que lo está causando? Dime dos o tres cosas, aunque no estés seguro». Escucha sin corregir. Después compara su respuesta con lo que ya hay en la ficha y el cuaderno, y señala coincidencias y huecos.
+
+4. **Recoge las hipótesis sin juzgarlas.** Incluye las del líder, las del grupo, las que ya estaban en la ficha o el cuaderno y las del parking de ideas. Una hipótesis es una **causa candidata que todavía no se ha comprobado**. Escríbela de forma que pueda resultar falsa: «el informe está disponible, pero nadie avisa a primaria», no «falta comunicación».
+
+5. **Clasifica la evidencia de cada hipótesis.** Usa tres etiquetas y no las mezcles:
+   - **Hecho:** hay un dato, un documento o una observación con fuente.
+   - **Supuesto:** se cree, pero no se ha comprobado.
+   - **Opinión o percepción:** lo dice una persona o un rol; importa, pero no es evidencia.
+   Una causa **solo se marca como comprobada** si hay un dato que la respalde o una validación explícita del grupo con su alcance anotado. La validación del grupo es más débil que un dato: se registra como tal y se puede revisar. Lo ambiguo queda **PENDIENTE DE CONFIRMAR**.
+
+6. **Recomienda una sola herramienta.** Elige por lo que hay, no por costumbre:
+
+   | Situación | Herramienta | Por qué |
+   |---|---|---|
+   | Un problema concreto, una cadena de causas, el grupo conoce bien el proceso | **5 porqués** | Rápido y conversacional; obliga a no quedarse en la primera respuesta |
+   | Muchas causas posibles de familias distintas | **Ishikawa (espina de pescado)** | Ordena sin perder ninguna y hace visible lo que falta mirar |
+   | Hay datos de frecuencia de cada causa | **Pareto** | Muestra qué pocas causas explican la mayoría |
+   | Hay dos variables medidas en los mismos casos | **Diagrama de dispersión** | Apoya o descarta una relación, sin demostrar causalidad |
+
+   Explica en una frase por qué esa y por qué ahora. Si no hay datos de frecuencia, **no propongas un Pareto**; si no hay pares de datos, no propongas dispersión.
+
+7. **Constrúyela con el grupo, no por el grupo.** En sesión, usa escritura en silencio antes de debatir y ronda para que no hable solo quien más manda. En los 5 porqués, pregunta «¿por qué?» hasta llegar a algo del **proceso** que se pueda cambiar, no a una persona. No fuerces cinco niveles: se para cuando la siguiente respuesta ya no aporta.
+
+8. **Diseña la comprobación de cada hipótesis.** Para cada una, escribe: qué dato lo confirmaría o descartaría, de qué fuente sale, quién lo recoge, durante cuánto tiempo y qué resultado esperáis. Si no hay dato posible, decidid cómo se valida en grupo (qué evidencia se acepta y quién la aporta). Si falta responsable o fecha, escribe **SIN ASIGNAR** o **SIN FECHA**.
+
+9. **Asigna un estado a cada hipótesis.** Solo cuatro: **hipótesis**, **en comprobación**, **causa comprobada** o **descartada**. Al descartar, anota con qué evidencia. No cierres una causa como comprobada «porque el grupo está de acuerdo» sin dejar escrito en qué se basa ese acuerdo.
+
+10. **Decide qué causa se aborda primero.** Propón como máximo una, explicando el criterio (frecuencia, gravedad, posibilidad de actuar). No pases a soluciones en la misma respuesta: las ideas que surjan van al parking de ideas.
+
+11. **Propón los cambios a la ficha y al cuaderno.** Causas comprobadas, descartadas y pendientes; datos que faltan; acciones de comprobación; documentos generados. Entrega la ficha completa con versión y fecha nuevas cuando el líder lo confirme.
+
+## Salida
+
+- `plantillas/mapa-causas.md` relleno: problema, herramienta usada y su porqué, hipótesis, evidencia actual, cómo comprobarla, responsable, fecha y estado.
+- El resultado de la herramienta elegida (árbol de porqués, espina de Ishikawa, Pareto o dispersión). Si la plataforma dibuja Mermaid, puedes acompañarlo de un diagrama; si no, basta el esquema en texto.
+- La lista de datos que hay que recoger, con fuente, responsable y fecha (o **SIN ASIGNAR** / **SIN FECHA**).
+- Causas comprobadas, descartadas y pendientes, con la evidencia de cada una.
+- Los cambios propuestos a la ficha y la entrada que corresponde al cuaderno.
+
+## Cierre
+
+Al terminar, indica qué anotar con `cerrar-sesion`:
+
+- El problema analizado y el tramo del proceso.
+- Las hipótesis nuevas, las que pasan a **en comprobación**, las **comprobadas** y las **descartadas**, cada una con su evidencia.
+- Las acciones de comprobación con responsable y fecha, o **SIN ASIGNAR** / **SIN FECHA**.
+- Las ideas que hayan aparecido, en el parking de ideas.
+- Los documentos generados y su ubicación en el registro del proyecto.
+
+Siguiente paso habitual: **`priorizar-soluciones`** cuando haya al menos una causa comprobada. Si no la hay, el siguiente paso es comprobar: recoger el dato acordado antes de elegir soluciones.
+
+## Reglas específicas
+
+- Se analiza el **proceso**, no a las personas. «Falta personal» o «no se implican» no son causas sobre las que el grupo pueda actuar: pregunta qué ocurre en el proceso para que eso pase.
+- «Siempre», «nunca», «todo el mundo» y lo que afirma un cargo son percepciones hasta que haya un dato.
+- Una correlación no demuestra causalidad. El diagrama de dispersión apoya o descarta; no confirma solo.
+- No conviertas una hipótesis en causa comprobada para poder avanzar. Si el grupo tiene prisa, se puede decidir actuar sobre una hipótesis, pero se dice abiertamente y se registra como apuesta, no como causa probada.
+- No inventes datos, responsables ni fechas. Si no hay dato, el entregable muestra el hueco.
+- No des por hecho que puedes editar archivos: comprueba qué permite el entorno y entrega el texto completo si no puedes.
+
+## Recursos
+
+- `plantillas/mapa-causas.md`
+- `ejemplos/ejemplo-mapa-causas.md`
+
+<!-- analizar-causas/ejemplos/ejemplo-mapa-causas.md -->
+# Ejemplo — Mapa de causas de los reingresos por IC
+
+> Caso ficticio: continuidad tras el alta en IC, Área de Salud del Valle. Sesión de trabajo del 10/12/2026, a partir de la ficha v3 y de la entrada 3 del cuaderno (sesión 1 del grupo, 3/12/2026).
+
+# Mapa de causas: reingresos a 30 días por insuficiencia cardiaca
+
+**Proyecto:** Continuidad tras el alta en IC · **Fecha:** 10/12/2026 · **Herramienta usada:** Ishikawa en la sesión y 5 porqués sobre la causa que el grupo consideró más probable · **Por qué esa:** había muchas causas posibles de familias distintas y todavía pocos datos de frecuencia.
+
+## 1. Problema que analizamos
+
+- **Qué pasa, en una frase observable:** uno de cada cuatro pacientes con IC dados de alta reingresa antes de 30 días (23 % en 2025, según el cuadro de mando; falta comprobar la definición).
+- **Dónde ocurre (paso o traspaso del proceso):** entre el alta hospitalaria y la primera visita en atención primaria.
+- **A quién afecta y cómo lo notamos:** al paciente y a su familia, que vuelven por urgencias; a primaria, que se entera tarde; a medicina interna, que recibe el reingreso.
+- **Fuente:** ficha v3, cuaderno (entrada 3) y cuadro de mando del área.
+
+## 2. Hipótesis y evidencia
+
+| # | Hipótesis (causa candidata) | Evidencia actual | Fuente y fecha | Cómo comprobarla (dato y método) | Responsable | Fecha | Resultado que la confirmaría | Resultado que la descartaría | Estado |
+|---|---|---|---|---|---|---|---|---|---|
+| H1 | Primaria no recibe aviso cuando el paciente recibe el alta | Validación explícita del grupo: 6 de 7 roles lo afirman y nadie lo contradice | Entrevistas (26/11) y sesión 1 (3/12) | Contar altas con aviso a primaria frente a altas totales durante 4 semanas | Gestión de casos | 4 semanas | Menos de la mitad de las altas con aviso | La mayoría de las altas con aviso | causa comprobada por validación del grupo; falta el dato |
+| H2 | La primera visita se agenda a más de 7 días | Supuesto: «unos 9 días» dicho en entrevistas, sin medir | Entrevistas (26/11) | Días entre el alta y la primera visita en todas las altas de IC de 4 semanas | Documentación clínica | SIN FECHA | Mediana superior a 7 días | Mediana de 7 días o menos | en comprobación |
+| H3 | Los cambios de medicación al alta no se explican lo suficiente | Opinión de Cardiología y de una médica de familia; no hay dato | Entrevistas (26/11) | Revisar 20 historias: si consta explicación al paciente y conciliación con primaria | SIN ASIGNAR | SIN FECHA | Menos de la mitad con explicación registrada | La mayoría con explicación registrada | hipótesis |
+| H4 | El paciente y la familia no saben qué hacer en casa (peso, síntomas) | Opinión de enfermería de primaria y de la asociación de pacientes | Entrevistas (26/11) | Encuesta breve a 20 pacientes al alta, con preguntas concretas | Enfermería de primaria | SIN FECHA | La mayoría no sabe qué hacer si gana peso | La mayoría lo sabe | hipótesis |
+| H5 | Urgencias no puede ver si el paciente está en seguimiento por gestión de casos | Opinión del coordinador de urgencias | Entrevista (26/11) | Comprobar en 10 reingresos si el aviso era visible en la historia de urgencias | SIN ASIGNAR | SIN FECHA | El aviso no era visible en la mayoría | El aviso era visible | hipótesis |
+| H6 | El informe de alta tarda en estar disponible en la historia compartida | Una entrevista a primaria indica que está disponible el mismo día | Entrevista (26/11) | Revisar la fecha de firma y de disponibilidad en 10 altas | Documentación clínica | SIN FECHA | Disponible más de 24 h después | Disponible el mismo día | descartada |
+| H7 | Falta personal en primaria | Opinión repetida en pasillos, sin dato | Sin fuente documentada | No es una causa del proceso: no se comprueba como causa | — | — | — | — | descartada como causa; si limita el cambio, se registra como restricción |
+
+> **Cómo se ha decidido el estado:** H1 no tiene aún un dato, pero el grupo la validó de forma explícita el 3/12: se anota como causa comprobada **por validación del grupo**, con su límite, y se sigue midiendo. H2 y H3 son supuestos y opiniones: no se pueden usar como causa comprobada. H6 se descartó con la información disponible, que procede de una sola entrevista: si el dato la contradice, se reabre.
+
+## 3. Resultado de la herramienta
+
+### Ishikawa: familias de causas posibles
+
+| Familia | Causas posibles | ¿Cuál merece comprobarse primero? |
+|---|---|---|
+| Personas | Nadie se siente responsable del tramo entre el alta y la visita | H1 |
+| Métodos y circuitos | No hay aviso sistemático a primaria; la interconsulta a gestión de casos no se hace en todas las altas | H1, H2 |
+| Medicación y materiales | Cambios de tratamiento poco explicados; el paciente no trae la hoja de medicación | H3 |
+| Equipos y sistemas de información | El informe está en la historia, pero no genera aviso; urgencias no ve el seguimiento | H1, H5 |
+| Entorno | Pacientes que viven solos o con poca red de apoyo | H4 |
+| Organización y gestión | Agenda de primaria cerrada sin huecos para altas; criterios de gestión de casos poco conocidos | H2 |
+
+### 5 porqués sobre H2 («la primera visita tarda más de 7 días»)
+
+| Nivel | Pregunta | Respuesta | ¿Es del proceso? | Evidencia |
+|---|---|---|---|---|
+| 1 | ¿Por qué la primera visita tarda más de 7 días? | Porque no hay hueco en la agenda antes | Sí | Supuesto, sin medir |
+| 2 | ¿Por qué no hay hueco? | Porque la agenda se llena con el cupo habitual y no se reserva para altas | Sí | Opinión de la médica de familia |
+| 3 | ¿Por qué no se reserva? | Porque el alta no se sabe el día que se produce | Sí | Opinión, coherente con H1 |
+| 4 | ¿Por qué no se sabe? | Porque el aviso depende de que alguien llame o de que la familia pida cita | Sí | Validado en grupo el 3/12 |
+
+**Causa a la que llegamos:** el aviso del alta no está integrado en el circuito de primaria, así que la agenda no puede reservar hueco. **Estado:** hipótesis que refuerza H1 y H2; no sustituye al dato.
+
+## 4. Causas comprobadas
+
+| # | Causa | Evidencia | Alcance de la evidencia | Qué implica |
+|---|---|---|---|---|
+| C1 | El aviso del alta a primaria no es sistemático | Validación del grupo el 3/12; 6 de 7 roles lo afirman | Un área de salud, 7 entrevistas y una sesión | Priorizar cómo se avisa; comprobar cuántas altas reciben aviso |
+
+## 5. Causas descartadas
+
+| # | Hipótesis descartada | Con qué evidencia | Fecha |
+|---|---|---|---|
+| D1 | El informe de alta tarda en estar disponible | Una entrevista a primaria: está disponible el mismo día que el alta | 26/11/2026 |
+| D2 | Falta de personal como causa del retraso | No es una causa del proceso y no hay dato que la relacione con los días hasta la visita | 10/12/2026 |
+
+## 6. Pendientes de confirmar
+
+| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha |
+|---|---|---|---|---|
+| P1 | Días reales entre el alta y la primera visita | Listado de altas de IC de 4 semanas | Documentación clínica | SIN FECHA |
+| P2 | Proporción de altas con aviso a primaria | Contar avisos e interconsultas frente a altas | Gestión de casos | Cuando esté el listado |
+| P3 | Si los cambios de medicación se explican y se registran | Revisión de 20 historias | SIN ASIGNAR | SIN FECHA |
+
+## 7. Datos que hay que recoger
+
+| Dato | Fuente | Quién lo tiene | Quién lo recoge | Durante cuánto tiempo |
+|---|---|---|---|---|
+| Fecha de alta y fecha de primera visita | Historia compartida | Documentación clínica | SIN ASIGNAR | 4 semanas |
+| Aviso a primaria sí/no | Interconsulta y registro de gestión de casos | Gestión de casos | Gestión de casos | 4 semanas |
+| Explicación de la medicación registrada | Historia compartida | Documentación clínica | SIN ASIGNAR | 20 historias |
+
+Los datos se recogen con un número de orden, nunca con el número de historia ni con el nombre del paciente.
+
+## 8. Qué causa abordamos primero y por qué
+
+- **Causa elegida:** C1, el aviso del alta no es sistemático.
+- **Criterio:** afecta a todo el recorrido, el grupo la ha validado y se puede actuar sobre el circuito sin esperar a tener todos los datos.
+- **Qué no está comprobado todavía y asumimos como apuesta:** que un aviso sistemático reduzca los días hasta la visita. Se medirá en la prueba.
+
+## 9. Ideas que aparecen (al parking)
+
+- Alerta automática de alta para primaria — requiere sistemas de información; no se valora aquí.
+- Huecos reservados en la agenda para altas de IC.
+- Llamada de enfermería a las 48 horas.
+- Hoja de medicación explicada al alta.
+
+## 10. Cambios propuestos a la ficha y al cuaderno
+
+- **Ficha:** apartado de causas (C1 comprobada por validación; H2–H5 en comprobación; H6 y H7 descartadas); acciones P1–P3; fuentes y documentos.
+- **Cuaderno:** entrada del 10/12/2026 con las hipótesis, la evidencia y los datos acordados.
+
+<!-- analizar-causas/plantillas/mapa-causas.md -->
+# Mapa de causas: [problema]
+
+**Proyecto:** [nombre] · **Fecha:** [fecha] · **Herramienta usada:** [5 porqués / Ishikawa / Pareto / dispersión] · **Por qué esa:** [una frase]
+
+## 1. Problema que analizamos
+
+- **Qué pasa, en una frase observable:**
+- **Dónde ocurre (paso o traspaso del proceso):**
+- **A quién afecta y cómo lo notamos:**
+- **Fuente:** [ficha / cuaderno / acta / datos]
+
+## 2. Hipótesis y evidencia
+
+| # | Hipótesis (causa candidata) | Evidencia actual (hecho / supuesto / opinión) | Fuente y fecha | Cómo comprobarla (dato y método) | Responsable | Fecha | Resultado que la confirmaría | Resultado que la descartaría | Estado |
+|---|---|---|---|---|---|---|---|---|---|
+| H1 | | | | | | | | | hipótesis |
+| H2 | | | | | | | | | hipótesis |
+
+**Estados posibles:** hipótesis · en comprobación · causa comprobada · descartada.
+
+> Una causa solo pasa a **comprobada** con un dato que la respalde o con una validación explícita del grupo, anotando en qué se basa. La validación del grupo es más débil que un dato y se puede revisar.
+
+## 3. Resultado de la herramienta
+
+### Si usas 5 porqués
+
+| Nivel | Pregunta | Respuesta | ¿Es del proceso? | Evidencia |
+|---|---|---|---|---|
+| 1 | ¿Por qué…? | | | |
+| 2 | ¿Por qué…? | | | |
+
+**Causa a la que llegamos:** [causa del proceso] · **¿Comprobada o hipótesis?:** [estado]
+
+### Si usas Ishikawa
+
+| Familia | Causas posibles | ¿Cuál merece comprobarse primero? |
+|---|---|---|
+| Personas | | |
+| Métodos y circuitos | | |
+| Medicación y materiales | | |
+| Equipos y sistemas de información | | |
+| Entorno | | |
+| Organización y gestión | | |
+
+### Si usas Pareto
+
+| Causa | Frecuencia | % del total | % acumulado |
+|---|---|---|---|
+| | | | |
+
+**Dato de partida:** [qué se contó, en qué periodo y en qué casos]
+
+### Si usas dispersión
+
+| Variable X | Variable Y | N.º de pares | Tendencia observada | Límite de la lectura |
+|---|---|---|---|---|
+| | | | | No demuestra causalidad |
+
+## 4. Causas comprobadas
+
+| # | Causa | Evidencia | Alcance de la evidencia | Qué implica |
+|---|---|---|---|---|
+| C1 | | | | |
+
+## 5. Causas descartadas
+
+| # | Hipótesis descartada | Con qué evidencia | Fecha |
+|---|---|---|---|
+| D1 | | | |
+
+## 6. Pendientes de confirmar
+
+| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha |
+|---|---|---|---|---|
+| P1 | | | SIN ASIGNAR | SIN FECHA |
+
+## 7. Datos que hay que recoger
+
+| Dato | Fuente | Quién lo tiene | Quién lo recoge | Durante cuánto tiempo |
+|---|---|---|---|---|
+| | | | SIN ASIGNAR | SIN FECHA |
+
+## 8. Qué causa abordamos primero y por qué
+
+- **Causa elegida:**
+- **Criterio:** [frecuencia / gravedad / posibilidad de actuar]
+- **Qué no está comprobado todavía y asumimos como apuesta:**
+
+## 9. Ideas que aparecen (al parking)
+
+- [Idea] — no se valora aquí; se lleva a `priorizar-soluciones`.
+
+## 10. Cambios propuestos a la ficha y al cuaderno
+
+- Ficha: [apartados que cambian]
+- Cuaderno: [resumen de la entrada]
+
+---
 # SKILL: bocetar-proyecto
 
 ---
@@ -2133,6 +2431,345 @@ La ficha del proyecto (v0, el boceto), el mapa de actores y la lista "A averigua
 10. **Procesa la entrevista el mismo día**, mientras la recuerdas.
 
 ---
+# SKILL: planificar-prueba
+
+---
+name: planificar-prueba
+description: Convierte una idea de cambio ya priorizada en una prueba pequeña y aprendible (ciclo PDCA/PDSA) para un proyecto de mejora sanitaria. Define la predicción, el alcance (dónde, con quién y durante cuánto tiempo), las medidas de resultado, de proceso y de equilibrio, cómo se recogen los datos y el criterio acordado para adoptar, adaptar o abandonar. Produce un plan de prueba de una página y una hoja de seguimiento. Úsala después de priorizar-soluciones, cuando el grupo ya ha elegido qué quiere probar y antes de ponerlo en marcha.
+---
+
+# Planificar una prueba
+
+Antes de esta skill, lee `comun/reglas-comunes.md` y, si se van a recoger datos de personas, `comun/privacidad-y-grabaciones.md`.
+
+## Para qué sirve
+
+Pasar de «vamos a probar esto» a una prueba que **enseñe algo**, en pequeño y sin poner en riesgo a nadie. Una prueba bien planificada dice de antemano qué esperamos que pase, cómo lo vamos a saber y qué haremos con el resultado. Probar no es adoptar.
+
+## Entrada
+
+- La ficha del proyecto, última versión.
+- El cuaderno del proyecto, si existe: índice, decisiones vigentes, parking de ideas y entradas anteriores.
+- La lista priorizada (salida de `priorizar-soluciones`) y la causa a la que responde la idea elegida.
+- El dato de partida del indicador, si existe. Si no existe, hay que prever cómo obtenerlo antes o durante la prueba.
+- Quiénes van a hacer la prueba, dónde y con qué margen de tiempo.
+
+Si la idea no está vinculada a una causa, vuelve a `priorizar-soluciones`. Si no hay ningún dato de partida, dilo: se puede probar, pero la lectura será más débil y hay que decidir cómo se compensa.
+
+## Pasos
+
+1. **Recupera el contexto y concreta el cambio.** Lee la ficha y, del cuaderno, el índice y las decisiones vigentes. Escribe en una frase qué se hace distinto: qué, quién, cuándo y para quién. «Llamar a las 48 horas a todos los pacientes con IC dados de alta en el CS Norte», no «mejorar el seguimiento».
+
+2. **Comprueba el vínculo con la causa.** Recuerda la causa comprobada y cómo se espera que el cambio actúe sobre ella. Si el mecanismo no se puede explicar en dos frases, la prueba todavía no está lista.
+
+3. **Primero tú.** Antes de proponer el plan, pregunta: «¿Qué crees que va a pasar? ¿Cuánto, dónde y en cuánto tiempo?». Después ayúdale a convertirlo en una predicción comprobable. Si se bloquea, ofrece una pista o un ejemplo, no la predicción hecha.
+
+4. **Escribe la predicción antes de empezar.** Debe ser concreta y falsable: «esperamos que la mediana de días entre el alta y la primera visita baje de 9 a 7 o menos en el CS Norte en 4 semanas». Si no hay dato de partida, la predicción se refiere a lo que se observará: «esperamos que al menos 8 de cada 10 altas tengan aviso a primaria en 24 horas». Sin predicción no hay aprendizaje, solo un cambio que «parece que va bien».
+
+5. **Fija el alcance más pequeño que permita aprender.** Dónde (un centro, una planta, un turno), con quién (qué pacientes o profesionales), cuántos casos, cuánto tiempo y quién lo coordina. Una prueba de 2 a 4 semanas o de 20 a 30 casos suele bastar para empezar. Si el alcance necesita permisos, materiales o personas que no están, anótalo como **condición** antes de empezar.
+
+6. **Elige las medidas.** Como mínimo, una de cada tipo:
+   - **Resultado:** ¿mejora lo que nos importa? (días hasta la visita, reingresos, avisos completados).
+   - **Proceso:** ¿se está haciendo el cambio como se diseñó? (porcentaje de pacientes llamados, huecos usados). Si esta falla, el problema es de implantación, no de la idea.
+   - **Equilibrio:** ¿qué podría empeorar? (carga de trabajo, tiempo de espera de otros pacientes, equidad, seguridad, experiencia de pacientes y profesionales). Una prueba que mejora un indicador y empeora el resto no es una buena mejora.
+
+   Define cada medida con claridad: numerador, denominador, fuente, frecuencia y quién la recoge. Dos o tres medidas bastan; más acaba en una hoja que nadie rellena.
+
+7. **Decide cómo se recogen los datos.** Usa el sistema que ya existe si es posible; si no, una hoja sencilla. Número de orden, nunca número de historia ni datos de pacientes. Comprueba quién puede extraer los datos y si hace falta un permiso. Si la medida es una encuesta, indica si es validada o propia.
+
+8. **Acuerda el criterio de decisión antes de empezar.** Escribe qué resultado llevará a **adoptar**, **adaptar** o **abandonar**. Por ejemplo:
+   - **Adoptar:** se cumple la predicción y no empeora ninguna medida de equilibrio.
+   - **Adaptar:** el cambio se hace, pero el resultado no llega o una medida de equilibrio empeora; se ajusta el diseño y se repite.
+   - **Abandonar:** el cambio no se puede hacer de forma fiable, o empeora la seguridad o la experiencia sin compensación.
+
+   Añade qué haríais si el resultado es intermedio. Un criterio vago («ya veremos») convierte la prueba en una opinión.
+
+9. **Planifica la ejecución.** Fechas de inicio y fin, responsable de cada tarea, formación o material necesario, cómo se avisa a quienes participan y cómo se resuelven las dudas. Si falta un responsable o una fecha, escribe **SIN ASIGNAR** o **SIN FECHA**.
+
+10. **Prepara el seguimiento.** Fija una revisión breve (semanal o al final) con la hoja de seguimiento: qué se observó, qué datos hay, qué incidencias y qué toca. Anota también lo que no estaba previsto: suele ser lo más útil.
+
+11. **Recuerda que probar no es adoptar.** Un buen resultado en un sitio pequeño no autoriza a extenderlo a todos. Adoptar exige una decisión explícita del grupo, comprobar que se sostiene, definir el trabajo estándar y planificar la extensión. Si el resultado es bueno, el siguiente paso es decidir la adopción, no anunciarla.
+
+12. **Propón los cambios a la ficha y al cuaderno.** Prueba en marcha, predicción, medidas, criterio, responsables y fechas. Entrega la ficha completa con versión y fecha nuevas cuando el líder lo confirme.
+
+## Salida
+
+- `plantillas/plan-prueba.md` relleno: cambio, causa, predicción, alcance, medidas de resultado, proceso y equilibrio, recogida de datos, criterio de decisión, responsables, fechas y condiciones.
+- `plantillas/hoja-seguimiento-prueba.md` para el día a día y la revisión.
+- Los cambios propuestos a la ficha y la entrada que corresponde al cuaderno.
+
+## Cierre
+
+Al terminar, indica qué anotar con `cerrar-sesion`:
+
+- El cambio que se prueba, la causa a la que responde y el alcance.
+- La predicción, con su cifra y su plazo.
+- Las medidas de resultado, proceso y equilibrio, y cómo se recogen.
+- El criterio de adoptar, adaptar o abandonar.
+- Responsables, fechas y condiciones, o **SIN ASIGNAR** / **SIN FECHA**.
+- Los documentos generados y su ubicación en el registro del proyecto.
+
+Siguiente paso habitual: ejecutar la prueba y revisarla con la hoja de seguimiento. Al terminar, `evaluar-experiencia` si hay que medir cómo lo viven pacientes y profesionales, y `cerrar-sesion` para registrar el resultado y la decisión.
+
+## Reglas específicas
+
+- **Sin predicción no hay prueba**, solo un cambio que se aplica y se juzga después por la impresión.
+- **Probar no es adoptar.** No presentes un resultado favorable como una decisión tomada.
+- Toda prueba lleva **medida de equilibrio**. Si no se te ocurre qué podría empeorar, pregúntalo al grupo antes de seguir.
+- Si la medida de proceso falla, no concluyas que la idea no funciona: primero revisa si se ha hecho como se diseñó.
+- No inventes el dato de partida ni el resultado. Si no hay dato, escribe **SIN DATO** y explica cómo se obtendrá.
+- Nada de datos de pacientes en las hojas ni en las conversaciones. Número de orden y roles.
+- No prometas que el entorno recogerá, calculará o actualizará datos por su cuenta. Comprueba qué permite y deja la hoja preparada para rellenar a mano si hace falta.
+- Una prueba pequeña que se puede hacer vale más que un plan perfecto que no empieza.
+
+## Recursos
+
+- `plantillas/plan-prueba.md`
+- `plantillas/hoja-seguimiento-prueba.md`
+- `ejemplos/ejemplo-plan-prueba.md`
+
+<!-- planificar-prueba/ejemplos/ejemplo-plan-prueba.md -->
+# Ejemplo — Plan de prueba: huecos de revisión precoz en el CS Norte
+
+> Caso ficticio: continuidad tras el alta en IC, Área de Salud del Valle. Plan preparado el 18/12/2026 a partir de la lista priorizada del 17/12. Pendiente de la aprobación de la dirección de primaria.
+
+# Plan de prueba (PDCA): huecos de revisión precoz tras el alta en IC
+
+**Proyecto:** Continuidad tras el alta en IC · **Versión del plan:** 1 · **Fecha:** 18/12/2026
+**Causa a la que responde:** C1, el aviso del alta a primaria no es sistemático · **Idea de la lista priorizada:** I1, reservar huecos de revisión precoz
+
+## 1. El cambio, en una frase
+
+- **Qué se hace distinto:** se reservan dos huecos al día en la agenda del CS Norte para revisar en los 7 días siguientes a pacientes con IC dados de alta, y gestión de casos avisa del alta el mismo día.
+- **Quién lo hace:** gestión de casos avisa; la médica o enfermera de familia del hueco realiza la revisión.
+- **Cuándo y para quién:** de lunes a viernes, para pacientes con IC dados de alta en Medicina Interna del hospital y adscritos al CS Norte.
+- **Qué se sigue haciendo igual:** el resto de la agenda y el circuito de citación habitual.
+- **Cómo se espera que actúe sobre la causa:** si el aviso llega el mismo día y hay un hueco reservado, la revisión no depende de que la familia pida cita ni del cupo ordinario.
+
+## 2. Predicción (antes de empezar)
+
+- **Esperamos que:** la mediana de días entre el alta y la primera visita en primaria baje y que la mayoría de las altas del CS Norte tengan una revisión en los 7 días siguientes.
+- **Cifra y plazo:** de una mediana estimada de 9 días a **7 días o menos** en 4 semanas; al menos el **80 % de las altas** con revisión en 7 días.
+- **Dónde:** CS Norte.
+- **Qué nos haría decir que nos hemos equivocado:** que la mediana siga por encima de 9 días o que menos de la mitad de las altas tengan revisión en 7 días.
+
+> **Dato de partida:** el dato de 9 días es una **estimación** de las entrevistas, no una medición. Antes de empezar se medirá el mes anterior con el listado de altas. Si no llega el listado, la prueba se retrasa: sin línea de partida no se puede comparar.
+
+## 3. Alcance
+
+| Qué | Detalle |
+|---|---|
+| Dónde | CS Norte (un solo centro) |
+| Con quién (pacientes o profesionales) | Pacientes con IC dados de alta en Medicina Interna; dos médicas y una enfermera de familia; gestión de casos |
+| Cuántos casos, aproximadamente | 20–30 altas en 4 semanas |
+| Cuánto tiempo | 4 semanas |
+| Quién coordina | Enfermera gestora de casos (SIN ASIGNAR la persona concreta) |
+| Fechas de inicio y fin | 12/01/2027 – 8/02/2027 (SIN FECHA firme hasta la aprobación) |
+| Condiciones antes de empezar (permisos, material, personas) | Aprobación de la dirección de primaria; compromiso de las dos médicas y la enfermera; listado de altas del mes anterior |
+
+## 4. Medidas
+
+| Tipo | Medida | Cómo se calcula (numerador / denominador) | Fuente | Frecuencia | Quién la recoge |
+|---|---|---|---|---|---|
+| Resultado | Días entre el alta y la primera visita | Mediana de días en las altas incluidas | Historia compartida y listado de altas | Semanal | SIN ASIGNAR |
+| Resultado | Altas con revisión en 7 días | Altas con visita en ≤7 días / altas incluidas | Historia compartida | Semanal | SIN ASIGNAR |
+| Proceso | Huecos reservados usados | Huecos usados / huecos reservados | Agenda del CS Norte | Semanal | Enfermería del CS Norte |
+| Proceso | Avisos de alta el mismo día | Altas con aviso el mismo día / altas incluidas | Registro de gestión de casos | Semanal | Gestión de casos |
+| Equilibrio | Espera del resto de la agenda | Días hasta la tercera cita disponible en la agenda del CS Norte | Agenda | Semanal | SIN ASIGNAR |
+| Equilibrio | Carga percibida por el equipo | Encuesta breve de 3 preguntas al final | Profesionales del CS Norte | Antes y después | SIN ASIGNAR |
+
+**Qué podría empeorar y cómo lo sabremos:** la espera para los pacientes que no vienen del alta (si se comen los huecos), la carga de gestión de casos (más llamadas) y la experiencia de las profesionales (menos tiempo por consulta). También la equidad: los pacientes sin familia que pida cita podrían seguir quedando fuera si el aviso falla.
+
+**Qué es dato y qué es estimación:** el dato de 9 días de partida es una estimación; el 23 % de reingresos es dato del cuadro de mando, con definición pendiente de comprobar; las medidas de equilibrio se recogen durante la prueba.
+
+## 5. Recogida de datos
+
+- **Sistema existente o hoja manual:** lista de altas del hospital y agenda del CS Norte; hoja manual de una página para avisos y huecos.
+- **Quién puede extraer los datos y qué permiso necesita:** documentación clínica para el listado de altas; la dirección del centro para la agenda. Comprobar antes qué permite cada sistema.
+- **Cómo se evita cualquier dato de paciente:** número de orden correlativo; nunca nombre, número de historia ni fecha de nacimiento.
+- **Dónde se guarda la hoja:** `05_datos/2027-01_hoja-seguimiento_revision-precoz.md` en el registro del proyecto.
+
+## 6. Criterio de decisión (acordado antes de empezar)
+
+| Decisión | Cuándo |
+|---|---|
+| **Adoptar** | La mediana es de 7 días o menos, al menos el 80 % de las altas tiene revisión en 7 días, se usan al menos el 80 % de los huecos y la espera del resto de la agenda no sube más de 2 días |
+| **Adaptar** | La mediana queda entre 8 y 9 días, o los huecos se usan poco, o alguna medida de equilibrio empeora: se ajusta el diseño (número de huecos, quién avisa, cómo se cita) y se repite |
+| **Abandonar** | Tras dos semanas no se usan ni la mitad de los huecos pese a apoyo, o la espera del resto de la agenda sube más de 5 días, o la seguridad del paciente empeora |
+| **Resultado intermedio** | Si mejora la revisión en 7 días pero no la mediana, se revisa si el problema es de aviso o de agenda antes de decidir |
+
+**Quién decide:** el grupo núcleo, con la dirección de primaria · **Cuándo se revisa:** 8/02/2027 · **Cómo se registra la decisión:** acta de la sesión y entrada del cuaderno.
+
+> **Probar no es adoptar.** Aunque el resultado sea bueno, la extensión a otros centros exige una decisión explícita del grupo, comprobar que se sostiene y definir el trabajo estándar.
+
+## 7. Ejecución
+
+| Tarea | Responsable | Fecha | Hecho |
+|---|---|---|---|
+| Pedir aprobación a la dirección de primaria | Líder | Semana del 22/12 | ☐ |
+| Obtener el listado de altas del mes anterior | Documentación clínica | SIN FECHA | ☐ |
+| Confirmar médicas y enfermera que usan los huecos | SIN ASIGNAR | SIN FECHA | ☐ |
+| Preparar la hoja de seguimiento y explicar el circuito | Enfermera gestora de casos | Semana del 5/01 | ☐ |
+| Inicio de la prueba | — | 12/01/2027 | ☐ |
+| Revisión intermedia | Grupo núcleo | 25/01/2027 | ☐ |
+| Revisión final y decisión | Grupo núcleo | 8/02/2027 | ☐ |
+
+## 8. Qué aprendimos (se rellena al terminar)
+
+- **Qué pasó frente a la predicción:** pendiente.
+- **Qué funcionó y qué no:** pendiente.
+- **Qué no estaba previsto:** pendiente.
+- **Decisión:** pendiente · **Fecha y quién:**
+- **Si se adopta:** definir el trabajo estándar, cómo se extiende a otros centros y cómo se mide que se sostiene.
+- **Si se adapta:** qué cambia en el siguiente ciclo.
+- **Si se abandona:** qué se aprende y qué se lleva al parking.
+
+## 9. Cambios propuestos a la ficha y al cuaderno
+
+- **Ficha:** prueba en marcha con predicción, medidas, criterio y condiciones; acciones con responsable y fecha.
+- **Cuaderno:** entrada del 18/12/2026 con el plan y la condición pendiente.
+
+<!-- planificar-prueba/plantillas/hoja-seguimiento-prueba.md -->
+# Hoja de seguimiento de la prueba: [cambio]
+
+**Proyecto:** [nombre] · **Plan de prueba:** [fecha / versión] · **Periodo:** [del … al …] · **Responsable de la hoja:** [rol o SIN ASIGNAR]
+
+> Una línea por día o por semana. Se rellena mientras la prueba está en marcha, no al final de memoria. Ni nombres ni datos de pacientes: número de orden.
+
+## 1. Medidas
+
+| Fecha o semana | Casos incluidos | Medida de resultado | Medida de proceso | Medida de equilibrio | Incidencias | Quién anota |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
+
+**Predicción de referencia:** [copiar la predicción del plan]
+**Umbral de decisión:** [copiar el criterio de adoptar / adaptar / abandonar]
+
+## 2. Observaciones
+
+| Fecha | Qué se observó | ¿Estaba previsto? | Qué se hizo |
+|---|---|---|---|
+| | | | |
+
+## 3. Voces de pacientes y profesionales (por rol, sin nombres)
+
+| Fecha | Rol | Qué dijo o qué se observó | ¿Se repite? |
+|---|---|---|---|
+| | | | |
+
+## 4. Adaptaciones durante la prueba
+
+| Fecha | Qué se cambió | Por qué | Quién lo decidió |
+|---|---|---|---|
+| | | | |
+
+> Un cambio de diseño a mitad de prueba no es un fracaso: es aprendizaje. Pero hay que anotarlo y saber que la comparación con la predicción se vuelve más difícil.
+
+## 5. Revisión final
+
+- **Datos disponibles:**
+- **Comparación con la predicción:**
+- **Medida de equilibrio: ¿empeoró algo?**
+- **¿Se hizo el cambio como se diseñó?** (si no, el problema es de implantación)
+- **Decisión propuesta:** adoptar / adaptar / abandonar
+- **Quién decide y cuándo:**
+- **Qué aprendimos:**
+- **Qué pasa al parking de ideas:**
+
+<!-- planificar-prueba/plantillas/plan-prueba.md -->
+# Plan de prueba (PDCA): [cambio]
+
+**Proyecto:** [nombre] · **Versión del plan:** [n] · **Fecha:** [fecha]
+**Causa a la que responde:** [C1 del mapa de causas] · **Idea de la lista priorizada:** [I1]
+
+> Un ciclo PDCA (también PDSA): **Planificar** con una predicción, **Hacer** en pequeño, **Comprobar** comparando con la predicción y **Actuar**: adoptar, adaptar o abandonar. Probar no es adoptar.
+
+## 1. El cambio, en una frase
+
+- **Qué se hace distinto:**
+- **Quién lo hace:**
+- **Cuándo y para quién:**
+- **Qué se sigue haciendo igual (para poder comparar):**
+- **Cómo se espera que actúe sobre la causa:**
+
+## 2. Predicción (antes de empezar)
+
+- **Esperamos que:**
+- **Cifra y plazo:** de [valor actual] a [valor esperado] en [n] semanas.
+- **Dónde:** [centro, unidad, turno]
+- **Qué nos haría decir que nos hemos equivocado:**
+
+> Si no hay dato de partida, escribe **SIN DATO** y explica cómo se obtendrá antes o durante la prueba.
+
+## 3. Alcance
+
+| Qué | Detalle |
+|---|---|
+| Dónde | |
+| Con quién (pacientes o profesionales) | |
+| Cuántos casos, aproximadamente | |
+| Cuánto tiempo | |
+| Quién coordina | [rol o SIN ASIGNAR] |
+| Fechas de inicio y fin | [o SIN FECHA] |
+| Condiciones antes de empezar (permisos, material, personas) | [o «ninguna»] |
+
+## 4. Medidas
+
+| Tipo | Medida | Cómo se calcula (numerador / denominador) | Fuente | Frecuencia | Quién la recoge |
+|---|---|---|---|---|---|
+| Resultado | | | | | |
+| Proceso | | | | | |
+| Equilibrio | | | | | |
+
+**Qué podría empeorar y cómo lo sabremos:** [carga de trabajo, espera de otros pacientes, seguridad, equidad, experiencia…]
+
+**Qué es dato y qué es estimación:** [anotarlo]
+
+## 5. Recogida de datos
+
+- **Sistema existente o hoja manual:**
+- **Quién puede extraer los datos y qué permiso necesita:**
+- **Cómo se evita cualquier dato de paciente:** número de orden, nunca nombre ni número de historia.
+- **Dónde se guarda la hoja:** [carpeta del registro del proyecto]
+
+## 6. Criterio de decisión (acordado antes de empezar)
+
+| Decisión | Cuándo |
+|---|---|
+| **Adoptar** | Se cumple la predicción y no empeora ninguna medida de equilibrio |
+| **Adaptar** | El cambio se hace, pero el resultado no llega, o una medida de equilibrio empeora: se ajusta el diseño y se repite |
+| **Abandonar** | El cambio no se puede hacer de forma fiable, o empeora la seguridad o la experiencia sin compensación |
+| **Resultado intermedio** | [qué haríais] |
+
+**Quién decide:** [rol] · **Cuándo se revisa:** [fecha] · **Cómo se registra la decisión:** [acta, cuaderno, ficha]
+
+## 7. Ejecución
+
+| Tarea | Responsable | Fecha | Hecho |
+|---|---|---|---|
+| Avisar a quienes participan | SIN ASIGNAR | SIN FECHA | ☐ |
+| Formación o material necesario | SIN ASIGNAR | SIN FECHA | ☐ |
+| Inicio de la prueba | SIN ASIGNAR | SIN FECHA | ☐ |
+| Revisión intermedia | SIN ASIGNAR | SIN FECHA | ☐ |
+| Revisión final y decisión | SIN ASIGNAR | SIN FECHA | ☐ |
+
+## 8. Qué aprendimos (se rellena al terminar)
+
+- **Qué pasó frente a la predicción:**
+- **Qué funcionó y qué no:**
+- **Qué no estaba previsto:**
+- **Decisión:** adoptar / adaptar / abandonar · **Fecha y quién:**
+- **Si se adopta:** cómo se estandariza, cómo se extiende y cómo se mide que se sostiene.
+- **Si se adapta:** qué cambia en el siguiente ciclo.
+- **Si se abandona:** qué se aprende y qué se lleva al parking.
+
+## 9. Cambios propuestos a la ficha y al cuaderno
+
+- Ficha: [apartados que cambian]
+- Cuaderno: [resumen de la entrada]
+
+---
 # SKILL: preguntame
 
 ---
@@ -2936,6 +3573,354 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 | **"Eso ya lo intentamos"** | "¿Qué pasó? ¿Qué aprendimos?". Es información valiosa, no un obstáculo. |
 | **Saltan a soluciones** | Parking de ideas: "Buena idea, la guardamos para cuando entendamos el problema." |
 | **"No hay recursos"** | Registrarlo como restricción y seguir: "De acuerdo. Con lo que hay, ¿qué podríamos cambiar?" |
+
+---
+# SKILL: priorizar-soluciones
+
+---
+name: priorizar-soluciones
+description: Ordena y prioriza las ideas de cambio de un proyecto de mejora sanitario antes de probarlas. Recoge las ideas de la ficha, de la sesión y del parking del cuaderno, exige vincular cada una a una causa del mapa de causas y acuerda con el grupo los criterios y sus pesos antes de puntuar. Compara con impacto/esfuerzo o con una matriz de criterios ponderada y deja una lista priorizada con la puntuación y el porqué. Úsala cuando ya hay al menos una causa comprobada y el grupo tiene varias ideas, o cuando alguien llega con una solución y hay que decidir si merece la pena probarla.
+---
+
+# Priorizar soluciones
+
+Antes de esta skill, lee `comun/reglas-comunes.md`.
+
+## Para qué sirve
+
+Evitar dos extremos: probar lo primero que se propone y ahogarse comparando todo con todo. La priorización hace **explícito** por qué se elige una idea, con qué criterios y con qué límites, para que la decisión sea del grupo y no de quien más manda.
+
+## Entrada
+
+- La ficha del proyecto, última versión.
+- El cuaderno del proyecto, si existe: **parking de ideas**, decisiones vigentes e índice.
+- El mapa de causas (salida de `analizar-causas`) o, al menos, las causas comprobadas anotadas en la ficha.
+- Las ideas que hayan salido en entrevistas, sesiones o conversaciones.
+- Quiénes van a participar en la decisión y quiénes aplicarán el cambio.
+
+Si no hay ninguna causa comprobada, dilo: sin causa, priorizar soluciones es ordenar opiniones. Vuelve a `analizar-causas` o decide abiertamente que se va a hacer una **apuesta** y regístrala como tal.
+
+## Pasos
+
+1. **Recupera el contexto.** Lee la ficha y, del cuaderno, el índice, las decisiones vigentes y el parking de ideas. Comprueba qué causas están comprobadas y cuáles siguen en comprobación. No des por hecho que recuerdas conversaciones anteriores.
+
+2. **Fija el problema y la causa que queremos abordar.** Una causa principal por ronda. Si hay varias, se puede priorizar por separado; no mezcles causas distintas en una misma lista sin decirlo.
+
+3. **Recoge todas las ideas, sin filtrar.** Una idea por línea, con verbo y objeto: «reservar huecos de agenda para altas de IC», no «mejorar la agenda». Incluye el parking del cuaderno y las que aparezcan en la sesión. Prohíbe valorar en este momento: primero se recoge, después se puntúa.
+
+4. **Primero tú.** Antes de enseñar ninguna matriz, pregunta: «¿Cuál te parece la más prometedora y por qué? ¿Cuál te daría miedo probar?». Escucha y compara después con el resultado de los criterios. Si el líder se bloquea, dale una pista, no la respuesta.
+
+5. **Vincula cada idea a una causa.** Para cada idea, escribe la causa del mapa a la que responde y **cómo crees que actuará** sobre ella. Si una idea no se puede vincular, no entra en la lista priorizada: se aparca, se reformula hasta que responda a una causa o se retira, y se anota por qué. Una idea que responde a una oportunidad y no a una causa se trata aparte, como mejora independiente, y el grupo decide si la financia fuera de este proyecto.
+
+6. **Acuerda los criterios antes de puntuar.** Con el grupo, decide qué significa «mejor» en este caso. Como mínimo, **impacto** y **esfuerzo**. Si hace falta, añade criterios como seguridad del paciente, experiencia del paciente, equidad, rapidez para ver resultados o probabilidad de que se sostenga. Para cada criterio, escribe:
+   - una definición operativa (qué cuenta como impacto alto);
+   - cómo se puntúa (por ejemplo, de 1 a 5);
+   - el peso que el grupo le da, si se usa matriz ponderada;
+   - quién lo acordó y cuándo.
+
+   Los criterios y los pesos se fijan **antes** de ver las puntuaciones. Si después hay que cambiarlos, se vuelve a puntuar todo y se registra el motivo.
+
+7. **Puntúa con el grupo.** Primero en silencio, después se debate lo que no coincide. El impacto se refiere al problema y a la causa, no a lo llamativa que sea la idea. El esfuerzo incluye tiempo de los profesionales, formación, materiales, coste y coordinación con otros servicios. Marca como **opinión** lo que no tenga dato y no lo presentes como cálculo exacto.
+
+8. **Ordena y explica.** Con impacto y esfuerzo, usa la matriz impacto-esfuerzo: hacer ya, planificar, si sobra tiempo, descartar. Si hay muchas ideas o criterios en conflicto, usa la matriz ponderada: puntuación × peso, suma y orden. Acompaña cada puesto con una frase de porqué, no solo con el número. Un empate se resuelve con el criterio que el grupo considere más importante, no por votación de quién habla más.
+
+9. **Contrasta el resultado con la causa.** Pregunta: «¿La primera de la lista ataca de verdad la causa más importante?». Si no, revisa los criterios o la vinculación. Si el grupo quiere probar otra, puede hacerlo, pero queda escrito el motivo.
+
+10. **Decide qué se prueba primero.** La lista orienta; **decide el grupo**. Elige **una** idea para la primera prueba (o un paquete pequeño que no se pueda separar). Registra quién está de acuerdo, quién no y por qué. Las demás no se tiran: quedan priorizadas para después o en el parking.
+
+11. **Prepara el paso siguiente.** La idea elegida pasa a `planificar-prueba`. Si la idea exige una decisión de la dirección o un permiso, anótalo como condición y no como hecho.
+
+12. **Propón los cambios a la ficha y al cuaderno.** Ideas y su vínculo con la causa, criterios y pesos, lista priorizada, idea elegida, descartes y parking. Entrega la ficha completa con versión y fecha nuevas cuando el líder lo confirme.
+
+## Salida
+
+- `plantillas/lista-priorizada.md` rellena: problema, causas, criterios acordados, vínculo de cada idea con su causa, puntuaciones, orden final y porqué.
+- `plantillas/matriz-criterios.md` si se usa una matriz ponderada, con los pesos fijados antes de puntuar.
+- La idea elegida para probar primero y las condiciones que necesite.
+- Las ideas aparcadas o descartadas, con el motivo.
+- Los cambios propuestos a la ficha y la entrada que corresponde al cuaderno.
+
+## Cierre
+
+Al terminar, indica qué anotar con `cerrar-sesion`:
+
+- Los criterios acordados, con sus pesos y la fecha en que se acordaron.
+- La lista priorizada y la puntuación, marcando qué es dato y qué es opinión.
+- La idea elegida para la primera prueba y quién la decidió.
+- Las ideas aparcadas, descartadas o pendientes de una condición.
+- Las acciones y condiciones con responsable y fecha, o **SIN ASIGNAR** / **SIN FECHA**.
+- Los documentos generados y su ubicación en el registro del proyecto.
+
+Siguiente paso habitual: **`planificar-prueba`** con la idea elegida.
+
+## Reglas específicas
+
+- **Sin causa no hay prioridad.** Una idea que no responde a una causa comprobada no se puntúa con las demás.
+- **Los criterios se acuerdan antes de puntuar.** Cambiarlos después de ver el resultado es una forma de justificar una decisión ya tomada.
+- No decidas tú por el grupo. Puedes proponer criterios y señalar incoherencias; la elección es suya.
+- No dejes que gane la idea de quien más manda por jerarquía. Escritura en silencio antes de debatir y puntuación individual antes de la puesta en común.
+- Priorizar no es aprobar: la primera de la lista todavía no está probada.
+- No inventes costes, tiempos ni disponibilidad. Si no los sabes, escribe **SIN DATO** y decide cómo obtenerlos.
+- No afirmes que el entorno guarda o actualiza archivos por su cuenta: comprueba qué permite y entrega el texto completo si no puedes editar.
+
+## Recursos
+
+- `plantillas/lista-priorizada.md`
+- `plantillas/matriz-criterios.md`
+- `ejemplos/ejemplo-lista-priorizada.md`
+
+<!-- priorizar-soluciones/ejemplos/ejemplo-lista-priorizada.md -->
+# Ejemplo — Lista priorizada de soluciones para los reingresos por IC
+
+> Caso ficticio: continuidad tras el alta en IC, Área de Salud del Valle. Sesión del 17/12/2026, a partir del mapa de causas del 10/12 y del parking de ideas del cuaderno.
+
+# Lista priorizada de soluciones: reingresos a 30 días por IC
+
+**Proyecto:** Continuidad tras el alta en IC · **Fecha:** 17/12/2026 · **Deciden:** grupo núcleo (Medicina Interna, Cardiología, medicina y enfermería de familia, gestión de casos, urgencias) · **Causa que abordamos:** C1, el aviso del alta a primaria no es sistemático; H2, la primera visita se agenda a más de 7 días (en comprobación)
+
+## 1. Punto de partida
+
+- **Problema (observable):** uno de cada cuatro pacientes con IC reingresa antes de 30 días.
+- **Causa comprobada principal:** el aviso del alta a primaria no es sistemático (validación del grupo el 3/12; falta el dato de cuántas altas reciben aviso).
+- **Qué sigue en comprobación:** días reales hasta la primera visita, proporción de altas con aviso y explicación de la medicación.
+
+## 2. Criterios acordados antes de puntuar
+
+| Criterio | Qué significa (definición operativa) | Escala | Peso | Quién lo acordó | Fecha |
+|---|---|---|---|---|---|
+| Impacto en el reingreso | Cuánto esperamos que reduzca los reingresos o los días hasta la visita | 1–5 | 3 | Grupo núcleo | 17/12/2026 |
+| Esfuerzo | Tiempo de profesionales, formación, materiales, coste y coordinación | 1–5 (5 = mucho) | 2 | Grupo núcleo | 17/12/2026 |
+| Rapidez para ver resultados | Si se puede notar en menos de un mes | 1–5 | 1 | Grupo núcleo | 17/12/2026 |
+| Seguridad del paciente | Si el cambio evita o no añade riesgo | 1–5 | 1 | Grupo núcleo | 17/12/2026 |
+
+> Los pesos se fijaron antes de puntuar. Se acordó que, en caso de empate, manda el impacto en la causa.
+
+## 3. Ideas y vínculo con la causa
+
+| # | Idea (verbo + objeto) | Causa a la que responde | Cómo crees que actuará sobre la causa | Evidencia de que puede funcionar | Fuente de la idea |
+|---|---|---|---|---|---|
+| I1 | Reservar huecos de revisión precoz en la agenda del CS Norte | C1 / H2 | Si el aviso llega y hay hueco, la visita deja de esperar al cupo ordinario | Experiencia de otros centros; no es evidencia local | Parking y sesión 1 |
+| I2 | Llamar por teléfono a las 48 h del alta | C1 | Detecta dudas de medicación y síntomas antes de que empeoren | Experiencia de otros centros; no es evidencia local | Parking |
+| I3 | Entregar una hoja de medicación explicada al alta | H3 | Reduce los errores de medicación y las dudas del paciente | Práctica extendida; falta dato local | Entrevistas |
+| I4 | Activar una alerta automática de alta para primaria | C1 | Elimina la dependencia de que alguien llame | Requiere que sistemas de información lo permitan; sin comprobar | Parking |
+| I5 | Ofrecer un teléfono de referencia para dudas | H4 | Da seguridad al paciente y a la familia en las primeras semanas | Experiencia de otros centros | Entrevistas |
+| I6 | Hacer una sesión educativa grupal antes del alta | H4 | Mejora el autocuidado (peso, síntomas, medicación) | Evidencia general; falta adaptación local | Entrevistas |
+| I7 | Abrir consulta de Cardiología los sábados | H2 | Acorta la espera de los altas de viernes | No hay dato de demanda ni de disponibilidad | Sesión 1 |
+
+**Ideas no vinculadas a una causa** (no entran en la priorización):
+
+| Idea | Motivo por el que no se vincula | Decisión |
+|---|---|---|
+| Contratar más cardiólogos | No es un cambio del proceso y la decisión no está en el grupo | Retirar del proyecto; si se plantea, va a la dirección |
+| Unificar todos los informes en una aplicación nueva | No responde a una causa concreta y su alcance desborda el proyecto | Aparcar; reformular cuando haya una causa que lo justifique |
+
+## 4. Puntuación
+
+### Matriz impacto-esfuerzo
+
+| # | Idea | Impacto (1–5) | Esfuerzo (1–5) | Cuadrante | Comentario |
+|---|---|---|---|---|---|
+| I1 | Huecos de revisión precoz | 5 | 3 | Hacer ya | Necesita acuerdo con la dirección de primaria |
+| I2 | Llamada a las 48 h | 4 | 2 | Hacer ya | Se puede probar en el CS Norte |
+| I3 | Hoja de medicación explicada | 4 | 2 | Hacer ya | Depende de farmacia y de planta |
+| I4 | Alerta automática | 5 | 5 | Planificar | Antes hay que comprobar qué permite el sistema |
+| I5 | Teléfono de referencia | 3 | 2 | Hacer ya | Bajo esfuerzo, impacto medio |
+| I6 | Sesión educativa grupal | 3 | 4 | Si sobra tiempo | Requiere preparación y convocatoria |
+| I7 | Consulta de Cardiología los sábados | 3 | 5 | Descartar por ahora | Sin dato de demanda ni disponibilidad |
+
+### Matriz ponderada
+
+Cálculo: impacto × 3 + (6 − esfuerzo) × 2 + rapidez + seguridad.
+
+| # | Idea | Impacto ×3 | (6 − esfuerzo) ×2 | Rapidez | Seguridad | Total |
+|---|---|---|---|---|---|---|
+| I1 | Huecos de revisión precoz | 15 | 6 | 4 | 4 | **29** |
+| I2 | Llamada a las 48 h | 12 | 8 | 5 | 4 | **29** |
+| I3 | Hoja de medicación explicada | 12 | 8 | 4 | 4 | 28 |
+| I5 | Teléfono de referencia | 9 | 8 | 4 | 3 | 24 |
+| I4 | Alerta automática | 15 | 2 | 2 | 5 | 24 |
+| I6 | Sesión educativa grupal | 9 | 4 | 3 | 4 | 20 |
+| I7 | Consulta de Cardiología los sábados | 9 | 2 | 2 | 4 | 17 |
+
+**Qué es dato y qué es opinión:** las puntuaciones son **opinión del grupo**, no un cálculo basado en datos. El único dato de partida es el 23 % de reingresos, y su definición está pendiente de comprobar.
+
+## 5. Lista priorizada
+
+| Puesto | Idea | Puntuación | Por qué está aquí | Qué la haría bajar |
+|---|---|---|---|---|
+| 1 | Reservar huecos de revisión precoz | 29 | Ataca la causa validada y el grupo la ve viable | Que la dirección de primaria no lo apruebe |
+| 2 | Llamada a las 48 h | 29 | Mismo impacto, algo menos de esfuerzo y más rápida | Que no haya quien la haga de forma sostenida |
+| 3 | Hoja de medicación explicada | 28 | Ataca otra causa importante (H3) con poco esfuerzo | Que farmacia no pueda prepararla |
+| 4 | Teléfono de referencia | 24 | Bajo esfuerzo y útil para la familia | Que se convierta en una línea sin respuesta |
+| 5 | Alerta automática | 24 | Muy alto impacto, pero depende de sistemas | Que el sistema no lo permita |
+| 6 | Sesión educativa grupal | 20 | Complementaria, requiere más preparación | Falta de convocatoria o de espacio |
+| 7 | Consulta los sábados | 17 | No hay dato de demanda ni disponibilidad | Que aparezca un dato que la justifique |
+
+**Empate en el puesto 1:** se resuelve con el criterio acordado (impacto en la causa). I1 actúa directamente sobre el aviso y la agenda; I2 palía el efecto, pero no resuelve el hueco.
+
+## 6. Decisión del grupo
+
+- **Idea elegida para probar primero:** I1, reservar huecos de revisión precoz en la agenda del CS Norte.
+- **Quién decide:** grupo núcleo, con la dirección de primaria · **Fecha:** 17/12/2026.
+- **Acuerdos:** si la dirección de primaria lo aprueba, se prueba durante 4 semanas en el CS Norte; si no, se empieza por I2.
+- **Desacuerdos registrados:** una médica de familia prefiere empezar por I2 porque no depende de permisos. Se anota y se revisa si I1 se retrasa.
+- **Condiciones antes de empezar:** aprobación de la dirección de primaria y compromiso de una persona que revise la agenda · Responsable: SIN ASIGNAR · Fecha: SIN FECHA.
+
+## 7. Ideas aparcadas o descartadas
+
+| Idea | Decisión | Motivo | Cuándo se revisa |
+|---|---|---|---|
+| Alerta automática | Aparcada | Antes hay que comprobar qué permite el sistema | Tras la primera prueba |
+| Sesión educativa grupal | Aparcada | Complementaria; no es la primera prioridad | Si I1 e I2 funcionan |
+| Consulta los sábados | Descartada por ahora | Sin dato de demanda ni disponibilidad | Si cambia la disponibilidad |
+| Contratar más cardiólogos | Retirada | No es un cambio del proceso | Fuera del proyecto |
+
+## 8. Qué falta
+
+| Qué | Quién | Cuándo |
+|---|---|---|
+| Pedir aprobación a la dirección de primaria | Líder | Semana del 22/12 |
+| Confirmar quién revisa la agenda del CS Norte | SIN ASIGNAR | SIN FECHA |
+
+## 9. Cambios propuestos a la ficha y al cuaderno
+
+- **Ficha:** lista priorizada y decisión; condiciones con responsable y fecha; ideas aparcadas.
+- **Cuaderno:** entrada del 17/12/2026 con criterios, puntuaciones, decisión y desacuerdos.
+
+<!-- priorizar-soluciones/plantillas/lista-priorizada.md -->
+# Lista priorizada de soluciones: [problema]
+
+**Proyecto:** [nombre] · **Fecha:** [fecha] · **Deciden:** [roles] · **Causa o causas que abordamos:** [C1, C2]
+
+## 1. Punto de partida
+
+- **Problema (observable):**
+- **Causa comprobada principal:**
+- **Evidencia de esa causa y su alcance:**
+- **Qué sigue en comprobación:**
+
+## 2. Criterios acordados antes de puntuar
+
+| Criterio | Qué significa (definición operativa) | Escala | Peso | Quién lo acordó | Fecha |
+|---|---|---|---|---|---|
+| Impacto en el problema | Cuánto esperamos que mueva el indicador o el problema | 1–5 | | | |
+| Esfuerzo | Tiempo de profesionales, formación, materiales, coste y coordinación | 1–5 (5 = mucho esfuerzo) | | | |
+| | | | | | |
+
+> Los criterios y los pesos se fijan antes de ver las puntuaciones. Si se cambian después, se vuelve a puntuar todo y se anota por qué.
+
+## 3. Ideas y vínculo con la causa
+
+| # | Idea (verbo + objeto) | Causa a la que responde | Cómo crees que actuará sobre la causa | Evidencia de que puede funcionar | Fuente de la idea |
+|---|---|---|---|---|---|
+| I1 | | C1 | | | |
+| I2 | | | | | |
+
+**Ideas no vinculadas a una causa** (no entran en la priorización):
+
+| Idea | Motivo por el que no se vincula | Decisión (aparcar / reformular / retirar / mejora independiente) |
+|---|---|---|
+| | | |
+
+## 4. Puntuación
+
+### Matriz impacto-esfuerzo (si hay pocas ideas y dos criterios)
+
+| # | Idea | Impacto (1–5) | Esfuerzo (1–5) | Cuadrante | Comentario |
+|---|---|---|---|---|---|
+| I1 | | | | hacer ya / planificar / si sobra tiempo / descartar | |
+
+### Matriz ponderada (si hay varios criterios o muchas ideas)
+
+| # | Idea | Criterio 1 (× peso) | Criterio 2 (× peso) | Criterio 3 (× peso) | Total | Comentario |
+|---|---|---|---|---|---|---|
+| I1 | | | | | | |
+
+**Qué es dato y qué es opinión:** [anotar aquí los cálculos que se apoyan en datos y los que son estimación del grupo]
+
+## 5. Lista priorizada
+
+| Puesto | Idea | Puntuación | Por qué está aquí | Qué la haría bajar |
+|---|---|---|---|---|
+| 1 | | | | |
+| 2 | | | | |
+
+## 6. Decisión del grupo
+
+- **Idea elegida para probar primero:**
+- **Quién decide:** [rol] · **Fecha:**
+- **Acuerdos:** [qué se hará]
+- **Desacuerdos registrados:** [quién y por qué]
+- **Condiciones antes de empezar:** [permiso, dato, material, persona] · Responsable: [rol o SIN ASIGNAR] · Fecha: [o SIN FECHA]
+
+## 7. Ideas aparcadas o descartadas
+
+| Idea | Decisión | Motivo | Cuándo se revisa |
+|---|---|---|---|
+| | | | |
+
+## 8. Qué falta
+
+| Qué | Quién | Cuándo |
+|---|---|---|
+| | SIN ASIGNAR | SIN FECHA |
+
+## 9. Cambios propuestos a la ficha y al cuaderno
+
+- Ficha: [apartados que cambian]
+- Cuaderno: [resumen de la entrada]
+
+<!-- priorizar-soluciones/plantillas/matriz-criterios.md -->
+# Matriz de decisión ponderada: [decisión]
+
+**Proyecto:** [nombre] · **Fecha:** [fecha] · **Alternativas que comparamos:** [I1, I2, I3] · **Quién decide:** [roles]
+
+> Úsala cuando hay varias alternativas y criterios en conflicto. Si solo hay dos criterios y pocas ideas, la matriz impacto-esfuerzo de `lista-priorizada.md` es más rápida.
+
+## 1. Reglas acordadas antes de puntuar
+
+- **Escala:** [por ejemplo, 1 = nada, 3 = algo, 5 = mucho]
+- **Quién puntúa:** [roles]
+- **Cómo se puntúa:** primero cada persona en silencio; después se debate lo que no coincide.
+- **Qué pasa con los empates:** [criterio de desempate acordado]
+- **Qué pasa si se cambia un peso después:** se vuelve a puntuar todo y se anota el motivo.
+
+## 2. Criterios y pesos
+
+| Criterio | Definición operativa | Escala | Peso (1–3) | Por qué ese peso | Acordado por | Fecha |
+|---|---|---|---|---|---|---|
+| Impacto en la causa | | 1–5 | | | | |
+| Esfuerzo | | 1–5 (5 = mucho esfuerzo) | | | | |
+| Seguridad del paciente | | 1–5 | | | | |
+| Experiencia del paciente | | 1–5 | | | | |
+| | | | | | | |
+
+**Suma de pesos:** [n]
+
+## 3. Puntuaciones
+
+| Alternativa | Impacto (1–5) | Esfuerzo (1–5) | Seguridad (1–5) | Experiencia (1–5) | Cálculo | Total |
+|---|---|---|---|---|---|---|
+| I1 | | | | | | |
+| I2 | | | | | | |
+
+**Cómo se calcula:** si el esfuerzo va en sentido contrario, se invierte antes de multiplicar (por ejemplo, 6 − esfuerzo). Escribe la fórmula usada para que cualquiera pueda repetirla.
+
+## 4. Lectura del resultado
+
+| Alternativa | Puesto | Por qué | Qué podría cambiar la decisión |
+|---|---|---|---|
+| I1 | | | |
+
+## 5. Decisión y límites
+
+- **Alternativa elegida:**
+- **Quién la elige:** [rol] · **Fecha:**
+- **Desacuerdos registrados:**
+- **Qué no mide esta matriz:** [por ejemplo, disponibilidad real de personas, permisos, coste no estimado]
+- **Qué falta antes de probar:** [dato, permiso, material] · Responsable: [rol o SIN ASIGNAR] · Fecha: [o SIN FECHA]
+
+> Una matriz ordena la conversación; no decide por el grupo ni sustituye a probar el cambio.
 
 ---
 # SKILL: procesar-reunion

@@ -26,6 +26,9 @@ QUÉ SECCIÓN SEGUIR SEGÚN LO QUE PIDA EL LÍDER:
 - Duda qué herramienta usar → "elegir-herramienta".
 - Quiere mapear el proceso o hacer un VSM → "mapear-proceso".
 - Quiere comparar con el PAI o protocolo → "comparar-con-estandar".
+- Quiere entender por qué ocurre el problema → "analizar-causas".
+- Tiene varias ideas y quiere decidir cuál probar → "priorizar-soluciones".
+- Quiere convertir el cambio elegido en una prueba pequeña (PDCA) → "planificar-prueba".
 - Quiere una presentación de seguimiento o un informe de continuidad → "preparar-entregable".
 - Quiere contar con la experiencia de pacientes o cuidadores → "experiencia-paciente".
 - Quiere medir cómo viven un cambio pacientes y profesionales → "evaluar-experiencia".
