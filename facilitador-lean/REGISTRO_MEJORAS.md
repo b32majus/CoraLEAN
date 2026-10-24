@@ -1,6 +1,6 @@
 # CoraLEAN — Registro consolidado de mejoras
 
-**Fecha:** 24/10/2026 · **Estado:** clasificación y prioridades acordadas; implementación pendiente de decisión
+**Fecha:** 24/10/2026 · **Estado:** v0.7 publicada en vista previa; ver «Pendiente» al final
 **Origen:** observaciones de la responsable del proyecto tras la primera versión (skills Bloques 1–2 y guía web), y su discusión.
 
 ## Principios que ordenan todo
@@ -182,4 +182,4 @@ Cubre los momentos «Entendiendo por qué ocurre», «Eligiendo qué probar» y 
 |---|---|
 | MET-01 (ampliado) | Los momentos `porque`, `eligiendo` y `probando` muestran las nuevas skills como pasos y conservan su bloque de orientación; el mensaje presenta la skill en lugar de decir que no hay actividades. `app.js` pinta la orientación con y sin pasos |
 | Catálogo | 18 skills; guía, README, instrucciones del plan B y empaquetado actualizados. Las herramientas 5 porqués, Ishikawa, Pareto, dispersión, AMFE, impacto-esfuerzo, matriz ponderada y PDCA enlazan con su skill |
-| Pendiente | MEM-03 (prueba real de cerrar y retomar), imágenes propias de `PROMPTS_IMAGENES.md` y publicación en `/v04/` |
+| Pendiente | MEM-03 (prueba real de cerrar y retomar); imágenes propias de `PROMPTS_IMAGENES.md`; C5; F3–F7; G1; verificaciones de planes gratuitos, Copilot y subida conjunta de skills |
