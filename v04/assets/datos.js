@@ -236,7 +236,55 @@ window.GUIA = {
       despues: ["Si la ficha o el cuaderno no están en los archivos del proyecto, adjúntalos", "Ten a mano los datos que ya existen; si no hay, lo veremos antes de elegir la herramienta"],
       consejo: "Que la causa sea del proceso, no de una persona. Y no la des por comprobada porque el grupo esté de acuerdo: anota en qué se basa ese acuerdo.",
       plantillas: ["mapa-causas"], ejemplos: ["analizar-causas--ejemplo-mapa-causas"],
-      herramientas: ["porques", "ishikawa", "pareto", "dispersion"], tecnicas: ["silencio", "ronda", "parking"], siguiente: "priorizar-soluciones", ficha: true
+      herramientas: ["porques", "ishikawa", "pareto", "dispersion"], tecnicas: ["silencio", "ronda", "parking"], siguiente: "priorizar-soluciones", ficha: true,
+      manual: {
+        antes: [
+          "Tienes el problema escrito de forma observable, sin adjetivos y sin culpables: «la primera visita tras el alta se agenda a más de 7 días».",
+          "Sabes en qué paso o traspaso del proceso ocurre; si hay varios problemas, habéis elegido uno y el resto está aparcado.",
+          "Tienes a mano la ficha del proyecto y el cuaderno (o lo que ya habéis apuntado sobre causas e ideas).",
+          "Sabes qué datos existen de frecuencia o de las dos variables que queréis relacionar. Si no hay, se anota: lo decidiréis antes de elegir la herramienta.",
+          "Hay 45–60 minutos y pueden estar quienes hacen el trabajo, no solo quien manda."
+        ],
+        pasos: [
+          "Escribe el problema en una frase observable: qué pasa, dónde y desde cuándo. Si hay varios, elegid uno con el grupo y aparcad los demás.",
+          "Antes de abrir ninguna herramienta, que cada persona diga qué cree que lo causa. Escritura en silencio de 3–5 minutos y ronda de una frase por persona: así la primera opinión no condiciona al resto.",
+          "Recoge todas las hipótesis en una lista, también las del parking de ideas. Escríbelas de forma que puedan resultar falsas: «el aviso del alta a primaria no es sistemático», no «falta comunicación».",
+          "Clasifica la evidencia de cada hipótesis sin mezclarla: hecho (dato, documento u observación con fuente), supuesto (se cree, no está comprobado) u opinión (lo dice una persona o un rol). Lo dudoso queda pendiente de confirmar.",
+          "Elige una sola herramienta por lo que hay, no por costumbre: 5 porqués si es una cadena de causas conocida; Ishikawa si hay muchas causas de familias distintas; Pareto solo si hay datos de frecuencia; dispersión solo si hay dos variables medidas en los mismos casos.",
+          "Aplica la herramienta con el grupo. En los 5 porqués, pregunta «¿por qué?» hasta llegar a algo del proceso que se pueda cambiar, no a una persona. Reparte tareas de escritura para que no lo haga todo el líder.",
+          "Para cada hipótesis, decide qué dato la confirmaría o descartaría, de qué fuente sale, quién lo recoge y durante cuánto tiempo. Si falta alguien o una fecha, escribe SIN ASIGNAR o SIN FECHA.",
+          "Da un estado a cada hipótesis: hipótesis, en comprobación, causa comprobada o descartada. Cierra con una sola causa a abordar primero; las ideas que aparezcan van al parking, no a la solución."
+        ],
+        recursos: [
+          { tipo: "plantilla", id: "mapa-causas" },
+          { tipo: "ejemplo", id: "analizar-causas--ejemplo-mapa-causas" },
+          { tipo: "herramienta", id: "porques" },
+          { tipo: "herramienta", id: "ishikawa" },
+          { tipo: "herramienta", id: "pareto" },
+          { tipo: "herramienta", id: "dispersion" },
+          { tipo: "imprimible", id: "ishikawa" }
+        ],
+        bienHecho: "Un buen resultado es un mapa de causas con 4–8 hipótesis escritas de forma comprobable, cada una con su evidencia etiquetada, su estado y el dato que falta, y una sola causa elegida para abordar primero. Se distingue lo que sabéis de lo que creéis: cualquiera puede señalar qué evidencia respalda cada causa comprobada y qué límite tiene.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo escribe «falta comunicación» y la marca como causa comprobada porque todos están de acuerdo. No se puede comprobar: no dice qué aviso falta ni cuándo. La versión útil sería «el aviso del alta a primaria no es sistemático», con la evidencia anotada (validación explícita del grupo el 3/12) y el dato pendiente (cuántas altas reciben aviso).",
+        avanzar: [
+          "Hay al menos una causa comprobada con su evidencia escrita y su alcance (un dato con fuente o una validación explícita del grupo).",
+          "Cada hipótesis pendiente tiene el dato que la comprobaría, un responsable y una fecha (o SIN ASIGNAR / SIN FECHA).",
+          "Las ideas que han aparecido están en el parking, separadas de las causas.",
+          "Si el grupo quiere pasar a soluciones sin ninguna causa comprobada, se puede, pero se dice en voz alta que es una apuesta y se registra como tal.",
+          "Pide ayuda a un facilitador con experiencia si el problema no se puede localizar en el proceso, si hay dos servicios en conflicto o si nadie sabe qué dato existe."
+        ],
+        guardar: "Sale el mapa de causas relleno (plantilla), el resultado de la herramienta y la lista de datos que faltan con responsable y fecha. Guárdalo en el registro del proyecto, en 04_analisis, y anota en la ficha las causas comprobadas, descartadas y pendientes, los datos que faltan y el próximo paso. Al cerrar, añade la entrada al cuaderno. Si hay causa comprobada, sigue con «Prioriza las soluciones»; si no, recoge antes el dato acordado."
+      },
+      metodo: [
+        "Empieza preguntándome qué hipótesis tengo yo, antes de proponer nada.",
+        "Clasifica cada causa como hecho (con fuente), supuesto u opinión, y no mezcles las etiquetas.",
+        "Una causa solo está comprobada si hay un dato o una validación explícita del grupo; lo demás queda pendiente de confirmar.",
+        "Recomienda una sola herramienta según lo que haya: 5 porqués, Ishikawa, Pareto (solo con datos de frecuencia) o dispersión (solo con dos variables medidas).",
+        "Busca causas del proceso, no de las personas.",
+        "Dime qué evidencia falta, qué dato confirmaría o descartaría cada hipótesis, quién lo recoge y cuándo.",
+        "No inventes datos, responsables ni fechas: escribe SIN ASIGNAR o SIN FECHA.",
+        "Termina con una conclusión provisional y con la evidencia que la sostiene, una sola causa a abordar primero, el siguiente paso y qué guardar."
+      ]
     },
     {
       id: "priorizar-soluciones", momento: "eligiendo", titulo: "Prioriza las soluciones", skill: "priorizar-soluciones",
@@ -251,7 +299,53 @@ window.GUIA = {
       despues: ["Adjunta la ficha, el mapa de causas y el cuaderno si no están en los archivos del proyecto", "Ten a mano las ideas del parking y las que hayan salido en las entrevistas"],
       consejo: "Los criterios y los pesos se acuerdan antes de ver las puntuaciones. Si se cambian después, se vuelve a puntuar todo y se anota el motivo.",
       plantillas: ["lista-priorizada", "matriz-criterios"], ejemplos: ["priorizar-soluciones--ejemplo-lista-priorizada"],
-      herramientas: ["matriz", "ponderada"], tecnicas: ["silencio", "puntos", "punyo", "parking"], siguiente: "planificar-prueba", ficha: true
+      herramientas: ["matriz", "ponderada"], tecnicas: ["silencio", "puntos", "punyo", "parking"], siguiente: "planificar-prueba", ficha: true,
+      manual: {
+        antes: [
+          "Hay al menos una causa comprobada, con su dato o su validación del grupo. Si no la hay, será una apuesta y hay que decirlo antes de empezar.",
+          "Tienes a mano el mapa de causas y el parking de ideas del cuaderno.",
+          "Sabes quién decide y quién aplicará el cambio; conviene que estén en la sesión.",
+          "Hay 45–60 minutos: acordar criterios y pesos lleva más tiempo del que parece."
+        ],
+        pasos: [
+          "Fija una sola causa por ronda y escribe el problema de forma observable. Si hay varias causas, se prioriza por separado y se dice.",
+          "Recoge todas las ideas sin filtrar ni valorar: una por línea, con verbo y objeto («reservar huecos de agenda para altas de IC», no «mejorar la agenda»). Incluye el parking del cuaderno.",
+          "Antes de enseñar ninguna matriz, pregunta a cada persona cuál le parece más prometedora y cuál le daría miedo probar. Escritura en silencio y ronda; después compara con el resultado de los criterios.",
+          "Vincula cada idea a una causa del mapa y explica en una frase cómo crees que actuará sobre ella. Si una idea no se puede vincular, se aparca o se retira con su motivo.",
+          "Acuerda los criterios y sus pesos antes de puntuar: como mínimo impacto y esfuerzo; si hace falta, seguridad, experiencia del paciente, equidad, rapidez o probabilidad de sostenerse. Escribe qué significa cada uno, cómo se puntúa y quién lo acordó.",
+          "Puntúa primero en silencio y debated después solo lo que no coincide. El impacto se refiere a la causa, no a lo llamativa que sea la idea; el esfuerzo incluye tiempo de profesionales, formación, materiales, coste y coordinación.",
+          "Ordena con la matriz impacto-esfuerzo o, si hay muchas ideas o criterios en conflicto, con la matriz ponderada. Acompaña cada puesto con una frase de porqué, no solo con el número.",
+          "Contrasta el resultado con la causa: «¿la primera ataca de verdad la causa más importante?». Elige una sola idea para la primera prueba; las demás quedan priorizadas o en el parking. Si exige un permiso, anótalo como condición."
+        ],
+        recursos: [
+          { tipo: "plantilla", id: "lista-priorizada" },
+          { tipo: "plantilla", id: "matriz-criterios" },
+          { tipo: "ejemplo", id: "priorizar-soluciones--ejemplo-lista-priorizada" },
+          { tipo: "herramienta", id: "matriz" },
+          { tipo: "herramienta", id: "ponderada" },
+          { tipo: "imprimible", id: "matriz" }
+        ],
+        bienHecho: "Un buen resultado es una lista priorizada en la que cada idea está vinculada a una causa, los criterios y sus pesos están escritos con quién los acordó y cuándo, y cada puesto tiene una frase que explica por qué. Se ve qué es dato y qué es opinión, y hay una sola idea elegida para probar con sus condiciones.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo puntúa primero y, al ver que gana «abrir consulta de Cardiología los sábados», añade el criterio «rapidez» con peso alto para justificarla. Además, esa idea no responde a ninguna causa comprobada y no hay dato de demanda ni de disponibilidad. Lo correcto es acordar los criterios antes de puntuar y aparcar la idea con su motivo.",
+        avanzar: [
+          "Cada idea de la lista responde a una causa del mapa; las que no, están aparcadas con su motivo.",
+          "Los criterios y los pesos están escritos con quién los acordó y cuándo, y no se han cambiado después de ver las puntuaciones.",
+          "Hay una sola idea elegida para la primera prueba, con quién la decidió y las condiciones que necesita.",
+          "Si la idea exige una decisión de la dirección o un permiso, está anotada como condición, no como hecho.",
+          "Pide ayuda a un facilitador con experiencia si el grupo no logra acordar criterios, si la decisión la está tomando una sola persona o si hay servicios enfrentados."
+        ],
+        guardar: "Sale la lista priorizada (plantilla) y, si se ha usado, la matriz de criterios con sus pesos; también la idea elegida y las aparcadas con su motivo. Guárdalo en 04_analisis del registro del proyecto, anota en la ficha los criterios, la idea elegida y sus condiciones, y añade la entrada al cuaderno al cerrar. Sigue con «Planifica la prueba» usando la idea elegida."
+      },
+      metodo: [
+        "Empieza preguntándome qué idea me parece más prometedora y cuál me daría miedo probar.",
+        "Exige que cada idea esté vinculada a una causa comprobada del mapa de causas; si no, se aparca.",
+        "Recoge primero todas las ideas sin valorarlas y acordad no puntuar hasta el final.",
+        "Acuerda conmigo los criterios y sus pesos antes de puntuar; como mínimo impacto y esfuerzo.",
+        "Si cambiamos un criterio después de ver las puntuaciones, hay que volver a puntuar todo y anotar el motivo.",
+        "Marca como opinión lo que no tenga dato y no lo presentes como un cálculo exacto.",
+        "Ordena con impacto-esfuerzo o con la matriz ponderada y explica cada puesto con una frase, no solo con el número.",
+        "Termina con una sola idea elegida para probar, las demás priorizadas o en el parking, y qué falta antes de decidir."
+      ]
     },
     {
       id: "planificar-prueba", momento: "probando", titulo: "Planifica la prueba", skill: "planificar-prueba",
@@ -269,7 +363,53 @@ window.GUIA = {
       despues: ["Adjunta la ficha, la lista priorizada y el mapa de causas si no están en los archivos del proyecto", "Dile qué datos existen ya y cuáles habría que recoger a mano"],
       consejo: "Sin predicción no hay aprendizaje, solo un cambio que parece que va bien. Y probar no es adoptar: el resultado no autoriza a extenderlo sin una decisión del grupo.",
       plantillas: ["plan-prueba", "hoja-seguimiento-prueba"], ejemplos: ["planificar-prueba--ejemplo-plan-prueba"],
-      herramientas: ["pdca"], tecnicas: ["cierre"], siguiente: "evaluar-experiencia", ficha: true
+      herramientas: ["pdca"], tecnicas: ["cierre"], siguiente: "evaluar-experiencia", ficha: true,
+      manual: {
+        antes: [
+          "La idea elegida está vinculada a una causa comprobada y sabes explicar en dos frases cómo actuará sobre ella.",
+          "Sabes si existe un dato de partida del indicador. Si no existe, hay que decidir cómo obtenerlo antes o durante la prueba.",
+          "Sabes quién hará la prueba, dónde y con cuánto tiempo.",
+          "Tienes a mano la lista priorizada y la ficha del proyecto."
+        ],
+        pasos: [
+          "Escribe en una frase qué se hace distinto: qué, quién, cuándo y para quién. Añade qué se sigue haciendo igual, para que nadie cambie más cosas de las previstas.",
+          "Comprueba el vínculo con la causa: cómo esperas que el cambio actúe sobre ella. Si no se explica en dos frases, la prueba todavía no está lista.",
+          "Pregunta primero a cada persona qué cree que va a pasar, cuánto, dónde y en cuánto tiempo; convertidlo entre todos en una predicción con cifra y plazo, escrita antes de empezar.",
+          "Fija el alcance más pequeño que permita aprender: un centro, una planta o un turno; 2–4 semanas o 20–30 casos suelen bastar. Anota permisos, materiales y personas como condiciones antes de empezar.",
+          "Elige dos o tres medidas, al menos una de cada tipo: resultado (¿mejora lo que importa?), proceso (¿se hace como se diseñó?) y equilibrio (¿qué podría empeorar?). Define numerador, denominador, fuente, frecuencia y quién la recoge.",
+          "Decide cómo se recogen los datos: el sistema que ya existe o una hoja sencilla con número de orden. Nunca datos que identifiquen al paciente.",
+          "Acuerda antes de empezar qué resultado llevará a adoptar, adaptar o abandonar, y qué haríais si el resultado es intermedio. Un criterio vago («ya veremos») convierte la prueba en una opinión.",
+          "Fija fechas, responsables y una revisión breve con la hoja de seguimiento. Si falta algo, escribe SIN ASIGNAR o SIN FECHA. Recuerda en voz alta que probar no es adoptar."
+        ],
+        recursos: [
+          { tipo: "plantilla", id: "plan-prueba" },
+          { tipo: "plantilla", id: "hoja-seguimiento-prueba" },
+          { tipo: "ejemplo", id: "planificar-prueba--ejemplo-plan-prueba" },
+          { tipo: "herramienta", id: "pdca" },
+          { tipo: "imprimible", id: "recogida" }
+        ],
+        bienHecho: "Un buen resultado es un plan de una página con la predicción (cifra, lugar y plazo), un alcance pequeño, una medida de resultado, una de proceso y una de equilibrio con quién las recoge, el criterio para adoptar, adaptar o abandonar escrito antes de empezar, y responsables y fechas. Cualquiera del grupo puede explicar qué se espera y cómo se sabrá.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): «vamos a reservar huecos y ya veremos si funciona». Sin predicción, sin medida de equilibrio y sin criterio, al mes la espera del resto de la agenda ha subido y nadie sabe si la revisión precoz ha mejorado algo. La versión útil fija la predicción (mediana de 7 días o menos y 80 % de altas revisadas en 4 semanas) y mide también la espera del resto de la agenda.",
+        avanzar: [
+          "La predicción tiene cifra, lugar y plazo, y está escrita antes de empezar.",
+          "Hay al menos una medida de resultado, una de proceso y una de equilibrio, con quién la recoge y con qué frecuencia.",
+          "Está escrito qué llevará a adoptar, adaptar o abandonar, y qué pasa si el resultado es intermedio.",
+          "Las condiciones (permisos, materiales, personas) están resueltas o anotadas; si no, la prueba no empieza todavía.",
+          "Pide ayuda a un facilitador con experiencia si no hay ningún dato de partida, si hay que manejar datos de pacientes o si el cambio afecta a varios servicios a la vez."
+        ],
+        guardar: "Sale el plan de prueba de una página (plantilla) y la hoja de seguimiento. Guárdalos en 05_datos del registro del proyecto, anota en la ficha la prueba en marcha con predicción, medidas, criterio, responsables y fechas, y añade la entrada al cuaderno al cerrar. Sigue ejecutando la prueba y revísala con la hoja; al terminar, decidid si adoptar, adaptar o abandonar."
+      },
+      metodo: [
+        "Empieza preguntándome mi predicción: qué espero que pase, cuánto, dónde y en cuánto tiempo.",
+        "Convierte mi respuesta en una predicción con cifra y plazo, escrita antes de empezar.",
+        "Recuérdame que probar no es adoptar: un buen resultado no autoriza a extenderlo sin una decisión del grupo.",
+        "Fija el alcance más pequeño que permita aprender y anota permisos y materiales como condiciones.",
+        "Pide al menos una medida de resultado, una de proceso y una de equilibrio; si no se me ocurre qué puede empeorar, pregúntamelo.",
+        "Aclara que si falla la medida de proceso, el problema puede ser de implantación, no de la idea.",
+        "Acuerda antes de empezar el criterio para adoptar, adaptar o abandonar, y qué haremos si el resultado es intermedio.",
+        "No inventes el dato de partida, los responsables ni las fechas: escribe SIN DATO, SIN ASIGNAR o SIN FECHA.",
+        "Termina con una conclusión provisional basada en la predicción y el criterio, el siguiente paso y qué guardar."
+      ]
     },
     {
       id: "donde-estamos", momento: null, titulo: "Retoma el proyecto", skill: "donde-estamos",
@@ -625,3 +765,9 @@ window.GUIA = {
     ] }
   ]
 };
+
+/* Bloque de método que acompaña al mensaje cuando no hay skills instaladas. */
+window.GUIA.metodoEncabezado = "Método de esta actividad (aunque no tengas CoraLEAN configurado):";
+window.GUIA.textoMetodo = (p) => (p && p.metodo && p.metodo.length
+  ? "\n\n" + window.GUIA.metodoEncabezado + "\n" + p.metodo.map((x, i) => `${i + 1}. ${x}`).join("\n")
+  : "");

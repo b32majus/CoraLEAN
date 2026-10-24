@@ -192,6 +192,20 @@ pre.bloque { background: var(--code); border-radius: 8px; padding: 12px; overflo
 .flujo-ficha span { background: var(--panel-2); border-radius: 8px; padding: 6px 10px; }
 .flujo-ficha i { color: var(--acc); font-style: normal; font-weight: 700; }
 
+/* Bloque manual: nivel 1, sin IA */
+.manual { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid var(--acc); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); min-width: 0; }
+.manual-head { background: var(--acc-soft); padding: 10px 16px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.manual-head b { font-size: 16px; color: var(--acc); } .manual-head span { font-size: 13.5px; color: var(--ink-2); }
+.manual-body { padding: 16px; display: grid; gap: 16px; min-width: 0; }
+.manual-body h3 { font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 8px; font-weight: 700; }
+.manual-body h3 .nota { font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.checklist label { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; cursor: pointer; }
+.checklist input { flex: none; width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--acc); }
+.manual-pasos { margin: 0 0 12px; padding-left: 22px; display: grid; gap: 8px; }
+.manual .card.bien { border-top: 3px solid var(--ok); }
+.manual .card.contra { border-top: 3px solid var(--warn); }
+
 /* Diagramas */
 .diagrama { width: 100%; height: auto; display: block; }
 .d-box { fill: var(--panel); stroke: var(--ink-2); stroke-width: 1.2; }
@@ -253,4 +267,12 @@ pre.bloque { background: var(--code); border-radius: 8px; padding: 12px; overflo
 }
 @media (max-width: 560px) { .momentos-tira { grid-template-columns: repeat(2, minmax(0, 1fr)); } .paso-fila { grid-template-columns: minmax(0, 1fr); } .paso-fila .chip { grid-row: auto; grid-column: 1; justify-self: start; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .lateral { transition: none; } }
-@media print { .lateral, .barra-movil, .gen, .pasonav, .filtros { display: none !important; } .contenido { margin: 0; } body { background: #fff; } }
+@media print {
+  .lateral, .barra-movil, .gen, .pasonav, .filtros { display: none !important; }
+  .contenido { margin: 0; } body { background: #fff; }
+  .manual, .manual .card { box-shadow: none; }
+  .manual .card, .checklist li { break-inside: avoid; }
+  .manual-head { border-bottom: 1px solid #000; }
+  .manual a, .manual .chip { color: inherit; }
+  .checklist input { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
