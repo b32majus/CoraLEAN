@@ -105,6 +105,17 @@ const ok = (cond, msg) => { if (!cond) f.push(msg); };
     ok((await p.$$(".paso-fila .chip.skill")).length === 0, "UX-06: las filas de actividades muestran el nombre técnico de la skill");
     await p.evaluate(() => { location.hash = "momento-porque"; }); await p.waitForTimeout(150);
     ok((await p.$$(".orientacion #preview-orientacion")).length === 1 && (await p.textContent("#preview-orientacion")).length > 80, "MET-01: el momento «Entendiendo por qué ocurre» no ofrece mensaje de orientación");
+    ok((await p.$$('.lista-pasos a[href="#paso-analizar-causas"]')).length === 1, "Plan B: el momento «Entendiendo por qué ocurre» no muestra la skill como paso");
+    for (const [mid, sid] of [["eligiendo", "priorizar-soluciones"], ["probando", "planificar-prueba"]]) {
+      await p.evaluate((x) => { location.hash = "momento-" + x; }, mid); await p.waitForTimeout(120);
+      ok((await p.$$(`.lista-pasos a[href="#paso-${sid}"]`)).length === 1, `Plan B: el momento «${mid}» no muestra la skill ${sid} como paso`);
+      ok((await p.$$(".orientacion #preview-orientacion")).length === 1, `Plan B: el momento «${mid}» ha perdido su bloque de orientación`);
+    }
+    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba"]) {
+      await p.evaluate((x) => { location.hash = "paso-" + x; }, sid); await p.waitForTimeout(120);
+      ok((await p.textContent("#preview")).length > 60, `Plan B: el paso ${sid} no prepara un mensaje`);
+      ok((await p.$$('.gen-head a[href="#instalar"]')).length > 0, `Plan B: el paso ${sid} no enlaza a configurar el asistente`);
+    }
     ok(!/en preparación/i.test(await p.$eval("#app", (a) => a.innerText)), "MET-01: sigue apareciendo «en preparación» en un momento");
     await p.evaluate(() => { location.hash = "herramientas"; }); await p.waitForTimeout(150);
     ok(await p.evaluate(() => [...document.querySelectorAll(".herr-c .diag")].every((d) => d.getAttribute("role") === "img" && (d.getAttribute("aria-label") || "").length > 5)), "ACC-01: los diagramas no tienen descripción accesible");

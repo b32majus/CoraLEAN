@@ -17,5 +17,26 @@ for s in sorted((raiz / "skills").glob("*/SKILL.md")):
         if not ((s.parent / r).exists() or (r.startswith("comun/") and (raiz / r).exists())):
             fallos.append(f"{s.parent.name}: falta {r}")
 print(f"skills: {n}")
+# Plan B: las tres skills nuevas deben tener secciones completas, plantilla, ejemplo y contenido mínimo.
+secciones = ["## Para qué sirve", "## Entrada", "## Pasos", "## Salida", "## Cierre"]
+nuevas = {
+    "analizar-causas": ["hipótesis", "causa comprobada", "opinión"],
+    "priorizar-soluciones": ["criterio", "causa"],
+    "planificar-prueba": ["predicción", "equilibrio", "adoptar", "abandonar"],
+}
+for nombre, palabras in nuevas.items():
+    s = raiz / "skills" / nombre / "SKILL.md"
+    if not s.exists():
+        fallos.append(f"{nombre}: falta la skill"); continue
+    t = s.read_text()
+    for sec in secciones:
+        if sec not in t:
+            fallos.append(f"{nombre}: falta la sección «{sec[3:]}»")
+    for sub in ("plantillas", "ejemplos"):
+        if not list((s.parent / sub).glob("*.md")):
+            fallos.append(f"{nombre}: falta al menos un archivo en {sub}/")
+    for palabra in palabras:
+        if palabra not in t.lower():
+            fallos.append(f"{nombre}: no menciona «{palabra}»")
 for f in fallos: print("FALLO", f)
 sys.exit(1 if fallos else 0)

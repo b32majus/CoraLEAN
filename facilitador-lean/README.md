@@ -27,6 +27,9 @@ Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT, Claude y Ope
 | `elegir-herramienta` | Una herramienta, por qué ahora, cuándo no y cómo empezar (29 herramientas) |
 | `mapear-proceso` | Mapa por niveles asistenciales o VSM, con diagrama y hoja de recogida de tiempos |
 | `comparar-con-estandar` | Brechas frente al PAI o protocolo y borrador de adaptación local |
+| `analizar-causas` | De síntomas y opiniones a causas comprobables: hipótesis, evidencia, herramienta y cómo comprobarla |
+| `priorizar-soluciones` | Ideas vinculadas a causas y priorizadas con criterios acordados antes de puntuar |
+| `planificar-prueba` | Prueba PDCA pequeña: predicción, medidas (también de equilibrio), seguimiento y criterio adoptar/adaptar/abandonar |
 | `cerrar-sesion` | Terminar sin perder nada: ficha actualizada y mensaje para retomar |
 | `preparar-entregable` | Presentación de seguimiento que evoluciona e informe de continuidad, solo con lo trabajado y confirmado |
 | `experiencia-paciente` | Modalidades de participación de pacientes (pros y contras), entrevistas, grupos y mapa de experiencia |

@@ -27,6 +27,19 @@ Object.keys(D).forEach((k) => { const s = D[k](); if (!/^<svg[^>]*aria-hidden="t
 // Plataforma «sin configurar» y orientación en momentos sin actividades.
 if (!G.plataformas.find((p) => p.id === "sinconfig")) f.push("falta plataforma sinconfig");
 ["porque", "eligiendo", "probando", "sosteniendo"].forEach((id) => { const m = G.momentos.find((x) => x.id === id); if (!m || !m.orientacion || !m.orientacion.mensaje) f.push("momento sin orientación " + id); });
+// Plan B: los tres momentos muestran su skill como paso y conservan la orientación actualizada.
+const planB = { porque: "analizar-causas", eligiendo: "priorizar-soluciones", probando: "planificar-prueba" };
+Object.entries(planB).forEach(([mid, sid]) => {
+  const m = G.momentos.find((x) => x.id === mid), p = P(sid);
+  if (!p) { f.push("falta paso " + sid); return; }
+  if (p.skill !== sid) f.push("paso " + sid + " con skill " + p.skill);
+  if (p.momento !== mid) f.push("paso " + sid + " en momento " + p.momento);
+  if (!(p.plantillas || []).length) f.push("paso sin plantilla " + sid);
+  if (!(p.ejemplos || []).length) f.push("paso sin ejemplo " + sid);
+  if (!m) return;
+  if (!m.pasos.includes(sid)) f.push("momento " + mid + " sin " + sid);
+  if (/Mientras preparamos/.test(m.orientacion.texto + m.orientacion.mensaje)) f.push("orientación sin actualizar " + mid);
+});
 // Frases prohibidas en las fuentes (no en dist/ ni guia/recursos/).
 const prohibidas = ["se actualiza solo", "añaden la entrada solos", "Solo se debate", "Solo se debaten", "no lo reabras", "nunca se resume ni se reescribe lo anterior", "En cada sesión"];
 const fuentes = [];

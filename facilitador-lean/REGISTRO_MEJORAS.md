@@ -167,3 +167,19 @@ No «¿te gusta?», sino:
 | MET-01 | Mensaje de orientación en los momentos sin actividades específicas |
 | ACC-01 | Etiquetas asociadas, menú móvil inert y Escape, pestañas con teclado, foco al cambiar de vista, diagramas con descripción |
 | Pendiente | MEM-03 (prueba real de cerrar y retomar en dos sesiones) y Plan B (skills de causas, priorización y prueba) |
+
+## Estado de implementación — Plan B (24/10/2026)
+
+Cubre los momentos «Entendiendo por qué ocurre», «Eligiendo qué probar» y «Probando y adoptando cambios». Las tres skills leen la ficha y el cuaderno, aplican «primero tú» y cierran indicando qué anotar con `cerrar-sesion`.
+
+| Skill | Qué aporta | Plantillas y ejemplo |
+|---|---|---|
+| `analizar-causas` | Mapa de causas: hipótesis, evidencia actual (hecho, supuesto u opinión), cómo comprobarla y estado; una sola herramienta (5 porqués, Ishikawa, Pareto o dispersión). Ninguna causa se da por comprobada sin dato o validación explícita del grupo | `mapa-causas` · ejemplo con el caso ficticio de IC |
+| `priorizar-soluciones` | Cada idea vinculada a una causa; criterios y pesos acordados antes de puntuar; impacto/esfuerzo o matriz ponderada; lista con puntuación y porqué | `lista-priorizada`, `matriz-criterios` · ejemplo con el caso ficticio |
+| `planificar-prueba` | PDCA pequeño con predicción, alcance, medidas de resultado, proceso y equilibrio, recogida de datos y criterio adoptar/adaptar/abandonar; recuerda que probar no es adoptar | `plan-prueba`, `hoja-seguimiento-prueba` · ejemplo con el caso ficticio |
+
+| ID | Estado |
+|---|---|
+| MET-01 (ampliado) | Los momentos `porque`, `eligiendo` y `probando` muestran las nuevas skills como pasos y conservan su bloque de orientación; el mensaje presenta la skill en lugar de decir que no hay actividades. `app.js` pinta la orientación con y sin pasos |
+| Catálogo | 18 skills; guía, README, instrucciones del plan B y empaquetado actualizados. Las herramientas 5 porqués, Ishikawa, Pareto, dispersión, AMFE, impacto-esfuerzo, matriz ponderada y PDCA enlazan con su skill |
+| Pendiente | MEM-03 (prueba real de cerrar y retomar), imágenes propias de `PROMPTS_IMAGENES.md` y publicación en `/v04/` |

@@ -192,7 +192,7 @@
     const i = G.momentos.indexOf(m);
     const pasos = m.pasos.map(paso);
     const PRE = estado.plataforma === "sinconfig" ? plat().prefijo() : "";
-    const orientacion = m.orientacion ? `<section class="card orientacion"><h3>Pide orientación a tu asistente</h3><p>${esc(m.orientacion.texto)}</p>
+    const orientacion = m.orientacion ? `<section class="card orientacion"><h3>${pasos.length ? "Si prefieres un mensaje suelto" : "Pide orientación a tu asistente"}</h3><p>${esc(m.orientacion.texto)}</p>
 <pre class="bloque" id="preview-orientacion">${esc(PRE + m.orientacion.mensaje)}</pre>
 <div class="enlaces"><button class="btn prim" id="copiar-orientacion">Copiar mensaje</button><span class="ok-copiado" aria-live="polite"></span></div>
 <p class="nota">También te ayudan: <a href="#paso-elegir-herramienta">Elige la herramienta</a> · <a href="#paso-preparar-sesion">Prepara la siguiente sesión</a> · <a href="#paso-procesar-sesion">Procesa la reunión</a></p></section>` : "";
