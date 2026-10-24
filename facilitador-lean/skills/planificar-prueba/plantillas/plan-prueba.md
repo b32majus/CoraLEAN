@@ -1,17 +1,19 @@
 # Plan de prueba (PDCA): [cambio]
 
 **Proyecto:** [nombre] · **Versión del plan:** [n] · **Fecha:** [fecha]
-**Causa a la que responde:** [C1 del mapa de causas] · **Idea de la lista priorizada:** [I1]
+**Causa a la que responde:** [C1 o HP1 del mapa de causas] · **Idea de la lista priorizada:** [I1]
 
 > Un ciclo PDCA (también PDSA): **Planificar** con una predicción, **Hacer** en pequeño, **Comprobar** comparando con la predicción y **Actuar**: adoptar, adaptar o abandonar. Probar no es adoptar.
 
 ## 1. El cambio, en una frase
 
 - **Qué se hace distinto:**
+- **¿Es una intervención combinada?** [sí/no. Si sí, qué componentes se cambian a la vez y qué no se podrá atribuir a cada uno]
 - **Quién lo hace:**
 - **Cuándo y para quién:**
 - **Qué se sigue haciendo igual (para poder comparar):**
 - **Cómo se espera que actúe sobre la causa:**
+- **Si la causa es una hipótesis prioritaria:** qué aprenderá la prueba sobre ella
 
 ## 2. Predicción (antes de empezar)
 
@@ -33,6 +35,8 @@
 | Quién coordina | [rol o SIN ASIGNAR] |
 | Fechas de inicio y fin | [o SIN FECHA] |
 | Condiciones antes de empezar (permisos, material, personas) | [o «ninguna»] |
+
+> Una prueba de 2–4 semanas o de 20–30 casos sirve para aprender sobre la **viabilidad** y el efecto inmediato del cambio; **no demuestra eficacia clínica** ni permite generalizar a otros centros. Si es una intervención combinada, el efecto no se puede atribuir a un componente.
 
 ## 4. Medidas
 
@@ -64,6 +68,8 @@
 
 **Quién decide:** [rol] · **Cuándo se revisa:** [fecha] · **Cómo se registra la decisión:** [acta, cuaderno, ficha]
 
+> Si es una intervención combinada, el criterio se refiere al conjunto. Para saber qué componente sostiene el efecto hace falta otra prueba.
+
 ## 7. Ejecución
 
 | Tarea | Responsable | Fecha | Hecho |
@@ -75,6 +81,8 @@
 | Revisión final y decisión | SIN ASIGNAR | SIN FECHA | ☐ |
 
 ## 8. Qué aprendimos (se rellena al terminar)
+
+> Al cerrar el periodo, interpreta los resultados con `interpretar-resultados`: compara lo ocurrido con la predicción, revisa el proceso y el equilibrio y decide. No cambies la predicción ni el criterio para que encajen con lo que pasó.
 
 - **Qué pasó frente a la predicción:**
 - **Qué funcionó y qué no:**

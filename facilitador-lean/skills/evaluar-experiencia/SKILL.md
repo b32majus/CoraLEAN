@@ -40,8 +40,9 @@ Un cambio puede mejorar un indicador y empeorar la experiencia de quien lo vive 
    - con pocas respuestas, describe y no generalices;
    - las preguntas abiertas suelen ser lo más útil: agrupa los temas que se repiten;
    - quien responde no siempre representa a todos; dilo.
+   - Para integrar la experiencia con el resto de medidas de la prueba y decidir, usa `interpretar-resultados`; para dejar el seguimiento de la experiencia en la rutina, `consolidar-mejora`. Esta skill mide; no decide por sí sola.
 
-8. **Al proyecto:** los resultados van a la ficha (hechos, con fuente y fecha) y al registro (`05_datos/`), y pueden aparecer en la presentación de seguimiento y en el informe de continuidad.
+8. **Al proyecto:** los resultados van a la ficha (hechos, con fuente y fecha) y al registro (`05_datos/`), y pueden aparecer en la presentación de seguimiento y en el informe de continuidad. Cuando una mejora se adopta, deja acordado quién revisa la experiencia y con qué frecuencia (ver `consolidar-mejora`).
 
 ## Entrega
 

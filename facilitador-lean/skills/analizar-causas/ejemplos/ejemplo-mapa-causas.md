@@ -17,15 +17,15 @@
 
 | # | Hipótesis (causa candidata) | Evidencia actual | Fuente y fecha | Cómo comprobarla (dato y método) | Responsable | Fecha | Resultado que la confirmaría | Resultado que la descartaría | Estado |
 |---|---|---|---|---|---|---|---|---|---|
-| H1 | Primaria no recibe aviso cuando el paciente recibe el alta | Validación explícita del grupo: 6 de 7 roles lo afirman y nadie lo contradice | Entrevistas (26/11) y sesión 1 (3/12) | Contar altas con aviso a primaria frente a altas totales durante 4 semanas | Gestión de casos | 4 semanas | Menos de la mitad de las altas con aviso | La mayoría de las altas con aviso | causa comprobada por validación del grupo; falta el dato |
-| H2 | La primera visita se agenda a más de 7 días | Supuesto: «unos 9 días» dicho en entrevistas, sin medir | Entrevistas (26/11) | Días entre el alta y la primera visita en todas las altas de IC de 4 semanas | Documentación clínica | SIN FECHA | Mediana superior a 7 días | Mediana de 7 días o menos | en comprobación |
-| H3 | Los cambios de medicación al alta no se explican lo suficiente | Opinión de Cardiología y de una médica de familia; no hay dato | Entrevistas (26/11) | Revisar 20 historias: si consta explicación al paciente y conciliación con primaria | SIN ASIGNAR | SIN FECHA | Menos de la mitad con explicación registrada | La mayoría con explicación registrada | hipótesis |
-| H4 | El paciente y la familia no saben qué hacer en casa (peso, síntomas) | Opinión de enfermería de primaria y de la asociación de pacientes | Entrevistas (26/11) | Encuesta breve a 20 pacientes al alta, con preguntas concretas | Enfermería de primaria | SIN FECHA | La mayoría no sabe qué hacer si gana peso | La mayoría lo sabe | hipótesis |
-| H5 | Urgencias no puede ver si el paciente está en seguimiento por gestión de casos | Opinión del coordinador de urgencias | Entrevista (26/11) | Comprobar en 10 reingresos si el aviso era visible en la historia de urgencias | SIN ASIGNAR | SIN FECHA | El aviso no era visible en la mayoría | El aviso era visible | hipótesis |
+| H1 | Primaria no recibe aviso cuando el paciente recibe el alta | Hecho testimonial: 6 de 7 roles constatan que el aviso no es sistemático; nadie lo contradice. No hay dato que demuestre que eso causa reingresos | Entrevistas (26/11) y sesión 1 (3/12) | Contar altas con aviso a primaria frente a altas totales durante 4 semanas | Gestión de casos | 4 semanas | Menos de la mitad de las altas con aviso | La mayoría de las altas con aviso | hipótesis prioritaria respaldada por el grupo; falta el dato |
+| H2 | La primera visita se agenda a más de 7 días | Supuesto: «unos 9 días» dicho en entrevistas, sin medir | Entrevistas (26/11) | Días entre el alta y la primera visita en todas las altas de IC de 4 semanas | Documentación clínica | SIN FECHA | Mediana superior a 7 días | Mediana de 7 días o menos | pendiente de confirmar |
+| H3 | Los cambios de medicación al alta no se explican lo suficiente | Opinión de Cardiología y de una médica de familia; no hay dato | Entrevistas (26/11) | Revisar 20 historias: si consta explicación al paciente y conciliación con primaria | SIN ASIGNAR | SIN FECHA | Menos de la mitad con explicación registrada | La mayoría con explicación registrada | pendiente de confirmar |
+| H4 | El paciente y la familia no saben qué hacer en casa (peso, síntomas) | Opinión de enfermería de primaria y de la asociación de pacientes | Entrevistas (26/11) | Encuesta breve a 20 pacientes al alta, con preguntas concretas | Enfermería de primaria | SIN FECHA | La mayoría no sabe qué hacer si gana peso | La mayoría lo sabe | pendiente de confirmar |
+| H5 | Urgencias no puede ver si el paciente está en seguimiento por gestión de casos | Opinión del coordinador de urgencias | Entrevista (26/11) | Comprobar en 10 reingresos si el aviso era visible en la historia de urgencias | SIN ASIGNAR | SIN FECHA | El aviso no era visible en la mayoría | El aviso era visible | pendiente de confirmar |
 | H6 | El informe de alta tarda en estar disponible en la historia compartida | Una entrevista a primaria indica que está disponible el mismo día | Entrevista (26/11) | Revisar la fecha de firma y de disponibilidad en 10 altas | Documentación clínica | SIN FECHA | Disponible más de 24 h después | Disponible el mismo día | descartada |
 | H7 | Falta personal en primaria | Opinión repetida en pasillos, sin dato | Sin fuente documentada | No es una causa del proceso: no se comprueba como causa | — | — | — | — | descartada como causa; si limita el cambio, se registra como restricción |
 
-> **Cómo se ha decidido el estado:** H1 no tiene aún un dato, pero el grupo la validó de forma explícita el 3/12: se anota como causa comprobada **por validación del grupo**, con su límite, y se sigue midiendo. H2 y H3 son supuestos y opiniones: no se pueden usar como causa comprobada. H6 se descartó con la información disponible, que procede de una sola entrevista: si el dato la contradice, se reabre.
+> **Cómo se ha decidido el estado:** H1 no tiene aún un dato. El grupo **constata un hecho del proceso** (el aviso no es sistemático) y coincide en él, pero eso no demuestra que sea la causa de los reingresos: queda como **hipótesis prioritaria respaldada por el grupo**, con su incertidumbre y el dato pendiente. H2–H5 son supuestos u opiniones: **pendientes de confirmar**. H6 se descartó con la información disponible, que procede de una sola entrevista: si el dato la contradice, se reabre.
 
 ## 3. Resultado de la herramienta
 
@@ -49,30 +49,36 @@
 | 3 | ¿Por qué no se reserva? | Porque el alta no se sabe el día que se produce | Sí | Opinión, coherente con H1 |
 | 4 | ¿Por qué no se sabe? | Porque el aviso depende de que alguien llame o de que la familia pida cita | Sí | Validado en grupo el 3/12 |
 
-**Causa a la que llegamos:** el aviso del alta no está integrado en el circuito de primaria, así que la agenda no puede reservar hueco. **Estado:** hipótesis que refuerza H1 y H2; no sustituye al dato.
+**Causa a la que llegamos:** el aviso del alta no está integrado en el circuito de primaria, así que la agenda no puede reservar hueco. **Estado:** pendiente de confirmar; refuerza la hipótesis prioritaria HP1, pero no sustituye al dato ni demuestra la relación causal.
 
-## 4. Causas comprobadas
+## 4. Causas comprobadas con dato
 
-| # | Causa | Evidencia | Alcance de la evidencia | Qué implica |
-|---|---|---|---|---|
-| C1 | El aviso del alta a primaria no es sistemático | Validación del grupo el 3/12; 6 de 7 roles lo afirman | Un área de salud, 7 entrevistas y una sesión | Priorizar cómo se avisa; comprobar cuántas altas reciben aviso |
+Todavía ninguna. El 23 % de reingresos es un dato del cuadro de mando, pero describe el problema, no su causa, y su definición está pendiente de comprobar.
 
-## 5. Causas descartadas
+## 5. Hipótesis prioritarias respaldadas por el grupo
+
+Lo que el grupo constata del proceso, con su alcance. **No es una causa demostrada.**
+
+| # | Hipótesis prioritaria | Qué constata el grupo (hecho observado o testimonial) | Quién lo aporta y cuándo | Relación causal: qué falta para demostrarla | Incertidumbre que asumimos | Qué aprenderá la prueba sobre la causa |
+|---|---|---|---|---|---|---|
+| HP1 | El aviso del alta a primaria no es sistemático y eso contribuye a los reingresos | 6 de 7 roles coinciden en que el aviso no se produce siempre; ninguna entrevista lo contradice | Grupo núcleo, sesión del 3/12/2026 | Contar cuántas altas reciben aviso y comparar con los días hasta la visita y con los reingresos | El grupo puede estar describiendo su parte del circuito; no hay dato del conjunto | Si el aviso cambia los días hasta la visita; no probará por sí solo que reduzca reingresos |
+
+## 6. Hipótesis descartadas
 
 | # | Hipótesis descartada | Con qué evidencia | Fecha |
 |---|---|---|---|
 | D1 | El informe de alta tarda en estar disponible | Una entrevista a primaria: está disponible el mismo día que el alta | 26/11/2026 |
 | D2 | Falta de personal como causa del retraso | No es una causa del proceso y no hay dato que la relacione con los días hasta la visita | 10/12/2026 |
 
-## 6. Pendientes de confirmar
+## 7. Pendientes de confirmar
 
-| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha |
-|---|---|---|---|---|
-| P1 | Días reales entre el alta y la primera visita | Listado de altas de IC de 4 semanas | Documentación clínica | SIN FECHA |
-| P2 | Proporción de altas con aviso a primaria | Contar avisos e interconsultas frente a altas | Gestión de casos | Cuando esté el listado |
-| P3 | Si los cambios de medicación se explican y se registran | Revisión de 20 historias | SIN ASIGNAR | SIN FECHA |
+| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha | Tipo de evidencia que se espera |
+|---|---|---|---|---|---|
+| P1 | Días reales entre el alta y la primera visita | Listado de altas de IC de 4 semanas | Documentación clínica | SIN FECHA | Dato registrado |
+| P2 | Proporción de altas con aviso a primaria | Contar avisos e interconsultas frente a altas | Gestión de casos | Cuando esté el listado | Dato registrado |
+| P3 | Si los cambios de medicación se explican y se registran | Revisión de 20 historias | SIN ASIGNAR | SIN FECHA | Dato documental |
 
-## 7. Datos que hay que recoger
+## 8. Datos que hay que recoger
 
 | Dato | Fuente | Quién lo tiene | Quién lo recoge | Durante cuánto tiempo |
 |---|---|---|---|---|
@@ -82,20 +88,22 @@
 
 Los datos se recogen con un número de orden, nunca con el número de historia ni con el nombre del paciente.
 
-## 8. Qué causa abordamos primero y por qué
+## 9. Qué causa abordamos primero y por qué
 
-- **Causa elegida:** C1, el aviso del alta no es sistemático.
-- **Criterio:** afecta a todo el recorrido, el grupo la ha validado y se puede actuar sobre el circuito sin esperar a tener todos los datos.
-- **Qué no está comprobado todavía y asumimos como apuesta:** que un aviso sistemático reduzca los días hasta la visita. Se medirá en la prueba.
+- **Hipótesis prioritaria elegida:** HP1, el aviso del alta no es sistemático.
+- **Estado:** hipótesis prioritaria respaldada por el grupo; no hay dato que demuestre la relación causal.
+- **Criterio:** afecta a todo el recorrido, el grupo constata el hecho y se puede actuar sobre el circuito sin esperar a tener todos los datos.
+- **Qué no está comprobado todavía y asumimos como apuesta:** que un aviso sistemático reduzca los días hasta la visita y, más adelante, los reingresos. Se medirá en la prueba.
+- **Qué aprenderá la prueba sobre la causa:** si el aviso llega y hay hueco, sabremos si los días hasta la visita dependían del aviso; no probará por sí sola que el aviso reduzca reingresos.
 
-## 9. Ideas que aparecen (al parking)
+## 10. Ideas que aparecen (al parking)
 
 - Alerta automática de alta para primaria — requiere sistemas de información; no se valora aquí.
 - Huecos reservados en la agenda para altas de IC.
 - Llamada de enfermería a las 48 horas.
 - Hoja de medicación explicada al alta.
 
-## 10. Cambios propuestos a la ficha y al cuaderno
+## 11. Cambios propuestos a la ficha y al cuaderno
 
-- **Ficha:** apartado de causas (C1 comprobada por validación; H2–H5 en comprobación; H6 y H7 descartadas); acciones P1–P3; fuentes y documentos.
-- **Cuaderno:** entrada del 10/12/2026 con las hipótesis, la evidencia y los datos acordados.
+- **Ficha:** apartado de causas (HP1 como hipótesis prioritaria respaldada por el grupo, con su incertidumbre y el dato pendiente; H2–H5 pendientes de confirmar; H6 y H7 descartadas); acciones P1–P3; fuentes y documentos.
+- **Cuaderno:** entrada del 10/12/2026 con las hipótesis, la evidencia, el tipo de evidencia y los datos acordados.

@@ -87,6 +87,7 @@ Para dibujar mapas de proceso y VSM con símbolos que todo el mundo entienda, ve
 - **Qué es:** el indicador en el tiempo con la mediana como referencia. Ayuda a distinguir un cambio real de la variación normal.
 - **Regla práctica:** seis o más puntos seguidos por encima o por debajo de la mediana suelen indicar un cambio real.
 - **Gráfico de control:** versión más avanzada que añade límites estadísticos; útil cuando hay muchos datos y alguien con experiencia para interpretarlo.
+- **Con CoraLEAN:** ver la skill `interpretar-resultados`.
 - **Errores:** sacar conclusiones con pocos puntos; reaccionar a cada subida o bajada.
 
 ## Histograma
@@ -105,6 +106,7 @@ Para dibujar mapas de proceso y VSM con símbolos que todo el mundo entienda, ve
 - **Qué es:** un gráfico de evolución con dos límites calculados a partir de los propios datos, que marcan la variación esperable del proceso. Ayuda a distinguir la **variación normal** (no conviene reaccionar a cada subida) de las **señales** de que algo ha cambiado de verdad.
 - **Señales habituales:** un punto fuera de los límites; varios puntos seguidos al mismo lado de la línea central; tendencias sostenidas.
 - **Cuándo:** cuando hay muchos datos (por ejemplo, semanales durante meses) y alguien con experiencia para calcularlo e interpretarlo. Con pocos datos, mejor el gráfico de evolución.
+- **Con CoraLEAN:** ver la skill `interpretar-resultados`.
 - **Errores:** confundir los límites de control con los objetivos; recalcular los límites cada vez que cambia algo.
 
 ## Mapa de experiencia del paciente
@@ -159,10 +161,12 @@ Para dibujar mapas de proceso y VSM con símbolos que todo el mundo entienda, ve
 - **Qué es:** el ciclo de las pruebas de cambio: **Planificar** (con una predicción: «esperamos que…»), **Hacer** en pequeño, **Comprobar** (comparar el resultado con la predicción) y **Actuar** (adoptar, adaptar o abandonar).
 - **PDCA o PDSA:** son el mismo ciclo. En España es más conocido como PDCA. Deming prefirió llamar a la tercera fase *Study* (estudiar) en lugar de *Check* (comprobar) para subrayar que no se trata solo de verificar si salió bien, sino de **aprender** por qué.
 - **Ejemplo:** durante 4 semanas, en un centro de salud, reservar 2 huecos semanales para revisión precoz tras el alta. Predicción: el 70 % de las altas se verán en 7 días.
+- **Con CoraLEAN:** ver la skill `planificar-prueba`; para interpretar el resultado, `interpretar-resultados`.
 - **Errores:** pruebas demasiado grandes; no hacer predicción; dar por adoptado lo que solo se ha probado.
 
 ## A3
 - **Qué es:** el proyecto contado en una hoja: contexto, situación actual, objetivo, análisis de causas, contramedidas, plan y seguimiento. Sigue la lógica del ciclo PDCA.
+- **Con CoraLEAN:** ver la skill `consolidar-mejora`.
 - **Errores:** convertirlo en un formulario más; rellenarlo el líder solo, sin el grupo; hacerlo sin haber ido a ver el proceso.
 
 ## 5S
@@ -174,12 +178,15 @@ Para dibujar mapas de proceso y VSM con símbolos que todo el mundo entienda, ve
   - cuando algo no se cumple, la acción no es «recogerlo» sino cambiar el estándar para que no vuelva a pasar;
   - resultados visibles en un panel de la zona.
 - **Ejemplo propio:** el carro de curas, con dotación fija, sitio marcado para cada material y revisión por turno.
+- **Con CoraLEAN:** ver la skill `consolidar-mejora`.
 - **Errores:** confundirlo con una limpieza puntual; hacerlo para una visita; no mantenerlo.
 
 ## Trabajo estándar
 - **Qué es:** la mejor forma conocida hoy de hacer una tarea, acordada por quienes la hacen, documentada y visible. Se revisa cada vez que se mejora.
+- **Con CoraLEAN:** ver la skill `consolidar-mejora`.
 - **Errores:** imponerlo desde fuera; estandarizar antes de haber probado el cambio.
 
 ## Gestión visual
 - **Qué es:** un panel en la zona de trabajo con los indicadores, los problemas del día y las acciones en marcha, revisado en una reunión breve y periódica.
+- **Con CoraLEAN:** ver la skill `consolidar-mejora`.
 - **Errores:** paneles que nadie mira; demasiados indicadores.

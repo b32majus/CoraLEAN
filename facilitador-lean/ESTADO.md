@@ -4,6 +4,7 @@
 
 ## Hecho
 - v0.5 + Plan A (auditoría UX) + Plan B (analizar-causas, priorizar-soluciones, planificar-prueba): 18 skills, tests TODO CORRECTO.
+- Plan C (piloto niveles 1 y 2) y Plan D (correcciones de Cora + `interpretar-resultados` y `consolidar-mejora`): 20 skills, `tests/ejecutar.sh` TODO CORRECTO. Pendiente de revisión, commit y publicación.
 - Rama `feat/facilitador-lean` (repo b32majus/CoraLEAN, proyecto en subcarpeta `facilitador-lean/`).
 - Vista previa: https://b32majus.github.io/CoraLEAN/v04/ (raíz de gh-pages = v0.2, no tocar sin aprobación).
 
@@ -22,12 +23,12 @@
 - Publicar: rsync del outbox a `<clon>/facilitador-lean/` (excluir dist, guia/recursos, .gitignore); gh-pages `/v04/` = copia de `guia/.` sin `.nojekyll`.
 
 ## Siguiente (orden acordado 2026-10-24)
-- **Plan C** (`PLAN_C.md`): piloto niveles 1 y 2 en analizar-causas, priorizar-soluciones, planificar-prueba. Si funciona, extender al resto.
-- **Plan D**: contenido nuevo para interpretar resultados y consolidar/sostener la mejora.
+- **Plan C** HECHO (commit 03c0673, publicado en /v04/): piloto niveles 1 y 2 en analizar-causas, priorizar-soluciones, planificar-prueba. Si funciona, extender al resto.
+- **Plan D** (`PLAN_D.md`) HECHO: correcciones de la auditoría de Cora (estados de evidencia causal, intervención combinada, límites de pruebas pequeñas) + skills `interpretar-resultados` y `consolidar-mejora`. Pendiente: prueba integral sin IA (causas → evaluación, con predicción fallida y equilibrio que empeora) y solo entonces extender el patrón del Plan C.
 - **Plan E**: empaquetado por canal (nivel 3) + página «Elige cómo usarlo».
 - **Prueba de Cora**: persona sin Lean, caso ficticio con trampas, sin IA o solo IA gratuita. Es el criterio real de «hecho».
 
 Otros pendientes:
-1. (Plan B hecho y publicado en /v04/.) Pendiente decidir: ¿analizar-causas debe exigir siempre dato medido?
+1. Decidido: no se exige dato medido (en sanidad a menudo no existe), pero consenso ≠ causa demostrada. «Guardar» remite a `cerrar-sesion` para la entrada del cuaderno.
 2. MEM-03: Sil prueba cierre/reanudación de sesión en ChatGPT/Claude reales.
 3. Imágenes pendientes de `PROMPTS_IMAGENES.md`.

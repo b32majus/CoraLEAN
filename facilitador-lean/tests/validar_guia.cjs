@@ -42,9 +42,11 @@ Object.entries(planB).forEach(([mid, sid]) => {
 });
 // Plan C: piloto «sin IA» y «IA generalista» en tres actividades.
 const PILOTO = {
-  "analizar-causas": ["hipótesis", "hecho", "supuesto", "opinión", "evidencia", "dato", "validación", "causa comprobada", "proceso", "parking"],
-  "priorizar-soluciones": ["causa comprobada", "causa", "criterios", "pesos", "impacto", "esfuerzo", "puntuar", "prometedora", "opinión", "dato", "condici", "parking"],
-  "planificar-prueba": ["predicción", "alcance", "resultado", "proceso", "equilibrio", "adoptar", "adaptar", "abandonar", "probar no es adoptar", "dato de partida", "condici"]
+  "analizar-causas": ["hipótesis", "hecho", "supuesto", "opinión", "evidencia", "dato", "causa comprobada con dato", "hipótesis prioritaria", "pendiente de confirmar", "descartada", "proceso", "parking"],
+  "priorizar-soluciones": ["causa comprobada con dato", "hipótesis prioritaria", "causa", "criterios", "pesos", "impacto", "esfuerzo", "puntuar", "prometedora", "opinión", "dato", "condici", "parking", "matriz"],
+  "planificar-prueba": ["predicción", "alcance", "resultado", "proceso", "equilibrio", "adoptar", "adaptar", "abandonar", "probar no es adoptar", "dato de partida", "condici", "intervención combinada", "viabilidad"],
+  "interpretar-resultados": ["predicción", "tendencia", "desplazamiento", "rachas", "funcionó", "no funcionó", "los datos no bastan", "resultado", "proceso", "equilibrio", "adoptar", "adaptar", "abandonar", "ampliar"],
+  "consolidar-mejora": ["trabajo estándar", "formación", "control visual", "responsable", "umbral", "6 meses", "degrad", "cierre", "escala", "cerrar"]
 };
 const textoManual = (p) => [p.manual.bienHecho, p.manual.contraejemplo, p.manual.guardar, ...p.manual.antes, ...p.manual.pasos, ...p.manual.avanzar, ...p.metodo].join(" ").toLowerCase();
 Object.entries(PILOTO).forEach(([sid, claves]) => {
@@ -82,12 +84,46 @@ Object.entries(PILOTO).forEach(([sid, claves]) => {
   msg = pre + msg + G.textoMetodo(p);
   if (msg.length > 2500) f.push(`mensaje sin configurar de ${sid}: ${msg.length} caracteres`);
 });
+// Plan D: correcciones metodológicas y cierre del ciclo (interpretar y sostener).
+const ESTADOS = ["comprobada con dato", "hipótesis prioritaria respaldada por el grupo", "pendiente de confirmar", "descartada"];
+const tAnalizar = fs.readFileSync(path.join(raiz, "skills/analizar-causas/SKILL.md"), "utf8").toLowerCase();
+const tPlantilla = fs.readFileSync(path.join(raiz, "skills/analizar-causas/plantillas/mapa-causas.md"), "utf8").toLowerCase();
+const mAnalizar = textoManual(P("analizar-causas"));
+ESTADOS.forEach((e) => {
+  if (!tAnalizar.includes(e)) f.push(`estado «${e}» ausente en analizar-causas/SKILL.md`);
+  if (!tPlantilla.includes(e)) f.push(`estado «${e}» ausente en mapa-causas.md`);
+  if (!mAnalizar.includes(e)) f.push(`estado «${e}» ausente en el manual de analizar-causas`);
+});
+// El ejemplo de planificar declara la intervención combinada y no promete eficacia.
+const tPlanEj = fs.readFileSync(path.join(raiz, "skills/planificar-prueba/ejemplos/ejemplo-plan-prueba.md"), "utf8").toLowerCase();
+if (!tPlanEj.includes("intervención combinada")) f.push("el ejemplo de planificar-prueba no declara la intervención combinada");
+if (!tPlanEj.includes("no demuestran eficacia clínica")) f.push("el ejemplo de planificar-prueba no aclara que no demuestra eficacia clínica");
+// El ejemplo de interpretar incluye predicción no cumplida, equilibrio que empeora y los datos no bastan.
+const tInterp = fs.readFileSync(path.join(raiz, "skills/interpretar-resultados/ejemplos/ejemplo-hoja-interpretacion.md"), "utf8").toLowerCase();
+if (!tInterp.includes("no cumplida")) f.push("el ejemplo de interpretar no incluye una predicción no cumplida");
+if (!/equilibrio[\s\S]{0,400}empeor/.test(tInterp)) f.push("el ejemplo de interpretar no incluye una medida de equilibrio que empeora");
+if (!tInterp.includes("los datos no bastan")) f.push("el ejemplo de interpretar no incluye la opción «los datos no bastan»");
+// Momentos, cadena de siguiente y enlaces a herramientas.
+[["interpretar-resultados", "probando"], ["consolidar-mejora", "sosteniendo"]].forEach(([sid, mid]) => {
+  const p = P(sid), m = G.momentos.find((x) => x.id === mid);
+  if (!p) { f.push("falta paso " + sid); return; }
+  if (p.skill !== sid) f.push("paso " + sid + " con skill " + p.skill);
+  if (p.momento !== mid) f.push("paso " + sid + " en momento " + p.momento);
+  if (!m || !m.pasos.includes(sid)) f.push("momento " + mid + " sin " + sid);
+  if (!m || !m.orientacion || !m.orientacion.mensaje) f.push("momento " + mid + " sin orientación");
+});
+if (!P("interpretar-resultados") || P("planificar-prueba").siguiente !== "interpretar-resultados") f.push("planificar-prueba no encadena con interpretar-resultados");
+if (!P("consolidar-mejora") || P("interpretar-resultados").siguiente !== "consolidar-mejora") f.push("interpretar-resultados no encadena con consolidar-mejora");
+[["runchart", "interpretar-resultados"], ["control", "interpretar-resultados"], ["estandar", "consolidar-mejora"], ["visual", "consolidar-mejora"], ["a3", "consolidar-mejora"]].forEach(([hid, sid]) => {
+  const h = G.herramientas.find((x) => x.id === hid);
+  if (!h || h.skill !== sid) f.push(`herramienta ${hid} sin enlace a ${sid}`);
+});
 G.pasos.filter((p) => !PILOTO[p.id]).forEach((p) => {
   if (p.manual) f.push("manual fuera del piloto: " + p.id);
   if (p.metodo) f.push("metodo fuera del piloto: " + p.id);
 });
 // Frases prohibidas en las fuentes (no en dist/ ni guia/recursos/).
-const prohibidas = ["se actualiza solo", "añaden la entrada solos", "Solo se debate", "Solo se debaten", "no lo reabras", "nunca se resume ni se reescribe lo anterior", "En cada sesión"];
+const prohibidas = ["se actualiza solo", "añaden la entrada solos", "Solo se debate", "Solo se debaten", "no lo reabras", "nunca se resume ni se reescribe lo anterior", "En cada sesión", "comprobada por validación", "validación explícita del grupo", "suelen bastar para empezar"];
 const fuentes = [];
 const recorrer = (d) => fs.readdirSync(d, { withFileTypes: true }).forEach((e) => {
   const p = path.join(d, e.name);

@@ -17,12 +17,16 @@ for s in sorted((raiz / "skills").glob("*/SKILL.md")):
         if not ((s.parent / r).exists() or (r.startswith("comun/") and (raiz / r).exists())):
             fallos.append(f"{s.parent.name}: falta {r}")
 print(f"skills: {n}")
-# Plan B: las tres skills nuevas deben tener secciones completas, plantilla, ejemplo y contenido mínimo.
+if n != 20:
+    fallos.append(f"se esperaban 20 skills y hay {n}")
+# Plan B y Plan D: las skills nuevas deben tener secciones completas, plantilla, ejemplo y contenido mínimo.
 secciones = ["## Para qué sirve", "## Entrada", "## Pasos", "## Salida", "## Cierre"]
 nuevas = {
-    "analizar-causas": ["hipótesis", "causa comprobada", "opinión"],
-    "priorizar-soluciones": ["criterio", "causa"],
-    "planificar-prueba": ["predicción", "equilibrio", "adoptar", "abandonar"],
+    "analizar-causas": ["hipótesis", "causa comprobada con dato", "opinión", "hipótesis prioritaria"],
+    "priorizar-soluciones": ["criterio", "causa", "matriz"],
+    "planificar-prueba": ["predicción", "equilibrio", "adoptar", "abandonar", "intervención combinada"],
+    "interpretar-resultados": ["predicción", "tendencia", "desplazamiento", "rachas", "funcionó", "no funcionó", "los datos no bastan", "adoptar", "adaptar", "abandonar", "ampliar"],
+    "consolidar-mejora": ["trabajo estándar", "formación", "control visual", "responsable", "umbral", "1, 3 y 6", "degrad", "cierre", "escala"],
 }
 for nombre, palabras in nuevas.items():
     s = raiz / "skills" / nombre / "SKILL.md"

@@ -69,12 +69,17 @@ Y el cierre estándar.
 | Decidir qué herramienta usar | `elegir-herramienta` |
 | Entender cómo funciona hoy el proceso | `mapear-proceso` |
 | Comparar con el PAI o el protocolo | `comparar-con-estandar` |
+| Entender por qué ocurre el problema | `analizar-causas` |
+| Elegir qué cambio probar primero | `priorizar-soluciones` |
+| Planificar una prueba pequeña (PDCA) | `planificar-prueba` |
+| Interpretar los resultados de la prueba y decidir | `interpretar-resultados` |
+| Consolidar la mejora y comprobar que se sostiene | `consolidar-mejora` |
 | Terminar la sesión sin perder nada | `cerrar-sesion` |
 | Presentación de seguimiento o informe de continuidad | `preparar-entregable` |
 | Incorporar la experiencia de pacientes y cuidadores | `experiencia-paciente` |
 | Medir cómo viven el cambio pacientes y profesionales | `evaluar-experiencia` |
 
-Para analizar causas, priorizar soluciones y planificar pruebas todavía no hay skill específica. Usa `elegir-herramienta` y `preparar-sesion`.
+Si la duda es metodológica y no de una actividad concreta, usa `elegir-herramienta` y `preparar-sesion`.
 
 ## Las preguntas del proyecto (áreas de razonamiento)
 

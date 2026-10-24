@@ -1,6 +1,6 @@
 ---
 name: planificar-prueba
-description: Convierte una idea de cambio ya priorizada en una prueba pequeña y aprendible (ciclo PDCA/PDSA) para un proyecto de mejora sanitaria. Define la predicción, el alcance (dónde, con quién y durante cuánto tiempo), las medidas de resultado, de proceso y de equilibrio, cómo se recogen los datos y el criterio acordado para adoptar, adaptar o abandonar. Produce un plan de prueba de una página y una hoja de seguimiento. Úsala después de priorizar-soluciones, cuando el grupo ya ha elegido qué quiere probar y antes de ponerlo en marcha.
+description: Convierte una idea de cambio ya priorizada en una prueba pequeña y aprendible (ciclo PDCA/PDSA) para un proyecto de mejora sanitaria. Define la predicción, el alcance (dónde, con quién y durante cuánto tiempo), las medidas de resultado, de proceso y de equilibrio, cómo se recogen los datos y el criterio acordado para adoptar, adaptar o abandonar. Declara si el cambio es una intervención combinada y qué no se podrá atribuir a cada componente. Produce un plan de prueba de una página y una hoja de seguimiento. Úsala después de priorizar-soluciones, cuando el grupo ya ha elegido qué quiere probar y antes de ponerlo en marcha.
 ---
 
 # Planificar una prueba
@@ -25,13 +25,15 @@ Si la idea no está vinculada a una causa, vuelve a `priorizar-soluciones`. Si n
 
 1. **Recupera el contexto y concreta el cambio.** Lee la ficha y, del cuaderno, el índice y las decisiones vigentes. Escribe en una frase qué se hace distinto: qué, quién, cuándo y para quién. «Llamar a las 48 horas a todos los pacientes con IC dados de alta en el CS Norte», no «mejorar el seguimiento».
 
-2. **Comprueba el vínculo con la causa.** Recuerda la causa comprobada y cómo se espera que el cambio actúe sobre ella. Si el mecanismo no se puede explicar en dos frases, la prueba todavía no está lista.
+2. **Comprueba el vínculo con la causa.** Recuerda la causa a la que responde el cambio - comprobada con dato o hipótesis prioritaria respaldada por el grupo - y cómo se espera que actúe sobre ella. Si no se puede explicar en dos frases, la prueba todavía no está lista. Si es una hipótesis prioritaria, di que la prueba también servirá para **aprender sobre la causa** y no solo para mover el resultado.
 
 3. **Primero tú.** Antes de proponer el plan, pregunta: «¿Qué crees que va a pasar? ¿Cuánto, dónde y en cuánto tiempo?». Después ayúdale a convertirlo en una predicción comprobable. Si se bloquea, ofrece una pista o un ejemplo, no la predicción hecha.
 
 4. **Escribe la predicción antes de empezar.** Debe ser concreta y falsable: «esperamos que la mediana de días entre el alta y la primera visita baje de 9 a 7 o menos en el CS Norte en 4 semanas». Si no hay dato de partida, la predicción se refiere a lo que se observará: «esperamos que al menos 8 de cada 10 altas tengan aviso a primaria en 24 horas». Sin predicción no hay aprendizaje, solo un cambio que «parece que va bien».
 
-5. **Fija el alcance más pequeño que permita aprender.** Dónde (un centro, una planta, un turno), con quién (qué pacientes o profesionales), cuántos casos, cuánto tiempo y quién lo coordina. Una prueba de 2 a 4 semanas o de 20 a 30 casos suele bastar para empezar. Si el alcance necesita permisos, materiales o personas que no están, anótalo como **condición** antes de empezar.
+5. **Fija el alcance más pequeño que permita aprender.** Dónde (un centro, una planta, un turno), con quién (qué pacientes o profesionales), cuántos casos, cuánto tiempo y quién lo coordina. Una prueba de 2 a 4 semanas o de 20 a 30 casos suele bastar para aprender sobre la **viabilidad** del cambio y su efecto inmediato; **no basta para demostrar eficacia clínica ni para generalizar**. Si el alcance necesita permisos, materiales o personas que no están, anótalo como **condición** antes de empezar.
+
+   **Si se cambian varias cosas a la vez, decláralo como intervención combinada.** Escribe qué componentes se prueban juntos y asume que **no se podrá atribuir el efecto a uno solo**. Si necesitas saber qué componente funciona, prueba uno cada vez o diseña una prueba separada; si no es posible, dilo y limita lo que la prueba puede concluir.
 
 6. **Elige las medidas.** Como mínimo, una de cada tipo:
    - **Resultado:** ¿mejora lo que nos importa? (días hasta la visita, reingresos, avisos completados).
@@ -47,13 +49,13 @@ Si la idea no está vinculada a una causa, vuelve a `priorizar-soluciones`. Si n
    - **Adaptar:** el cambio se hace, pero el resultado no llega o una medida de equilibrio empeora; se ajusta el diseño y se repite.
    - **Abandonar:** el cambio no se puede hacer de forma fiable, o empeora la seguridad o la experiencia sin compensación.
 
-   Añade qué haríais si el resultado es intermedio. Un criterio vago («ya veremos») convierte la prueba en una opinión.
+   Añade qué haríais si el resultado es intermedio. Un criterio vago («ya veremos») convierte la prueba en una opinión. Si es una **intervención combinada**, el criterio se refiere al conjunto: no se podrá decidir cuál de los componentes mantener o retirar sin una prueba adicional.
 
 9. **Planifica la ejecución.** Fechas de inicio y fin, responsable de cada tarea, formación o material necesario, cómo se avisa a quienes participan y cómo se resuelven las dudas. Si falta un responsable o una fecha, escribe **SIN ASIGNAR** o **SIN FECHA**.
 
 10. **Prepara el seguimiento.** Fija una revisión breve (semanal o al final) con la hoja de seguimiento: qué se observó, qué datos hay, qué incidencias y qué toca. Anota también lo que no estaba previsto: suele ser lo más útil.
 
-11. **Recuerda que probar no es adoptar.** Un buen resultado en un sitio pequeño no autoriza a extenderlo a todos. Adoptar exige una decisión explícita del grupo, comprobar que se sostiene, definir el trabajo estándar y planificar la extensión. Si el resultado es bueno, el siguiente paso es decidir la adopción, no anunciarla.
+11. **Recuerda que probar no es adoptar.** Un buen resultado en un sitio pequeño no autoriza a extenderlo a todos. Adoptar exige una decisión explícita del grupo, comprobar que se sostiene, definir el trabajo estándar y planificar la extensión. Si el resultado es bueno, el siguiente paso es decidir la adopción, no anunciarla. Una prueba de cuatro semanas con 30 casos puede mostrar viabilidad y una señal de mejora; no demuestra eficacia clínica ni que funcione en otro contexto.
 
 12. **Propón los cambios a la ficha y al cuaderno.** Prueba en marcha, predicción, medidas, criterio, responsables y fechas. Entrega la ficha completa con versión y fecha nuevas cuando el líder lo confirme.
 
@@ -74,12 +76,14 @@ Al terminar, indica qué anotar con `cerrar-sesion`:
 - Responsables, fechas y condiciones, o **SIN ASIGNAR** / **SIN FECHA**.
 - Los documentos generados y su ubicación en el registro del proyecto.
 
-Siguiente paso habitual: ejecutar la prueba y revisarla con la hoja de seguimiento. Al terminar, `evaluar-experiencia` si hay que medir cómo lo viven pacientes y profesionales, y `cerrar-sesion` para registrar el resultado y la decisión.
+Siguiente paso habitual: ejecutar la prueba y revisarla con la hoja de seguimiento. Al terminar el periodo, `interpretar-resultados` para comparar lo ocurrido con la predicción y decidir; si se adopta, `consolidar-mejora`. `evaluar-experiencia` sirve para medir cómo lo viven pacientes y profesionales, y `cerrar-sesion` para registrar el resultado y la decisión.
 
 ## Reglas específicas
 
 - **Sin predicción no hay prueba**, solo un cambio que se aplica y se juzga después por la impresión.
 - **Probar no es adoptar.** No presentes un resultado favorable como una decisión tomada.
+- **Si se cambian varias cosas a la vez, es una intervención combinada:** se declara y se explica que no se podrá atribuir el efecto a un componente.
+- **Una prueba pequeña sirve para aprender sobre la viabilidad y el efecto inmediato, no para demostrar eficacia clínica.** No prometas más de lo que el tamaño y el plazo permiten.
 - Toda prueba lleva **medida de equilibrio**. Si no se te ocurre qué podría empeorar, pregúntalo al grupo antes de seguir.
 - Si la medida de proceso falla, no concluyas que la idea no funciona: primero revisa si se ha hecho como se diseñó.
 - No inventes el dato de partida ni el resultado. Si no hay dato, escribe **SIN DATO** y explica cómo se obtendrá.

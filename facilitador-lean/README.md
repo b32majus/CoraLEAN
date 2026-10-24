@@ -29,7 +29,9 @@ Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT, Claude y Ope
 | `comparar-con-estandar` | Brechas frente al PAI o protocolo y borrador de adaptación local |
 | `analizar-causas` | De síntomas y opiniones a causas comprobables: hipótesis, evidencia, herramienta y cómo comprobarla |
 | `priorizar-soluciones` | Ideas vinculadas a causas y priorizadas con criterios acordados antes de puntuar |
-| `planificar-prueba` | Prueba PDCA pequeña: predicción, medidas (también de equilibrio), seguimiento y criterio adoptar/adaptar/abandonar |
+| `planificar-prueba` | Prueba PDCA pequeña: predicción, medidas (también de equilibrio), intervención combinada, seguimiento y criterio adoptar/adaptar/abandonar |
+| `interpretar-resultados` | Comparar lo ocurrido con la predicción, leer el gráfico, revisar proceso y equilibrio y decidir adoptar, adaptar, abandonar o ampliar |
+| `consolidar-mejora` | Pasar a la práctica habitual: trabajo estándar, formación, control visual, responsable, umbral de alarma y revisiones a 1–3–6 meses |
 | `cerrar-sesion` | Terminar sin perder nada: ficha actualizada y mensaje para retomar |
 | `preparar-entregable` | Presentación de seguimiento que evoluciona e informe de continuidad, solo con lo trabajado y confirmado |
 | `experiencia-paciente` | Modalidades de participación de pacientes (pros y contras), entrevistas, grupos y mapa de experiencia |

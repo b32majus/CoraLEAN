@@ -106,12 +106,12 @@ const ok = (cond, msg) => { if (!cond) f.push(msg); };
     await p.evaluate(() => { location.hash = "momento-porque"; }); await p.waitForTimeout(150);
     ok((await p.$$(".orientacion #preview-orientacion")).length === 1 && (await p.textContent("#preview-orientacion")).length > 80, "MET-01: el momento «Entendiendo por qué ocurre» no ofrece mensaje de orientación");
     ok((await p.$$('.lista-pasos a[href="#paso-analizar-causas"]')).length === 1, "Plan B: el momento «Entendiendo por qué ocurre» no muestra la skill como paso");
-    for (const [mid, sid] of [["eligiendo", "priorizar-soluciones"], ["probando", "planificar-prueba"]]) {
+    for (const [mid, sid] of [["eligiendo", "priorizar-soluciones"], ["probando", "planificar-prueba"], ["probando", "interpretar-resultados"], ["sosteniendo", "consolidar-mejora"]]) {
       await p.evaluate((x) => { location.hash = "momento-" + x; }, mid); await p.waitForTimeout(120);
       ok((await p.$$(`.lista-pasos a[href="#paso-${sid}"]`)).length === 1, `Plan B: el momento «${mid}» no muestra la skill ${sid} como paso`);
       ok((await p.$$(".orientacion #preview-orientacion")).length === 1, `Plan B: el momento «${mid}» ha perdido su bloque de orientación`);
     }
-    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba"]) {
+    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba", "interpretar-resultados", "consolidar-mejora"]) {
       await p.evaluate((x) => { location.hash = "paso-" + x; }, sid); await p.waitForTimeout(120);
       ok((await p.textContent("#preview")).length > 60, `Plan B: el paso ${sid} no prepara un mensaje`);
       ok((await p.$$('.gen-head a[href="#instalar"]')).length > 0, `Plan B: el paso ${sid} no enlaza a configurar el asistente`);
@@ -131,7 +131,7 @@ const ok = (cond, msg) => { if (!cond) f.push(msg); };
     const ctx = await b.newContext({ viewport: { width: 1440, height: 950 } }); const p = await ctx.newPage();
     p.on("pageerror", (e) => f.push("Plan C pageerror " + e.message));
     await p.goto(base + "index.html#inicio"); await p.waitForTimeout(300);
-    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba"]) {
+    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba", "interpretar-resultados", "consolidar-mejora"]) {
       await p.evaluate((x) => { location.hash = "paso-" + x; }, sid); await p.waitForTimeout(180);
       const r = await p.evaluate(() => {
         const man = document.querySelector(".manual"), gen = document.querySelector(".gen");

@@ -174,7 +174,7 @@ Cubre los momentos «Entendiendo por qué ocurre», «Eligiendo qué probar» y 
 
 | Skill | Qué aporta | Plantillas y ejemplo |
 |---|---|---|
-| `analizar-causas` | Mapa de causas: hipótesis, evidencia actual (hecho, supuesto u opinión), cómo comprobarla y estado; una sola herramienta (5 porqués, Ishikawa, Pareto o dispersión). Ninguna causa se da por comprobada sin dato o validación explícita del grupo | `mapa-causas` · ejemplo con el caso ficticio de IC |
+| `analizar-causas` | Mapa de causas: hipótesis, evidencia actual (hecho, supuesto u opinión), cómo comprobarla y estado; una sola herramienta (5 porqués, Ishikawa, Pareto o dispersión). Distingue lo constatado del proceso de la relación causal y no da ninguna causa por comprobada sin un dato | `mapa-causas` · ejemplo con el caso ficticio de IC |
 | `priorizar-soluciones` | Cada idea vinculada a una causa; criterios y pesos acordados antes de puntuar; impacto/esfuerzo o matriz ponderada; lista con puntuación y porqué | `lista-priorizada`, `matriz-criterios` · ejemplo con el caso ficticio |
 | `planificar-prueba` | PDCA pequeño con predicción, alcance, medidas de resultado, proceso y equilibrio, recogida de datos y criterio adoptar/adaptar/abandonar; recuerda que probar no es adoptar | `plan-prueba`, `hoja-seguimiento-prueba` · ejemplo con el caso ficticio |
 
@@ -183,3 +183,19 @@ Cubre los momentos «Entendiendo por qué ocurre», «Eligiendo qué probar» y 
 | MET-01 (ampliado) | Los momentos `porque`, `eligiendo` y `probando` muestran las nuevas skills como pasos y conservan su bloque de orientación; el mensaje presenta la skill en lugar de decir que no hay actividades. `app.js` pinta la orientación con y sin pasos |
 | Catálogo | 18 skills; guía, README, instrucciones del plan B y empaquetado actualizados. Las herramientas 5 porqués, Ishikawa, Pareto, dispersión, AMFE, impacto-esfuerzo, matriz ponderada y PDCA enlazan con su skill |
 | Pendiente | MEM-03 (prueba real de cerrar y retomar); imágenes propias de `PROMPTS_IMAGENES.md`; C5; F3–F7; G1; verificaciones de planes gratuitos, Copilot y subida conjunta de skills |
+
+## Estado de implementación — Plan C y Plan D (24/10/2026)
+
+**Plan C** convirtió `analizar-causas`, `priorizar-soluciones` y `planificar-prueba` en actividades ejecutables sin IA (nivel 1, bloque «Hazlo paso a paso») y con una IA generalista sin configurar (nivel 2, mensaje con método). **Plan D** corrige la lectura causal del piloto y cierra el ciclo hasta el sostenimiento.
+
+| Qué | Estado |
+|---|---|
+| Evidencia causal | `analizar-causas` distingue cuatro estados: **comprobada con dato**, **hipótesis prioritaria respaldada por el grupo** (lo constatado del proceso, no la relación causal), **pendiente de confirmar** y **descartada**. La plantilla, el ejemplo y el bloque manual de la guía usan los mismos estados. No se exige dato medido; se exige decir qué evidencia sostiene cada afirmación |
+| Priorización | `priorizar-soluciones` admite causas comprobadas con dato e hipótesis prioritarias; si la causa es una hipótesis, la prueba también aprende sobre ella. La matriz hace explícitos los criterios, pero no convierte opiniones en datos ni demuestra que la ganadora sea mejor |
+| Prueba | `planificar-prueba` declara la **intervención combinada** y aclara que 2–4 semanas o 20–30 casos sirven para aprender sobre la **viabilidad**, no para demostrar eficacia clínica; el criterio de decisión se refiere al conjunto. Se corrigió también la ficha de la hoja de recogida |
+| `interpretar-resultados` | Compara lo ocurrido con la predicción, lee tendencia, desplazamiento y rachas, revisa proceso y equilibrio y elige entre «funcionó», «no funcionó» y «los datos no bastan». Decide adoptar, adaptar, abandonar o ampliar. Plantilla `hoja-interpretacion` y ejemplo con predicción no cumplida y equilibrio que empeora |
+| `consolidar-mejora` | Pasa de la prueba a la rutina: trabajo estándar, formación y relevo, control visual, responsable y medida con umbral de alarma, revisiones a 1, 3 y 6 meses, qué hacer si se degrada y cierre o escalado. Plantilla `plan-sostenimiento` y ejemplo del caso ficticio |
+| Guía | Los momentos `probando` y `sosteniendo` muestran los pasos nuevos; ambos tienen bloque `manual` y `metodo` (nivel 1 y 2). Cadena `planificar-prueba → interpretar-resultados → consolidar-mejora`. Las herramientas `runchart`, `control`, `estandar`, `visual` y `a3` enlazan con las skills nuevas sin duplicarlas |
+| Catálogo | 20 skills; README, instrucciones del plan B, tabla de herramientas, `donde-estamos` y empaquetado actualizados |
+
+| Pendiente | Prueba integral sin IA (causas → interpretación → sostenimiento) antes de extender el patrón del Plan C al resto; MEM-03; imágenes propias; C5; F3–F7; G1 |

@@ -5,15 +5,17 @@
 # Plan de prueba (PDCA): huecos de revisión precoz tras el alta en IC
 
 **Proyecto:** Continuidad tras el alta en IC · **Versión del plan:** 1 · **Fecha:** 18/12/2026
-**Causa a la que responde:** C1, el aviso del alta a primaria no es sistemático · **Idea de la lista priorizada:** I1, reservar huecos de revisión precoz
+**Causa a la que responde:** HP1, el aviso del alta a primaria no es sistemático (hipótesis prioritaria respaldada por el grupo) · **Idea de la lista priorizada:** I1, reservar huecos de revisión precoz
 
 ## 1. El cambio, en una frase
 
 - **Qué se hace distinto:** se reservan dos huecos al día en la agenda del CS Norte para revisar en los 7 días siguientes a pacientes con IC dados de alta, y gestión de casos avisa del alta el mismo día.
+- **¿Es una intervención combinada?** **Sí.** Se cambian dos cosas a la vez: el aviso el mismo día y la reserva de huecos. No se podrá saber qué parte del efecto se debe a cada una. Si el resultado es bueno, hará falta otra prueba para decidir qué componente mantener.
 - **Quién lo hace:** gestión de casos avisa; la médica o enfermera de familia del hueco realiza la revisión.
 - **Cuándo y para quién:** de lunes a viernes, para pacientes con IC dados de alta en Medicina Interna del hospital y adscritos al CS Norte.
 - **Qué se sigue haciendo igual:** el resto de la agenda y el circuito de citación habitual.
 - **Cómo se espera que actúe sobre la causa:** si el aviso llega el mismo día y hay un hueco reservado, la revisión no depende de que la familia pida cita ni del cupo ordinario.
+- **Qué aprenderá la prueba sobre la causa:** si los días hasta la visita dependen del aviso y de la disponibilidad de agenda. No demostrará por sí sola que el aviso reduzca los reingresos.
 
 ## 2. Predicción (antes de empezar)
 
@@ -35,6 +37,8 @@
 | Quién coordina | Enfermera gestora de casos (SIN ASIGNAR la persona concreta) |
 | Fechas de inicio y fin | 12/01/2027 – 8/02/2027 (SIN FECHA firme hasta la aprobación) |
 | Condiciones antes de empezar (permisos, material, personas) | Aprobación de la dirección de primaria; compromiso de las dos médicas y la enfermera; listado de altas del mes anterior |
+
+> **Qué permite y qué no permite este tamaño:** cuatro semanas y 20–30 casos bastan para aprender sobre la **viabilidad** del circuito y su efecto inmediato en los días hasta la visita. **No demuestran eficacia clínica** ni que el resultado se repita en otro centro; los reingresos a 30 días necesitan más tiempo y una definición acordada. Al ser una intervención combinada, tampoco se podrá atribuir el efecto al aviso o a los huecos por separado.
 
 ## 4. Medidas
 
@@ -69,7 +73,7 @@
 
 **Quién decide:** el grupo núcleo, con la dirección de primaria · **Cuándo se revisa:** 8/02/2027 · **Cómo se registra la decisión:** acta de la sesión y entrada del cuaderno.
 
-> **Probar no es adoptar.** Aunque el resultado sea bueno, la extensión a otros centros exige una decisión explícita del grupo, comprobar que se sostiene y definir el trabajo estándar.
+> **Probar no es adoptar.** Aunque el resultado sea bueno, la extensión a otros centros exige una decisión explícita del grupo, comprobar que se sostiene y definir el trabajo estándar. Y al ser una intervención combinada, el criterio se refiere al conjunto: para saber qué componente sostiene el efecto hace falta otra prueba.
 
 ## 7. Ejecución
 
@@ -85,6 +89,8 @@
 
 ## 8. Qué aprendimos (se rellena al terminar)
 
+> Se rellena al interpretar los resultados con `interpretar-resultados`, no al cerrar el calendario.
+
 - **Qué pasó frente a la predicción:** pendiente.
 - **Qué funcionó y qué no:** pendiente.
 - **Qué no estaba previsto:** pendiente.
@@ -95,5 +101,5 @@
 
 ## 9. Cambios propuestos a la ficha y al cuaderno
 
-- **Ficha:** prueba en marcha con predicción, medidas, criterio y condiciones; acciones con responsable y fecha.
-- **Cuaderno:** entrada del 18/12/2026 con el plan y la condición pendiente.
+- **Ficha:** prueba en marcha con predicción, medidas, criterio y condiciones; HP1 como hipótesis prioritaria, no como causa demostrada; acciones con responsable y fecha.
+- **Cuaderno:** entrada del 18/12/2026 con el plan, la intervención combinada y la condición pendiente.

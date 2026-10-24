@@ -13,12 +13,12 @@
 
 | # | Hipótesis (causa candidata) | Evidencia actual (hecho / supuesto / opinión) | Fuente y fecha | Cómo comprobarla (dato y método) | Responsable | Fecha | Resultado que la confirmaría | Resultado que la descartaría | Estado |
 |---|---|---|---|---|---|---|---|---|---|
-| H1 | | | | | | | | | hipótesis |
-| H2 | | | | | | | | | hipótesis |
+| H1 | | | | | | | | | pendiente de confirmar |
+| H2 | | | | | | | | | pendiente de confirmar |
 
-**Estados posibles:** hipótesis · en comprobación · causa comprobada · descartada.
+**Estados posibles:** comprobada con dato · hipótesis prioritaria respaldada por el grupo · pendiente de confirmar · descartada.
 
-> Una causa solo pasa a **comprobada** con un dato que la respalde o con una validación explícita del grupo, anotando en qué se basa. La validación del grupo es más débil que un dato y se puede revisar.
+> **Comprobada con dato** exige una medición, un registro o un documento con fuente que respalde la **relación causal** con el problema. **Hipótesis prioritaria respaldada por el grupo** significa que el grupo constata de forma coincidente un hecho del proceso (observación o testimonio), pero la relación causal no está demostrada: justifica una prueba pequeña exploratoria y hay que declarar su incertidumbre. El acuerdo del grupo no es un dato.
 
 ## 3. Resultado de la herramienta
 
@@ -56,41 +56,51 @@
 |---|---|---|---|---|
 | | | | | No demuestra causalidad |
 
-## 4. Causas comprobadas
+## 4. Causas comprobadas con dato
 
-| # | Causa | Evidencia | Alcance de la evidencia | Qué implica |
-|---|---|---|---|---|
-| C1 | | | | |
+| # | Causa | Evidencia (dato, registro o documento) | Fuente y fecha | Alcance de la evidencia | Qué implica |
+|---|---|---|---|---|---|
+| C1 | | | | | |
 
-## 5. Causas descartadas
+## 5. Hipótesis prioritarias respaldadas por el grupo
+
+Lo que el grupo constata del proceso, con su alcance. **No es una causa demostrada:** la relación causal con el problema está pendiente.
+
+| # | Hipótesis prioritaria | Qué constata el grupo (hecho observado o testimonial) | Quién lo aporta y cuándo | Relación causal: qué falta para demostrarla | Incertidumbre que asumimos | Qué aprenderá la prueba sobre la causa |
+|---|---|---|---|---|---|---|
+| HP1 | | | | | | |
+
+## 6. Hipótesis descartadas
 
 | # | Hipótesis descartada | Con qué evidencia | Fecha |
 |---|---|---|---|
 | D1 | | | |
 
-## 6. Pendientes de confirmar
+## 7. Pendientes de confirmar
 
-| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha |
-|---|---|---|---|---|
-| P1 | | | SIN ASIGNAR | SIN FECHA |
+| # | Qué falta saber | Cómo obtenerlo | Responsable | Fecha | Tipo de evidencia que se espera |
+|---|---|---|---|---|---|
+| P1 | | | SIN ASIGNAR | SIN FECHA | |
 
-## 7. Datos que hay que recoger
+## 8. Datos que hay que recoger
 
 | Dato | Fuente | Quién lo tiene | Quién lo recoge | Durante cuánto tiempo |
 |---|---|---|---|---|
 | | | | SIN ASIGNAR | SIN FECHA |
 
-## 8. Qué causa abordamos primero y por qué
+## 9. Qué causa abordamos primero y por qué
 
-- **Causa elegida:**
+- **Causa o hipótesis prioritaria elegida:**
+- **Estado:** comprobada con dato / hipótesis prioritaria respaldada por el grupo
 - **Criterio:** [frecuencia / gravedad / posibilidad de actuar]
 - **Qué no está comprobado todavía y asumimos como apuesta:**
+- **Si es una hipótesis prioritaria:** qué parte de la prueba servirá para aprender sobre la causa y no solo para mejorar el resultado.
 
-## 9. Ideas que aparecen (al parking)
+## 10. Ideas que aparecen (al parking)
 
 - [Idea] — no se valora aquí; se lleva a `priorizar-soluciones`.
 
-## 10. Cambios propuestos a la ficha y al cuaderno
+## 11. Cambios propuestos a la ficha y al cuaderno
 
 - Ficha: [apartados que cambian]
 - Cuaderno: [resumen de la entrada]
