@@ -41,7 +41,7 @@ En todos los modos, el mapa resultante es un **borrador** hasta que lo valida el
 
 6. **Tiempos (si es VSM).** Para cada paso: **tiempo de proceso** (se hace algo al paciente) y **tiempo de espera** hasta el siguiente paso. Marca cada valor como **medido** o **estimado**. Nunca presentes estimaciones como datos.
 
-7. **Problemas.** Localiza cada problema en un paso o traspaso concreto, con su origen (entrevista, sesión, dato).
+7. **Problemas.** Localiza cada problema en un paso o traspaso concreto, con su origen (entrevista, sesión, dato). Si el mapa se hizo en la pared con el código de colores (amarillo pasos, rosa problemas, azul tiempos, verde ideas), respétalo al leer las fotos. Si es VSM, clasifica cada actividad: aporta valor, no aporta valor pero hoy es necesaria, o desperdicio (ver tipos de desperdicio en `elegir-herramienta`); y distingue observación clínica de espera.
 
 8. **Primero tú.** Antes de las conclusiones, pregunta al líder: "Mirando el mapa, ¿dónde crees que está el principal problema?". Compara con lo que muestran los tiempos y los problemas.
 
@@ -63,7 +63,8 @@ En todos los modos, el mapa resultante es un **borrador** hasta que lo valida el
 
 - Se mapea **lo que pasa**, no lo que dice el protocolo.
 - Incluye las excepciones frecuentes (fines de semana, altas de tarde, pacientes que viven solos).
-- No mezcles soluciones en el mapa. Si aparecen, van al "aparcamiento".
+- No mezcles soluciones en el mapa. Si aparecen, van al parking de ideas (pósits verdes).
+- Si el grupo va a hacer el mapa en la pared, recomienda el código de colores y la leyenda en un lateral, y el lienzo imprimible de la guía.
 
 ## Recursos
 

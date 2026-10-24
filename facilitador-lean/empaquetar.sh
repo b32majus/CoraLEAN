@@ -2,7 +2,7 @@
 # Genera en dist/:
 #   - <skill>.zip: carpeta de la skill con comun/ dentro (SKILL.md en la raíz de la carpeta)
 #   - skills/<skill>/: las mismas carpetas sin comprimir (OpenCode, Claude Code)
-#   - proyecto/: INSTRUCCIONES.md + facilitador-lean-completo.md, para usar en un Project de ChatGPT o Claude
+#   - proyecto/: INSTRUCCIONES.md + coralean-completo.md, para usar en un Project de ChatGPT o Claude
 set -euo pipefail
 
 raiz="$(cd "$(dirname "$0")" && pwd)"
@@ -21,9 +21,9 @@ done
 mv "$dist/build" "$dist/skills"
 
 cp "$raiz/proyecto/INSTRUCCIONES.md" "$dist/proyecto/"
-completo="$dist/proyecto/facilitador-lean-completo.md"
+completo="$dist/proyecto/coralean-completo.md"
 {
-  echo "# Facilitador Lean — conocimiento completo"
+  echo "# CoraLEAN — conocimiento completo"
   echo
   for f in "$raiz"/comun/*.md; do
     echo "---"; echo "<!-- comun/$(basename "$f") -->"; cat "$f"; echo

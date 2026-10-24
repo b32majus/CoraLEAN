@@ -26,7 +26,7 @@ Que el líder llegue a cada reunión sabiendo **qué tiene que salir** y **cómo
 | Comparar con el estándar (PAI) | Lista de brechas clasificadas |
 | Analizar causas | Causas principales de los problemas priorizados |
 | Generar y priorizar soluciones | Soluciones priorizadas por impacto y esfuerzo |
-| Planificar la prueba | Plan de prueba pequeña con responsable, indicador y fechas |
+| Planificar la prueba (PDCA) | Plan de prueba pequeña con predicción, responsable, indicador y fechas |
 | **Seguimiento** | Estado de las acciones, obstáculos y siguientes pasos |
 
 Los tipos en negrita tienen guion detallado en `recursos/guiones-tipo.md`. Para el resto, usa la estructura general y las técnicas del catálogo.
@@ -48,7 +48,7 @@ Los tipos en negrita tienen guion detallado en `recursos/guiones-tipo.md`. Para 
 
 6. **Situaciones difíciles previsibles** y qué hacer (ver catálogo): alguien que acapara, un jefe que condiciona, silencio, conflicto entre servicios, desvío del tema.
 
-7. **Materiales:** pósits, rotuladores, papel continuo, documentos impresos, pantalla.
+7. **Materiales:** pósits de cuatro colores con su leyenda (amarillo pasos, rosa problemas, azul tiempos, verde ideas), rotuladores, papel continuo, hoja de parking de ideas, documentos impresos, pantalla.
 
 8. **Convocatoria** con `plantillas/convocatoria.md`.
 

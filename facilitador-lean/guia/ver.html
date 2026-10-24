@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CoraLEAN · Documento</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/estilo.css">
+  <style>
+    .doc-barra { position: sticky; top: 0; z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
+    .doc-barra div { max-width: 900px; margin: 0 auto; padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .doc-barra .tipo { margin-left: auto; font-size: 13px; color: var(--ink-2); }
+    .doc { max-width: 900px; margin: 24px auto 64px; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+    .doc-papel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(18px, 4vw, 40px); box-shadow: var(--shadow); }
+    .doc-papel h1 { font-size: clamp(24px, 3vw, 30px); margin: 0 0 16px; }
+    .doc-papel h2 { font-size: 20px; margin: 26px 0 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .doc-papel h3 { font-size: 17px; margin: 18px 0 8px; }
+    .doc-papel p, .doc-papel li { max-width: 75ch; }
+    .doc-papel blockquote { margin: 12px 0; padding: 10px 14px; background: var(--acc-soft); border-radius: 8px; }
+    .doc-papel blockquote p { margin: 0; }
+    .doc-papel table { margin: 10px 0 16px; font-size: 14.5px; }
+    .doc-papel td:empty::after { content: "\00a0"; }
+    .doc-papel pre { background: var(--code); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    .doc-papel code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+    .doc-papel pre code { background: none; padding: 0; }
+    .doc-papel hr { border: 0; border-top: 1px solid var(--line); margin: 20px 0; }
+    .doc-papel ul ul, .doc-papel ol ul { margin: 4px 0; }
+    .aviso-doc { font-size: 14px; color: var(--ink-2); margin: 0 0 14px; }
+  </style>
+</head>
+<body>
+  <div class="doc-barra"><div><a class="btn small" href="index.html#plantillas">← Volver a la guía</a><button class="btn small" id="copiar">Copiar texto</button><a class="btn small" id="descargar" download>Descargar .md</a><span class="ok-copiado" id="aviso"></span><span class="tipo" id="tipo"></span></div></div>
+  <main class="doc"><p class="aviso-doc" id="aviso-doc"></p><article class="doc-papel" id="doc">Cargando…</article></main>
+  <script>
+  (function () {
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    function inline(s) {
+      return esc(s)
+        .replace(/`([^`]+)`/g, "<code>$1</code>")
+        .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+        .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<i>$2</i>")
+        .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    }
+    function md(src) {
+      const L = src.replace(/\r/g, "").split("\n"); let i = 0, out = "";
+      const esTabla = (l) => /^\s*\|.*\|\s*$/.test(l);
+      while (i < L.length) {
+        let l = L[i];
+        if (/^```/.test(l)) { let b = []; i++; while (i < L.length && !/^```/.test(L[i])) b.push(L[i++]); i++; out += `<pre><code>${esc(b.join("\n"))}</code></pre>`; continue; }
+        if (/^\s*$/.test(l)) { i++; continue; }
+        let m = l.match(/^(#{1,6})\s+(.*)$/);
+        if (m) { const n = Math.min(m[1].length, 3); out += `<h${n}>${inline(m[2])}</h${n}>`; i++; continue; }
+        if (/^\s*(-{3,}|\*{3,})\s*$/.test(l)) { out += "<hr>"; i++; continue; }
+        if (/^\s*>/.test(l)) { let b = []; while (i < L.length && /^\s*>/.test(L[i])) b.push(L[i++].replace(/^\s*>\s?/, "")); out += `<blockquote>${md(b.join("\n"))}</blockquote>`; continue; }
+        if (esTabla(l)) {
+          let filas = []; while (i < L.length && esTabla(L[i])) filas.push(L[i++]);
+          const celdas = (r) => r.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+          const cab = celdas(filas[0]); const cuerpo = filas.slice(1).filter((r) => !/^\s*\|?\s*:?-{2,}/.test(r));
+          out += `<div class="tabla-w"><table><thead><tr>${cab.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${cuerpo.map((r) => `<tr>${celdas(r).map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+          continue;
+        }
+        if (/^\s*([-*]|\d+\.)\s+/.test(l)) {
+          const lista = (base) => {
+            const ord = /^\s*\d+\./.test(L[i]); let h = ord ? "<ol>" : "<ul>";
+            while (i < L.length && /^\s*([-*]|\d+\.)\s+/.test(L[i])) {
+              const ind = L[i].match(/^\s*/)[0].length;
+              if (ind < base) break;
+              if (ind > base) { h = h.replace(/<\/li>$/, "") + lista(ind) + "</li>"; continue; }
+              h += `<li>${inline(L[i].replace(/^\s*([-*]|\d+\.)\s+/, "").replace(/^\[ \]\s*/, "☐ "))}</li>`; i++;
+              while (i < L.length && /^\s{2,}\S/.test(L[i]) && !/^\s*([-*]|\d+\.)\s+/.test(L[i])) { h = h.replace(/<\/li>$/, " " + inline(L[i].trim()) + "</li>"); i++; }
+            }
+            return h + (ord ? "</ol>" : "</ul>");
+          };
+          out += lista(l.match(/^\s*/)[0].length); continue;
+        }
+        let p = [];
+        while (i < L.length && !/^\s*$/.test(L[i]) && !/^(#{1,6}\s|```|\s*>|\s*([-*]|\d+\.)\s+)/.test(L[i]) && !esTabla(L[i])) p.push(L[i++].trim());
+        out += `<p>${inline(p.join(" "))}</p>`;
+      }
+      return out;
+    }
+    const ruta = decodeURIComponent(location.hash.slice(1));
+    const ok = /^(plantillas|ejemplos)\/[a-z0-9-]+$/.test(ruta);
+    const url = `recursos/${ruta}.md`;
+    const doc = document.getElementById("doc");
+    document.getElementById("tipo").textContent = ruta.startsWith("ejemplos") ? "Ejemplo (caso ficticio)" : "Plantilla";
+    document.getElementById("aviso-doc").textContent = ruta.startsWith("ejemplos") ? "Ejemplo con datos inventados: úsalo como referencia de nivel y formato, no como contenido." : "Si tienes las skills de CoraLEAN instaladas, no necesitas descargar esta plantilla: tu asistente ya la usa.";
+    if (!ok) { doc.textContent = "Documento no encontrado."; return; }
+    const desc = document.getElementById("descargar"); desc.href = url;
+    let texto = "";
+    fetch(url).then((r) => r.ok ? r.text() : Promise.reject()).then((t) => {
+      texto = t; doc.innerHTML = md(t);
+      const h1 = doc.querySelector("h1"); if (h1) document.title = "CoraLEAN · " + h1.textContent;
+    }).catch(() => { doc.textContent = "No se ha podido cargar el documento."; });
+    document.getElementById("copiar").addEventListener("click", () => {
+      const aviso = document.getElementById("aviso");
+      if (navigator.clipboard) navigator.clipboard.writeText(texto).then(() => { aviso.textContent = "Copiado"; setTimeout(() => (aviso.textContent = ""), 2000); }, () => { aviso.textContent = "No se pudo copiar"; });
+    });
+  })();
+  </script>
+</body>
+</html>

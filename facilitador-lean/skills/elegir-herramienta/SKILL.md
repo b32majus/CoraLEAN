@@ -1,6 +1,6 @@
 ---
 name: elegir-herramienta
-description: Recomienda la herramienta Lean o de mejora de la calidad adecuada para el momento del proyecto sanitario (mapa de proceso, VSM, spaghetti, comparación con el PAI, 5 porqués, Ishikawa, Pareto, recogida de datos, gráfico de evolución, matriz impacto-esfuerzo, PDSA, A3, 5S, trabajo estándar, gestión visual) - una sola herramienta, por qué ahora, cuándo no usarla y cómo empezar. Úsala cuando el líder no sabe qué herramienta usar o duda entre varias.
+description: Recomienda la herramienta Lean o de mejora de la calidad adecuada para el momento del proyecto sanitario (gemba, mapa de proceso, VSM, tipos de desperdicio, spaghetti, comparación con el PAI, recogida de datos, gráfico de evolución, 5 porqués, Ishikawa, Pareto, AMFE, diagrama de impulsores, matriz impacto-esfuerzo, matriz de decisión ponderada, PDCA, A3, 5S, trabajo estándar, gestión visual) - una sola herramienta, por qué ahora, cuándo no usarla y cómo empezar. Úsala cuando el líder no sabe qué herramienta usar o duda entre varias.
 ---
 
 # Elegir herramienta
@@ -28,9 +28,11 @@ La ficha del proyecto y, si la hay, la pregunta concreta del líder ("¿hago un 
    - **cuándo no usarla** en este caso;
    - **alternativa más ligera** si hay poco tiempo.
 
-4. **Cómo empezar:** tres pasos concretos y, si existe, la skill que la desarrolla (`mapear-proceso`, `comparar-con-estandar`) o el tipo de sesión de `preparar-sesion`.
+4. **Fuente para profundizar:** si la herramienta aparece en el manual de SECA o en el kit del IHI, recomienda la fuente original con su enlace (ver final de `recursos/tabla-herramientas.md`).
 
-5. **Si el líder pide una herramienta que no toca** (por ejemplo, priorizar soluciones sin conocer las causas), dilo con claridad y explica qué falta antes. La decisión final es suya.
+5. **Cómo empezar:** tres pasos concretos y, si existe, la skill que la desarrolla (`mapear-proceso`, `comparar-con-estandar`) o el tipo de sesión de `preparar-sesion`.
+
+6. **Si el líder pide una herramienta que no toca** (por ejemplo, priorizar soluciones sin conocer las causas), dilo con claridad y explica qué falta antes. La decisión final es suya.
 
 ## Entrega
 

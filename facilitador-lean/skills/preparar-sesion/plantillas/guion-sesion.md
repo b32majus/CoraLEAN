@@ -25,7 +25,7 @@
 | Alguien acapara | |
 | Silencio | |
 | Conflicto | |
-| Nos desviamos | Aparcamiento: "Lo apunto para tratarlo después" |
+| Nos desviamos | Parking de ideas: "Lo apunto para tratarlo después" |
 
 ## Materiales
 -

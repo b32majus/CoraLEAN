@@ -115,3 +115,20 @@ No «¿te gusta?», sino:
 1. Probar la versión actual en un proyecto real (arranque y primera reunión) y recoger feedback.
 2. Implementar la **prioridad 1** como versión 0.3, incorporando ese feedback.
 3. Hacer las verificaciones pendientes y decidir la **prioridad 2**.
+
+## Estado de implementación — v0.3 (24/10/2026)
+
+**Fuentes:** SECA autorizó la reinterpretación con su manual accesible y citado en la biblioteca; el kit QI Essentials del IHI se cita y enlaza (su licencia no permite republicarlo).
+
+| ID | Estado en v0.3 |
+|---|---|
+| A1, A2, A3, A4, A5, A6, A7, A8 | Implementado: pantalla de inicio con el mapa de las siete preguntas y los seis momentos (sin numeración lineal), «por qué importa» y «cómo conecta» en cada paso, navegación lateral fija, mensajes cortos con «después de pegarlo» y recomendación de dictar, visor HTML de plantillas con descarga aparte, nombre CoraLEAN |
+| B1 | Implementado: sección «Bibliografía y fuentes» (SECA, IHI, artículos con PMID, libros, fuentes fiables) y enlace «para profundizar» en las fichas |
+| B2 | Implementado en parte: ideas del manual de SECA reinterpretadas en VSM (demanda, flujo empujado o tirado, valor añadido, observación frente a espera), tipos de desperdicio, 5S (verificación rotatoria, panel), spaghetti (cordel, alternativas con matriz ponderada), A3 (riesgo de formulario, gemba) |
+| B3, B4, B5, B6, B7 | Implementado: PDCA (también PDSA), parking de ideas, código de colores con leyenda imprimible, ficha de gemba, spaghetti, 5S, trabajo estándar y gestión visual en la guía |
+| B9 | Adelantado en parte: cada herramienta tiene página de detalle; imágenes propias pendientes |
+| B10 | Adelantado en parte: añadidos diagrama de impulsores, AMFE, matriz de decisión ponderada y tipos de desperdicio |
+| B11 | Implementado: regla común de fuentes fiables con enlace |
+| C1, C2, C3 | Implementado: fecha de última actualización y «Fuentes y documentos» en la ficha; skill `cerrar-sesion`; reanudación en `donde-estamos` |
+| F1, F2 | Implementado: configuración paso a paso por entorno (ChatGPT, Claude, OpenCode; Copilot y versiones gratuitas marcados como «en estudio») y primer mensaje |
+| Resto de prioridad 2 y 3 | Pendiente |

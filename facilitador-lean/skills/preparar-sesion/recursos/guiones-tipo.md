@@ -10,11 +10,11 @@
 - Enviar el boceto resumido (problema, objetivo y alcance provisionales, en media página) 48 horas antes.
 - Pedir a cada persona que traiga **un caso reciente** (sin datos del paciente) en el que el proceso funcionó mal o bien.
 - Si hay jefes en el grupo, hablar antes con ellos: pedirles que escuchen primero e intervengan al final de cada bloque.
-- Preparar: papel continuo en la pared, pósits de dos colores, rotuladores, el boceto impreso en grande, hoja de "Aparcados".
+- Preparar: papel continuo en la pared, pósits de cuatro colores con su leyenda en la pared (ver «Código de colores»), rotuladores, el boceto impreso en grande, hoja de «Parking de ideas».
 
 | Tiempo | Bloque | Técnica | Qué se dice / se pregunta | Qué tiene que salir |
 |---|---|---|---|---|
-| 0–10 | Apertura | — | "Gracias por venir. Estamos aquí porque [origen y encargo en dos frases]. Hoy no vamos a buscar soluciones: vamos a ponernos de acuerdo en qué problema queremos resolver y en cómo funciona hoy el proceso. Al terminar tendremos [resultado]." Consentimiento de grabación. Explicar "Aparcados". | Todos saben a qué vienen |
+| 0–10 | Apertura | — | "Gracias por venir. Estamos aquí porque [origen y encargo en dos frases]. Hoy no vamos a buscar soluciones: vamos a ponernos de acuerdo en qué problema queremos resolver y en cómo funciona hoy el proceso. Al terminar tendremos [resultado]." Consentimiento de grabación. Explicar el parking de ideas y la leyenda de colores. | Todos saben a qué vienen |
 | 10–20 | Presentación con sentido | Ronda | "Nombre, dónde trabajas y, en una frase, qué ves tú de este problema desde tu sitio." | Cada nivel ha hablado; primera foto de percepciones |
 | 20–40 | El problema y el objetivo | Escritura en silencio + semáforo | Leer el problema y el objetivo provisionales. "Durante 3 minutos, escribid en un pósit qué cambiaríais o qué falta." Leerlos. Después: "Con esos cambios, ¿os representa? Verde, ámbar o rojo." | Problema y objetivo validados o reformulados |
 | 40–50 | El alcance | Ronda rápida | "¿Dónde empieza el problema para el paciente? ¿Dónde termina para nosotros? ¿Qué dejamos fuera de momento?" | Inicio, fin y fuera del alcance |
@@ -29,7 +29,7 @@
 | Situación | Qué hacer |
 |---|---|
 | "¿Y esto para qué, si ya lo intentamos?" | "Contadnos qué pasó; es justo lo que necesitamos saber para no repetirlo." Registrar en la ficha. |
-| Alguien llega con la solución decidida | "La apuntamos en 'Aparcados'. Primero vamos a comprobar que resuelve el problema que tenemos." |
+| Alguien llega con la solución decidida | "La apuntamos en el parking de ideas. Primero vamos a comprobar que resuelve el problema que tenemos." |
 | Un servicio se siente acusado | "Estamos mirando el recorrido del paciente, no a los servicios. Los problemas suelen estar en los traspasos." |
 | No hay datos | "Perfecto, lo apuntamos en 'A averiguar'. ¿Quién podría medirlo dos semanas?" |
 | Falta un nivel asistencial clave | Registrarlo, decidir en el cierre a quién invitar o entrevistar. |
@@ -58,7 +58,7 @@
 | 0–10 | Apertura | — | "Hoy vamos a dibujar entre todos cómo es de verdad el recorrido del paciente, no como debería ser." | — |
 | 10–20 | Límites | Ronda | "¿Dónde empieza para el paciente? ¿Dónde termina para nosotros?" | Inicio y fin del proceso |
 | 20–60 | Mapa | Mapa en la pared + "la última vez que…" | "¿Cuál es el primer paso? ¿Quién lo hace? ¿Y después?" · "¿Cuánto pasa hasta el siguiente paso?" | Pasos, responsables y esperas |
-| 60–75 | Problemas | Escritura en silencio | "En 4 minutos, en pósits rojos: ¿dónde se atasca, se repite o falla?" Pegar en el mapa. | Problemas localizados en el mapa |
+| 60–75 | Problemas | Escritura en silencio | "En 4 minutos, en pósits rosas: ¿dónde se atasca, se repite o falla?" Pegar en el mapa. | Problemas localizados en el mapa |
 | 75–90 | Cierre | Cierre con responsables | "¿Qué datos necesitamos para confirmar los tiempos? ¿Quién?" | Acuerdos |
 
 ## C. Seguimiento (45–60 min)

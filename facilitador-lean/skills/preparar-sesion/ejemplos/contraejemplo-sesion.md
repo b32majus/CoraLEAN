@@ -19,6 +19,6 @@ Habla el jefe de servicio durante 15 minutos sobre lo que no funciona en primari
 | "¿Alguien tiene algo que decir?" | Apertura con objetivo y resultado: "Al terminar tendremos el recorrido real del paciente en nuestra área." |
 | Habla el jefe 15 minutos | Escritura en silencio antes del debate: todos escriben primero. Hablar con el jefe antes de la sesión. |
 | Primaria no habla | Ronda: cada nivel cuenta su parte del recorrido. |
-| Se discute una solución durante 30 minutos | Aparcamiento: "Buena idea; la guardamos para cuando entendamos el problema." |
+| Se discute una solución durante 30 minutos | Parking de ideas: "Buena idea; la guardamos para cuando entendamos el problema." |
 | Se acaba el tiempo sin acuerdos | Cierre de 10 minutos que no se recorta: acuerdos con responsable y fecha. |
 | Doce personas desde el principio | Entrevistas individuales previas y una sesión de validación con un grupo núcleo de 6–8 personas. |

@@ -1,78 +1,57 @@
-# Facilitador Lean — Bloques 1 y 2
+# CoraLEAN — skills y guía (v0.3)
 
-Asistente para que profesionales sanitarios lideren proyectos de mejora: arrancar un proyecto, preparar y conducir reuniones, entrevistar, procesar grabaciones, elegir herramientas, mapear el proceso, comparar con el PAI y no perder el hilo. Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT y Claude o, como plan B, dentro de un **Project**.
+CoraLEAN acompaña a profesionales sanitarios que lideran proyectos de mejora: les ayuda a pensar el problema, preparar y conducir reuniones, entrevistar, procesar lo que pasa en cada sesión, elegir herramientas Lean y no perder el hilo del proyecto. No sustituye a quien lidera: le enseña a hacerlo mientras lo hace.
 
-## El flujo
+Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT, Claude y OpenCode o, como plan B, dentro de un **Project**. La **guía web** orienta al usuario y prepara los mensajes para su asistente.
 
-```
-FASE 0 · ARRANQUE
-recoger-contexto → preguntame → bocetar-proyecto ─┬─→ planificar-entrevistas → (entrevistas grabadas)
-                                                  │                                     │
-                                                  │          procesar-reunion (entrevista) ┘
-                                                  │                     │
-                                                  │          sintetizar-entrevistas
-                                                  ▼                     ▼
-                       preparar-sesion: LANZAMIENTO  o  VALIDAR LA SITUACIÓN DE PARTIDA
-                                                                        │
-CICLO DE SESIONES ←─────────────────────────────────────────────────────┘
-donde-estamos → preparar-sesion → (sesión grabada) → procesar-reunion → ficha actualizada → …
-                     │
-                     └─ elegir-herramienta → mapear-proceso / comparar-con-estandar / …
-```
+## Principios
 
-**La ficha del proyecto es la memoria.** Cada skill la pide al empezar y devuelve la versión actualizada al terminar. Guarda siempre la última versión y pégala o adjúntala en la siguiente conversación.
+1. **Tres pilares:** razonamiento metodológico, aprendizaje durante el trabajo, continuidad y resultados utilizables.
+2. **Mapa, no ruta:** siete preguntas (áreas de razonamiento) y seis momentos que orientan; no fases obligatorias. Volver atrás es normal.
+3. **Primero tú:** la persona propone y CoraLEAN cuestiona y completa.
+4. **Entregables:** solo ordenan y presentan lo trabajado y confirmado en la ficha; nunca hacen el A3 por el líder.
+5. **La ficha del proyecto es la memoria.** Cada skill la pide al empezar y la devuelve actualizada; `cerrar-sesion` y `donde-estamos` aseguran la continuidad entre conversaciones.
 
-## Las skills
+## Skills
 
-| Bloque | Skill | Para qué |
-|---|---|---|
-| 1 | `recoger-contexto` | Ordenar todo lo que se sabe antes de empezar |
-| 1 | `preguntame` | Interrogatorio al líder, pregunta a pregunta |
-| 1 | `bocetar-proyecto` | Boceto, mapa de actores, plan de arranque, grupo núcleo y convocatoria. Ficha v0 |
-| 1 | `planificar-entrevistas` | A quién entrevistar y guion por rol |
-| 1 | `procesar-reunion` | De la grabación o las notas: acta, documento del líder (o ficha de entrevista) y cambios a la ficha |
-| 1 | `sintetizar-entrevistas` | Situación de partida para validar en grupo |
-| 1 | `preparar-sesion` | Guion minuto a minuto (incluye **lanzamiento**, validación, mapeo y seguimiento) y convocatoria |
-| 2 | `donde-estamos` | Momento del proyecto, semáforo de la ficha, alertas y siguiente paso |
-| 2 | `elegir-herramienta` | Una herramienta, por qué ahora, cuándo no y cómo empezar |
-| 2 | `mapear-proceso` | Mapa por niveles asistenciales o VSM, con diagrama y hoja de recogida de tiempos |
-| 2 | `comparar-con-estandar` | Brechas frente al PAI o protocolo y borrador de adaptación local |
+| Skill | Para qué |
+|---|---|
+| `donde-estamos` | Retomar el proyecto: reconstruir el contexto desde la ficha, momento, alertas y siguiente paso |
+| `recoger-contexto` | Ordenar todo lo que se sabe antes de empezar |
+| `preguntame` | Interrogatorio al líder, pregunta a pregunta |
+| `bocetar-proyecto` | Boceto, mapa de actores, plan de arranque, grupo núcleo y convocatoria. Ficha v0 |
+| `planificar-entrevistas` | A quién entrevistar y guion por rol, con consentimiento de grabación |
+| `procesar-reunion` | De la grabación o las notas: acta, documento del líder (o ficha de entrevista) y cambios a la ficha |
+| `sintetizar-entrevistas` | Situación de partida para validar en grupo |
+| `preparar-sesion` | Guion minuto a minuto (lanzamiento, validación, mapeo, seguimiento…) y convocatoria |
+| `elegir-herramienta` | Una herramienta, por qué ahora, cuándo no y cómo empezar (24 herramientas) |
+| `mapear-proceso` | Mapa por niveles asistenciales o VSM, con diagrama y hoja de recogida de tiempos |
+| `comparar-con-estandar` | Brechas frente al PAI o protocolo y borrador de adaptación local |
+| `cerrar-sesion` | Terminar sin perder nada: ficha actualizada y mensaje para retomar |
 
 Los ejemplos usan un caso **ficticio**: adaptación del PAI de insuficiencia cardiaca en el "Área de Salud del Valle".
 
+## Fuentes de referencia
+
+- *Manual de Bolsillo Lean Healthcare*. Sociedad Española de Calidad Asistencial (SECA), 2025. https://calidadasistencial.es/manual-de-bolsillo-lean-healthcare/ — SECA ha autorizado la reinterpretación de sus ideas, con el manual original accesible y citado. Las fichas de CoraLEAN están escritas con palabras e imágenes propias.
+- *Kit de Herramientas de QI Essentials*. Institute for Healthcare Improvement (IHI), 2017. https://www.ihi.org/es/library/tools/quality-improvement-essentials-toolkit — citado y enlazado; no se reproduce.
+
+## Estructura
+
+```
+facilitador-lean/
+├── comun/                 reglas comunes, privacidad y grabaciones, plantilla de la ficha
+├── skills/<skill>/        SKILL.md + plantillas/ + recursos/ + ejemplos/
+├── proyecto/              INSTRUCCIONES.md del plan B
+├── guia/                  guía web estática (se publica en la rama gh-pages)
+├── empaquetar.sh          genera dist/ (zips, carpetas para OpenCode, plan B) y los recursos de la guía
+└── REGISTRO_MEJORAS.md    registro consolidado de mejoras y prioridades
+```
+
 ## Instalación
 
-Ejecuta `./empaquetar.sh`. Genera en `dist/`:
-- un `.zip` por skill;
-- `dist/proyecto/` con `INSTRUCCIONES.md` y `facilitador-lean-completo.md` (todo el contenido en un solo archivo).
+Ejecuta `./empaquetar.sh`. Genera en `dist/`: un `.zip` por skill, `dist/skills/` (carpetas para OpenCode o `~/.claude/skills`) y `dist/proyecto/` (plan B: `INSTRUCCIONES.md` + `coralean-completo.md`). La guía web explica paso a paso cómo instalar en cada entorno.
 
-**Opción A, skills (recomendada):**
-- **Claude:** Personalizar → Skills → subir cada `.zip`.
-- **ChatGPT:** Skills (dentro de Plugins) → subir cada `.zip`.
+## Pendiente
 
-**Opción B, Project (plan B, o si las skills no se pueden subir):**
-1. Crea un Project en ChatGPT o Claude.
-2. Pega el contenido de `INSTRUCCIONES.md` en las instrucciones del Project.
-3. Sube `facilitador-lean-completo.md` como archivo del Project.
-4. Guarda también la ficha del proyecto como archivo del Project y sustitúyela por la nueva versión cada vez que cambie.
-
-## Para empezar un proyecto real
-
-1. "Me han encargado [proyecto]. Te pego lo que tengo." → `recoger-contexto`.
-2. "Pregúntame lo que falte." → `preguntame`.
-3. "Haz el boceto." → `bocetar-proyecto` (ficha v0, actores, grupo, convocatoria).
-4. "Prepara la reunión de lanzamiento del lunes, 90 minutos, con [roles]." → `preparar-sesion`.
-5. Después de la reunión: "Te pego la transcripción." → `procesar-reunion`.
-
-## Feedback que interesa recoger
-
-- ¿Dónde has tenido que corregir al asistente? (copia la respuesta y tu corrección)
-- ¿Qué preguntó que no aportaba? ¿Qué no preguntó y debería?
-- ¿El guion se podía usar tal cual en la reunión? ¿Qué cambiaste?
-- ¿Tuviste que volver a contar contexto en una conversación nueva?
-
-## Pendiente (Bloque 3)
-
-- `analizar-causas`, `priorizar-soluciones`, `planificar-prueba` (PDSA).
-- Empaquetar como plugin único.
-- Si SECA lo autoriza por escrito: incorporar el *Manual de Bolsillo Lean Healthcare* como recurso.
+Ver `REGISTRO_MEJORAS.md` (prioridad 2: entregables de continuidad, experiencia de pacientes y profesionales, modos Copilot y planes gratuitos tras verificarlos, fichas ampliadas).

@@ -4,8 +4,9 @@
 
 **Proyecto:**
 **Líder:** (rol)
-**Versión:** v0 · **Fecha:**
-**Momento actual:** Arranque · Situación actual · Análisis de causas · Soluciones · Prueba · Implantación · Sostener
+**Versión:** v0 · **Última actualización:** (fecha)
+**Momento actual:** Preparando el proyecto · Entendiendo el problema · Entendiendo por qué ocurre · Eligiendo qué probar · Probando y adoptando cambios · Evaluando y sosteniendo la mejora  
+(El momento orienta, no es una fase: se puede volver a uno anterior cuando aparece información nueva.)
 **Estado de esta ficha:** BORRADOR (sin validar con el grupo) / VALIDADA el …
 
 ---
@@ -68,7 +69,12 @@
 - **Siguiente paso y por qué:**
 - **Próxima sesión (fecha, tipo, objetivo):**
 
-## 15. Historial de versiones
+## 15. Fuentes y documentos del proyecto
+(Documentos originales que sostienen la ficha: encargo, PAI, actas, transcripciones procesadas, datos. Así se puede volver a la fuente cuando haga falta.)
+| Documento | Fecha | Dónde está | Qué aporta |
+|---|---|---|---|
+
+## 16. Historial de versiones
 | Versión | Fecha | Qué cambió |
 |---|---|---|
 | v0 | | Boceto inicial |

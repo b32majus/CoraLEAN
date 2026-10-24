@@ -37,9 +37,13 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 
 ## Para entender el proceso
 
+**Código de colores de los pósits** (para cualquier mapa en la pared)
+- **Amarillo:** pasos o actividades. **Rosa o rojo:** problemas e incidencias. **Azul:** tiempos. **Verde:** ideas de mejora (van al parking de ideas).
+- Coloca en un lateral **una leyenda con un pósit de cada color y su significado**. Todo el grupo entiende el código sin tener que explicarlo cada vez.
+
 **7. Mapa en la pared**
 - *Para qué:* construir entre todos el recorrido real del paciente.
-- *Cómo:* papel continuo, un pósit por paso (verbo + objeto: "solicitar analítica"), en orden. Debajo, en otro color, esperas y problemas.
+- *Cómo:* papel continuo y la leyenda de colores en un lateral. Un pósit amarillo por paso (verbo + objeto: "solicitar analítica"), en orden. Debajo, los tiempos en azul y los problemas en rosa. Las ideas que surjan, en verde, al parking de ideas.
 - *Pregunta clave:* "¿Y después qué pasa? ¿Quién lo hace? ¿Cuánto tiempo pasa hasta el siguiente paso?"
 
 **8. "La última vez que…"**
@@ -48,13 +52,13 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 
 **9. Ir a ver (gemba)**
 - *Para qué:* ver el proceso donde ocurre, no como se cuenta.
-- *Cómo:* recorrer el lugar de trabajo con quien lo hace, observando y preguntando, sin corregir.
+- *Cómo:* recorrer el lugar de trabajo con quien lo hace, con una pregunta concreta, observando primero y preguntando después («¿me enseñas cómo lo haces?»), sin corregir. Es observación, no inspección.
 
 ## Para mantener el orden
 
-**10. Aparcamiento**
-- *Para qué:* no perder temas importantes que desvían la sesión.
-- *Cómo:* una hoja visible titulada "Aparcados". "Es importante; lo apunto aquí y decidimos al final cuándo tratarlo."
+**10. Parking de ideas**
+- *Para qué:* que ninguna idea se pierda y que el grupo no se desvíe del objetivo de la sesión. En las sesiones aparecen continuamente propuestas interesantes que todavía no toca analizar.
+- *Cómo:* una hoja visible titulada «Parking de ideas» (o la zona de pósits verdes). "Es una buena idea; la aparcamos aquí y no se pierde." Al cerrar la sesión, se repasa el parking y se decide cuándo tratar cada idea. Las ideas del parking se registran en la ficha del proyecto.
 
 **11. Tiempo visible**
 - *Para qué:* respetar los bloques.
@@ -73,5 +77,5 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 | **Silencio** | Aguantar 10 segundos. Reformular más concreto. Pasar a escritura en silencio o parejas. |
 | **Conflicto entre servicios** | Volver a los hechos y al paciente: "¿Qué le pasa al paciente en ese punto?". Registrar las dos versiones como "a aclarar con datos". |
 | **"Eso ya lo intentamos"** | "¿Qué pasó? ¿Qué aprendimos?". Es información valiosa, no un obstáculo. |
-| **Saltan a soluciones** | Aparcamiento: "Buena idea, la guardamos para cuando entendamos el problema." |
+| **Saltan a soluciones** | Parking de ideas: "Buena idea, la guardamos para cuando entendamos el problema." |
 | **"No hay recursos"** | Registrarlo como restricción y seguir: "De acuerdo. Con lo que hay, ¿qué podríamos cambiar?" |

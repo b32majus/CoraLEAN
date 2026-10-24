@@ -101,13 +101,79 @@
     t(106, 122, "Si sobra tiempo", "d-t") + t(234, 122, "Descartar", "d-t") +
     t(170, 176, "Esfuerzo →", "d-ts") + `<text x="22" y="90" class="d-ts" text-anchor="middle" transform="rotate(-90 22 90)">Impacto →</text>`);
 
-  D.pdsa = () => {
+  D.pdca = () => {
     const c = [160, 90], r = 70;
-    const q = [["Planificar", "predicción", -1, -1], ["Hacer", "en pequeño", 1, -1], ["Estudiar", "frente a la predicción", 1, 1], ["Actuar", "adoptar · adaptar · abandonar", -1, 1]];
+    const q = [["Planificar", "con predicción", -1, -1], ["Hacer", "en pequeño", 1, -1], ["Comprobar", "frente a la predicción", 1, 1], ["Actuar", "adoptar · adaptar · abandonar", -1, 1]];
     let b = defs + `<circle cx="${c[0]}" cy="${c[1]}" r="${r}" class="d-soft"/>` + line(c[0] - r, c[1], c[0] + r, c[1]) + line(c[0], c[1] - r, c[0], c[1] + r);
     q.forEach(([n, s, dx, dy]) => { b += t(c[0] + dx * 36, c[1] + dy * 30, n, "d-tb") + t(c[0] + dx * 36, c[1] + dy * 30 + 14, s, "d-ts"); });
     b += `<path d="M ${c[0] + r + 12} ${c[1] - 30} A ${r + 12} ${r + 12} 0 0 1 ${c[0] + r + 12} ${c[1] + 30}" class="d-acc-line" fill="none" marker-end="url(#fl)"/>`;
     return svg(b);
+  };
+
+  D.impulsores = () => {
+    let b = defs + box(6, 70, 70, 40, "d-acc-soft") + t(41, 88, "Objetivo", "d-tb") + t(41, 102, "medible", "d-ts");
+    [[30, "Impulsor 1"], [90, "Impulsor 2"], [150, "Impulsor 3"]].forEach(([y, n]) => {
+      b += box(108, y - 14, 84, 28) + t(150, y + 4, n, "d-t") + arrow(108, y, 76, 90);
+      [-10, 10].forEach((d) => { b += box(226, y + d - 9, 88, 18, "d-ok-soft") + t(270, y + d + 4, "idea de cambio", "d-ts") + arrow(226, y + d, 192, y); });
+    });
+    return svg(b);
+  };
+
+  D.gemba = () => {
+    let b = defs + box(10, 20, 300, 120, "d-lane", 6) + t(160, 40, "Donde ocurre el trabajo", "d-ts");
+    [[50, 110], [80, 96], [110, 112], [140, 98], [170, 114], [200, 100]].forEach(([x, y], i) => { b += `<ellipse cx="${x}" cy="${y}" rx="7" ry="11" class="${i % 2 ? "d-soft-fill" : "d-acc-fill"}" transform="rotate(${i % 2 ? 20 : -20} ${x} ${y})"/>`; });
+    b += `<circle cx="252" cy="88" r="26" class="d-acc-soft"/><circle cx="252" cy="88" r="10" class="d-acc"/>` + t(252, 128, "observar", "d-tacc");
+    b += t(110, 160, "1. Ve   2. Observa   3. Pregunta   4. Anota hechos", "d-ts");
+    return svg(b, 170);
+  };
+
+  D.desperdicios = () => {
+    const w = ["Esperas", "Traslados", "Movimientos", "Sobreproceso", "Stock", "Hacer de más", "Errores", "Talento"];
+    return svg(w.map((n, i) => { const x = 8 + (i % 4) * 78, y = 14 + Math.floor(i / 4) * 78; return box(x, y, 72, 70, i === 0 ? "d-bad-soft" : "d-soft") + t(x + 36, y + 30, String(i + 1), "d-tacc") + t(x + 36, y + 50, n, "d-t"); }).join(""), 180);
+  };
+
+  D.spaghetti = () => {
+    let b = box(8, 8, 304, 164, "d-lane", 2) + box(20, 20, 60, 40) + t(50, 44, "Control", "d-ts") + box(240, 20, 60, 40) + t(270, 44, "Almacén", "d-ts") + box(20, 120, 60, 40) + t(50, 144, "Hab. 1", "d-ts") + box(240, 120, 60, 40) + t(270, 144, "Hab. 8", "d-ts") + box(130, 70, 60, 40) + t(160, 94, "Farmacia", "d-ts");
+    b += `<path d="M50 60 C 120 140, 200 10, 270 60 S 120 170, 50 120 S 220 30, 160 70 S 300 170, 270 120 S 40 90, 50 60" class="d-bad-line" fill="none"/>`;
+    return svg(b);
+  };
+
+  D.amfe = () => {
+    const h = ["Paso", "Fallo", "G", "F", "D", "Riesgo"], xs = [8, 70, 168, 196, 224, 254];
+    let b = box(8, 10, 304, 24, "d-acc-soft", 2) + h.map((s, i) => t(xs[i] + 4, 27, s, "d-tb", "start")).join("");
+    [["Alta", "Sin aviso a AP", 8, 7, 6, "336"], ["Alta", "Cambio de dosis no explicado", 9, 5, 5, "225"], ["Visita", "Cita tardía", 6, 8, 3, "144"]].forEach((r, j) => {
+      const y = 56 + j * 36; b += line(8, y + 12, 312, y + 12, "d-grid");
+      r.forEach((c, i) => { b += t(xs[i] + 4, y, String(c), i === 5 ? (j === 0 ? "d-tbad" : "d-t") : (i === 1 ? "d-ts" : "d-t"), "start"); });
+    });
+    return svg(b + t(160, 172, "Riesgo = gravedad × frecuencia × detección", "d-ts"));
+  };
+
+  D.ponderada = () => {
+    const rows = [["Seguridad", "×3", "4", "8"], ["Experiencia", "×2", "5", "7"], ["Tiempo prof.", "×2", "6", "6"], ["Coste", "×1", "8", "5"]];
+    let b = box(8, 10, 304, 24, "d-acc-soft", 2) + ["Criterio", "Peso", "Opción A", "Opción B"].map((s, i) => t([14, 120, 182, 252][i], 27, s, "d-tb", "start")).join("");
+    rows.forEach((r, j) => { const y = 56 + j * 26; b += line(8, y + 9, 312, y + 9, "d-grid") + r.map((c, i) => t([14, 120, 196, 266][i], y, c, i === 1 ? "d-tacc" : "d-t", "start")).join(""); });
+    b += t(14, 170, "Total", "d-tb", "start") + t(196, 170, "42", "d-t", "start") + t(266, 170, "57", "d-tok", "start");
+    return svg(b, 180);
+  };
+
+  D.estandar = () => {
+    let b = box(60, 10, 200, 160, "d-box", 4) + t(160, 32, "Trabajo estándar", "d-tb");
+    ["Paso 1 · qué y cómo", "Paso 2 · punto clave", "Paso 3 · por qué", "Revisado: (fecha)"].forEach((s, i) => { b += box(76, 46 + i * 30, 14, 14, i < 3 ? "d-ok-soft" : "d-soft", 2) + t(98, 57 + i * 30, s, i === 3 ? "d-ts" : "d-t", "start"); });
+    return svg(b);
+  };
+
+  D.visual = () => {
+    let b = box(8, 8, 304, 164, "d-box", 4) + t(160, 26, "Panel del equipo", "d-tb");
+    b += box(18, 36, 140, 90, "d-soft") + `<polyline points="26,110 46,100 66,104 86,86 106,80 126,70 146,64" class="d-acc-line" fill="none"/>` + t(88, 140, "Indicador", "d-ts");
+    [["Problemas de hoy", "d-bad-soft"], ["Acciones", "d-ok-soft"]].forEach(([n, c], i) => { b += box(168, 36 + i * 64, 134, 54, c) + t(235, 56 + i * 64, n, "d-t"); });
+    return svg(b + t(235, 160, "Reunión breve, de pie", "d-ts"));
+  };
+
+  D.cincos = () => {
+    const s = ["Separar", "Ordenar", "Limpiar", "Estandarizar", "Mantener"];
+    let b = defs;
+    s.forEach((n, i) => { const a = (-90 + i * 72) * Math.PI / 180, x = 160 + 64 * Math.cos(a), y = 90 + 64 * Math.sin(a); b += `<circle cx="${x}" cy="${y}" r="24" class="${i === 4 ? "d-acc-soft" : "d-soft"}"/>` + t(x, y - 2, `${i + 1}`, "d-tacc") + t(x, y + 11, n, "d-ts"); });
+    return svg(b + t(160, 94, "5S", "d-tb"));
   };
 
   D.a3 = () => {
