@@ -4,13 +4,13 @@
 
 # Lista priorizada de soluciones: reingresos a 30 días por IC
 
-**Proyecto:** Continuidad tras el alta en IC · **Fecha:** 17/12/2026 · **Deciden:** grupo núcleo (Medicina Interna, Cardiología, medicina y enfermería de familia, gestión de casos, urgencias) · **Causa que abordamos:** C1, el aviso del alta a primaria no es sistemático; H2, la primera visita se agenda a más de 7 días (en comprobación)
+**Proyecto:** Continuidad tras el alta en IC · **Fecha:** 17/12/2026 · **Deciden:** grupo núcleo (Medicina Interna, Cardiología, medicina y enfermería de familia, gestión de casos, urgencias) · **Causa que abordamos:** HP1, el aviso del alta a primaria no es sistemático (hipótesis prioritaria respaldada por el grupo); H2, la primera visita se agenda a más de 7 días (pendiente de confirmar)
 
 ## 1. Punto de partida
 
 - **Problema (observable):** uno de cada cuatro pacientes con IC reingresa antes de 30 días.
-- **Causa comprobada principal:** el aviso del alta a primaria no es sistemático (validación del grupo el 3/12; falta el dato de cuántas altas reciben aviso).
-- **Qué sigue en comprobación:** días reales hasta la primera visita, proporción de altas con aviso y explicación de la medicación.
+- **Hipótesis prioritaria principal:** el aviso del alta a primaria no es sistemático. El grupo constata el hecho (6 de 7 roles), pero no hay dato que demuestre la relación causal con los reingresos.
+- **Qué sigue pendiente de confirmar:** días reales hasta la primera visita, proporción de altas con aviso, explicación de la medicación y relación causal con los reingresos.
 
 ## 2. Criterios acordados antes de puntuar
 
@@ -27,10 +27,10 @@
 
 | # | Idea (verbo + objeto) | Causa a la que responde | Cómo crees que actuará sobre la causa | Evidencia de que puede funcionar | Fuente de la idea |
 |---|---|---|---|---|---|
-| I1 | Reservar huecos de revisión precoz en la agenda del CS Norte | C1 / H2 | Si el aviso llega y hay hueco, la visita deja de esperar al cupo ordinario | Experiencia de otros centros; no es evidencia local | Parking y sesión 1 |
-| I2 | Llamar por teléfono a las 48 h del alta | C1 | Detecta dudas de medicación y síntomas antes de que empeoren | Experiencia de otros centros; no es evidencia local | Parking |
+| I1 | Reservar huecos de revisión precoz en la agenda del CS Norte | HP1 / H2 | Si el aviso llega y hay hueco, la visita deja de esperar al cupo ordinario | Experiencia de otros centros; no es evidencia local | Parking y sesión 1 |
+| I2 | Llamar por teléfono a las 48 h del alta | HP1 | Detecta dudas de medicación y síntomas antes de que empeoren | Experiencia de otros centros; no es evidencia local | Parking |
 | I3 | Entregar una hoja de medicación explicada al alta | H3 | Reduce los errores de medicación y las dudas del paciente | Práctica extendida; falta dato local | Entrevistas |
-| I4 | Activar una alerta automática de alta para primaria | C1 | Elimina la dependencia de que alguien llame | Requiere que sistemas de información lo permitan; sin comprobar | Parking |
+| I4 | Activar una alerta automática de alta para primaria | HP1 | Elimina la dependencia de que alguien llame | Requiere que sistemas de información lo permitan; sin comprobar | Parking |
 | I5 | Ofrecer un teléfono de referencia para dudas | H4 | Da seguridad al paciente y a la familia en las primeras semanas | Experiencia de otros centros | Entrevistas |
 | I6 | Hacer una sesión educativa grupal antes del alta | H4 | Mejora el autocuidado (peso, síntomas, medicación) | Evidencia general; falta adaptación local | Entrevistas |
 | I7 | Abrir consulta de Cardiología los sábados | H2 | Acorta la espera de los altas de viernes | No hay dato de demanda ni de disponibilidad | Sesión 1 |
@@ -70,13 +70,13 @@ Cálculo: impacto × 3 + (6 − esfuerzo) × 2 + rapidez + seguridad.
 | I6 | Sesión educativa grupal | 9 | 4 | 3 | 4 | 20 |
 | I7 | Consulta de Cardiología los sábados | 9 | 2 | 2 | 4 | 17 |
 
-**Qué es dato y qué es opinión:** las puntuaciones son **opinión del grupo**, no un cálculo basado en datos. El único dato de partida es el 23 % de reingresos, y su definición está pendiente de comprobar.
+**Qué es dato y qué es opinión:** las puntuaciones son **opinión del grupo**, no un cálculo basado en datos. El único dato de partida es el 23 % de reingresos, y su definición está pendiente de comprobar. La matriz hace explícitos los criterios y sus pesos, pero **no convierte estas opiniones en datos ni demuestra que la primera idea sea mejor**: solo ordena la decisión que después hay que probar.
 
 ## 5. Lista priorizada
 
 | Puesto | Idea | Puntuación | Por qué está aquí | Qué la haría bajar |
 |---|---|---|---|---|
-| 1 | Reservar huecos de revisión precoz | 29 | Ataca la causa validada y el grupo la ve viable | Que la dirección de primaria no lo apruebe |
+| 1 | Reservar huecos de revisión precoz | 29 | Ataca la hipótesis prioritaria y el grupo la ve viable | Que la dirección de primaria no lo apruebe |
 | 2 | Llamada a las 48 h | 29 | Mismo impacto, algo menos de esfuerzo y más rápida | Que no haya quien la haga de forma sostenida |
 | 3 | Hoja de medicación explicada | 28 | Ataca otra causa importante (H3) con poco esfuerzo | Que farmacia no pueda prepararla |
 | 4 | Teléfono de referencia | 24 | Bajo esfuerzo y útil para la familia | Que se convierta en una línea sin respuesta |
@@ -89,6 +89,7 @@ Cálculo: impacto × 3 + (6 − esfuerzo) × 2 + rapidez + seguridad.
 ## 6. Decisión del grupo
 
 - **Idea elegida para probar primero:** I1, reservar huecos de revisión precoz en la agenda del CS Norte.
+- **Qué aprenderá la prueba sobre la causa:** si el aviso llega y hay hueco, sabremos si los días hasta la visita dependían del aviso. No demostrará por sí sola que el aviso reduzca los reingresos: HP1 sigue siendo una hipótesis prioritaria.
 - **Quién decide:** grupo núcleo, con la dirección de primaria · **Fecha:** 17/12/2026.
 - **Acuerdos:** si la dirección de primaria lo aprueba, se prueba durante 4 semanas en el CS Norte; si no, se empieza por I2.
 - **Desacuerdos registrados:** una médica de familia prefiere empezar por I2 porque no depende de permisos. Se anota y se revisa si I1 se retrasa.

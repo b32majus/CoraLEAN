@@ -36,7 +36,7 @@ window.GUIA = {
       porque: "Atacar síntomas produce cambios que no funcionan o que trasladan el problema a otro sitio. Distinguir hipótesis de causas comprobadas es una de las competencias que más diferencian a un buen líder de proyecto.",
       areas: ["causas"], pasos: ["analizar-causas"], herramientas: ["porques", "ishikawa", "pareto", "dispersion", "amfe"],
       listo: ["Los problemas a abordar están priorizados", "Hay causas identificadas y alguna evidencia que las respalde", "No se culpa a personas, sino al proceso"],
-      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Quiero entender por qué ocurre el problema del proyecto. Trabaja este momento con el método de la skill «analizar-causas»: primero pregúntame qué causas sospecho yo. Después ayúdame a separar hipótesis, evidencia y opinión, a elegir una sola herramienta (5 porqués, Ishikawa, Pareto si hay datos de frecuencia o dispersión si hay dos variables medidas) y a decidir qué dato necesitamos para confirmar o descartar cada causa. No des ninguna causa por comprobada sin un dato o sin una validación explícita del grupo." } },
+      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Quiero entender por qué ocurre el problema del proyecto. Trabaja este momento con el método de la skill «analizar-causas»: primero pregúntame qué causas sospecho yo. Después ayúdame a separar hipótesis, evidencia y opinión, a distinguir lo que constatamos del proceso de la relación causal con el problema, y a elegir una sola herramienta (5 porqués, Ishikawa, Pareto si hay datos de frecuencia o dispersión si hay dos variables medidas). No des ninguna causa por comprobada sin un dato: el acuerdo del grupo es una hipótesis prioritaria, no una demostración." } },
     { id: "eligiendo", nombre: "Eligiendo qué probar", pregunta: "¿Qué cambio merece la pena probar?",
       porque: "No todas las ideas valen lo mismo, y las mejores salen de quienes harán el trabajo. Elegir con criterios explícitos evita que gane la idea de quien más manda.",
       areas: ["cambio"], pasos: ["priorizar-soluciones"], herramientas: ["impulsores", "matriz", "ponderada"],
@@ -44,14 +44,14 @@ window.GUIA = {
       orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Tenemos varias ideas de cambio y quiero decidir cuál probar primero. Trabaja este momento con el método de la skill «priorizar-soluciones»: primero pregúntame qué idea prefiero yo y por qué. Después exige que cada idea esté vinculada a una causa del mapa de causas, acuerda conmigo los criterios y sus pesos antes de puntuar, y ayúdame a elegir una sola idea para probar. Recuérdame qué falta antes de decidir." } },
     { id: "probando", nombre: "Probando y adoptando cambios", pregunta: "¿Funciona aquí? ¿Lo adoptamos?",
       porque: "Probar en pequeño reduce el riesgo y enseña más que cualquier plan. Y probar no es adoptar: que una prueba salga bien no significa que esté listo para todos.",
-      areas: ["prueba"], pasos: ["planificar-prueba", "evaluar-experiencia"], herramientas: ["pdca", "runchart", "control", "experiencia", "estandar"],
-      listo: ["La prueba tenía predicción, indicador, responsable y fechas", "Hay resultados medidos", "Se ha decidido adoptar, adaptar o abandonar"],
-      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Quiero convertir el cambio elegido en una prueba pequeña (un ciclo PDCA). Trabaja este momento con el método de la skill «planificar-prueba»: primero pregúntame qué espero que pase. Después ayúdame a escribir la predicción, las medidas de resultado, proceso y equilibrio, el alcance pequeño (dónde, cuánto tiempo, con quién, cuántos casos), cómo recogeremos los datos y el criterio para adoptar, adaptar o abandonar. Recuérdame que probar no es adoptar." } },
+      areas: ["prueba"], pasos: ["planificar-prueba", "interpretar-resultados", "evaluar-experiencia"], herramientas: ["pdca", "runchart", "control", "experiencia", "estandar"],
+      listo: ["La prueba tenía predicción, indicador, responsable y fechas", "Hay resultados medidos", "Se ha interpretado el resultado y se ha decidido adoptar, adaptar, abandonar o ampliar"],
+      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Quiero convertir el cambio elegido en una prueba pequeña (un ciclo PDCA) y saber qué hacer con el resultado. Trabaja este momento con las skills «planificar-prueba» e «interpretar-resultados»: primero pregúntame qué espero que pase. Después ayúdame a escribir la predicción, las medidas de resultado, proceso y equilibrio, el alcance pequeño y el criterio para adoptar, adaptar o abandonar. Al terminar, compara lo ocurrido con la predicción, revisa la implantación y el equilibrio, y dime si funcionó, no funcionó o los datos no bastan para saberlo. Recuérdame que probar no es adoptar." } },
     { id: "sosteniendo", nombre: "Evaluando y sosteniendo la mejora", pregunta: "¿Se mantiene? ¿Qué hemos aprendido?",
       porque: "Muchas mejoras se degradan en semanas cuando el grupo deja de mirar. Medir en el tiempo y escuchar cómo viven el cambio pacientes y profesionales es lo que lo hace durar.",
-      areas: ["sostener"], pasos: ["evaluar-experiencia"], herramientas: ["runchart", "control", "experiencia", "visual", "cincos", "estandar", "a3"],
-      listo: ["El indicador se revisa periódicamente", "Se conoce cómo viven el cambio pacientes y profesionales", "Se ha recogido lo aprendido"],
-      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Hemos adoptado un cambio y quiero comprobar si se mantiene. Primero pregúntame qué señales veo yo. Después ayúdame a decidir qué indicador revisar y con qué frecuencia, cómo saber si la mejora se está perdiendo, cómo conocer la experiencia de pacientes y profesionales, y qué hemos aprendido que sirva para el siguiente proyecto." } }
+      areas: ["sostener"], pasos: ["consolidar-mejora", "evaluar-experiencia"], herramientas: ["runchart", "control", "experiencia", "visual", "cincos", "estandar", "a3"],
+      listo: ["El indicador se revisa periódicamente", "Se conoce cómo viven el cambio pacientes y profesionales", "Hay estándar, responsable y umbral de alarma, y se ha recogido lo aprendido"],
+      orientacion: { texto: "Este momento ya tiene actividades con CoraLEAN. Si además quieres un mensaje suelto para tu asistente, o todavía no has instalado las skills, copia este y pégalo.", mensaje: "Hemos adoptado un cambio y quiero comprobar si se mantiene. Trabaja este momento con las skills «consolidar-mejora» y «evaluar-experiencia»: primero pregúntame qué señales veo yo y qué creo que podría romper la mejora. Después ayúdame a definir el trabajo estándar (quién, qué, cuándo), la formación y el relevo, el control visual, un responsable y una medida de seguimiento con umbral de alarma, revisiones a 1, 3 y 6 meses y qué hacer si se degrada. Al final, decidiremos si cerrar o escalar el proyecto." } }
   ],
 
   /* Lo que se hace en cualquier momento */
@@ -234,7 +234,7 @@ window.GUIA = {
       campos: [{ id: "problema", etiqueta: "Problema que analizamos", ej: "reingresos a 30 días por IC" }],
       plantilla: "Vamos a analizar por qué ocurre este problema: {problema}. Primero pregúntame qué causas sospecho yo. Después ayúdame a ordenar las hipótesis y a decidir cómo comprobar cada una.",
       despues: ["Si la ficha o el cuaderno no están en los archivos del proyecto, adjúntalos", "Ten a mano los datos que ya existen; si no hay, lo veremos antes de elegir la herramienta"],
-      consejo: "Que la causa sea del proceso, no de una persona. Y no la des por comprobada porque el grupo esté de acuerdo: anota en qué se basa ese acuerdo.",
+      consejo: "Que la causa sea del proceso, no de una persona. Y no la des por comprobada porque el grupo esté de acuerdo: anota qué evidencia la sostiene y qué límite tiene.",
       plantillas: ["mapa-causas"], ejemplos: ["analizar-causas--ejemplo-mapa-causas"],
       herramientas: ["porques", "ishikawa", "pareto", "dispersion"], tecnicas: ["silencio", "ronda", "parking"], siguiente: "priorizar-soluciones", ficha: true,
       manual: {
@@ -242,18 +242,18 @@ window.GUIA = {
           "Tienes el problema escrito de forma observable, sin adjetivos y sin culpables: «la primera visita tras el alta se agenda a más de 7 días».",
           "Sabes en qué paso o traspaso del proceso ocurre; si hay varios problemas, habéis elegido uno y el resto está aparcado.",
           "Tienes a mano la ficha del proyecto y el cuaderno (o lo que ya habéis apuntado sobre causas e ideas).",
-          "Sabes qué datos existen de frecuencia o de las dos variables que queréis relacionar. Si no hay, se anota: lo decidiréis antes de elegir la herramienta.",
+          "Sabes qué datos existen. Si no hay ninguno, se puede seguir: anotaréis que lo que el grupo constata es una hipótesis prioritaria, no una causa demostrada.",
           "Hay 45–60 minutos y pueden estar quienes hacen el trabajo, no solo quien manda."
         ],
         pasos: [
           "Escribe el problema en una frase observable: qué pasa, dónde y desde cuándo. Si hay varios, elegid uno con el grupo y aparcad los demás.",
           "Antes de abrir ninguna herramienta, que cada persona diga qué cree que lo causa. Escritura en silencio de 3–5 minutos y ronda de una frase por persona: así la primera opinión no condiciona al resto.",
           "Recoge todas las hipótesis en una lista, también las del parking de ideas. Escríbelas de forma que puedan resultar falsas: «el aviso del alta a primaria no es sistemático», no «falta comunicación».",
-          "Clasifica la evidencia de cada hipótesis sin mezclarla: hecho (dato, documento u observación con fuente), supuesto (se cree, no está comprobado) u opinión (lo dice una persona o un rol). Lo dudoso queda pendiente de confirmar.",
+          "Clasifica la evidencia de cada hipótesis sin mezclarla: hecho (dato, documento u observación con fuente), supuesto (se cree, no está comprobado) u opinión (lo dice una persona o un rol). Separa además lo que el grupo constata del proceso de la relación causal con el problema: que coincidáis en que el aviso falla no demuestra que eso cause los reingresos.",
           "Elige una sola herramienta por lo que hay, no por costumbre: 5 porqués si es una cadena de causas conocida; Ishikawa si hay muchas causas de familias distintas; Pareto solo si hay datos de frecuencia; dispersión solo si hay dos variables medidas en los mismos casos.",
           "Aplica la herramienta con el grupo. En los 5 porqués, pregunta «¿por qué?» hasta llegar a algo del proceso que se pueda cambiar, no a una persona. Reparte tareas de escritura para que no lo haga todo el líder.",
-          "Para cada hipótesis, decide qué dato la confirmaría o descartaría, de qué fuente sale, quién lo recoge y durante cuánto tiempo. Si falta alguien o una fecha, escribe SIN ASIGNAR o SIN FECHA.",
-          "Da un estado a cada hipótesis: hipótesis, en comprobación, causa comprobada o descartada. Cierra con una sola causa a abordar primero; las ideas que aparezcan van al parking, no a la solución."
+          "Para cada hipótesis, decide qué dato la confirmaría o descartaría, de qué fuente sale, quién lo recoge y durante cuánto tiempo. Si no hay dato posible, anota qué evidencia del proceso se acepta y quién la aporta: como máximo dará una hipótesis prioritaria. Si falta alguien o una fecha, escribe SIN ASIGNAR o SIN FECHA.",
+          "Da un estado a cada hipótesis: comprobada con dato, hipótesis prioritaria respaldada por el grupo, pendiente de confirmar o descartada. Cierra con una sola causa o hipótesis prioritaria a abordar primero; si es una hipótesis, la prueba también servirá para aprender sobre la causa. Las ideas que aparezcan van al parking, no a la solución."
         ],
         recursos: [
           { tipo: "plantilla", id: "mapa-causas" },
@@ -264,26 +264,29 @@ window.GUIA = {
           { tipo: "herramienta", id: "dispersion" },
           { tipo: "imprimible", id: "ishikawa" }
         ],
-        bienHecho: "Un buen resultado es un mapa de causas con 4–8 hipótesis escritas de forma comprobable, cada una con su evidencia etiquetada, su estado y el dato que falta, y una sola causa elegida para abordar primero. Se distingue lo que sabéis de lo que creéis: cualquiera puede señalar qué evidencia respalda cada causa comprobada y qué límite tiene.",
-        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo escribe «falta comunicación» y la marca como causa comprobada porque todos están de acuerdo. No se puede comprobar: no dice qué aviso falta ni cuándo. La versión útil sería «el aviso del alta a primaria no es sistemático», con la evidencia anotada (validación explícita del grupo el 3/12) y el dato pendiente (cuántas altas reciben aviso).",
+        bienHecho: "Un buen resultado es un mapa de causas con 4–8 hipótesis escritas de forma comprobable, cada una con su evidencia etiquetada, su estado y lo que falta, y una sola causa o hipótesis prioritaria elegida para abordar primero. Se distingue lo que sabéis de lo que creéis y, dentro de lo que sabéis, lo que es un hecho constatado del proceso y lo que es la relación causal con el problema: cualquiera puede señalar qué evidencia sostiene cada afirmación y qué límite tiene.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo escribe «falta comunicación» y la marca como comprobada con dato porque todos están de acuerdo. No se puede comprobar: no dice qué aviso falta ni cuándo, y el acuerdo no es un dato. La versión útil sería «el aviso del alta a primaria no es sistemático», anotada como hipótesis prioritaria respaldada por el grupo: se escribe qué constata el grupo, qué relación causal queda sin demostrar y qué dato falta (cuántas altas reciben aviso).",
         avanzar: [
-          "Hay al menos una causa comprobada con su evidencia escrita y su alcance (un dato con fuente o una validación explícita del grupo).",
-          "Cada hipótesis pendiente tiene el dato que la comprobaría, un responsable y una fecha (o SIN ASIGNAR / SIN FECHA).",
+          "Hay al menos una causa comprobada con dato o una hipótesis prioritaria respaldada por el grupo, con su evidencia y su alcance escritos. No se exige un dato medido para avanzar.",
+          "Si lo elegido es una hipótesis prioritaria, está escrito que la prueba también servirá para aprender sobre la causa, con su incertidumbre.",
+          "Está escrito qué parte es un hecho constatado del proceso y qué parte es la relación causal, todavía sin demostrar.",
+          "Cada hipótesis pendiente tiene qué evidencia la confirmaría o descartaría, un responsable y una fecha (o SIN ASIGNAR / SIN FECHA).",
           "Las ideas que han aparecido están en el parking, separadas de las causas.",
-          "Si el grupo quiere pasar a soluciones sin ninguna causa comprobada, se puede, pero se dice en voz alta que es una apuesta y se registra como tal.",
+          "Si el grupo quiere pasar a soluciones sin ninguna causa ni hipótesis prioritaria, se puede, pero se dice en voz alta que es una apuesta y se registra como tal.",
           "Pide ayuda a un facilitador con experiencia si el problema no se puede localizar en el proceso, si hay dos servicios en conflicto o si nadie sabe qué dato existe."
         ],
-        guardar: "Sale el mapa de causas relleno (plantilla), el resultado de la herramienta y la lista de datos que faltan con responsable y fecha. Guárdalo en el registro del proyecto, en 04_analisis, y anota en la ficha las causas comprobadas, descartadas y pendientes, los datos que faltan y el próximo paso. Al cerrar, añade la entrada al cuaderno. Si hay causa comprobada, sigue con «Prioriza las soluciones»; si no, recoge antes el dato acordado."
+        guardar: "Sale el mapa de causas relleno (plantilla), el resultado de la herramienta y la lista de lo que falta con responsable y fecha. Guárdalo en el registro del proyecto, en 04_analisis, y anota en la ficha los estados: comprobada con dato, hipótesis prioritaria, pendiente de confirmar o descartada. Al cerrar, añade la entrada al cuaderno. Si hay causa comprobada con dato o hipótesis prioritaria, sigue con «Prioriza las soluciones» y recuerda si la prueba también aprenderá sobre la causa; si no, recoge antes la evidencia acordada."
       },
       metodo: [
         "Empieza preguntándome qué hipótesis tengo yo, antes de proponer nada.",
         "Clasifica cada causa como hecho (con fuente), supuesto u opinión, y no mezcles las etiquetas.",
-        "Una causa solo está comprobada si hay un dato o una validación explícita del grupo; lo demás queda pendiente de confirmar.",
+        "Separa lo que el grupo constata del proceso de la relación causal con el problema: coincidir en un hecho no demuestra la causa.",
+        "Usa cuatro estados: comprobada con dato, hipótesis prioritaria respaldada por el grupo, pendiente de confirmar y descartada. El acuerdo del grupo no es un dato.",
         "Recomienda una sola herramienta según lo que haya: 5 porqués, Ishikawa, Pareto (solo con datos de frecuencia) o dispersión (solo con dos variables medidas).",
         "Busca causas del proceso, no de las personas.",
-        "Dime qué evidencia falta, qué dato confirmaría o descartaría cada hipótesis, quién lo recoge y cuándo.",
+        "Dime qué evidencia falta, qué confirmaría o descartaría cada hipótesis, quién lo recoge y cuándo. No exijas un dato medido si no existe, pero di qué sostiene cada afirmación.",
         "No inventes datos, responsables ni fechas: escribe SIN ASIGNAR o SIN FECHA.",
-        "Termina con una conclusión provisional y con la evidencia que la sostiene, una sola causa a abordar primero, el siguiente paso y qué guardar."
+        "Termina con una conclusión provisional y con la evidencia que la sostiene, una sola causa o hipótesis prioritaria a abordar primero, el siguiente paso y qué guardar."
       ]
     },
     {
@@ -291,7 +294,7 @@ window.GUIA = {
       resumen: "Recoge las ideas, también las del parking, vincula cada una a una causa y priorízalas con criterios acordados antes de puntuar: impacto y esfuerzo o una matriz ponderada.",
       porque: "No todas las ideas valen lo mismo, y las mejores salen de quienes harán el trabajo. Elegir con criterios explícitos evita que gane la idea de quien más manda.",
       conecta: "Recibe las causas comprobadas de «Analiza las causas» y el parking del cuaderno. La idea elegida pasa a «Planifica la prueba».",
-      cuando: "Cuando ya hay una causa comprobada y el grupo tiene varias ideas, o cuando alguien llega con una solución y hay que decidir si merece la pena probarla.",
+      cuando: "Cuando ya hay una causa comprobada con dato o una hipótesis prioritaria respaldada por el grupo, y el grupo tiene varias ideas; o cuando alguien llega con una solución y hay que decidir si merece la pena probarla.",
       necesitas: ["La ficha y el cuaderno (parking de ideas y decisiones)", "El mapa de causas o las causas comprobadas de la ficha", "Quiénes deciden y quiénes aplicarán el cambio"],
       recibes: ["Lista priorizada con criterios, puntuación y porqué", "Vínculo de cada idea con su causa", "Idea elegida para la primera prueba", "Ideas aparcadas o descartadas con su motivo"],
       campos: [{ id: "causa", etiqueta: "Causa que queremos abordar", ej: "el aviso del alta a primaria no es sistemático" }],
@@ -302,8 +305,9 @@ window.GUIA = {
       herramientas: ["matriz", "ponderada"], tecnicas: ["silencio", "puntos", "punyo", "parking"], siguiente: "planificar-prueba", ficha: true,
       manual: {
         antes: [
-          "Hay al menos una causa comprobada, con su dato o su validación del grupo. Si no la hay, será una apuesta y hay que decirlo antes de empezar.",
+          "Hay al menos una causa comprobada con dato o una hipótesis prioritaria respaldada por el grupo. Si no hay ninguna, será una apuesta y hay que decirlo antes de empezar.",
           "Tienes a mano el mapa de causas y el parking de ideas del cuaderno.",
+          "Sabes si la causa es una hipótesis prioritaria: la prueba servirá también para aprender sobre ella.",
           "Sabes quién decide y quién aplicará el cambio; conviene que estén en la sesión.",
           "Hay 45–60 minutos: acordar criterios y pesos lleva más tiempo del que parece."
         ],
@@ -311,10 +315,10 @@ window.GUIA = {
           "Fija una sola causa por ronda y escribe el problema de forma observable. Si hay varias causas, se prioriza por separado y se dice.",
           "Recoge todas las ideas sin filtrar ni valorar: una por línea, con verbo y objeto («reservar huecos de agenda para altas de IC», no «mejorar la agenda»). Incluye el parking del cuaderno.",
           "Antes de enseñar ninguna matriz, pregunta a cada persona cuál le parece más prometedora y cuál le daría miedo probar. Escritura en silencio y ronda; después compara con el resultado de los criterios.",
-          "Vincula cada idea a una causa del mapa y explica en una frase cómo crees que actuará sobre ella. Si una idea no se puede vincular, se aparca o se retira con su motivo.",
+          "Vincula cada idea a una causa del mapa y explica en una frase cómo crees que actuará sobre ella. Si la causa es una hipótesis prioritaria, anota qué aprenderá la prueba sobre la causa. Si una idea no se puede vincular, se aparca o se retira con su motivo.",
           "Acuerda los criterios y sus pesos antes de puntuar: como mínimo impacto y esfuerzo; si hace falta, seguridad, experiencia del paciente, equidad, rapidez o probabilidad de sostenerse. Escribe qué significa cada uno, cómo se puntúa y quién lo acordó.",
-          "Puntúa primero en silencio y debated después solo lo que no coincide. El impacto se refiere a la causa, no a lo llamativa que sea la idea; el esfuerzo incluye tiempo de profesionales, formación, materiales, coste y coordinación.",
-          "Ordena con la matriz impacto-esfuerzo o, si hay muchas ideas o criterios en conflicto, con la matriz ponderada. Acompaña cada puesto con una frase de porqué, no solo con el número.",
+          "Puntúa primero en silencio y debated después solo lo que no coincide. El impacto se refiere a la causa, no a lo llamativa que sea la idea; el esfuerzo incluye tiempo de profesionales, formación, materiales, coste y coordinación. Marca como opinión lo que no tenga dato.",
+          "Ordena con la matriz impacto-esfuerzo o, si hay muchas ideas o criterios en conflicto, con la matriz ponderada. Acompaña cada puesto con una frase de porqué, no solo con el número. La matriz hace explícitos los criterios, pero no convierte las opiniones en datos ni demuestra que la ganadora sea mejor.",
           "Contrasta el resultado con la causa: «¿la primera ataca de verdad la causa más importante?». Elige una sola idea para la primera prueba; las demás quedan priorizadas o en el parking. Si exige un permiso, anótalo como condición."
         ],
         recursos: [
@@ -325,24 +329,25 @@ window.GUIA = {
           { tipo: "herramienta", id: "ponderada" },
           { tipo: "imprimible", id: "matriz" }
         ],
-        bienHecho: "Un buen resultado es una lista priorizada en la que cada idea está vinculada a una causa, los criterios y sus pesos están escritos con quién los acordó y cuándo, y cada puesto tiene una frase que explica por qué. Se ve qué es dato y qué es opinión, y hay una sola idea elegida para probar con sus condiciones.",
-        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo puntúa primero y, al ver que gana «abrir consulta de Cardiología los sábados», añade el criterio «rapidez» con peso alto para justificarla. Además, esa idea no responde a ninguna causa comprobada y no hay dato de demanda ni de disponibilidad. Lo correcto es acordar los criterios antes de puntuar y aparcar la idea con su motivo.",
+        bienHecho: "Un buen resultado es una lista priorizada en la que cada idea está vinculada a una causa comprobada con dato o a una hipótesis prioritaria, los criterios y sus pesos están escritos con quién los acordó y cuándo, y cada puesto tiene una frase que explica por qué. Se ve qué es dato y qué es opinión; la matriz no se presenta como una prueba. Hay una sola idea elegida para probar, con sus condiciones y, si la causa es una hipótesis, con lo que la prueba aprenderá sobre ella.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo puntúa primero y, al ver que gana «abrir consulta de Cardiología los sábados», añade el criterio «rapidez» con peso alto para justificarla. Además, esa idea no responde a ninguna causa del mapa y no hay dato de demanda ni de disponibilidad. Lo correcto es acordar los criterios antes de puntuar, aparcar la idea con su motivo y no presentar la matriz como si demostrara cuál es mejor.",
         avanzar: [
-          "Cada idea de la lista responde a una causa del mapa; las que no, están aparcadas con su motivo.",
+          "Cada idea de la lista responde a una causa del mapa - comprobada con dato o hipótesis prioritaria -; las que no, están aparcadas con su motivo.",
           "Los criterios y los pesos están escritos con quién los acordó y cuándo, y no se han cambiado después de ver las puntuaciones.",
-          "Hay una sola idea elegida para la primera prueba, con quién la decidió y las condiciones que necesita.",
-          "Si la idea exige una decisión de la dirección o un permiso, está anotada como condición, no como hecho.",
+          "Está claro qué parte es dato y qué parte es opinión del grupo; la matriz no se usa como demostración.",
+          "Hay una sola idea elegida para la primera prueba, con quién la decidió y las condiciones que necesita. Si la causa es una hipótesis prioritaria, está anotado qué aprenderá la prueba sobre ella.",
           "Pide ayuda a un facilitador con experiencia si el grupo no logra acordar criterios, si la decisión la está tomando una sola persona o si hay servicios enfrentados."
         ],
-        guardar: "Sale la lista priorizada (plantilla) y, si se ha usado, la matriz de criterios con sus pesos; también la idea elegida y las aparcadas con su motivo. Guárdalo en 04_analisis del registro del proyecto, anota en la ficha los criterios, la idea elegida y sus condiciones, y añade la entrada al cuaderno al cerrar. Sigue con «Planifica la prueba» usando la idea elegida."
+        guardar: "Sale la lista priorizada (plantilla) y, si se ha usado, la matriz de criterios con sus pesos; también la idea elegida y las aparcadas con su motivo. Guárdalo en 04_analisis del registro del proyecto, anota en la ficha los criterios, la idea elegida, sus condiciones y si la causa es una hipótesis prioritaria, y añade la entrada al cuaderno al cerrar. Sigue con «Planifica la prueba» usando la idea elegida."
       },
       metodo: [
         "Empieza preguntándome qué idea me parece más prometedora y cuál me daría miedo probar.",
-        "Exige que cada idea esté vinculada a una causa comprobada del mapa de causas; si no, se aparca.",
+        "Exige que cada idea esté vinculada a una causa del mapa: comprobada con dato o hipótesis prioritaria respaldada por el grupo. Si no, se aparca.",
+        "Si la causa es una hipótesis prioritaria, recuérdame que la prueba también servirá para aprender sobre la causa.",
         "Recoge primero todas las ideas sin valorarlas y acordad no puntuar hasta el final.",
         "Acuerda conmigo los criterios y sus pesos antes de puntuar; como mínimo impacto y esfuerzo.",
         "Si cambiamos un criterio después de ver las puntuaciones, hay que volver a puntuar todo y anotar el motivo.",
-        "Marca como opinión lo que no tenga dato y no lo presentes como un cálculo exacto.",
+        "Marca como opinión lo que no tenga dato. La matriz hace explícitos los criterios, pero no convierte opiniones en datos ni demuestra que la ganadora sea mejor.",
         "Ordena con impacto-esfuerzo o con la matriz ponderada y explica cada puesto con una frase, no solo con el número.",
         "Termina con una sola idea elegida para probar, las demás priorizadas o en el parking, y qué falta antes de decidir."
       ]
@@ -351,7 +356,7 @@ window.GUIA = {
       id: "planificar-prueba", momento: "probando", titulo: "Planifica la prueba", skill: "planificar-prueba",
       resumen: "Convierte la idea elegida en un ciclo PDCA pequeño: predicción, alcance, medidas de resultado, proceso y equilibrio, recogida de datos y criterio para adoptar, adaptar o abandonar.",
       porque: "Probar en pequeño reduce el riesgo y enseña más que cualquier plan. Y probar no es adoptar: que una prueba salga bien no significa que esté listo para todos.",
-      conecta: "Recibe la idea elegida en la priorización y la causa a la que responde. La hoja de seguimiento permite decidir al final; si se adopta, toca estandarizar y medir que se sostiene.",
+      conecta: "Recibe la idea elegida en la priorización y la causa a la que responde. La hoja de seguimiento recoge lo que pasa; al terminar, «Interpreta los resultados» lo compara con la predicción y decide. Si se adopta, toca consolidar y medir que se sostiene.",
       cuando: "Después de elegir qué probar y antes de ponerlo en marcha.",
       necesitas: ["La idea elegida y la causa a la que responde", "El dato de partida del indicador, si existe", "Quiénes la van a hacer, dónde y con qué tiempo"],
       recibes: ["Plan de prueba en una página: predicción, alcance, medidas y criterio", "Hoja de seguimiento", "Qué recoger, quién y cuándo", "Condiciones antes de empezar"],
@@ -363,23 +368,24 @@ window.GUIA = {
       despues: ["Adjunta la ficha, la lista priorizada y el mapa de causas si no están en los archivos del proyecto", "Dile qué datos existen ya y cuáles habría que recoger a mano"],
       consejo: "Sin predicción no hay aprendizaje, solo un cambio que parece que va bien. Y probar no es adoptar: el resultado no autoriza a extenderlo sin una decisión del grupo.",
       plantillas: ["plan-prueba", "hoja-seguimiento-prueba"], ejemplos: ["planificar-prueba--ejemplo-plan-prueba"],
-      herramientas: ["pdca"], tecnicas: ["cierre"], siguiente: "evaluar-experiencia", ficha: true,
+      herramientas: ["pdca"], tecnicas: ["cierre"], siguiente: "interpretar-resultados", ficha: true,
       manual: {
         antes: [
-          "La idea elegida está vinculada a una causa comprobada y sabes explicar en dos frases cómo actuará sobre ella.",
+          "La idea elegida está vinculada a una causa comprobada con dato o a una hipótesis prioritaria, y sabes explicar en dos frases cómo actuará sobre ella.",
           "Sabes si existe un dato de partida del indicador. Si no existe, hay que decidir cómo obtenerlo antes o durante la prueba.",
           "Sabes quién hará la prueba, dónde y con cuánto tiempo.",
           "Tienes a mano la lista priorizada y la ficha del proyecto."
         ],
         pasos: [
           "Escribe en una frase qué se hace distinto: qué, quién, cuándo y para quién. Añade qué se sigue haciendo igual, para que nadie cambie más cosas de las previstas.",
-          "Comprueba el vínculo con la causa: cómo esperas que el cambio actúe sobre ella. Si no se explica en dos frases, la prueba todavía no está lista.",
+          "Comprueba el vínculo con la causa: cómo esperas que el cambio actúe sobre ella. Si no se explica en dos frases, la prueba todavía no está lista. Si es una hipótesis prioritaria, di que la prueba también aprenderá sobre la causa.",
           "Pregunta primero a cada persona qué cree que va a pasar, cuánto, dónde y en cuánto tiempo; convertidlo entre todos en una predicción con cifra y plazo, escrita antes de empezar.",
-          "Fija el alcance más pequeño que permita aprender: un centro, una planta o un turno; 2–4 semanas o 20–30 casos suelen bastar. Anota permisos, materiales y personas como condiciones antes de empezar.",
+          "Fija el alcance más pequeño que permita aprender: un centro, una planta o un turno; 2–4 semanas o 20–30 casos suelen bastar para aprender sobre la viabilidad y el efecto inmediato, no para demostrar eficacia clínica. Anota permisos, materiales y personas como condiciones antes de empezar.",
+          "Si cambiáis varias cosas a la vez, declaradlo como intervención combinada: escribid qué componentes se prueban juntos y asumid que no se podrá atribuir el efecto a uno solo. Si necesitáis saber qué componente funciona, probad uno cada vez o decid que la prueba no podrá responderlo.",
           "Elige dos o tres medidas, al menos una de cada tipo: resultado (¿mejora lo que importa?), proceso (¿se hace como se diseñó?) y equilibrio (¿qué podría empeorar?). Define numerador, denominador, fuente, frecuencia y quién la recoge.",
           "Decide cómo se recogen los datos: el sistema que ya existe o una hoja sencilla con número de orden. Nunca datos que identifiquen al paciente.",
-          "Acuerda antes de empezar qué resultado llevará a adoptar, adaptar o abandonar, y qué haríais si el resultado es intermedio. Un criterio vago («ya veremos») convierte la prueba en una opinión.",
-          "Fija fechas, responsables y una revisión breve con la hoja de seguimiento. Si falta algo, escribe SIN ASIGNAR o SIN FECHA. Recuerda en voz alta que probar no es adoptar."
+          "Acuerda antes de empezar qué resultado llevará a adoptar, adaptar o abandonar, y qué haríais si el resultado es intermedio. Si es una intervención combinada, el criterio se refiere al conjunto. Un criterio vago («ya veremos») convierte la prueba en una opinión.",
+          "Fija fechas, responsables y una revisión breve con la hoja de seguimiento. Si falta algo, escribe SIN ASIGNAR o SIN FECHA. Recuerda en voz alta que probar no es adoptar y que una prueba pequeña no demuestra eficacia clínica."
         ],
         recursos: [
           { tipo: "plantilla", id: "plan-prueba" },
@@ -388,29 +394,162 @@ window.GUIA = {
           { tipo: "herramienta", id: "pdca" },
           { tipo: "imprimible", id: "recogida" }
         ],
-        bienHecho: "Un buen resultado es un plan de una página con la predicción (cifra, lugar y plazo), un alcance pequeño, una medida de resultado, una de proceso y una de equilibrio con quién las recoge, el criterio para adoptar, adaptar o abandonar escrito antes de empezar, y responsables y fechas. Cualquiera del grupo puede explicar qué se espera y cómo se sabrá.",
-        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): «vamos a reservar huecos y ya veremos si funciona». Sin predicción, sin medida de equilibrio y sin criterio, al mes la espera del resto de la agenda ha subido y nadie sabe si la revisión precoz ha mejorado algo. La versión útil fija la predicción (mediana de 7 días o menos y 80 % de altas revisadas en 4 semanas) y mide también la espera del resto de la agenda.",
+        bienHecho: "Un buen resultado es un plan de una página con la predicción (cifra, lugar y plazo), un alcance pequeño, una medida de resultado, una de proceso y una de equilibrio con quién las recoge, el criterio para adoptar, adaptar o abandonar escrito antes de empezar, y responsables y fechas. Si es una intervención combinada, está declarado y se explica que no se podrá atribuir el efecto a un componente. Cualquiera del grupo puede explicar qué se espera, cuánto puede concluir la prueba y cómo se sabrá.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): «vamos a reservar huecos y ya veremos si funciona». Sin predicción, sin medida de equilibrio y sin criterio, al mes la espera del resto de la agenda ha subido y nadie sabe si la revisión precoz ha mejorado algo. La versión útil fija la predicción (mediana de 7 días o menos y 80 % de altas revisadas en 4 semanas), mide también la espera del resto de la agenda y declara que es una intervención combinada: aviso el mismo día y huecos, sin poder atribuir el efecto a uno solo.",
         avanzar: [
           "La predicción tiene cifra, lugar y plazo, y está escrita antes de empezar.",
           "Hay al menos una medida de resultado, una de proceso y una de equilibrio, con quién la recoge y con qué frecuencia.",
           "Está escrito qué llevará a adoptar, adaptar o abandonar, y qué pasa si el resultado es intermedio.",
+          "Si se cambian varias cosas a la vez, está declarado como intervención combinada y anotado qué no se podrá atribuir a cada componente.",
           "Las condiciones (permisos, materiales, personas) están resueltas o anotadas; si no, la prueba no empieza todavía.",
           "Pide ayuda a un facilitador con experiencia si no hay ningún dato de partida, si hay que manejar datos de pacientes o si el cambio afecta a varios servicios a la vez."
         ],
-        guardar: "Sale el plan de prueba de una página (plantilla) y la hoja de seguimiento. Guárdalos en 05_datos del registro del proyecto, anota en la ficha la prueba en marcha con predicción, medidas, criterio, responsables y fechas, y añade la entrada al cuaderno al cerrar. Sigue ejecutando la prueba y revísala con la hoja; al terminar, decidid si adoptar, adaptar o abandonar."
+        guardar: "Sale el plan de prueba de una página (plantilla) y la hoja de seguimiento. Guárdalos en 05_datos del registro del proyecto, anota en la ficha la prueba en marcha con predicción, medidas, criterio, responsables y fechas, y añade la entrada al cuaderno al cerrar. Ejecuta la prueba y revísala con la hoja; al terminar, interpreta el resultado con «Interpreta los resultados» antes de decidir si adoptar, adaptar, abandonar o ampliar."
       },
       metodo: [
         "Empieza preguntándome mi predicción: qué espero que pase, cuánto, dónde y en cuánto tiempo.",
         "Convierte mi respuesta en una predicción con cifra y plazo, escrita antes de empezar.",
         "Recuérdame que probar no es adoptar: un buen resultado no autoriza a extenderlo sin una decisión del grupo.",
         "Fija el alcance más pequeño que permita aprender y anota permisos y materiales como condiciones.",
+        "Aclara que 2–4 semanas o 20–30 casos sirven para aprender sobre la viabilidad, no para demostrar eficacia clínica.",
+        "Si cambio varias cosas a la vez, decláralo como intervención combinada y explica que no se podrá atribuir el efecto a un componente.",
         "Pide al menos una medida de resultado, una de proceso y una de equilibrio; si no se me ocurre qué puede empeorar, pregúntamelo.",
         "Aclara que si falla la medida de proceso, el problema puede ser de implantación, no de la idea.",
         "Acuerda antes de empezar el criterio para adoptar, adaptar o abandonar, y qué haremos si el resultado es intermedio.",
-        "No inventes el dato de partida, los responsables ni las fechas: escribe SIN DATO, SIN ASIGNAR o SIN FECHA.",
-        "Termina con una conclusión provisional basada en la predicción y el criterio, el siguiente paso y qué guardar."
+        "No inventes el dato de partida, los responsables ni las fechas: escribe SIN DATO, SIN ASIGNAR o SIN FECHA. Termina con una conclusión provisional basada en la predicción y el criterio, el siguiente paso y qué guardar."
       ]
     },
+    {
+      id: "interpretar-resultados", momento: "probando", titulo: "Interpreta los resultados", skill: "interpretar-resultados",
+      resumen: "Compara lo que ocurrió con la predicción, lee el gráfico de evolución y revisa las medidas de proceso y de equilibrio. Distingue entre «funcionó», «no funcionó» y «los datos no bastan para saberlo», y decide adoptar, adaptar, abandonar o ampliar la prueba.",
+      porque: "Un resultado no habla solo. Sin compararlo con lo que se predijo, sin mirar si el cambio se hizo de verdad y sin revisar qué empeoró, la reunión acaba en opiniones. Y a veces la conclusión honesta es que todavía no se puede saber.",
+      conecta: "Recibe el plan y la hoja de seguimiento de «Planifica la prueba» y los datos de experiencia, si existen. Si se adopta, pasa a «Consolida la mejora»; si se adapta o amplía, vuelve a planificar con lo aprendido.",
+      cuando: "Al terminar el periodo de prueba, antes de decidir qué hacer con el cambio.",
+      necesitas: ["El plan de prueba: predicción, medidas y criterio", "La hoja de seguimiento y los datos, con su fuente", "Qué pasó durante la prueba: incidencias y cambios", "La evaluación de la experiencia, si se hizo"],
+      recibes: ["Hoja de interpretación: predicción frente a lo ocurrido", "Lectura del gráfico y de las medidas de proceso y equilibrio", "Una de tres lecturas: funcionó, no funcionó o los datos no bastan", "Decisión justificada: adoptar, adaptar, abandonar o ampliar"],
+      campos: [{ id: "prueba", etiqueta: "Prueba que interpretamos", ej: "huecos de revisión precoz en el CS Norte" }],
+      plantilla: "Vamos a interpretar los resultados de esta prueba: {prueba}. Te adjunto la hoja de seguimiento y los datos disponibles. Primero pregúntame qué creo yo que ha pasado. Después ayúdame a compararlo con la predicción, revisar la implantación y el equilibrio, y decidir si adoptar, adaptar, abandonar o ampliar la prueba.",
+      despues: ["Adjunta el plan de prueba y la hoja de seguimiento si no están en los archivos del proyecto", "Dile cuántos casos hay, qué falta y qué cambió durante la prueba"],
+      consejo: "No muevas la predicción ni el criterio para que encajen. Y no confundas «no funcionó» con «los datos no bastan»: son conclusiones distintas y llevan a decisiones distintas.",
+      plantillas: ["hoja-interpretacion"], ejemplos: ["interpretar-resultados--ejemplo-hoja-interpretacion"],
+      herramientas: ["runchart", "control"], tecnicas: [], siguiente: "consolidar-mejora", ficha: true,
+      manual: {
+        antes: [
+          "Tienes el plan de prueba con la predicción, las medidas y el criterio para adoptar, adaptar o abandonar, escritos antes de empezar.",
+          "Tienes la hoja de seguimiento y los datos, con su fuente y su fecha. Si falta alguno, se anota.",
+          "Sabes qué pasó durante la prueba: incidencias, cambios de diseño y personas que no participaron.",
+          "Tienes la evaluación de la experiencia de pacientes y profesionales, si se hizo.",
+          "Hay 45–60 minutos y están quienes hicieron la prueba, no solo quien la coordinó."
+        ],
+        pasos: [
+          "Recupera el contexto en tres líneas: qué se probó, dónde, durante cuánto tiempo y con qué predicción. Si no hay predicción escrita, se puede describir lo ocurrido, pero no interpretarlo contra una expectativa.",
+          "Pregunta primero a cada persona qué cree que ha pasado y qué se lo hace pensar. Guarda la respuesta para compararla al final.",
+          "Mira la medida de proceso antes que el resultado: ¿se hizo el cambio como se diseñó? ¿Cuántos avisos salieron y cuántos huecos se usaron? Si el cambio no se implantó, no concluyas que la idea no funciona.",
+          "Ordena los datos y di qué evidencia es cada cosa: dato medido o registrado (con fuente y fecha), observación directa, testimonio o percepción (de quién y por qué rol) y estimación. No rellenes huecos con impresiones.",
+          "Compara con la predicción y clasifica: cumplida, no cumplida, cumplida en parte o no evaluable. Usa la cifra y el plazo que se escribieron antes de empezar.",
+          "Lee el gráfico de evolución con reglas sencillas: tendencia (varios puntos seguidos que suben o bajan), desplazamiento (seis o más puntos al mismo lado de la referencia) y rachas (demasiados puntos seguidos al mismo lado). Con menos de 10–12 puntos, describe y no afirmes que hay un cambio real. Si no sabes calcular un gráfico de control, no lo improvises.",
+          "Revisa por separado las medidas de resultado, de proceso y de equilibrio. Una mejora del resultado con un equilibrio que empeora no es una buena mejora.",
+          "Contrasta con la experiencia de pacientes y profesionales, si existe. Con pocas respuestas, describe y no generalices.",
+          "Elige una de las tres lecturas: funcionó, no funcionó o los datos no bastan para saberlo. Si faltan casos, tiempo, una medida o la implantación no fue suficiente, dilo: es una conclusión válida y hay que explicar qué haría falta.",
+          "Decide con el grupo: adoptar, adaptar, abandonar o ampliar la prueba. Escribe la justificación, quién decide, los desacuerdos y qué no permite afirmar la prueba. Recuerda que en una intervención combinada no se puede atribuir el efecto a un componente.",
+          "Propón los cambios a la ficha y al cuaderno: resultado, interpretación, decisión y qué falta."
+        ],
+        recursos: [
+          { tipo: "plantilla", id: "hoja-interpretacion" },
+          { tipo: "ejemplo", id: "interpretar-resultados--ejemplo-hoja-interpretacion" },
+          { tipo: "herramienta", id: "runchart" },
+          { tipo: "herramienta", id: "control" },
+          { tipo: "paso", id: "evaluar-experiencia" }
+        ],
+        bienHecho: "Un buen resultado es una hoja de interpretación en la que la predicción se compara con lo observado, se distingue qué se hizo de verdad (proceso) de lo que mejoró (resultado) y de lo que empeoró (equilibrio), y cada afirmación dice qué evidencia la sostiene. La lectura es una de tres - funcionó, no funcionó o los datos no bastan para saberlo - y la decisión (adoptar, adaptar, abandonar o ampliar) está justificada con sus límites y con quién la tomó.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo ve que el 89 % de las altas tienen aviso y concluye «funcionó», sin mirar que la mediana sigue en 9 días y que la espera del resto de la agenda ha subido cuatro días. El aviso se implantó, pero el resultado no llegó y el equilibrio empeoró. Además, con cuatro semanas no se puede saber si bajan los reingresos: eso es «los datos no bastan», no un éxito.",
+        avanzar: [
+          "La predicción y el criterio se leen tal como se escribieron, sin cambiarlos después.",
+          "Está claro qué se hizo de verdad (proceso) y qué se puede concluir del resultado y del equilibrio.",
+          "La lectura elegida es una de tres: funcionó, no funcionó o los datos no bastan para saberlo, con su justificación.",
+          "La decisión es explícita - adoptar, adaptar, abandonar o ampliar - y dice quién la tomó, con qué límites y qué falta.",
+          "Pide ayuda a un facilitador con experiencia si hay datos contradictorios, si el grupo quiere adoptar con un equilibrio que empeora o si nadie sabe qué se midió."
+        ],
+        guardar: "Sale la hoja de interpretación (plantilla) con la comparación, la lectura y la decisión. Guárdala en 05_datos del registro del proyecto, anota en la ficha el resultado, la lectura y la decisión, y añade la entrada al cuaderno al cerrar. Si se adopta, sigue con «Consolida la mejora»; si se adapta o amplía, vuelve a «Planifica la prueba» con lo aprendido."
+      },
+      metodo: [
+        "Empieza preguntándome qué creo que ha pasado y cómo lo compararía con la predicción.",
+        "Comprueba primero la medida de proceso: si el cambio no se hizo como se diseñó, no se puede concluir que la idea no funciona.",
+        "Compara lo ocurrido con la predicción escrita antes de empezar; no la cambies ahora.",
+        "Lee el gráfico con reglas sencillas: tendencia, desplazamiento y rachas. Con menos de 10–12 puntos, describe y no afirmes un cambio real.",
+        "Revisa por separado resultado, proceso y equilibrio; un resultado mejor con un equilibrio que empeora no es una buena mejora.",
+        "Distingue tres lecturas: funcionó, no funcionó y los datos no bastan para saberlo. No sustituyas la tercera por una opinión.",
+        "Di qué evidencia sostiene cada afirmación y cada resultado: si es un dato medido, un registro, una observación, un testimonio o una estimación.",
+        "Termina con una decisión justificada - adoptar, adaptar, abandonar o ampliar - y con sus límites, responsables y siguiente paso."
+      ]
+    },
+    {
+      id: "consolidar-mejora", momento: "sosteniendo", titulo: "Consolida la mejora", skill: "consolidar-mejora",
+      resumen: "Pasa de la prueba a la práctica habitual: trabajo estándar, formación y relevo, control visual, un responsable y una medida de seguimiento con umbral de alarma, revisiones a 1, 3 y 6 meses y qué hacer si la mejora se degrada. Cierra o escala el proyecto.",
+      porque: "Muchas mejoras se deshacen en silencio cuando termina el proyecto: cambia un responsable, se olvida la reunión y nadie mira el indicador. Consolidar es dejar el cambio integrado en el trabajo de cada día, con alguien que mira.",
+      conecta: "Recibe la decisión de adoptar de «Interpreta los resultados». Se apoya en el trabajo estándar, la gestión visual y el A3; al terminar, se cierra la sesión y la mejora sigue en la rutina.",
+      cuando: "Cuando el grupo ha decidido adoptar un cambio que funcionó, no antes de probarlo.",
+      necesitas: ["La hoja de interpretación con la decisión de adoptar", "El plan de prueba y lo aprendido", "Quiénes harán el trabajo y quién responde de él", "Los datos de experiencia, si existen"],
+      recibes: ["Plan de sostenimiento en una página", "Trabajo estándar y formación y relevo", "Control visual y medida con umbral de alarma", "Revisiones a 1, 3 y 6 meses y decisión de cierre o escalado"],
+      campos: [{ id: "cambio", etiqueta: "Cambio que se consolida", ej: "revisión precoz tras el alta en IC en el CS Norte" }],
+      plantilla: "Hemos decidido adoptar este cambio: {cambio}. Te adjunto la hoja de interpretación y el plan de prueba. Primero pregúntame qué creo que hará que siga funcionando y qué lo rompería. Después ayúdame a dejarlo en la rutina: trabajo estándar, formación y relevo, control visual, responsable, medida con umbral de alarma y revisiones.",
+      despues: ["Adjunta la hoja de interpretación y el plan de prueba si no están en los archivos del proyecto", "Cuéntale quién hará el trabajo a partir de ahora y qué relevo existe"],
+      consejo: "Un cambio no se sostiene solo. Si no hay responsable, medida y una reunión breve que la mire, la mejora se pierde aunque el resultado fuera bueno.",
+      plantillas: ["plan-sostenimiento"], ejemplos: ["consolidar-mejora--ejemplo-plan-sostenimiento"],
+      herramientas: ["estandar", "visual", "runchart", "control", "a3"], tecnicas: ["cierre"], siguiente: "cerrar-sesion", ficha: true,
+      manual: {
+        antes: [
+          "Hay una decisión explícita del grupo de adoptar el cambio. Si no la hay, no se consolida: vuelve a interpretar o a planificar.",
+          "Sabes qué se adopta, en qué centros, unidades o turnos, para quién y desde cuándo.",
+          "Sabes quiénes harán el trabajo a partir de ahora y quién responde de él.",
+          "Tienes el plan de prueba, la hoja de interpretación y los datos de experiencia, si existen."
+        ],
+        pasos: [
+          "Recupera el contexto en tres líneas: qué se adopta, dónde, para quién y desde cuándo, y quién lo decidió.",
+          "Pregunta primero a cada persona qué hará que siga funcionando dentro de seis meses y qué lo rompería. Después compara con lo aprendido en la prueba.",
+          "Confirma la adopción y su alcance: dónde, para quién y desde cuándo. Extender a otro centro es otra decisión, no una consecuencia automática del buen resultado.",
+          "Escribe el trabajo estándar con quienes hacen la tarea: quién hace qué, cuándo, con qué material y dónde se registra. Incluye las excepciones frecuentes y quién puede cambiar el estándar. Debe ser el mejor modo conocido hoy, no una norma impuesta desde fuera.",
+          "Acuerda la formación y el relevo: cómo aprende quien llega nuevo, quién enseña, cuánto dura y dónde está el material. Incluye turnos, vacaciones y sustituciones; una sesión única no basta.",
+          "Deja un control visual: qué se ve de un vistazo, dónde y quién lo actualiza. Pocos indicadores, los que el equipo puede cambiar, y una reunión breve y periódica que los revise.",
+          "Fija un responsable y una medida de seguimiento con umbral de alarma: indicador, fuente, frecuencia, quién lo revisa y qué valor o patrón dispara la alarma. Distingue variación normal de señal de deterioro. Si falta alguien o una fecha, escribe SIN ASIGNAR o SIN FECHA.",
+          "Acuerda qué hacer si se degrada: comprobar si el proceso se sigue haciendo como estaba, reforzar la formación, ajustar el estándar y, si no basta, volver a una prueba pequeña o abandonar. Cada paso con quién lo activa y en cuánto tiempo. Se mira el proceso, no a las personas.",
+          "Planifica las revisiones a 1, 3 y 6 meses: qué se revisa, quién participa y qué decisión toca. Usa el gráfico de evolución y, si hay datos suficientes, el de control.",
+          "Documenta y decide el cierre o el escalado: deja el plan en el registro, actualiza ficha y cuaderno y, si se cierra, resume el recorrido en un A3 o en el informe. Escala si hacen falta recursos, dirección o extensión a otros servicios. Registra qué queda abierto y qué pasa al parking."
+        ],
+        recursos: [
+          { tipo: "plantilla", id: "plan-sostenimiento" },
+          { tipo: "ejemplo", id: "consolidar-mejora--ejemplo-plan-sostenimiento" },
+          { tipo: "herramienta", id: "estandar" },
+          { tipo: "herramienta", id: "visual" },
+          { tipo: "herramienta", id: "runchart" },
+          { tipo: "herramienta", id: "control" },
+          { tipo: "herramienta", id: "a3" },
+          { tipo: "paso", id: "evaluar-experiencia" }
+        ],
+        bienHecho: "Un buen resultado es un plan de sostenimiento de una página: qué se adopta y desde cuándo, el trabajo estándar con quién, qué y cuándo, la formación y el relevo, el control visual, un responsable y una medida de seguimiento con umbral de alarma acordado antes, qué hacer si se degrada, las revisiones a 1, 3 y 6 meses y la decisión de cerrar o escalar. Cualquiera del equipo puede explicar qué se espera de él y qué se mira cada mes.",
+        contraejemplo: "Contraejemplo (caso ficticio del Área de Salud del Valle): el grupo adopta la revisión precoz, lo anuncia en el acta y da el proyecto por terminado. No hay estándar escrito, ni responsable del seguimiento, ni umbral de alarma. Dos meses después, una médica nueva ocupa los huecos con cupo ordinario y nadie lo detecta hasta que la espera ha subido otra vez. El cambio se había probado, pero nunca se consolidó.",
+        avanzar: [
+          "Está escrito qué se adopta, dónde, para quién y desde cuándo, quién lo decidió y quién será su responsable.",
+          "El trabajo estándar dice quién, qué y cuándo, y está acordado con quienes hacen la tarea.",
+          "Hay formación y relevo previstos, o una condición con responsable y fecha.",
+          "Hay un responsable y una medida de seguimiento con umbral de alarma acordado; si falta, está como SIN ASIGNAR o SIN FECHA y es la primera tarea.",
+          "Están fijadas las revisiones a 1, 3 y 6 meses y qué hacer si se degrada.",
+          "Pide ayuda a un facilitador con experiencia si la adopción no está decidida, si nadie asume el seguimiento, si no hay un umbral acordado o si se quiere extender sin comprobar que se sostiene."
+        ],
+        guardar: "Sale el plan de sostenimiento (plantilla) y, si no existía, el trabajo estándar en una página. Guárdalos en 04_analisis o 05_datos del registro del proyecto según su contenido, anota en la ficha el cambio adoptado, el responsable, la medida con umbral y las revisiones, y añade la entrada al cuaderno al cerrar. Sigue con «Cierra la sesión» y mantén las revisiones acordadas; si se escala, prepara el informe o la presentación."
+      },
+      metodo: [
+        "Empieza preguntándome qué hará que esto siga funcionando dentro de seis meses, quién debería ser el responsable y qué lo rompería.",
+        "Confirma que hay una decisión explícita de adoptar y que el alcance está claro antes de escribir el trabajo estándar; sin ella, no consolides.",
+        "Ayúdame a escribir el trabajo estándar con quienes hacen la tarea: quién, qué, cuándo y con qué material.",
+        "Incluye formación y relevo para turnos, vacaciones y quien llega nuevo.",
+        "Define un control visual sencillo y una reunión breve que lo revise.",
+        "Fija un responsable y una medida de seguimiento con umbral de alarma acordado antes de mirar los datos.",
+        "Acuerda qué hacer si se degrada, con pasos, responsable y plazos; mira el proceso y las condiciones, no a las personas.",
+        "Planifica revisiones a 1, 3 y 6 meses y termina con la decisión de cerrar o escalar, lo que queda abierto y qué guardar."
+      ]
+    },
+
     {
       id: "donde-estamos", momento: null, titulo: "Retoma el proyecto", skill: "donde-estamos",
       resumen: "Al empezar una conversación: CoraLEAN localiza la última ficha, reconstruye el contexto sin que tengas que contarlo y te dice en qué momento estás, qué está débil y qué toca ahora.",
@@ -427,14 +566,14 @@ window.GUIA = {
     },
     {
       id: "preparar-sesion", momento: null, titulo: "Prepara la siguiente sesión", skill: "preparar-sesion",
-      resumen: "Cualquier sesión de trabajo: mapear, comparar con el estándar, analizar causas, priorizar, planificar una prueba (PDCA) o hacer seguimiento.",
+      resumen: "Cualquier sesión de trabajo: mapear, comparar con el estándar, analizar causas, priorizar, planificar una prueba (PDCA), interpretar resultados, consolidar la mejora o hacer seguimiento.",
       porque: "Cada reunión tiene que producir algo concreto. Prepararla es la diferencia entre una sesión útil y otra que «seguimos hablando».",
       conecta: "Después de la sesión, procésala; al terminar el día, cierra la sesión.",
       cuando: "Antes de cada reunión del grupo.",
       necesitas: ["La ficha", "Tipo de sesión, duración y asistentes"],
       recibes: ["Guion minuto a minuto", "Convocatoria", "Materiales y trabajo previo"],
       campos: [
-        { id: "tipo", etiqueta: "Tipo de sesión", tipo: "select", opciones: ["no lo sé (propónmelo según la ficha)", "seguimiento de acciones", "mapear el proceso actual", "comparar con el estándar", "analizar causas", "generar y priorizar soluciones", "planificar una prueba (PDCA)"] },
+        { id: "tipo", etiqueta: "Tipo de sesión", tipo: "select", opciones: ["no lo sé (propónmelo según la ficha)", "seguimiento de acciones", "mapear el proceso actual", "comparar con el estándar", "analizar causas", "generar y priorizar soluciones", "planificar una prueba (PDCA)", "interpretar los resultados de la prueba", "consolidar la mejora y su seguimiento"] },
         { id: "duracion", etiqueta: "Duración", ej: "60 minutos" },
         { id: "asistentes", etiqueta: "Asistentes (por rol)", ej: "grupo núcleo" }
       ],
@@ -589,7 +728,7 @@ window.GUIA = {
       cuandoNo: "Si no hay estándar de referencia.", consejo: "Compara con lo que pasa, no con lo que dice vuestro protocolo.",
       plantilla: "tabla-brechas", skill: "comparar-con-estandar" },
     { id: "recogida", nombre: "Hoja de recogida de datos", momento: "entendiendo", pregunta: "¿Cuánto pasa? ¿Con qué frecuencia?",
-      teoria: "Cuando el dato no existe, se mide a mano durante un periodo corto. Dos a cuatro semanas, o 20–30 casos, suelen bastar para tener un dato de partida.",
+      teoria: "Cuando el dato no existe, se mide a mano durante un periodo corto. Dos a cuatro semanas, o 20–30 casos, suelen bastar para tener una referencia de partida; no para estimar con precisión ni para demostrar eficacia. Sirve para saber por dónde va el proceso y comparar después.",
       como: ["Una o dos variables, no más", "Decide quién la rellena y dónde se guarda", "Número de orden, nunca el número de historia", "Al terminar: mediana, mínimo, máximo, % que cumple"],
       cuandoNo: "Si el dato ya está en un sistema.", consejo: "Que sea tan corta que dé pereza no rellenarla.",
       plantilla: "hoja-recogida-tiempos", imprimir: "recogida", skill: "mapear-proceso" },
@@ -647,20 +786,20 @@ window.GUIA = {
     { id: "runchart", nombre: "Gráfico de evolución", momento: "sosteniendo", pregunta: "¿Está mejorando con el tiempo?",
       teoria: "El indicador en el tiempo con la mediana como referencia. Permite ver si un cambio produce mejora sostenida sin reaccionar a cada subida o bajada. El gráfico de control es su versión con límites estadísticos.",
       como: ["Elige el indicador y la periodicidad", "Dibuja los puntos en orden", "Traza la mediana", "Marca cuándo se introdujo el cambio"],
-      cuandoNo: "Con menos de 10–12 puntos.", consejo: "Seis puntos seguidos por encima o por debajo de la mediana suelen indicar un cambio real.", fuente: "ihi" },
+      cuandoNo: "Con menos de 10–12 puntos.", consejo: "Seis puntos seguidos por encima o por debajo de la mediana suelen indicar un cambio real.", fuente: "ihi", skill: "interpretar-resultados" },
     { id: "control", nombre: "Gráfico de control", momento: "probando", pregunta: "¿El proceso es estable? ¿El cambio es real?",
       teoria: "Un gráfico de evolución con límites calculados a partir de los propios datos, que marcan la variación esperable. Distingue la variación normal, ante la que no conviene reaccionar, de las señales de que algo ha cambiado de verdad.",
       como: ["Recoge datos periódicos durante un tiempo (p. ej., semanales)", "Calcula la línea central y los límites (o pide ayuda a quien sepa)", "Busca señales: puntos fuera de límites, rachas al mismo lado, tendencias", "Marca cuándo se introdujo el cambio"],
       cuandoNo: "Con pocos datos o sin nadie que sepa calcularlo: usa el gráfico de evolución.", consejo: "Los límites de control no son objetivos: describen lo que el proceso hace hoy, no lo que querríamos.",
-      fuente: "ihi", ejemplo: { diag: "ej-control", texto: "Porcentaje semanal de altas sin visita en 7 días (ficticio): tras el cambio, siete semanas seguidas por debajo de la media anterior. Es una señal de mejora real, no de variación normal." } },
+      fuente: "ihi", skill: "interpretar-resultados", ejemplo: { diag: "ej-control", texto: "Porcentaje semanal de altas sin visita en 7 días (ficticio): tras el cambio, siete semanas seguidas por debajo de la media anterior. Es una señal de mejora real, no de variación normal." } },
     { id: "estandar", nombre: "Trabajo estándar", momento: "sosteniendo", pregunta: "¿Cómo hacemos que todos lo hagan igual?",
       teoria: "La mejor forma conocida hoy de hacer una tarea, acordada por quienes la hacen, documentada y visible. No es rígida: se revisa cada vez que se mejora.",
       como: ["Parte de lo que funcionó en la prueba", "Acórdalo con quienes hacen la tarea", "Documéntalo de forma breve y visual", "Ponlo donde se usa", "Revísalo cuando algo cambie"],
-      cuandoNo: "Antes de haber probado el cambio.", consejo: "Un estándar impuesto desde fuera no se cumple. Uno que el equipo ha escrito, sí." },
+      cuandoNo: "Antes de haber probado el cambio.", consejo: "Un estándar impuesto desde fuera no se cumple. Uno que el equipo ha escrito, sí.", skill: "consolidar-mejora" },
     { id: "visual", nombre: "Gestión visual", momento: "sosteniendo", pregunta: "¿Cómo vemos de un vistazo si va bien?",
       teoria: "Un panel en la zona de trabajo con los indicadores, los problemas del día y las acciones en marcha, revisado en una reunión breve y periódica. Hace que la mejora siga viva cuando el proyecto termina.",
       como: ["Pocos indicadores, los que el equipo puede cambiar", "Problemas y acciones con responsable", "Reunión breve de pie, siempre a la misma hora", "Actualizarlo es tarea del equipo, no del líder"],
-      cuandoNo: "Sin indicador que mirar.", consejo: "Un panel que nadie mira es decoración. Si en dos semanas nadie lo actualiza, simplifícalo." },
+      cuandoNo: "Sin indicador que mirar.", consejo: "Un panel que nadie mira es decoración. Si en dos semanas nadie lo actualiza, simplifícalo.", skill: "consolidar-mejora" },
     { id: "cincos", nombre: "5S", momento: "sosteniendo", pregunta: "¿Cómo mantenemos ordenado un puesto o una zona?",
       teoria: "Cinco pasos para ordenar y mantener ordenado: separar lo que sobra, ordenar lo necesario (un sitio para cada cosa), limpiar y eliminar lo que ensucia, estandarizar las reglas y mantenerlas. No es una limpieza puntual: es un hábito que se revisa.",
       como: ["Empieza con un propósito (p. ej., menos interrupciones buscando material)", "Separa, ordena y limpia con el equipo", "Fija el estándar: sitio marcado, dotación, revisión", "Revisiones periódicas por turnos con una lista corta", "Si algo falla, cambia el estándar, no solo lo recojas", "Resultados visibles en un panel"],
@@ -670,7 +809,7 @@ window.GUIA = {
       teoria: "El proyecto en una hoja siguiendo el ciclo PDCA: contexto, situación actual, objetivo, análisis de causas, contramedidas, plan y seguimiento. Su valor está en el razonamiento que obliga a hacer, no en el documento.",
       como: ["Contexto y problema", "Situación actual (con el mapa)", "Objetivo e indicador", "Análisis de causas", "Contramedidas, plan y seguimiento"],
       cuandoNo: "Como formulario que rellena el líder solo, o sin haber ido a ver el proceso.", consejo: "CoraLEAN no te hará el A3: te acompaña a pensarlo. La ficha del proyecto ya recoge lo que necesitas.",
-      fuente: "seca" }
+      fuente: "seca", skill: "consolidar-mejora" }
   ],
 
   colores: [
@@ -717,7 +856,8 @@ window.GUIA = {
     "guion-paciente": "Guion de entrevista con paciente", "mapa-experiencia": "Mapa de experiencia del paciente", "plan-evaluacion-experiencia": "Plan de evaluación de la experiencia",
     "encuesta-profesionales": "Encuesta breve a profesionales",
     "mapa-causas": "Mapa de causas", "lista-priorizada": "Lista priorizada de soluciones", "matriz-criterios": "Matriz de decisión ponderada (criterios)",
-    "plan-prueba": "Plan de prueba (PDCA)", "hoja-seguimiento-prueba": "Hoja de seguimiento de la prueba"
+    "plan-prueba": "Plan de prueba (PDCA)", "hoja-seguimiento-prueba": "Hoja de seguimiento de la prueba",
+    "hoja-interpretacion": "Hoja de interpretación de la prueba", "plan-sostenimiento": "Plan de sostenimiento de la mejora"
   },
 
   imprimibles: { compromisos: "Compromisos de la sesión", leyenda: "Leyenda de colores", parking: "Parking de ideas", actores: "Mapa de actores", carriles: "Mapa por carriles", spaghetti: "Plano para spaghetti", recogida: "Hoja de recogida", ishikawa: "Espina de pescado", matriz: "Matriz impacto-esfuerzo", semaforo: "Tarjetas del semáforo", journey: "Mapa de experiencia del paciente" },

@@ -1,13 +1,15 @@
 # Lista priorizada de soluciones: [problema]
 
-**Proyecto:** [nombre] · **Fecha:** [fecha] · **Deciden:** [roles] · **Causa o causas que abordamos:** [C1, C2]
+**Proyecto:** [nombre] · **Fecha:** [fecha] · **Deciden:** [roles] · **Causa o causas que abordamos:** [C1 / HP1, C2]
 
 ## 1. Punto de partida
 
 - **Problema (observable):**
-- **Causa comprobada principal:**
+- **Causa o hipótesis prioritaria que abordamos:** [C1 / HP1]
+- **Estado de la causa:** comprobada con dato / hipótesis prioritaria respaldada por el grupo
 - **Evidencia de esa causa y su alcance:**
-- **Qué sigue en comprobación:**
+- **Qué sigue pendiente de confirmar:**
+- **Si es una hipótesis prioritaria:** qué aprenderá la prueba sobre la causa
 
 ## 2. Criterios acordados antes de puntuar
 
@@ -23,7 +25,7 @@
 
 | # | Idea (verbo + objeto) | Causa a la que responde | Cómo crees que actuará sobre la causa | Evidencia de que puede funcionar | Fuente de la idea |
 |---|---|---|---|---|---|
-| I1 | | C1 | | | |
+| I1 | | C1 / HP1 | | | |
 | I2 | | | | | |
 
 **Ideas no vinculadas a una causa** (no entran en la priorización):
@@ -47,6 +49,8 @@
 | I1 | | | | | | |
 
 **Qué es dato y qué es opinión:** [anotar aquí los cálculos que se apoyan en datos y los que son estimación del grupo]
+
+> La matriz hace explícitos los criterios y sus pesos, pero **no convierte las opiniones en datos ni demuestra que la primera idea sea mejor**. Ordena la decisión; la comprobación llega con la prueba.
 
 ## 5. Lista priorizada
 

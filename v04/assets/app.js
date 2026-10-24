@@ -576,6 +576,8 @@
       ["Tengo notas o la grabación de una reunión", "paso-procesar-sesion", "Saca el acta, el correo para el grupo y lo que hay que guardar."],
       ["Sabemos el problema, pero no sus causas", "momento-porque", "Separa hipótesis de causas comprobadas antes de proponer cambios."],
       ["Tengo varias ideas y no sé cuál probar", "momento-eligiendo", "Compara las ideas con criterios y elige una prueba pequeña."],
+      ["He terminado una prueba y tengo resultados", "paso-interpretar-resultados", "Compara con la predicción y decide adoptar, adaptar, abandonar o ampliar."],
+      ["El cambio funciona y quiero que se sostenga", "paso-consolidar-mejora", "Deja estándar, responsable, medida con umbral y revisiones."],
       ["Vuelvo a un proyecto que ya empecé", "paso-donde-estamos", "Retoma desde la ficha sin volver a contarlo todo."],
       ["No sé por dónde seguir", "paso-donde-estamos", "CoraLEAN revisa contigo dónde estáis y qué toca."]
     ];

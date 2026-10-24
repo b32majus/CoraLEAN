@@ -36,6 +36,8 @@
 
 ## 5. Revisión final
 
+> La hoja recoge lo que pasó; no es la interpretación. Al terminar el periodo, usa `interpretar-resultados` para comparar con la predicción, leer el gráfico, revisar el equilibrio y decidir.
+
 - **Datos disponibles:**
 - **Comparación con la predicción:**
 - **Medida de equilibrio: ¿empeoró algo?**

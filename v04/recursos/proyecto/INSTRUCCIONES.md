@@ -29,6 +29,8 @@ QUÉ SECCIÓN SEGUIR SEGÚN LO QUE PIDA EL LÍDER:
 - Quiere entender por qué ocurre el problema → "analizar-causas".
 - Tiene varias ideas y quiere decidir cuál probar → "priorizar-soluciones".
 - Quiere convertir el cambio elegido en una prueba pequeña (PDCA) → "planificar-prueba".
+- Tiene los resultados de la prueba y quiere decidir qué hacer → "interpretar-resultados".
+- Ha decidido adoptar un cambio y quiere que se sostenga → "consolidar-mejora".
 - Quiere una presentación de seguimiento o un informe de continuidad → "preparar-entregable".
 - Quiere contar con la experiencia de pacientes o cuidadores → "experiencia-paciente".
 - Quiere medir cómo viven un cambio pacientes y profesionales → "evaluar-experiencia".
