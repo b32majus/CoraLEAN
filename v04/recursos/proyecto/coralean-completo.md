@@ -4,25 +4,27 @@
 <!-- comun/plantilla-cuaderno.md -->
 # Cuaderno del proyecto — [nombre del proyecto]
 
-> Línea evolutiva del proyecto. **Solo se añade al final: nunca se resume ni se reescribe lo anterior.** La foto de hoy está en la ficha del proyecto; aquí está todo el recorrido.
+> Línea evolutiva del proyecto. Tiene dos partes: la **historia** (las entradas, que no se modifican ni se resumen; si algo cambia, se añade una entrada nueva) y unas **vistas derivadas** arriba (cabecera, índice y decisiones vigentes), que se regeneran a partir de las entradas. La foto de hoy está en la ficha del proyecto.
+
+## Vistas derivadas (se regeneran a partir de las entradas)
 
 **Última actualización:** (fecha) · **Número de entradas:** 0 · **Ficha vigente:** v[n] ([fecha])
 
-## Índice
+### Índice
 | Nº | Fecha | Tipo de sesión | En una línea |
 |---|---|---|---|
 | 1 | | | |
 
-## Decisiones vigentes
+### Decisiones vigentes
 | Fecha | Decisión | Condición | Sustituye a |
 |---|---|---|---|
 
-## Archivo
+### Archivo
 (Cuadernos archivados, con una línea de resumen cada uno. Ejemplo: `cuaderno_2026-T4.md` — entradas 1–14: arranque, entrevistas y validación de la situación de partida.)
 
-## Línea evolutiva
+## Historia (entradas inmutables)
 
-<!-- Pega aquí cada entrada nueva al final, con la plantilla de entrada. -->
+<!-- Cada entrada nueva va al final, con la plantilla de entrada. Las entradas anteriores no se modifican. -->
 
 ---
 <!-- comun/plantilla-entrada-cuaderno.md -->
@@ -197,20 +199,20 @@ La memoria del proyecto tiene **tres capas**:
 | Capa | Qué es | Tamaño | Se actualiza |
 |---|---|---|---|
 | **Ficha del proyecto** | La foto de hoy: lo decidido, lo pendiente y lo que se sabe ahora | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
-| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | Solo se **añade al final**. Nunca se resume ni se reescribe el historial |
+| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | La **historia** (entradas) no se modifica ni se resume: se añaden entradas nuevas. La cabecera, el índice y las decisiones vigentes son **vistas derivadas** que se regeneran a partir de las entradas |
 | **Documentos de trabajo** | Actas, fichas de entrevista, mapas, datos, entregables | Muchos archivos | Se **guardan**; el cuaderno y la ficha los citan |
 
 La ficha se lee siempre primero. El cuaderno se consulta por la parte necesaria (su índice y la tabla de «Decisiones vigentes») y es la fuente principal para reconstruir el proyecto o preparar un informe. La ficha y el cuaderno citan los documentos en «Fuentes y documentos», para volver al original.
 
 ## Cómo se actualiza el cuaderno
 
-El cuaderno nunca se reescribe: solo se añade una entrada al final. Cómo se hace depende del entorno:
+La historia no se reescribe: cada sesión añade una entrada al final. Las vistas derivadas (cabecera, índice, decisiones vigentes) se regeneran a partir de las entradas. Cómo se hace depende de lo que **pueda hacer de verdad** tu asistente. Compruébalo una vez: pide que añada una línea de prueba al final del cuaderno y mira si el archivo cambia.
 
-| Situación | Qué hace CoraLEAN |
+| Lo que puede hacer el asistente | Qué hace CoraLEAN |
 |---|---|
-| **El entorno edita archivos** (Work, Cowork, OpenCode, agentes de Copilot) | Añade la entrada al final del cuaderno y lo dice. No toca lo anterior |
-| **Entorno manual y cuaderno corto** (hasta unas 15 páginas) | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. Recuerda sustituirlo en la base de conocimiento (descargar o «añadir a la fuente») y borrar la versión anterior |
-| **Entorno manual y cuaderno largo** | Entrega **solo la entrada nueva**, indica dónde pegarla y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`), dejando un resumen en el cuaderno vivo |
+| **Edita el archivo** (comprobado) | Añade la entrada al final, regenera las vistas derivadas y lo dice. No toca las entradas anteriores |
+| **Crea un archivo nuevo, pero no sustituye el existente** | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. El usuario lo sustituye en la base de conocimiento (descargar o «añadir a la fuente») y borra la versión anterior |
+| **Solo da texto** (o el cuaderno es muy largo) | Entrega **solo la entrada nueva**, indica dónde pegarla y, si el cuaderno es largo, sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo |
 
 ## Versión para consultar
 
@@ -246,7 +248,7 @@ La fecha delante hace que se ordenen solos. El tipo y el detalle permiten encont
 | Entorno | Ficha y cuaderno | Documentos de trabajo |
 |---|---|---|
 | Project de ChatGPT o Claude | Archivos del proyecto: la última ficha y el cuaderno. Al cerrar, sustituye cada uno por su versión nueva y borra la anterior | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
-| OpenCode, Work, Cowork | Archivos en la carpeta del proyecto; el cuaderno se actualiza solo | La propia carpeta del proyecto con la estructura de arriba |
+| Entornos que trabajan con carpetas (OpenCode y, si lo has comprobado, Work o Cowork) | Archivos en la carpeta del proyecto; el asistente puede actualizar el cuaderno si edita archivos (compruébalo) | La propia carpeta del proyecto con la estructura de arriba |
 | Conversación suelta | Documentos propios que pegas o adjuntas | Carpeta propia |
 
 Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los documentos de trabajo. Aun así, **la ficha es lo primero que se lee**. Con límite de archivos, el cuaderno es lo más útil después de la ficha: un solo archivo con todo el recorrido.
@@ -278,7 +280,7 @@ Eres **CoraLEAN**, un facilitador y mentor metodológico para profesionales sani
    - Al terminar cualquier trabajo que cambie el proyecto, propón los cambios a la ficha y, cuando el líder los confirme, entrega la **ficha completa actualizada** con un número de versión nuevo.
    - Actualiza siempre la **fecha de última actualización** y el apartado de fuentes y documentos.
    - Recuerda al líder que guarde la última versión y la pegue o adjunte al empezar la próxima conversación. Al terminar una sesión de trabajo, ofrece `cerrar-sesion`.
-   - Además de la ficha existe el **cuaderno del proyecto** (línea evolutiva, un solo archivo). **Nunca resumas ni reescribas su historial**: solo añades la entrada nueva al final.
+   - Además de la ficha existe el **cuaderno del proyecto** (un solo archivo). Sus **entradas son historia: nunca las resumas ni las modifiques**; si algo cambia, añade una entrada nueva. La cabecera, el índice y las decisiones vigentes son vistas derivadas que se regeneran a partir de las entradas. No des por hecho que puedes editar archivos: comprueba qué permite el entorno.
    - Nunca des por hecho que recuerdas conversaciones anteriores. Lo que no está en la ficha ni en el cuaderno, no existe.
    - Los documentos de trabajo (actas, fichas de entrevista, mapas, datos, entregables) van al **registro del proyecto**, con el nombre y la carpeta que indica `registro-proyecto.md`. La ficha los cita en «Fuentes y documentos».
 
@@ -601,11 +603,11 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
    - «Próximo paso» actualizado.
 
 5. **Cuaderno del proyecto.** Genera la **entrada de esta sesión** con `comun/plantilla-entrada-cuaderno.md` (qué se trabajó, decisiones, hallazgos y datos con fuente, hipótesis, acciones, parking de ideas, documentos, qué cambió en la ficha y por qué). Solo lo trabajado y confirmado. Después, según el entorno (reglas en `comun/registro-proyecto.md`):
-   - **Si puedes editar archivos** (Work, Cowork, OpenCode, agentes de Copilot): añade la entrada al **final** del cuaderno, actualiza la cabecera (fecha y número de entradas), el índice y «Decisiones vigentes», y dilo. No toques lo anterior.
+   - **Si has comprobado que puedes editar el archivo:** añade la entrada al **final** del cuaderno, regenera las vistas derivadas (cabecera con fecha y número de entradas, índice, decisiones vigentes) y dilo. No modifiques las entradas anteriores. Si no sabes si puedes editarlo, no lo supongas: usa uno de los modos siguientes.
    - **Entorno manual, cuaderno corto** (hasta unas 15 páginas): entrega el cuaderno completo con la entrada añadida y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, avísalo: se ha perdido algo.
    - **Entorno manual, cuaderno largo:** entrega **solo la entrada nueva** y dónde pegarla, y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo.
    - **Si todavía no hay cuaderno,** créalo con `comun/plantilla-cuaderno.md` y la primera entrada.
-   - **Nunca resumas ni reescribas el historial.**
+   - **Nunca resumas ni modifiques las entradas anteriores:** si algo cambió, se registra en una entrada nueva.
 
 6. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
 
@@ -619,7 +621,7 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
 
 9. **Dónde guardarlo**, según el entorno:
    - **Project de ChatGPT o Claude:** sustituye en los archivos del proyecto la ficha **y** el cuaderno por sus versiones nuevas (descargando el archivo o con «añadir a la fuente») y borra las anteriores para que no haya dos.
-   - **OpenCode, Work, Cowork:** se guardan en la carpeta del proyecto; el cuaderno se actualiza solo.
+   - **Entornos con carpeta del proyecto** (OpenCode y, si lo has comprobado, Work o Cowork): se guardan en la carpeta; si el asistente edita archivos, comprueba que el cuaderno ha cambiado.
    - **Conversación suelta:** guárdalos en documentos propios y pégalos o adjúntalos al empezar.
 
 ## Entrega
@@ -649,18 +651,20 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
 <!-- cerrar-sesion/ejemplos/ejemplo-cuaderno.md -->
 # Cuaderno del proyecto — Continuidad tras el alta en IC
 
-> Caso **ficticio** (Área de Salud del Valle). Línea evolutiva del proyecto. **Solo se añade al final: nunca se resume ni se reescribe lo anterior.**
+> Caso **ficticio** (Área de Salud del Valle). Las entradas de la historia no se modifican; la cabecera, el índice y las decisiones vigentes son vistas derivadas que se regeneran a partir de ellas.
+
+## Vistas derivadas (se regeneran a partir de las entradas)
 
 **Última actualización:** 3/12/2026 · **Número de entradas:** 3 · **Ficha vigente:** v3 (3/12/2026)
 
-## Índice
+### Índice
 | Nº | Fecha | Tipo de sesión | En una línea |
 |---|---|---|---|
 | 1 | 5/11/2026 | Boceto del proyecto | Dirección provisional, mapa de actores y plan de arranque con entrevistas |
 | 2 | 26/11/2026 | Síntesis de entrevistas | Siete entrevistas integradas; dos contradicciones a validar |
 | 3 | 3/12/2026 | Sesión 1 de grupo | Situación de partida validada; piloto condicionado a la dirección de primaria |
 
-## Decisiones vigentes
+### Decisiones vigentes
 | Fecha | Decisión | Condición | Sustituye a |
 |---|---|---|---|
 | 5/11/2026 | Empezar con entrevistas individuales antes de reunir al grupo | — | — |
@@ -668,10 +672,10 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
 | 3/12/2026 | Pilotar la revisión precoz tras el alta en el CS Norte | Si la dirección de primaria lo aprueba | — |
 | 3/12/2026 | Medir 4 semanas los días entre el alta y la primera visita | Requiere el listado de altas | — |
 
-## Archivo
+### Archivo
 (Todavía no hay cuadernos archivados.)
 
-## Línea evolutiva
+## Historia (entradas inmutables)
 
 ### 1. 2026-11-05 · Boceto del proyecto
 
@@ -2823,7 +2827,7 @@ Gracias,
 |---|---|---|---|---|
 | 0–10 | Apertura | — | "Hemos hablado con [n] personas de [niveles]. Hoy no venimos a buscar soluciones: venimos a comprobar si lo que hemos entendido es la realidad. Al terminar tendremos una foto de partida que todos reconozcamos." Consentimiento de grabación. | Todos saben a qué vienen |
 | 10–20 | Recorrido rápido | Exposición breve | Presentar el mapa del proceso en 5 minutos. "¿Hay algún paso que falte o que sobre?" | Mapa corregido |
-| 20–55 | Validar afirmaciones | Semáforo | "Afirmación 1: … ¿Verde, ámbar o rojo?". Solo se debaten ámbar y rojo: "¿Qué parte no es así? ¿Puedes contarnos la última vez que…?" | Cada afirmación: validada, corregida o "a comprobar con datos" |
+| 20–55 | Validar afirmaciones | Semáforo | "Afirmación 1: … ¿Verde, ámbar o rojo?". Se debate sobre todo lo ámbar y lo rojo: "¿Qué parte no es así? ¿Puedes contarnos la última vez que…?" | Cada afirmación: validada, corregida o "a comprobar con datos" |
 | 55–70 | Contradicciones | Ronda | "En las entrevistas hemos oído dos versiones sobre… Desde vuestra parte del proceso, ¿cuál se parece más a lo que veis?" | Contradicciones resueltas o con plan para obtener el dato |
 | 70–80 | Problema y alcance | Puño a cinco | Leer el problema y el alcance provisionales (de la ficha). "¿Os representa? Del 0 al 5." Si hay 0–2: "¿Qué cambiarías?" | Problema y alcance validados o reformulados |
 | 80–90 | Cierre | Cierre con responsables + ronda | "Hemos validado… Queda por comprobar… ¿Quién consigue el dato de…? ¿Para cuándo?" "Próxima sesión: …" "En una palabra, ¿cómo os vais?" | Acuerdos con responsable y fecha |
@@ -2876,7 +2880,7 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 
 **4. Semáforo de validación**
 - *Para qué:* validar rápido una situación de partida o un borrador.
-- *Cómo:* se lee cada afirmación y cada persona levanta verde (es así), ámbar (en parte) o rojo (no es así). Solo se debate lo ámbar y lo rojo.
+- *Cómo:* se lee cada afirmación y cada persona levanta verde (es así), ámbar (en parte) o rojo (no es así). Se debate sobre todo lo ámbar y lo rojo; lo verde se da por bueno salvo que aparezca información nueva.
 - *Ejemplo:* "Afirmación 3: 'El informe de alta llega a primaria en menos de 48 horas'. ¿Verde, ámbar o rojo?"
 
 **5. Votación por puntos**

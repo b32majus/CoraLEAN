@@ -1,7 +1,7 @@
 /* Diagramas esquemáticos de cada herramienta. Usan clases CSS para respetar el tema claro y oscuro. */
 (function () {
   const W = 320, H = 180;
-  const svg = (body, h = H) => `<svg viewBox="0 0 ${W} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+  const svg = (body, h = H) => `<svg viewBox="0 0 ${W} ${h}" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
   const t = (x, y, s, cls = "d-t", anchor = "middle") => `<text x="${x}" y="${y}" class="${cls}" text-anchor="${anchor}">${s}</text>`;
   const box = (x, y, w, h, cls = "d-box", r = 4) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" class="${cls}"/>`;
   const line = (x1, y1, x2, y2, cls = "d-line") => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${cls}"/>`;
@@ -187,7 +187,7 @@
   D.semaforo = () => svg(
     [["d-ok", "Verde", "Es así"], ["d-warn", "Ámbar", "En parte"], ["d-bad", "Rojo", "No es así"]].map(([c, n, s], i) =>
       `<circle cx="${60 + i * 100}" cy="72" r="30" class="${c}"/>` + t(60 + i * 100, 128, n, "d-tb") + t(60 + i * 100, 146, s, "d-ts")).join("") +
-    t(160, 172, "Solo se debate lo ámbar y lo rojo", "d-ts"));
+    t(160, 172, "Se debate sobre todo lo ámbar y lo rojo", "d-ts"));
 
 
   D.histograma = () => {
@@ -239,12 +239,12 @@
       const cy = d > 0 ? 66 : 168;
       b += `<rect x="${x + 22}" y="${cy - 13}" width="76" height="30" rx="3" class="d-bad-soft"/>` + tt(x + 60, cy, c[0]) + tt(x + 60, cy + 12, c[1]);
     });
-    return `<svg viewBox="0 0 480 240" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+    return `<svg viewBox="0 0 480 240" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
   };
 
   D["ej-pareto"] = () => {
     const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
-    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
     const v = [[["Sin revisión", "precoz"], 14], [["Medicación"], 9], [["Autocuidado"], 6], [["Infección"], 3], [["Otros"], 2]]; let acc = 0, tot = 34; const pts = [];
     let b = `<line x1="24" y1="150" x2="410" y2="150" class="d-line"/><line x1="24" y1="150" x2="24" y2="14" class="d-line"/>`;
     v.forEach(([n, x], i) => { const h = x * 8, xx = 40 + i * 74; acc += x; b += `<rect x="${xx}" y="${150 - h}" width="56" height="${h}" rx="1" class="${i < 2 ? "d-acc-fill" : "d-soft-fill"}"/>` + tt(xx + 28, 145 - h, String(x)) + n.map((l, k) => tt(xx + 28, 164 + k * 12, l)).join(""); pts.push(`${xx + 28},${150 - (acc / tot) * 130}`); });
@@ -266,7 +266,7 @@
   };
   D["ej-control"] = () => {
     const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
-    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
     const ys = [70, 76, 66, 74, 68, 78, 72, 112, 118, 116, 122, 120, 124, 118];
     let b = `<line x1="24" y1="160" x2="400" y2="160" class="d-line"/><line x1="24" y1="160" x2="24" y2="14" class="d-line"/>`;
     b += `<line x1="24" y1="44" x2="214" y2="44" class="d-line-dash"/><line x1="24" y1="72" x2="214" y2="72" class="d-median"/><line x1="24" y1="100" x2="214" y2="100" class="d-line-dash"/>`;
@@ -279,7 +279,7 @@
 
   D["ej-matriz"] = () => {
     const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
-    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
     let b = `<line x1="40" y1="200" x2="410" y2="200" class="d-line"/><line x1="40" y1="200" x2="40" y2="12" class="d-line"/>`;
     b += `<rect x="44" y="16" width="180" height="88" class="d-ok-soft"/><rect x="226" y="16" width="180" height="88" class="d-acc-soft"/><rect x="44" y="106" width="180" height="90" class="d-soft"/><rect x="226" y="106" width="180" height="90" class="d-bad-soft"/>`;
     b += tt(52, 32, "Hacer ya", "d-tb", "start") + tt(234, 32, "Proyecto", "d-tb", "start") + tt(52, 190, "Si sobra tiempo", "d-ts", "start") + tt(234, 190, "Descartar", "d-ts", "start");
@@ -289,7 +289,7 @@
 
   D["ej-impulsores"] = () => {
     const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
-    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
     let b = `<rect x="6" y="80" width="96" height="56" rx="4" class="d-acc-soft"/>` + tt(54, 104, "Reingresos", "d-tb") + tt(54, 122, "23 % → 15 %");
     [[38, "Continuidad al alta", ["Aviso a primaria", "Huecos en 7 días"]], [108, "Autocuidado en casa", ["Hoja de medicación", "Educación con cuidadora"]], [178, "Detección precoz", ["Teléfono de referencia", "Alerta en urgencias"]]].forEach(([y, n, ideas]) => {
       b += `<rect x="140" y="${y - 16}" width="140" height="32" rx="4" class="d-box"/>` + tt(210, y + 4, n, "d-t") + `<line x1="140" y1="${y}" x2="102" y2="108" class="d-line" marker-end="url(#fl)"/>`;
