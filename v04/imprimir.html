@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoraLEAN · Lienzos para imprimir</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <style>
+    @page { size: A4 landscape; margin: 10mm; }
+    :root { --ink: #17313a; --ink-2: #4b5f66; --line: #9aa7a9; --acc: #0e6e66; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef0ee; color: var(--ink); font: 15px/1.4 "Atkinson Hyperlegible", system-ui, sans-serif; }
+    .barra { max-width: 1100px; margin: 0 auto; padding: 14px 16px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .barra a, .barra button { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; color: var(--ink); text-decoration: none; cursor: pointer; font: inherit; }
+    .barra button { background: var(--acc); color: #fff; border-color: var(--acc); font-weight: 700; }
+    .hoja { background: #fff; width: 277mm; max-width: calc(100% - 32px); aspect-ratio: 277 / 190; margin: 0 auto 24px; padding: 8mm; display: none; flex-direction: column; gap: 4mm; box-shadow: 0 2px 12px rgba(0,0,0,.12); }
+    .hoja.activa { display: flex; }
+    .hoja header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 2mm; }
+    .hoja h1 { font-size: 20px; margin: 0; } .hoja header span { color: var(--ink-2); font-size: 13px; }
+    .lienzo { flex: 1; min-height: 0; } .lienzo svg { width: 100%; height: 100%; }
+    svg text { font-family: "Atkinson Hyperlegible", sans-serif; fill: var(--ink); }
+    .l { stroke: var(--ink); stroke-width: 1.5; fill: none; } .g { stroke: var(--line); stroke-width: 1; fill: none; } .r { stroke: var(--ink); stroke-width: 1.5; fill: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; } th, td { border: 1px solid var(--line); padding: 0 6px; height: 9mm; text-align: left; } th { background: #f1f3f2; height: 8mm; }
+    .tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; flex: 1; }
+    .tarjeta { border-radius: 6mm; display: grid; place-items: center; font-size: 34px; font-weight: 700; color: #fff; }
+    .sw { display: inline-block; width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; }
+    .posits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm; flex: 1; }
+    .posit { border-radius: 2mm; padding: 6mm; display: flex; flex-direction: column; justify-content: center; color: #1f2a2e; box-shadow: 0 1mm 2mm rgba(0,0,0,.15); }
+    .posit b { font-size: 30px; } .posit span { font-size: 17px; margin-top: 2mm; }
+    .indice { max-width: 1100px; margin: 0 auto; padding: 0 16px 24px; }
+    @media print { body { background: #fff; } .barra, .indice { display: none; } .hoja { box-shadow: none; margin: 0; width: auto; max-width: none; aspect-ratio: auto; height: 190mm; } }
+  </style>
+</head>
+<body>
+  <div class="barra"><a href="index.html#herramientas">← Volver a la guía</a><button onclick="window.print()">Imprimir</button><span>Formato A4 horizontal. Para un taller, amplía a A3 al imprimir.</span></div>
+  <div class="indice" id="indice"></div>
+
+
+  <section class="hoja" id="leyenda"><header><h1>Leyenda de colores</h1><span>Pégala en un lateral de la pared al empezar la sesión</span></header>
+    <div class="posits">
+      <div class="posit" style="background:#f5d547"><b>Amarillo</b><span>Pasos o actividades del proceso</span></div>
+      <div class="posit" style="background:#f08aa0"><b>Rosa</b><span>Problemas e incidencias</span></div>
+      <div class="posit" style="background:#7fb8e6"><b>Azul</b><span>Tiempos de proceso o de espera</span></div>
+      <div class="posit" style="background:#8fd19e"><b>Verde</b><span>Ideas de mejora (al parking)</span></div>
+    </div></section>
+
+  <section class="hoja" id="parking"><header><h1>Parking de ideas</h1><span>Proyecto: ______________________ · Sesión: ____ · Fecha: ________</span></header>
+    <table><thead><tr><th style="width:52%">Idea</th><th style="width:18%">Quién la aporta (rol)</th><th style="width:30%">¿Cuándo la tratamos?</th></tr></thead><tbody id="filas-parking"></tbody></table>
+    <span style="font-size:12px;color:#4b5f66">Las ideas no se discuten ahora: se aparcan para que no se pierdan. Al cerrar la sesión, repasadlas y decidid cuándo tratar cada una.</span></section>
+
+  <section class="hoja" id="spaghetti"><header><h1>Plano para diagrama spaghetti</h1><span>Qué seguimos: ______________ · Periodo: ________ · Distancia total: ______ m</span></header>
+    <div class="lienzo"><svg viewBox="0 0 1000 560" preserveAspectRatio="none">
+      <defs><pattern id="cuad" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0 L0 0 0 25" class="g"/></pattern></defs>
+      <rect x="0" y="0" width="1000" height="560" fill="url(#cuad)" class="l"/>
+      <text x="500" y="285" text-anchor="middle" font-size="18" fill="#9aa7a9">Dibuja o pega aquí el plano de la zona y traza cada recorrido tal como ocurre</text></svg></div>
+    <span style="font-size:12px;color:#4b5f66">Consejo: sigue el trazado con un cordel sobre el plano y mide el cordel para conocer la distancia recorrida.</span></section>
+
+
+  <section class="hoja" id="journey"><header><h1>Mapa de experiencia del paciente</h1><span>Paciente tipo: ______________________ · Fecha: ________</span></header>
+    <table style="flex:1"><thead><tr><th style="width:16%"></th><th>Etapa 1</th><th>Etapa 2</th><th>Etapa 3</th><th>Etapa 4</th><th>Etapa 5</th></tr></thead><tbody>
+      <tr><th>Qué hace</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Con quién se encuentra</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Qué piensa</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Cómo se siente (bien · regular · mal)</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Puntos de dolor</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Momento que más importa</th><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Oportunidades</th><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+    <span style="font-size:12px;color:#4b5f66">Sin datos que identifiquen al paciente. Después, pon los puntos de dolor sobre el mapa del proceso.</span></section>
+
+  <section class="hoja" id="actores"><header><h1>Mapa de actores</h1><span>Proyecto: ______________________ · Fecha: ________</span></header>
+    <div class="lienzo"><svg viewBox="0 0 1000 560" preserveAspectRatio="none">
+      <line x1="60" y1="520" x2="980" y2="520" class="l"/><line x1="60" y1="520" x2="60" y2="20" class="l"/>
+      <line x1="520" y1="20" x2="520" y2="520" class="g"/><line x1="60" y1="270" x2="980" y2="270" class="g"/>
+      <text x="290" y="50" text-anchor="middle" font-size="18">Mantener informado · pedir apoyo</text>
+      <text x="750" y="50" text-anchor="middle" font-size="18" font-weight="700">Grupo núcleo / entrevista al inicio</text>
+      <text x="290" y="300" text-anchor="middle" font-size="18">Informar</text>
+      <text x="750" y="300" text-anchor="middle" font-size="18">Entrevistar o incluir (primera línea)</text>
+      <text x="520" y="550" text-anchor="middle" font-size="16">Interés →</text>
+      <text x="30" y="270" text-anchor="middle" font-size="16" transform="rotate(-90 30 270)">Influencia →</text></svg></div></section>
+
+  <section class="hoja" id="carriles"><header><h1>Mapa del proceso por carriles</h1><span>Empieza en: ______________ · Termina en: ______________</span></header>
+    <div class="lienzo"><svg viewBox="0 0 1000 560" preserveAspectRatio="none">
+      <rect x="0" y="0" width="1000" height="112" class="r"/><rect x="0" y="112" width="1000" height="112" class="r"/><rect x="0" y="224" width="1000" height="112" class="r"/><rect x="0" y="336" width="1000" height="112" class="r"/><rect x="0" y="448" width="1000" height="112" class="r"/>
+      <line x1="140" y1="0" x2="140" y2="560" class="l"/>
+      <text x="12" y="60" font-size="15">Carril: ________</text><text x="12" y="172" font-size="15">Carril: ________</text><text x="12" y="284" font-size="15">Carril: ________</text><text x="12" y="396" font-size="15">Carril: ________</text><text x="12" y="508" font-size="15">Paciente / familia</text></svg></div>
+    <span style="font-size:12px;color:#4b5f66;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><b>Leyenda:</b> <i class="sw" style="background:#f5d547"></i>pasos <i class="sw" style="background:#f08aa0"></i>problemas <i class="sw" style="background:#7fb8e6"></i>tiempos <i class="sw" style="background:#8fd19e"></i>ideas (parking) · Un pósit por paso (verbo + objeto). Marca los traspasos entre carriles y cómo pasa la información.</span></section>
+
+  <section class="hoja" id="recogida"><header><h1>Hoja de recogida de datos</h1><span>Qué medimos: ______________________ · Del ____ al ____ · Quién: ________</span></header>
+    <table><thead><tr><th style="width:6%">Nº</th><th style="width:16%">Fecha inicio</th><th style="width:16%">Fecha siguiente hito</th><th style="width:10%">Días</th><th style="width:14%">¿Cumple? (sí/no)</th><th>Observaciones</th></tr></thead>
+      <tbody id="filas"></tbody></table>
+    <span style="font-size:12px;color:#4b5f66">Usa un número de orden, nunca el número de historia ni datos que identifiquen al paciente.</span></section>
+
+  <section class="hoja" id="ishikawa"><header><h1>Espina de pescado (Ishikawa)</h1><span>Problema: ______________________________________</span></header>
+    <div class="lienzo"><svg viewBox="0 0 1000 560" preserveAspectRatio="none">
+      <line x1="40" y1="280" x2="820" y2="280" class="l" stroke-width="4"/><rect x="820" y="220" width="170" height="120" class="r"/><text x="905" y="285" text-anchor="middle" font-size="18" font-weight="700">Problema</text>
+      <line x1="150" y1="40" x2="290" y2="280" class="l"/><line x1="410" y1="40" x2="550" y2="280" class="l"/><line x1="670" y1="40" x2="790" y2="280" class="l"/>
+      <line x1="150" y1="520" x2="290" y2="280" class="l"/><line x1="410" y1="520" x2="550" y2="280" class="l"/><line x1="670" y1="520" x2="790" y2="280" class="l"/>
+      <text x="150" y="28" text-anchor="middle" font-size="17" font-weight="700">Personas</text><text x="410" y="28" text-anchor="middle" font-size="17" font-weight="700">Métodos y circuitos</text><text x="670" y="28" text-anchor="middle" font-size="17" font-weight="700">Medicación y materiales</text>
+      <text x="150" y="548" text-anchor="middle" font-size="17" font-weight="700">Equipos y sistemas</text><text x="410" y="548" text-anchor="middle" font-size="17" font-weight="700">Entorno</text><text x="670" y="548" text-anchor="middle" font-size="17" font-weight="700">Organización y gestión</text></svg></div></section>
+
+  <section class="hoja" id="matriz"><header><h1>Matriz impacto-esfuerzo</h1><span>Proyecto: ______________________ · Fecha: ________</span></header>
+    <div class="lienzo"><svg viewBox="0 0 1000 560" preserveAspectRatio="none">
+      <line x1="60" y1="520" x2="980" y2="520" class="l"/><line x1="60" y1="520" x2="60" y2="20" class="l"/>
+      <line x1="520" y1="20" x2="520" y2="520" class="g"/><line x1="60" y1="270" x2="980" y2="270" class="g"/>
+      <text x="290" y="50" text-anchor="middle" font-size="20" font-weight="700">Hacer ya</text><text x="750" y="50" text-anchor="middle" font-size="20" font-weight="700">Proyecto</text>
+      <text x="290" y="300" text-anchor="middle" font-size="18">Si sobra tiempo</text><text x="750" y="300" text-anchor="middle" font-size="18">Descartar</text>
+      <text x="520" y="550" text-anchor="middle" font-size="16">Esfuerzo →</text><text x="30" y="270" text-anchor="middle" font-size="16" transform="rotate(-90 30 270)">Impacto →</text></svg></div></section>
+
+  <section class="hoja" id="semaforo"><header><h1>Tarjetas del semáforo</h1><span>Recorta una tira por participante</span></header>
+    <div class="tarjetas"><div class="tarjeta" style="background:#2f8a4a">VERDE<br><small style="font-size:16px">Es así</small></div><div class="tarjeta" style="background:#c07a12">ÁMBAR<br><small style="font-size:16px">En parte</small></div><div class="tarjeta" style="background:#b7392f">ROJO<br><small style="font-size:16px">No es así</small></div></div></section>
+
+  <script>
+    (function () {
+      const nombres = { leyenda: "Leyenda de colores", parking: "Parking de ideas", spaghetti: "Plano para spaghetti", journey: "Mapa de experiencia del paciente", actores: "Mapa de actores", carriles: "Mapa por carriles", recogida: "Hoja de recogida", ishikawa: "Espina de pescado", matriz: "Matriz impacto-esfuerzo", semaforo: "Tarjetas del semáforo" };
+      document.getElementById("filas-parking").innerHTML = Array.from({ length: 12 }, () => `<tr><td></td><td></td><td></td></tr>`).join("");
+      document.getElementById("filas").innerHTML = Array.from({ length: 14 }, (_, i) => `<tr><td>${i + 1}</td><td></td><td></td><td></td><td></td><td></td></tr>`).join("");
+      document.getElementById("indice").innerHTML = "Lienzos: " + Object.entries(nombres).map(([id, n]) => `<a href="#${id}">${n}</a>`).join(" · ");
+      function mostrar() {
+        const id = location.hash.slice(1) || "leyenda";
+        document.querySelectorAll(".hoja").forEach((h) => h.classList.toggle("activa", h.id === id));
+        document.title = `CoraLEAN · ${nombres[id] || "Lienzos"}`;
+      }
+      window.addEventListener("hashchange", mostrar); mostrar();
+    })();
+  </script>
+</body>
+</html>

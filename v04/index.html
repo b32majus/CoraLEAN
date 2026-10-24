@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CoraLEAN · Guía</title>
+  <meta name="description" content="CoraLEAN te acompaña a liderar proyectos de mejora sanitarios y a aprender a hacerlo, con tu asistente de IA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="barra-movil">
+    <button class="btn-menu" id="abrir-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="lateral">☰</button>
+    <a class="marca" href="#inicio"><span class="marca-ico">C</span><b>CoraLEAN</b></a>
+  </header>
+  <div class="velo" id="velo" hidden></div>
+  <aside class="lateral" id="lateral" aria-label="Navegación">
+    <a class="marca" href="#inicio"><span class="marca-ico">C</span><span><b>CoraLEAN</b><small>Guía de uso</small></span></a>
+    <nav id="nav"></nav>
+    <div class="lateral-pie">
+      <label for="plataforma">Uso CoraLEAN en</label>
+      <select id="plataforma"></select>
+      <p>Esta guía no ejecuta nada ni envía datos: te orienta y prepara el mensaje para tu asistente.</p>
+    </div>
+  </aside>
+  <main class="contenido" id="app" tabindex="-1"></main>
+  <script src="assets/datos.js"></script>
+  <script src="assets/diagramas.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
