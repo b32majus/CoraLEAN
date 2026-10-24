@@ -254,6 +254,8 @@
     app.querySelectorAll(".filtros button").forEach((b) => b.addEventListener("click", () => { estado.filtro = b.dataset.m; vistaHerramientas(); }));
   }
 
+  const figura = (im) => `<figure class="foto"><img src="${im.src}" alt="${esc(im.alt)}" loading="lazy"><figcaption>${esc(im.pie)} <span class="ia">Imagen ilustrativa generada con IA.</span></figcaption></figure>`;
+
   function vistaHerramienta(id) {
     const h = herr(id);
     if (!h) return vistaHerramientas();
@@ -273,6 +275,7 @@
           <div class="callout tip"><span class="ico">✓</span><div><b>Consejo práctico</b>${esc(h.consejo)}</div></div>
         </div>
       </div>
+      ${h.imagen ? figura(h.imagen) : ""}
       ${h.ejemplo ? `<div class="card"><h3>Ejemplo (caso ficticio)</h3><div class="ejemplo-v"><div class="diag">${diag(h.ejemplo.diag)}</div><p>${esc(h.ejemplo.texto)}</p></div></div>` : ""}
       ${h.colores ? `<p class="nota">Símbolos para dibujarlo: <a href="#convenciones">convenciones gráficas</a>.</p>` : ""}
       ${h.colores ? `<div><div class="sec-t">Código de colores en la pared</div>${leyenda()}<p class="nota" style="margin-top:8px">Pega en un lateral una leyenda con un pósit de cada color y su significado. <a href="imprimir.html#leyenda" target="_blank" rel="noopener">Imprimir la leyenda</a></p></div>` : ""}
@@ -289,6 +292,7 @@
     app.innerHTML = `<div class="ancho">
       <div class="intro"><div class="etq">Biblioteca</div><h1>Técnicas de facilitación</h1><p>Para que hablen todos, validar rápido, decidir y que cada reunión acabe en acuerdos con nombre. Nunca más «¿alguien tiene algo que decir?».</p></div>
       <div class="card"><h3>Código de colores de los pósits</h3>${leyenda()}<p class="nota" style="margin-top:8px">Pon la leyenda en un lateral de la pared al empezar. <a href="imprimir.html#leyenda" target="_blank" rel="noopener">Imprimir la leyenda</a> · <a href="imprimir.html#parking" target="_blank" rel="noopener">Imprimir la hoja de parking de ideas</a> · <a href="imprimir.html#compromisos" target="_blank" rel="noopener">Imprimir la hoja de compromisos</a></p></div>
+      ${figura({ src: "assets/img/mapa-pared.jpg", alt: "Mapa de proceso en la pared con leyenda de colores y parking de ideas", pie: "Así se ve en una sesión: la leyenda a un lado y el parking de ideas en otro." })}
       <div class="tec-grid">${G.tecnicas.map((t) => `<article class="card tec ${t.id === "parking" ? "dest" : ""}" id="t-${t.id}"><h2>${esc(t.nombre)}</h2><p><b>Para qué:</b> ${esc(t.para)}</p><p><b>Cómo:</b> ${esc(t.como)}</p><div class="frase">«${esc(t.frase)}»</div></article>`).join("")}</div>
       <h2 style="font-size:22px">Situaciones difíciles</h2>
       <div class="card tabla-w"><table><thead><tr><th>Situación</th><th>Qué hacer</th></tr></thead><tbody>${G.dificiles.map(([s, q]) => `<tr><td><b>${esc(s)}</b></td><td>${esc(q)}</td></tr>`).join("")}</tbody></table></div>

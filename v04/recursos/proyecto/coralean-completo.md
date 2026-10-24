@@ -2381,7 +2381,7 @@ Los tipos en negrita tienen guion detallado en `recursos/guiones-tipo.md`. Para 
 
 6. **Situaciones difíciles previsibles** y qué hacer (ver catálogo): alguien que acapara, un jefe que condiciona, silencio, conflicto entre servicios, desvío del tema.
 
-7. **Materiales:** pósits de cuatro colores con su leyenda (amarillo pasos, rosa problemas, azul tiempos, verde ideas), rotuladores, papel continuo, hoja de parking de ideas, documentos impresos, pantalla.
+7. **Materiales:** pósits de cuatro colores con su leyenda (amarillo pasos, rosa problemas, azul tiempos, verde ideas), rotuladores, papel continuo, hoja de parking de ideas, hoja de compromisos de la sesión (qué, quién, para cuándo; se rellena en el cierre y su foto es la base del acta), documentos impresos, pantalla.
 
 8. **Convocatoria** con `plantillas/convocatoria.md`.
 
