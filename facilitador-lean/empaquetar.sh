@@ -45,6 +45,8 @@ rm -rf "$rec"
 mkdir -p "$rec/plantillas" "$rec/ejemplos" "$rec/skills" "$rec/proyecto"
 cp "$raiz/comun/plantilla-ficha-proyecto.md" "$rec/plantillas/ficha-proyecto.md"
 cp "$raiz/comun/plantilla-indice-registro.md" "$rec/plantillas/indice-registro.md"
+cp "$raiz/comun/plantilla-cuaderno.md" "$rec/plantillas/cuaderno.md"
+cp "$raiz/comun/plantilla-entrada-cuaderno.md" "$rec/plantillas/entrada-cuaderno.md"
 for dir in "$raiz"/skills/*/; do
   skill="$(basename "$dir")"
   [ -d "$dir/plantillas" ] && cp "$dir"/plantillas/*.md "$rec/plantillas/"

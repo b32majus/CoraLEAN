@@ -1,15 +1,15 @@
 ---
 name: cerrar-sesion
-description: Cierra una sesión de trabajo de un proyecto de mejora sanitario sin perder nada - recoge lo trabajado en la conversación (decisiones, hallazgos, datos, documentos usados, pendientes), propone los cambios a la ficha del proyecto, entrega la ficha completa con fecha y versión nuevas y un mensaje listo para retomar en la próxima conversación. Úsala al terminar de trabajar en el proyecto, aunque no haya habido reunión.
+description: Cierra una sesión de trabajo de un proyecto de mejora sanitario sin perder nada - recoge lo trabajado en la conversación (decisiones, hallazgos, datos, documentos usados, pendientes), propone los cambios a la ficha del proyecto, entrega la ficha completa con fecha y versión nuevas, añade la entrada de la sesión al cuaderno del proyecto (línea evolutiva) y da un mensaje listo para retomar en la próxima conversación. Úsala al terminar de trabajar en el proyecto, aunque no haya habido reunión.
 ---
 
 # Cerrar sesión
 
-Antes de esta skill, lee `comun/reglas-comunes.md`.
+Antes de esta skill, lee `comun/reglas-comunes.md` y `comun/registro-proyecto.md`.
 
 ## Para qué sirve
 
-Que lo trabajado en una conversación **no se quede en la conversación**. La ficha del proyecto es la memoria: si al terminar no se actualiza, la próxima vez habrá que volver a contarlo todo.
+Que lo trabajado en una conversación **no se quede en la conversación**. La memoria del proyecto tiene tres capas: la **ficha** (la foto de hoy, se sustituye), el **cuaderno** (la línea evolutiva, solo se añade) y los documentos de trabajo. Si al terminar no se actualizan, la próxima vez habrá que volver a contarlo todo.
 
 ## Cuándo
 
@@ -38,23 +38,34 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
    - fila nueva en el historial de versiones con qué cambió;
    - «Próximo paso» actualizado.
 
-5. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
+5. **Cuaderno del proyecto.** Genera la **entrada de esta sesión** con `comun/plantilla-entrada-cuaderno.md` (qué se trabajó, decisiones, hallazgos y datos con fuente, hipótesis, acciones, parking de ideas, documentos, qué cambió en la ficha y por qué). Solo lo trabajado y confirmado. Después, según el entorno (reglas en `comun/registro-proyecto.md`):
+   - **Si puedes editar archivos** (Work, Cowork, OpenCode, agentes de Copilot): añade la entrada al **final** del cuaderno, actualiza la cabecera (fecha y número de entradas), el índice y «Decisiones vigentes», y dilo. No toques lo anterior.
+   - **Entorno manual, cuaderno corto** (hasta unas 15 páginas): entrega el cuaderno completo con la entrada añadida y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, avísalo: se ha perdido algo.
+   - **Entorno manual, cuaderno largo:** entrega **solo la entrada nueva** y dónde pegarla, y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo.
+   - **Si todavía no hay cuaderno,** créalo con `comun/plantilla-cuaderno.md` y la primera entrada.
+   - **Nunca resumas ni reescribas el historial.**
 
-6. **Mensaje para retomar.** Entrega un bloque listo para copiar en la próxima conversación:
+6. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
+
+7. **Mensaje para retomar.** Entrega un bloque listo para copiar en la próxima conversación:
    ```
    Retomamos el proyecto [nombre]. Te adjunto la ficha (versión [vN], [fecha]).
    La última vez [resumen en una línea]. Ahora quiero [siguiente paso].
    ```
 
-7. **Dónde guardarlo**, según el entorno:
-   - **Project de ChatGPT o Claude:** sustituye el archivo de la ficha en los archivos del proyecto por la versión nueva (borra la anterior para que no haya dos).
-   - **OpenCode:** guarda la ficha en la carpeta del proyecto (sustituyendo la anterior).
-   - **Conversación suelta:** guárdala en un documento propio y pégala o adjúntala al empezar.
+8. **Versión para consultar.** Pregunta: «¿Quieres una versión del cuaderno para consultar?». Si el entorno puede crear archivos, genera un `.docx` con buen formato y tablas. Si no, ofrece el texto con tablas simples para pegar en Word, y menciona el visor de la guía, que muestra cualquier `.md` con formato sin enviar nada. Quien no trabaja en Markdown no tiene por qué verlo.
+
+9. **Dónde guardarlo**, según el entorno:
+   - **Project de ChatGPT o Claude:** sustituye en los archivos del proyecto la ficha **y** el cuaderno por sus versiones nuevas (descargando el archivo o con «añadir a la fuente») y borra las anteriores para que no haya dos.
+   - **OpenCode, Work, Cowork:** se guardan en la carpeta del proyecto; el cuaderno se actualiza solo.
+   - **Conversación suelta:** guárdalos en documentos propios y pégalos o adjúntalos al empezar.
 
 ## Entrega
 
 - Los cambios propuestos (antes de confirmar).
 - La ficha completa actualizada (después de confirmar).
+- La entrada del cuaderno, o el cuaderno completo con su comprobación.
+- La versión para consultar, si la pide.
 - El mensaje para retomar.
 - El cierre estándar.
 
@@ -62,5 +73,13 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
 
 - Si en la conversación no ha cambiado nada del proyecto, dilo y no generes una versión nueva.
 - Nunca resumas tanto que se pierda una decisión, un responsable o una fecha.
+- La ficha no es el cuaderno: la ficha es la foto de hoy (1–3 páginas) y el cuaderno guarda el recorrido completo.
 - La ficha debe seguir siendo manejable (1–3 páginas). El detalle (actas, transcripciones procesadas) va al registro del proyecto y la ficha solo lo referencia en «Fuentes y documentos».
 - Si en la sesión se ha generado un entregable (informe o presentación), regístralo en `06_entregables/` y anota en la ficha su versión y fecha.
+
+## Recursos
+
+- `comun/plantilla-cuaderno.md`
+- `comun/plantilla-entrada-cuaderno.md`
+- `comun/registro-proyecto.md`
+- `ejemplos/ejemplo-cuaderno.md`

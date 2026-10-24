@@ -1,4 +1,4 @@
-# CoraLEAN — skills y guía (v0.4)
+# CoraLEAN — skills y guía (v0.5)
 
 CoraLEAN acompaña a profesionales sanitarios que lideran proyectos de mejora: les ayuda a pensar el problema, preparar y conducir reuniones, entrevistar, procesar lo que pasa en cada sesión, elegir herramientas Lean y no perder el hilo del proyecto. No sustituye a quien lidera: le enseña a hacerlo mientras lo hace.
 
@@ -10,7 +10,7 @@ Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT, Claude y Ope
 2. **Mapa, no ruta:** siete preguntas (áreas de razonamiento) y seis momentos que orientan; no fases obligatorias. Volver atrás es normal.
 3. **Primero tú:** la persona propone y CoraLEAN cuestiona y completa.
 4. **Entregables:** solo ordenan y presentan lo trabajado y confirmado en la ficha; nunca hacen el A3 por el líder.
-5. **La ficha del proyecto es la memoria.** Cada skill la pide al empezar y la devuelve actualizada; `cerrar-sesion` y `donde-estamos` aseguran la continuidad entre conversaciones.
+5. **La memoria del proyecto tiene tres capas:** la **ficha** (la foto de hoy, se sustituye), el **cuaderno** (la línea evolutiva en un único `.md`, solo se añade al final) y los documentos de trabajo en el registro. `cerrar-sesion` y `donde-estamos` aseguran la continuidad entre conversaciones. La guía incluye un visor local para leer cualquier `.md` con formato.
 
 ## Skills
 

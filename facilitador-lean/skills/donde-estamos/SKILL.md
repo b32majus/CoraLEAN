@@ -20,7 +20,7 @@ La ficha del proyecto. Si no la hay, pide que la pegue. Si el proyecto no tiene 
 0. **Reanudación.** Si es el inicio de una conversación:
    - Localiza la **última versión** de la ficha: adjunta, pegada o en los archivos del proyecto. Si hay varias, usa la de versión y fecha más recientes y avisa de que conviene borrar las antiguas.
    - Si no la encuentras, pídela. No reconstruyas el proyecto de memoria.
-   - Lee la ficha completa y resume en tres líneas: de qué va el proyecto, qué se decidió la última vez y qué estaba pendiente. Pregunta si ha pasado algo desde la última actualización (reuniones, datos, cambios).
+   - Lee la ficha completa. Si existe el **cuaderno del proyecto**, lee solo su **índice** y la tabla de **«Decisiones vigentes»**; consulta entradas concretas únicamente si hace falta un detalle. Resume en tres líneas: de qué va el proyecto, qué se decidió la última vez y qué estaba pendiente. Pregunta si ha pasado algo desde la última actualización (reuniones, datos, cambios).
    - Si necesitas un detalle que no está en la ficha, consulta los documentos de «Fuentes y documentos» o pídelos.
 
 1. **Primero tú.** Pregunta: "¿Qué crees que toca ahora y por qué?". Guarda la respuesta para compararla al final. En modo rápido, sáltalo.

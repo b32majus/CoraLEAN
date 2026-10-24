@@ -282,17 +282,17 @@ window.GUIA = {
     },
     {
       id: "cerrar-sesion", momento: null, titulo: "Cierra la sesión", skill: "cerrar-sesion",
-      resumen: "Al terminar de trabajar: CoraLEAN recoge lo trabajado, propone los cambios a la ficha y te entrega la ficha actualizada y un mensaje para retomar.",
+      resumen: "Al terminar de trabajar: CoraLEAN recoge lo trabajado, propone los cambios a la ficha, te entrega la ficha actualizada, añade la entrada de la sesión al cuaderno del proyecto y te da un mensaje para retomar.",
       porque: "Lo trabajado en una conversación no puede quedarse en la conversación. Si la ficha no se actualiza, la próxima vez habrá que volver a contarlo todo.",
       conecta: "La próxima vez, empieza por «Retoma el proyecto» con la ficha nueva.",
       cuando: "Siempre que termines una sesión de trabajo con CoraLEAN, aunque no haya habido reunión.",
       necesitas: ["Nada más: trabaja sobre la conversación"],
-      recibes: ["Cambios propuestos a la ficha", "Ficha completa con versión y fecha nuevas", "Mensaje listo para retomar", "Dónde guardarla según tu entorno"],
+      recibes: ["Cambios propuestos a la ficha", "Ficha completa con versión y fecha nuevas", "Entrada del cuaderno (o el cuaderno completo con su comprobación)", "Versión para consultar en Word, si la quieres", "Mensaje listo para retomar", "Dónde guardarlos según tu entorno"],
       campos: [],
       plantilla: "Lo dejamos aquí por hoy. Cierra la sesión y actualiza la ficha del proyecto.",
-      despues: ["Guarda la ficha nueva: en un Project, sustituye el archivo anterior (borra el viejo)"],
+      despues: ["Guarda la ficha y el cuaderno en la base de conocimiento (descargando el archivo o con «añadir a la fuente») y borra las versiones anteriores", "Si quieres leerlo sin Markdown, pide la versión para consultar o abre el cuaderno en el visor de la guía"],
       consejo: "Una ficha al día vale más que cualquier conversación larga. Ciérrala cada vez.",
-      plantillas: ["ficha-proyecto"], ejemplos: [], herramientas: [], siguiente: "donde-estamos", ficha: true
+      plantillas: ["ficha-proyecto", "cuaderno", "entrada-cuaderno"], ejemplos: ["cerrar-sesion--ejemplo-cuaderno"], herramientas: [], siguiente: "donde-estamos", ficha: true
     },
     {
       id: "preparar-entregable", momento: null, titulo: "Prepara la presentación o el informe", skill: "preparar-entregable",
@@ -520,7 +520,7 @@ window.GUIA = {
     "convocatoria": "Convocatoria", "acta-seguimiento": "Acta de seguimiento", "documento-lider": "Documento del líder",
     "tabla-proceso": "Tabla del proceso", "hoja-recogida-tiempos": "Hoja de recogida de datos", "tabla-brechas": "Tabla de brechas",
     "adaptacion-local": "Adaptación local del PAI", "correo-acta": "Correo con el acta",
-    "presentacion-seguimiento": "Presentación de seguimiento", "informe-continuidad": "Informe de continuidad", "indice-registro": "Índice del registro del proyecto",
+    "presentacion-seguimiento": "Presentación de seguimiento", "informe-continuidad": "Informe de continuidad", "indice-registro": "Índice del registro del proyecto", "cuaderno": "Cuaderno del proyecto", "entrada-cuaderno": "Entrada del cuaderno (una por sesión)",
     "guion-paciente": "Guion de entrevista con paciente", "mapa-experiencia": "Mapa de experiencia del paciente", "plan-evaluacion-experiencia": "Plan de evaluación de la experiencia",
     "encuesta-profesionales": "Encuesta breve a profesionales"
   },

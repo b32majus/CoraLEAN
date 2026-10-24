@@ -146,3 +146,10 @@ No «¿te gusta?», sino:
 | B9 | Ampliado: ejemplos visuales con el caso ficticio en 11 herramientas |
 | B10 | Ampliado: histograma, diagrama de dispersión, gráfico de control, mapa de experiencia y medición de la experiencia |
 | Pendiente | Imágenes propias de la experta para las fichas; C5 (comportamiento de entornos con gestión de archivos); F3–F6; prioridad 3 |
+
+## Estado de implementación — v0.5 (24/10/2026)
+
+| ID | Estado en v0.5 |
+|---|---|
+| C4 | Ampliado: memoria en tres capas (ficha, cuaderno del proyecto, documentos). Plantillas del cuaderno y de cada entrada; `cerrar-sesion` añade la entrada con tres modos según el entorno (edita archivos / manual con cuaderno corto, con comprobación del nº de entradas / manual con cuaderno largo, solo la entrada); `donde-estamos` lee ficha, índice y decisiones vigentes; ejemplo con tres entradas |
+| Nuevo | Versión para consultar (Word) al cerrar la sesión y visor local de Markdown en la guía (`cuaderno.html`), sin enviar datos |

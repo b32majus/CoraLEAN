@@ -1,19 +1,35 @@
 # El registro del proyecto
 
-La memoria del proyecto tiene **dos niveles**:
+La memoria del proyecto tiene **tres capas**:
 
-| Nivel | Qué es | Tamaño | Se actualiza |
+| Capa | Qué es | Tamaño | Se actualiza |
 |---|---|---|---|
-| **Ficha del proyecto** | El estado actual: lo decidido, lo pendiente y lo que se sabe hoy | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
-| **Registro del proyecto** | Todos los documentos de trabajo: actas, fichas de entrevista, mapas, datos, entregables | Crece con el proyecto | Se **añade**; nunca se borra ni se reescribe |
+| **Ficha del proyecto** | La foto de hoy: lo decidido, lo pendiente y lo que se sabe ahora | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
+| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | Solo se **añade al final**. Nunca se resume ni se reescribe el historial |
+| **Documentos de trabajo** | Actas, fichas de entrevista, mapas, datos, entregables | Muchos archivos | Se **guardan**; el cuaderno y la ficha los citan |
 
-La ficha cita los documentos del registro en su apartado «Fuentes y documentos», para que siempre se pueda volver al original.
+La ficha se lee siempre primero. El cuaderno se consulta por la parte necesaria (su índice y la tabla de «Decisiones vigentes») y es la fuente principal para reconstruir el proyecto o preparar un informe. La ficha y el cuaderno citan los documentos en «Fuentes y documentos», para volver al original.
+
+## Cómo se actualiza el cuaderno
+
+El cuaderno nunca se reescribe: solo se añade una entrada al final. Cómo se hace depende del entorno:
+
+| Situación | Qué hace CoraLEAN |
+|---|---|
+| **El entorno edita archivos** (Work, Cowork, OpenCode, agentes de Copilot) | Añade la entrada al final del cuaderno y lo dice. No toca lo anterior |
+| **Entorno manual y cuaderno corto** (hasta unas 15 páginas) | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. Recuerda sustituirlo en la base de conocimiento (descargar o «añadir a la fuente») y borrar la versión anterior |
+| **Entorno manual y cuaderno largo** | Entrega **solo la entrada nueva**, indica dónde pegarla y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`), dejando un resumen en el cuaderno vivo |
+
+## Versión para consultar
+
+Quien no trabaja en Markdown puede pedir una versión para consultar: un `.docx` con buen formato si el entorno puede crear archivos, o el texto con tablas simples listo para pegar en Word. La guía web incluye además un **visor local** que muestra cualquier `.md` con formato, sin enviar nada a ningún sitio.
 
 ## Estructura de carpetas
 
 ```
 [nombre-del-proyecto]/
 ├── 00_ficha/            ficha-proyecto_v3_2026-11-12.md   ← solo la última versión
+│                        cuaderno-proyecto.md                ← línea evolutiva, solo se añade
 ├── 01_contexto/         encargo, estándar (PAI), ficha de contexto, boceto
 ├── 02_entrevistas/      fichas de entrevista por rol y síntesis (nunca transcripciones con nombres)
 ├── 03_sesiones/         guiones, actas y documentos del líder de cada sesión
@@ -35,13 +51,13 @@ La fecha delante hace que se ordenen solos. El tipo y el detalle permiten encont
 
 ## Dónde vive el registro según el entorno
 
-| Entorno | Ficha | Registro |
+| Entorno | Ficha y cuaderno | Documentos de trabajo |
 |---|---|---|
-| Project de ChatGPT o Claude | Archivo del proyecto (solo la última versión) | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
-| OpenCode | Archivo en la carpeta del proyecto | La propia carpeta del proyecto con la estructura de arriba |
-| Conversación suelta | Documento propio que pegas o adjuntas | Carpeta propia |
+| Project de ChatGPT o Claude | Archivos del proyecto: la última ficha y el cuaderno. Al cerrar, sustituye cada uno por su versión nueva y borra la anterior | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
+| OpenCode, Work, Cowork | Archivos en la carpeta del proyecto; el cuaderno se actualiza solo | La propia carpeta del proyecto con la estructura de arriba |
+| Conversación suelta | Documentos propios que pegas o adjuntas | Carpeta propia |
 
-Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los del registro. Aun así, **la ficha es lo primero que se lee**.
+Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los documentos de trabajo. Aun así, **la ficha es lo primero que se lee**. Con límite de archivos, el cuaderno es lo más útil después de la ficha: un solo archivo con todo el recorrido.
 
 ## Privacidad del registro
 
@@ -51,4 +67,4 @@ Si el entorno permite tener muchos archivos en el proyecto, se pueden subir tamb
 
 ## Índice del registro
 
-Plantilla: `plantilla-indice-registro.md`. CoraLEAN propone la fila nueva del índice cada vez que genera un documento para el registro.
+Plantillas: `plantilla-cuaderno.md`, `plantilla-entrada-cuaderno.md` y `plantilla-indice-registro.md`. CoraLEAN propone la fila nueva del índice cada vez que genera un documento para el registro.

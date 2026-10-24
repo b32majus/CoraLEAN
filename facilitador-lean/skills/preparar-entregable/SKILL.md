@@ -22,6 +22,7 @@ Que el trabajo del proyecto se pueda **compartir** sin que el líder tenga que r
 ## Entrada
 
 - La **ficha del proyecto**, última versión (imprescindible).
+- El **cuaderno del proyecto**, si existe: es la fuente principal para el «trabajo realizado» y la evolución.
 - Del registro, lo que sea útil: actas, mapas, brechas, datos. Pide solo lo que vayas a usar.
 - **Para quién es** y **para qué** (grupo de trabajo, dirección, otros servicios, una comisión) y, en la presentación, si ya existe una versión anterior.
 

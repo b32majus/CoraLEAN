@@ -54,7 +54,7 @@ Pide lo que falte de esta lista:
 
 7. **Propón los cambios a la ficha** (añadir, modificar, cerrar), cada uno con su origen (cita o minuto). Pide al líder que confirme. Cuando confirme, entrega la ficha completa con la versión nueva.
 
-8. **Registro.** Indica dónde guardar cada documento en el registro del proyecto (`comun/registro-proyecto.md`): acta y documento del líder en `03_sesiones/`, ficha de entrevista en `02_entrevistas/`.
+8. **Registro.** La entrada del cuaderno de esta sesión se genera al cerrarla (`cerrar-sesion`). Indica dónde guardar cada documento en el registro del proyecto (`comun/registro-proyecto.md`): acta y documento del líder en `03_sesiones/`, ficha de entrevista en `02_entrevistas/`.
 
 9. **Comprueba antes de entregar:**
    - cada decisión tiene una cita que la respalda;

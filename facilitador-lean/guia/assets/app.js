@@ -48,7 +48,7 @@
     });
     h += `<div class="nav-g">En cada sesión</div>` + G.cadaSesion.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("");
     h += `<div class="nav-g">Biblioteca</div>` + it("herramientas", "Herramientas Lean", actual.startsWith("herramienta")) + it("tecnicas", "Técnicas de facilitación", actual === "tecnicas") + it("convenciones", "Convenciones gráficas", actual === "convenciones") + it("plantillas", "Plantillas", actual === "plantillas") + it("bibliografia", "Bibliografía y fuentes", actual === "bibliografia");
-    h += `<div class="nav-g">Tu proyecto</div>` + it("ficha", "La ficha del proyecto", actual === "ficha") + it("instalar", "Configura tu asistente", actual === "instalar");
+    h += `<div class="nav-g">Tu proyecto</div>` + it("ficha", "La memoria del proyecto", actual === "ficha") + it("instalar", "Configura tu asistente", actual === "instalar");
     document.getElementById("nav").innerHTML = h;
   }
 
@@ -112,7 +112,7 @@
         <div class="funciona">
           <div class="card"><b>Configura tu asistente una vez</b><p>Instala las skills de CoraLEAN en ChatGPT, Claude u OpenCode, o crea un proyecto con sus instrucciones. <a href="#instalar">Cómo hacerlo</a></p></div>
           <div class="card"><b>Trabaja hablando con tu asistente</b><p>El trabajo real ocurre en tu IA. Esta guía te dice qué hacer en cada momento y te prepara el mensaje. Activa el micrófono y cuéntalo con tus palabras.</p></div>
-          <div class="card"><b>Guarda la ficha al terminar</b><p>Cierra cada sesión con CoraLEAN: te da la ficha actualizada. La próxima vez retomas desde ella sin volver a contarlo todo. <a href="#ficha">La ficha</a></p></div>
+          <div class="card"><b>Guarda la memoria al terminar</b><p>Cierra cada sesión con CoraLEAN: te da la ficha actualizada y añade la entrada al cuaderno. La próxima vez retomas desde ella sin volver a contarlo todo. <a href="#ficha">La memoria del proyecto</a></p></div>
         </div>
       </section>
 
@@ -363,13 +363,16 @@
 
   function vistaFicha() {
     app.innerHTML = `<div class="ancho">
-      <div class="intro"><div class="etq">Tu proyecto</div><h1>La ficha del proyecto</h1><p>Es la memoria del proyecto. Tu asistente no recuerda de forma fiable las conversaciones anteriores: lo que no está en la ficha, no existe para él. Por eso CoraLEAN la pide al empezar y la devuelve actualizada al terminar.</p></div>
-      <div class="card"><h3>El ciclo de cada sesión</h3><div class="flujo-ficha"><span>Retomas con la ficha</span><i>→</i><span>Trabajas</span><i>→</i><span>CoraLEAN propone cambios</span><i>→</i><span>Confirmas</span><i>→</i><span>Guardas la versión nueva</span></div>
+      <div class="intro"><div class="etq">Tu proyecto</div><h1>La memoria del proyecto</h1><p>Tu asistente no recuerda de forma fiable las conversaciones anteriores: lo que no está escrito, no existe para él. Por eso la memoria del proyecto tiene tres capas, y CoraLEAN las lee al empezar y las actualiza al terminar.</p></div>
+      <div class="card tabla-w"><h3>Las tres capas</h3><table><thead><tr><th>Capa</th><th>Qué es</th><th>Cómo se actualiza</th></tr></thead><tbody><tr><td><b>Ficha</b></td><td>La foto de hoy (1–3 páginas): lo decidido y lo pendiente</td><td>Se <b>sustituye</b> por la versión nueva en cada sesión</td></tr><tr><td><b>Cuaderno</b></td><td>La línea evolutiva: una entrada por sesión, en un solo archivo</td><td>Solo se <b>añade</b> al final. Nunca se resume ni se reescribe</td></tr><tr><td><b>Documentos</b></td><td>Actas, fichas de entrevista, mapas, datos, entregables</td><td>Se <b>guardan</b> en el registro; los citan la ficha y el cuaderno</td></tr></tbody></table></div>
+      <div class="card"><h3>Cómo se actualiza el cuaderno según tu entorno</h3><ul><li><b>Work, Cowork, OpenCode, agentes de Copilot:</b> añaden la entrada solos.</li><li><b>Proyecto manual, cuaderno corto:</b> CoraLEAN te da el cuaderno completo con una comprobación («tenía 12 entradas y ahora tiene 13»). Si el número no cuadra, se ha perdido algo. Sustituye el archivo en la base de conocimiento (descargar o «añadir a la fuente») y borra el anterior.</li><li><b>Proyecto manual, cuaderno largo:</b> te da solo la entrada nueva para pegar al final, y te sugiere archivar lo antiguo.</li></ul><p class="nota">El cuaderno no se actualiza solo en los entornos manuales: hay que guardarlo al cerrar cada sesión.</p></div>
+      <div class="card"><h3>Leerlo sin Markdown</h3><p>Al cerrar la sesión, pide «una versión para consultar»: un Word con buen formato si tu asistente puede crear archivos. O abre cualquier archivo <code>.md</code> en el visor de esta guía: se ve con formato, se puede imprimir o guardar como PDF y <b>no se envía nada a ningún sitio</b>.</p><div class="enlaces"><a class="btn small" href="cuaderno.html">Abrir el visor del cuaderno</a>${enlacePlantilla("cuaderno")} ${enlacePlantilla("entrada-cuaderno")}</div></div>
+      <div class="card"><h3>El ciclo de cada sesión</h3><div class="flujo-ficha"><span>Retomas con la ficha</span><i>→</i><span>Trabajas</span><i>→</i><span>CoraLEAN propone cambios</span><i>→</i><span>Confirmas</span><i>→</i><span>Guardas ficha y cuaderno</span></div>
         <div class="enlaces" style="margin-top:12px"><a class="chip skill" href="#paso-donde-estamos">Retoma el proyecto</a><a class="chip skill" href="#paso-cerrar-sesion">Cierra la sesión</a></div></div>
       <div class="rej-2">
-        <div class="card"><h3>Dos niveles de memoria</h3><p><b>La ficha</b> (1–3 páginas): el estado actual del proyecto. Se sustituye por la versión nueva en cada sesión.</p><p><b>El registro del proyecto</b>: la carpeta con todos los documentos de trabajo. Se añade; nunca se borra. La ficha los cita en «Fuentes y documentos» para volver al original.</p>
+        <div class="card"><h3>Los documentos de trabajo: el registro</h3><p>La carpeta donde se guardan los documentos. Se añade; nunca se borra. La ficha y el cuaderno los citan en «Fuentes y documentos» para volver al original.</p>
           <pre class="bloque">[proyecto]/
-├── 00_ficha/          solo la última versión
+├── 00_ficha/          última ficha + cuaderno
 ├── 01_contexto/       encargo, PAI, boceto
 ├── 02_entrevistas/    fichas por rol (sin nombres)
 ├── 03_sesiones/       guiones, actas, documentos del líder
@@ -385,7 +388,7 @@
           <li><b>Conversación suelta:</b> en un documento tuyo; pégala o adjúntala al empezar.</li></ul></div>
       </div>
       <div class="rej-2">
-        <div class="card"><h3>Qué contiene</h3><ol>
+        <div class="card"><h3>Qué contiene la ficha</h3><ol>
           <li>Origen y encargo</li><li>Problema</li><li>Objetivo e indicador</li><li>Alcance</li><li>Niveles y servicios implicados</li><li>Personas y su papel</li><li>Estándar de referencia</li><li>Lo que sabemos: hechos, supuestos, opiniones</li><li>Decisiones</li><li>Acciones con responsable y fecha</li><li>Herramientas aplicadas</li><li>Dudas y cosas a averiguar</li><li>Riesgos</li><li>Próximo paso</li><li>Fuentes y documentos</li><li>Historial de versiones</li></ol>
           <div class="enlaces" style="margin-top:10px">${enlacePlantilla("ficha-proyecto")}</div></div>
         <div class="card"><h3>Lo que hace CoraLEAN con ella</h3><ul>
