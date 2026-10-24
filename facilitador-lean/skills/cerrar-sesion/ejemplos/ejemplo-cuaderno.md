@@ -1,17 +1,19 @@
 # Cuaderno del proyecto — Continuidad tras el alta en IC
 
-> Caso **ficticio** (Área de Salud del Valle). Línea evolutiva del proyecto. **Solo se añade al final: nunca se resume ni se reescribe lo anterior.**
+> Caso **ficticio** (Área de Salud del Valle). Las entradas de la historia no se modifican; la cabecera, el índice y las decisiones vigentes son vistas derivadas que se regeneran a partir de ellas.
+
+## Vistas derivadas (se regeneran a partir de las entradas)
 
 **Última actualización:** 3/12/2026 · **Número de entradas:** 3 · **Ficha vigente:** v3 (3/12/2026)
 
-## Índice
+### Índice
 | Nº | Fecha | Tipo de sesión | En una línea |
 |---|---|---|---|
 | 1 | 5/11/2026 | Boceto del proyecto | Dirección provisional, mapa de actores y plan de arranque con entrevistas |
 | 2 | 26/11/2026 | Síntesis de entrevistas | Siete entrevistas integradas; dos contradicciones a validar |
 | 3 | 3/12/2026 | Sesión 1 de grupo | Situación de partida validada; piloto condicionado a la dirección de primaria |
 
-## Decisiones vigentes
+### Decisiones vigentes
 | Fecha | Decisión | Condición | Sustituye a |
 |---|---|---|---|
 | 5/11/2026 | Empezar con entrevistas individuales antes de reunir al grupo | — | — |
@@ -19,10 +21,10 @@
 | 3/12/2026 | Pilotar la revisión precoz tras el alta en el CS Norte | Si la dirección de primaria lo aprueba | — |
 | 3/12/2026 | Medir 4 semanas los días entre el alta y la primera visita | Requiere el listado de altas | — |
 
-## Archivo
+### Archivo
 (Todavía no hay cuadernos archivados.)
 
-## Línea evolutiva
+## Historia (entradas inmutables)
 
 ### 1. 2026-11-05 · Boceto del proyecto
 

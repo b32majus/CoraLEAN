@@ -5,7 +5,9 @@
 
   // Solo se guarda la plataforma, la última vista y el nombre del proyecto.
   const guardado = (() => { try { return JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { return {}; } })();
-  const estado = { plataforma: guardado.plataforma || "chatgpt", ultima: guardado.ultima || "", proyecto: guardado.proyecto || "", valores: {}, filtro: "todas", tab: "chatgpt" };
+  const TAB_DE = { chatgpt: "chatgpt", claude: "claude", opencode: "opencode", proyecto: "chatgpt" };
+  const estado = { plataforma: guardado.plataforma || "sinconfig", ultima: guardado.ultima || "", proyecto: guardado.proyecto || "", valores: {}, filtro: "todas", tab: "chatgpt", navAbierto: {} };
+  estado.tab = TAB_DE[estado.plataforma] || "chatgpt";
   const guardar = () => { try { localStorage.setItem(CLAVE, JSON.stringify({ plataforma: estado.plataforma, ultima: estado.ultima, proyecto: estado.proyecto })); } catch (e) { /* sin almacenamiento */ } };
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -29,34 +31,73 @@
   const enlacePlantilla = (id) => `<span class="chip">${esc(G.plantillas[id] || id)} · <a href="ver.html#plantillas/${id}">ver</a> · <a href="recursos/plantillas/${id}.md" download>descargar</a></span>`;
   const enlaceEjemplo = (id) => `<a class="chip" href="ver.html#ejemplos/${id}">${esc(id.split("--")[1].replace(/^ejemplo-/, "").replace(/-/g, " "))}</a>`;
   const fuente = (k) => G.fuentes[k] ? `<a class="chip" href="${G.fuentes[k].url}" target="_blank" rel="noopener">Para profundizar: ${esc(G.fuentes[k].corto)} ↗</a>` : "";
-  const miniHerr = (h) => `<a class="mini" href="#herramienta-${h.id}"><div class="diag">${diag(h.id)}</div><b>${esc(h.nombre)}</b><span>${esc(h.pregunta)}</span></a>`;
+  const miniHerr = (h) => `<a class="mini" href="#herramienta-${h.id}"><div class="diag" role="img" aria-label="Diagrama: ${esc(h.nombre)}. ${esc(h.pregunta)}">${diag(h.id)}</div><b>${esc(h.nombre)}</b><span>${esc(h.pregunta)}</span></a>`;
   const leyenda = () => `<div class="leyenda">${G.colores.map((c) => `<div class="posit" style="background:${c.color}"><b>${esc(c.nombre)}</b>${esc(c.uso)}</div>`).join("")}</div>`;
 
   // ---------- Navegación lateral ----------
   const sel = document.getElementById("plataforma");
   sel.innerHTML = G.plataformas.map((p) => `<option value="${p.id}">${esc(p.nombre)}</option>`).join("");
   sel.value = estado.plataforma;
-  sel.addEventListener("change", () => { estado.plataforma = sel.value; guardar(); render(); });
+  const ponerPlataforma = (id) => {
+    estado.plataforma = id; sel.value = id;
+    if (TAB_DE[id]) estado.tab = TAB_DE[id];
+    guardar();
+  };
+  sel.addEventListener("change", () => { ponerPlataforma(sel.value); render(); });
+
+  function grupoActivo(actual) {
+    if (actual.startsWith("momento-")) return "recorrido";
+    if (actual.startsWith("paso-")) { const p = paso(actual.slice(5)); return p && p.momento ? "recorrido" : "trabajar"; }
+    if (actual === "herramientas" || actual.startsWith("herramienta-") || ["tecnicas", "convenciones", "plantillas", "bibliografia"].includes(actual)) return "biblioteca";
+    if (actual === "ficha" || actual === "instalar") return "proyecto";
+    return null;
+  }
 
   function pintarNav(actual, momentoActual) {
     const it = (href, txt, act) => `<a class="nav-i" href="#${href}" ${act ? 'aria-current="page"' : ""}><span class="pt"></span>${esc(txt)}</a>`;
-    let h = it("inicio", "Inicio", actual === "inicio");
-    h += `<div class="nav-g">El recorrido</div>`;
+    const act = grupoActivo(actual);
+    const abierto = (id) => act === id || (estado.navAbierto[id] !== undefined ? estado.navAbierto[id] : (id === "recorrido" || id === "trabajar"));
+    const grupo = (id, titulo, cuerpo) => `<details class="nav-grupo" data-grupo="${id}" ${abierto(id) ? "open" : ""}><summary class="nav-g">${titulo}</summary>${cuerpo}</details>`;
+    let recorrido = "";
     G.momentos.forEach((m) => {
-      h += it(`momento-${m.id}`, m.nombre, actual === `momento-${m.id}`);
-      if (m.id === momentoActual && m.pasos.length) h += `<div class="nav-sub">${m.pasos.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("")}</div>`;
+      recorrido += it(`momento-${m.id}`, m.nombre, actual === `momento-${m.id}`);
+      if (m.id === momentoActual && m.pasos.length) recorrido += `<div class="nav-sub">${m.pasos.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("")}</div>`;
     });
-    h += `<div class="nav-g">En cada sesión</div>` + G.cadaSesion.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("");
-    h += `<div class="nav-g">Biblioteca</div>` + it("herramientas", "Herramientas Lean", actual.startsWith("herramienta")) + it("tecnicas", "Técnicas de facilitación", actual === "tecnicas") + it("convenciones", "Convenciones gráficas", actual === "convenciones") + it("plantillas", "Plantillas", actual === "plantillas") + it("bibliografia", "Bibliografía y fuentes", actual === "bibliografia");
-    h += `<div class="nav-g">Tu proyecto</div>` + it("ficha", "La memoria del proyecto", actual === "ficha") + it("instalar", "Configura tu asistente", actual === "instalar");
-    document.getElementById("nav").innerHTML = h;
+    const trabajar = G.cadaSesion.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("");
+    const biblioteca = it("herramientas", "Herramientas Lean", actual.startsWith("herramienta")) + it("tecnicas", "Técnicas de facilitación", actual === "tecnicas") + it("convenciones", "Convenciones gráficas", actual === "convenciones") + it("plantillas", "Plantillas", actual === "plantillas") + it("bibliografia", "Bibliografía y fuentes", actual === "bibliografia");
+    const proyecto = it("ficha", "La memoria del proyecto", actual === "ficha") + it("instalar", "Configura tu asistente", actual === "instalar");
+    let h = it("inicio", "Inicio", actual === "inicio") + it("empezar", "¿Qué hago ahora?", actual === "empezar");
+    h += grupo("recorrido", "El recorrido", recorrido);
+    h += grupo("trabajar", "Para trabajar", trabajar);
+    h += grupo("biblioteca", "Biblioteca", biblioteca);
+    h += grupo("proyecto", "Tu proyecto", proyecto);
+    const nav = document.getElementById("nav");
+    nav.innerHTML = h;
+    nav.querySelectorAll("details").forEach((d) => d.addEventListener("toggle", () => { if (d.isConnected) estado.navAbierto[d.dataset.grupo] = d.open; }));
   }
 
   const lateral = document.getElementById("lateral"), velo = document.getElementById("velo"), btnMenu = document.getElementById("abrir-menu");
-  const menu = (abrir) => { lateral.classList.toggle("abierto", abrir); velo.hidden = !abrir; btnMenu.setAttribute("aria-expanded", String(abrir)); };
+  const mqMovil = window.matchMedia("(max-width: 1023px)");
+  function syncInert() {
+    if (mqMovil.matches && !lateral.classList.contains("abierto")) lateral.setAttribute("inert", ""); else lateral.removeAttribute("inert");
+  }
+  const menu = (abrir) => {
+    const dentro = lateral.contains(document.activeElement);
+    lateral.classList.toggle("abierto", abrir);
+    velo.hidden = !abrir;
+    btnMenu.setAttribute("aria-expanded", String(abrir));
+    syncInert();
+    if (abrir) { const a = document.querySelector("#nav a"); if (a) a.focus(); }
+    else if (dentro) btnMenu.focus();
+  };
   btnMenu.addEventListener("click", () => menu(!lateral.classList.contains("abierto")));
   velo.addEventListener("click", () => menu(false));
   lateral.addEventListener("click", (e) => { if (e.target.closest("a")) menu(false); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lateral.classList.contains("abierto")) { menu(false); btnMenu.focus(); }
+  });
+  if (mqMovil.addEventListener) mqMovil.addEventListener("change", syncInert); else mqMovil.addListener(syncInert);
+  syncInert();
 
   // ---------- Mapa del razonamiento ----------
   function partir(s, n) {
@@ -83,7 +124,9 @@
     s += `<path d="M362 210 C 362 170, 470 170, 470 126" class="r-vuelta" marker-end="url(#fw)"/><text x="386" y="164" class="r-vuelta-t">una prueba descubre algo nuevo</text>`;
     s += `<path d="M110 210 C 110 170, 150 170, 150 126" class="r-vuelta" marker-end="url(#fw)"/><text x="132" y="164" class="r-vuelta-t">lo aprendido abre otro ciclo</text>`;
     s += `<text x="480" y="340" text-anchor="middle" class="r-area-p">Las flechas muestran el recorrido habitual. Las discontinuas, que volver atrás es normal cuando aparece información nueva.</text></svg>`;
-    return `<div class="mapa-razon">${s}</div>`;
+    return `<div class="mapa-razon">${s}</div>
+    <ol class="mapa-lista">${G.areas.map((a, i) => `<li><a href="#momento-${G.momentos.find((x) => x.areas.includes(a.id)).id}"><b>${i + 1}. ${esc(a.nombre)}</b><span>${esc(a.pregunta)}</span></a></li>`).join("")}</ol>
+    <p class="nota mapa-nota">No es una ruta: puedes volver a cualquier pregunta cuando aparezca información nueva.</p>`;
   }
 
   // ---------- Vistas ----------
@@ -94,17 +137,17 @@
         <div class="etq">Proyectos de mejora sanitaria</div>
         <h1>CoraLEAN</h1>
         <p class="lema">Te acompaña a liderar tu proyecto de mejora y a aprender a hacerlo: a pensar el problema, preparar y conducir las reuniones y no perder el hilo. Tú decides; CoraLEAN pregunta, ordena y te explica por qué.</p>
+        <div class="ctas"><a class="btn prim" href="#empezar">Empezar un proyecto</a><a class="btn" href="#paso-donde-estamos">Retomar un proyecto</a><a class="btn" href="#instalar">Configurar mi asistente</a>${ult ? `<a class="btn" href="#${esc(ult)}">Continuar donde lo dejé →</a>` : ""}</div>
         <div class="pilares">
           <div class="pilar"><b>Pensar el problema</b><span>Te ayuda a distinguir lo que sabes de lo que supones y a decidir qué toca hacer antes de saltar a las soluciones.</span></div>
           <div class="pilar"><b>Aprender haciendo</b><span>Primero propones tú; después CoraLEAN cuestiona y completa, y te explica el porqué mientras avanzas.</span></div>
           <div class="pilar"><b>No perder el hilo</b><span>La ficha del proyecto conserva decisiones, datos y pendientes, y se convierte en actas e informes de seguimiento.</span></div>
         </div>
-        <div class="ctas"><a class="btn prim" href="#paso-recoger-contexto">Empezar un proyecto</a><a class="btn" href="#paso-donde-estamos">Retomar un proyecto</a><a class="btn" href="#instalar">Configurar mi asistente</a>${ult ? `<a class="btn" href="#${esc(ult)}">Continuar donde lo dejé →</a>` : ""}</div>
       </section>
 
       <section class="rej-2">
         <div class="card"><h3>Para quién es</h3><p>Para profesionales sanitarios que lideran o participan en un proyecto de mejora (un circuito, la adaptación de un PAI, un problema de coordinación) y quieren hacerlo con método, aunque no tengan experiencia en Lean.</p></div>
-        <div class="card"><h3>Qué no es</h3><p>No es un generador de documentos ni hace el proyecto por ti: no te va a escribir el A3. Tampoco sustituye a tu organización ni a la mentoría: te acompaña mientras aprendes a hacerlo con menos ayuda.</p></div>
+        <div class="card"><h3>Qué no es</h3><p>CoraLEAN no decide ni hace el proyecto por ti. Te ayuda a razonar, y puede preparar actas, informes y presentaciones a partir del trabajo y las decisiones que hayas validado. Tampoco sustituye a tu organización ni a la mentoría: te acompaña mientras aprendes a hacerlo con menos ayuda.</p></div>
       </section>
 
       <section class="bloque">
@@ -114,6 +157,7 @@
           <div class="card"><b>Trabaja hablando con tu asistente</b><p>El trabajo real ocurre en tu IA. Esta guía te dice qué hacer en cada momento y te prepara el mensaje. Activa el micrófono y cuéntalo con tus palabras.</p></div>
           <div class="card"><b>Guarda la memoria al terminar</b><p>Cierra cada sesión con CoraLEAN: te da la ficha actualizada y añade la entrada al cuaderno. La próxima vez retomas desde ella sin volver a contarlo todo. <a href="#ficha">La memoria del proyecto</a></p></div>
         </div>
+        <p style="margin:0"><a href="ver.html#ejemplos/cerrar-sesion--ejemplo-cuaderno">Ver un proyecto de ejemplo de principio a fin →</a></p>
       </section>
 
       <section class="bloque">
@@ -131,7 +175,7 @@
       <section class="rej-2">
         <div class="card"><h3>Cómo navegar</h3><ul>
           <li><b>El recorrido:</b> los seis momentos del proyecto y lo que se hace en cada uno.</li>
-          <li><b>En cada sesión:</b> lo que harás siempre: retomar, preparar, procesar la reunión, elegir herramienta y cerrar.</li>
+          <li><b>Para trabajar:</b> lo que harás a menudo: retomar, preparar y procesar reuniones, elegir herramienta, preparar entregables y cerrar la sesión.</li>
           <li><b>Biblioteca:</b> herramientas Lean, técnicas de facilitación, plantillas y bibliografía, para consultar cuando las necesites.</li>
           <li><b>Abajo en el menú lateral:</b> elige dónde usas CoraLEAN y los mensajes se adaptan.</li></ul></div>
         <div class="card"><h3>Qué puedes esperar</h3><ul>
@@ -147,6 +191,11 @@
     const m = momento(id) || G.momentos[0];
     const i = G.momentos.indexOf(m);
     const pasos = m.pasos.map(paso);
+    const PRE = estado.plataforma === "sinconfig" ? plat().prefijo() : "";
+    const orientacion = m.orientacion ? `<section class="card orientacion"><h3>Pide orientación a tu asistente</h3><p>${esc(m.orientacion.texto)}</p>
+<pre class="bloque" id="preview-orientacion">${esc(PRE + m.orientacion.mensaje)}</pre>
+<div class="enlaces"><button class="btn prim" id="copiar-orientacion">Copiar mensaje</button><span class="ok-copiado" aria-live="polite"></span></div>
+<p class="nota">También te ayudan: <a href="#paso-elegir-herramienta">Elige la herramienta</a> · <a href="#paso-preparar-sesion">Prepara la siguiente sesión</a> · <a href="#paso-procesar-sesion">Procesa la reunión</a></p></section>` : "";
     app.innerHTML = `<div class="ancho">
       <div class="miga"><a href="#inicio">Inicio</a><span>·</span><span>Momento del proyecto</span></div>
       <div class="intro"><div class="etq">Momento</div><h1>${esc(m.nombre)}</h1><p><b>${esc(m.pregunta)}</b></p></div>
@@ -156,12 +205,17 @@
         <div class="card"><h3>Suele estar listo para avanzar cuando…</h3><ul>${m.listo.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="nota" style="margin-top:8px">Es una orientación, no un examen. Y si aparece algo nuevo, volver a un momento anterior es normal.</p></div>
       </div>
       <div><div class="sec-t">Qué hacer con CoraLEAN</div>
-        ${pasos.length ? `<div class="lista-pasos">${pasos.map((p) => `<a class="paso-fila" href="#paso-${p.id}"><b>${esc(p.titulo)}</b><span>${esc(p.resumen)}</span><span class="chip skill">${esc(p.skill)}</span></a>`).join("")}</div>`
-          : `<div class="card"><p><b>Las skills específicas de este momento están en preparación.</b> Mientras tanto, CoraLEAN te acompaña igual con:</p><div class="enlaces"><a class="chip skill" href="#paso-elegir-herramienta">elegir-herramienta</a><a class="chip skill" href="#paso-preparar-sesion">preparar-sesion</a><a class="chip skill" href="#paso-procesar-sesion">procesar-reunion</a></div></div>`}
+        ${pasos.length ? `<div class="lista-pasos">${pasos.map((p) => `<a class="paso-fila" href="#paso-${p.id}"><b>${esc(p.titulo)}</b><span>${esc(p.resumen)}</span></a>`).join("")}</div>` : ""}
+        ${orientacion}
       </div>
       <div><div class="sec-t">Herramientas habituales en este momento</div><div class="mini-grid">${m.herramientas.map(herr).filter(Boolean).map(miniHerr).join("")}</div></div>
       <div class="pasonav">${i > 0 ? `<a class="btn" href="#momento-${G.momentos[i - 1].id}">← ${esc(G.momentos[i - 1].nombre)}</a>` : "<span></span>"}${i < G.momentos.length - 1 ? `<a class="btn" href="#momento-${G.momentos[i + 1].id}">${esc(G.momentos[i + 1].nombre)} →</a>` : ""}</div>
     </div>`;
+    const btnOri = document.getElementById("copiar-orientacion");
+    if (btnOri) {
+      const preOri = document.getElementById("preview-orientacion");
+      btnOri.addEventListener("click", () => copiar(preOri.textContent, btnOri.parentElement.querySelector(".ok-copiado"), preOri));
+    }
   }
 
   function componer(p) {
@@ -184,31 +238,23 @@
     const campos = (p.campos || []).map((c) => {
       const v = (estado.valores[p.id] || {})[c.id] ?? (c.recordar ? estado.proyecto : "");
       const ctl = c.tipo === "select"
-        ? `<select data-campo="${c.id}">${c.opciones.map((o) => `<option ${o === v ? "selected" : ""}>${esc(o)}</option>`).join("")}</select>`
-        : `<input data-campo="${c.id}" value="${esc(v)}" placeholder="${esc(c.ej || "")}">`;
-      return `<div class="campo"><label>${esc(c.etiqueta)}</label>${ctl}</div>`;
+        ? `<select id="campo-${c.id}" data-campo="${c.id}">${c.opciones.map((o) => `<option ${o === v ? "selected" : ""}>${esc(o)}</option>`).join("")}</select>`
+        : `<input id="campo-${c.id}" data-campo="${c.id}" value="${esc(v)}" placeholder="${esc(c.ej || "")}">`;
+      return `<div class="campo"><label for="campo-${c.id}">${esc(c.etiqueta)}</label>${ctl}</div>`;
     }).join("");
     const despues = [...(p.despues || [])];
     if (p.ficha) despues.push("Si tu ficha no está en los archivos del proyecto, adjúntala");
     const herrs = (p.herramientas || []).map(herr).filter(Boolean).map(miniHerr).join("");
     const tecs = (p.tecnicas || []).map((t) => G.tecnicas.find((x) => x.id === t)).filter(Boolean).map((t) => `<a class="chip" href="#tecnicas">${esc(t.nombre)}</a>`).join(" ");
     const sig = p.siguiente ? paso(p.siguiente) : null;
+    const abierto = window.matchMedia("(min-width: 1024px)").matches ? "open" : "";
 
     app.innerHTML = `<div class="ancho paso">
-      <div class="miga"><a href="#inicio">Inicio</a><span>·</span>${m ? `<a href="#momento-${m.id}">${esc(m.nombre)}</a>` : "<span>En cada sesión</span>"}<span class="chip skill">${esc(p.skill)}</span></div>
+      <div class="miga"><a href="#inicio">Inicio</a><span>·</span>${m ? `<a href="#momento-${m.id}">${esc(m.nombre)}</a>` : "<span>Para trabajar</span>"}</div>
       <h1>${esc(p.titulo)}</h1>
       <p class="resumen">${esc(p.resumen)}</p>
-      <div class="rej-2">
-        <div class="card"><h3>Por qué importa</h3><p>${esc(p.porque)}</p></div>
-        <div class="card"><h3>Cómo conecta con el resto</h3><p>${esc(p.conecta)}</p></div>
-      </div>
-      <div class="rej-3">
-        <div class="card"><h3>Cuándo</h3><p>${esc(p.cuando)}</p></div>
-        <div class="card"><h3>Necesitas</h3><ul>${p.necesitas.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
-        <div class="card"><h3>Recibes</h3><ul>${p.recibes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
-      </div>
       <section class="gen" aria-label="Mensaje para tu asistente">
-        <div class="gen-head"><b>Empieza con este mensaje</b><span>${esc(plat().nombre)} · ${esc(plat().nota)} <a href="#instalar" style="color:inherit">¿Aún no lo tienes?</a></span></div>
+        <div class="gen-head"><b>Empieza con este mensaje</b><span>${estado.plataforma === "sinconfig" ? `Sin configurar · <a href="#instalar" style="color:inherit">Configura tu asistente</a> para mejores resultados` : `${esc(plat().nombre)} · ${esc(plat().nota)} <a href="#instalar" style="color:inherit">¿Aún no lo tienes?</a>`}</span></div>
         <div class="gen-body">
           <div class="gen-campos">${campos || '<p class="nota">Este paso no necesita datos: copia el mensaje tal cual.</p>'}
             ${despues.length ? `<div><div class="sec-t">Después de pegarlo</div><ul class="despues">${despues.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}</div>
@@ -218,6 +264,17 @@
         </div>
       </section>
       <div class="callout voz"><span class="ico"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span><div><b>Cómo contarlo</b>${esc(G.aportar)}</div></div>
+      <details class="mas" ${abierto}><summary>Por qué, cuándo y qué necesitas</summary>
+        <div class="rej-2">
+          <div class="card"><h3>Por qué importa</h3><p>${esc(p.porque)}</p></div>
+          <div class="card"><h3>Cómo conecta con el resto</h3><p>${esc(p.conecta)}</p></div>
+        </div>
+        <div class="rej-3">
+          <div class="card"><h3>Cuándo</h3><p>${esc(p.cuando)}</p></div>
+          <div class="card"><h3>Necesitas</h3><ul>${p.necesitas.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+          <div class="card"><h3>Recibes</h3><ul>${p.recibes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        </div>
+      </details>
       ${p.ficha ? `<div class="callout ficha"><span class="ico">F</span><div><b>La ficha es la memoria del proyecto.</b> CoraLEAN la usa para no hacerte repetir nada. Al terminar, cierra la sesión y guarda la versión nueva. <a href="#ficha">Más sobre la ficha</a></div></div>` : ""}
       ${p.privacidad ? `<div class="callout priv"><span class="ico">!</span><div><b>Privacidad.</b> Pide consentimiento antes de grabar. Antes de pegar una transcripción en una IA no aprobada por tu centro, cambia los nombres por roles y quita cualquier dato de pacientes.</div></div>` : ""}
       <div class="callout tip"><span class="ico">✓</span><div><b>Consejo</b>${esc(p.consejo)}</div></div>
@@ -225,7 +282,8 @@
       ${tecs ? `<div><div class="sec-t">Técnicas que usarás</div><div class="enlaces">${tecs}</div></div>` : ""}
       ${(p.plantillas || []).length ? `<div><div class="sec-t">Plantillas</div><div class="enlaces">${p.plantillas.map(enlacePlantilla).join(" ")}</div><p class="nota" style="margin-top:6px">Si tienes las skills instaladas, CoraLEAN ya las usa: no hace falta descargarlas.</p></div>` : ""}
       ${(p.ejemplos || []).length ? `<div><div class="sec-t">Ejemplos (caso ficticio)</div><div class="enlaces">${p.ejemplos.map(enlaceEjemplo).join(" ")}</div></div>` : ""}
-      <div class="pasonav">${m ? `<a class="btn" href="#momento-${m.id}">← ${esc(m.nombre)}</a>` : `<a class="btn" href="#inicio">← Inicio</a>`}${sig ? `<a class="btn prim" href="#paso-${sig.id}">Lo habitual después: ${esc(sig.titulo)} →</a>` : ""}</div>
+      <p class="nota">Nombre técnico de la skill: <code>${esc(p.skill)}</code></p>
+      <div class="pasonav">${m ? `<a class="btn" href="#momento-${m.id}">← ${esc(m.nombre)}</a>` : `<a class="btn" href="#inicio">← Inicio</a>`}${sig ? `<a class="btn prim" href="#paso-${sig.id}">Lo habitual después: ${esc(sig.titulo)} →</a>` : ""}${p.id !== "donde-estamos" ? `<a class="btn" href="#paso-donde-estamos">¿No encaja? Decide qué toca</a>` : ""}</div>
     </div>`;
 
     const pre = document.getElementById("preview");
@@ -249,7 +307,7 @@
     app.innerHTML = `<div class="ancho">
       <div class="intro"><div class="etq">Biblioteca</div><h1>Herramientas Lean y de mejora</h1><p>Una pequeña biblioteca en español para descubrir qué herramientas existen y consultar cómo usarlas cuando las necesites. No tienes que elegirlas tú solo: en cada momento, CoraLEAN te ayuda a identificar la que toca (<a href="#paso-elegir-herramienta">Elige la herramienta</a>). La regla: <b>la más ligera que responda a la pregunta que tiene ahora el proyecto</b>.</p></div>
       <div class="filtros" role="group" aria-label="Filtrar por momento"><button aria-pressed="${estado.filtro === "todas"}" data-m="todas">Todas</button>${G.momentos.map((m) => `<button aria-pressed="${estado.filtro === m.id}" data-m="${m.id}">${esc(m.nombre)}</button>`).join("")}</div>
-      <div class="herr-grid">${lista.map((h) => `<a class="card herr-c" href="#herramienta-${h.id}"><div class="diag">${diag(h.id)}</div><div class="etq">${esc(momento(h.momento).nombre)}</div><h2>${esc(h.nombre)}</h2><p>${esc(h.pregunta)}</p></a>`).join("")}</div>
+      <div class="herr-grid">${lista.map((h) => `<a class="card herr-c" href="#herramienta-${h.id}"><div class="diag" role="img" aria-label="Diagrama: ${esc(h.nombre)}. ${esc(h.pregunta)}">${diag(h.id)}</div><div class="etq">${esc(momento(h.momento).nombre)}</div><h2>${esc(h.nombre)}</h2><p>${esc(h.pregunta)}</p></a>`).join("")}</div>
     </div>`;
     app.querySelectorAll(".filtros button").forEach((b) => b.addEventListener("click", () => { estado.filtro = b.dataset.m; vistaHerramientas(); }));
   }
@@ -266,7 +324,7 @@
       <div class="miga"><a href="#herramientas">Herramientas</a><span>·</span><a href="#momento-${m.id}">${esc(m.nombre)}</a></div>
       <div class="herr-d">
         <div style="display:grid;gap:12px"><div class="etq">Herramienta</div><h1>${esc(h.nombre)}</h1><p class="preg">${esc(h.pregunta)}</p><p style="margin:0;font-size:17px">${esc(h.teoria)}</p></div>
-        <div class="card diag">${diag(h.id)}</div>
+        <div class="card diag" role="img" aria-label="Diagrama: ${esc(h.nombre)}. ${esc(h.pregunta)}">${diag(h.id)}</div>
       </div>
       <div class="rej-2">
         <div class="card"><h3>Cómo se hace</h3><ol>${h.como.map((x) => `<li>${esc(x)}</li>`).join("")}</ol></div>
@@ -276,7 +334,7 @@
         </div>
       </div>
       ${h.imagen ? figura(h.imagen) : ""}
-      ${h.ejemplo ? `<div class="card"><h3>Ejemplo (caso ficticio)</h3><div class="ejemplo-v"><div class="diag">${diag(h.ejemplo.diag)}</div><p>${esc(h.ejemplo.texto)}</p></div></div>` : ""}
+      ${h.ejemplo ? `<div class="card"><h3>Ejemplo (caso ficticio)</h3><div class="ejemplo-v"><div class="diag" role="img" aria-label="Ejemplo: ${esc(h.ejemplo.texto)}">${diag(h.ejemplo.diag)}</div><p>${esc(h.ejemplo.texto)}</p></div></div>` : ""}
       ${h.colores ? `<p class="nota">Símbolos para dibujarlo: <a href="#convenciones">convenciones gráficas</a>.</p>` : ""}
       ${h.colores ? `<div><div class="sec-t">Código de colores en la pared</div>${leyenda()}<p class="nota" style="margin-top:8px">Pega en un lateral una leyenda con un pósit de cada color y su significado. <a href="imprimir.html#leyenda" target="_blank" rel="noopener">Imprimir la leyenda</a></p></div>` : ""}
       <div><div class="sec-t">Recursos</div><div class="enlaces">
@@ -364,8 +422,13 @@
   function vistaFicha() {
     app.innerHTML = `<div class="ancho">
       <div class="intro"><div class="etq">Tu proyecto</div><h1>La memoria del proyecto</h1><p>Tu asistente no recuerda de forma fiable las conversaciones anteriores: lo que no está escrito, no existe para él. Por eso la memoria del proyecto tiene tres capas, y CoraLEAN las lee al empezar y las actualiza al terminar.</p></div>
-      <div class="card tabla-w"><h3>Las tres capas</h3><table><thead><tr><th>Capa</th><th>Qué es</th><th>Cómo se actualiza</th></tr></thead><tbody><tr><td><b>Ficha</b></td><td>La foto de hoy (1–3 páginas): lo decidido y lo pendiente</td><td>Se <b>sustituye</b> por la versión nueva en cada sesión</td></tr><tr><td><b>Cuaderno</b></td><td>La línea evolutiva: una entrada por sesión, en un solo archivo</td><td>Solo se <b>añade</b> al final. Nunca se resume ni se reescribe</td></tr><tr><td><b>Documentos</b></td><td>Actas, fichas de entrevista, mapas, datos, entregables</td><td>Se <b>guardan</b> en el registro; los citan la ficha y el cuaderno</td></tr></tbody></table></div>
-      <div class="card"><h3>Cómo se actualiza el cuaderno según tu entorno</h3><ul><li><b>Work, Cowork, OpenCode, agentes de Copilot:</b> añaden la entrada solos.</li><li><b>Proyecto manual, cuaderno corto:</b> CoraLEAN te da el cuaderno completo con una comprobación («tenía 12 entradas y ahora tiene 13»). Si el número no cuadra, se ha perdido algo. Sustituye el archivo en la base de conocimiento (descargar o «añadir a la fuente») y borra el anterior.</li><li><b>Proyecto manual, cuaderno largo:</b> te da solo la entrada nueva para pegar al final, y te sugiere archivar lo antiguo.</li></ul><p class="nota">El cuaderno no se actualiza solo en los entornos manuales: hay que guardarlo al cerrar cada sesión.</p></div>
+      <div class="card tabla-w"><h3>Las tres capas</h3><table><thead><tr><th>Capa</th><th>Qué es</th><th>Cómo se actualiza</th></tr></thead><tbody><tr><td><b>Ficha</b></td><td>La foto de hoy (1–3 páginas): lo decidido y lo pendiente</td><td>Se <b>sustituye</b> por la versión nueva en cada sesión</td></tr><tr><td><b>Cuaderno</b></td><td>La línea evolutiva: una entrada por sesión, en un solo archivo</td><td>Las entradas son historia: no se modifican; si algo cambia, se añade una entrada nueva. El índice y las decisiones vigentes son vistas derivadas que se regeneran a partir de las entradas.</td></tr><tr><td><b>Documentos</b></td><td>Actas, fichas de entrevista, mapas, datos, entregables</td><td>Se <b>guardan</b> en el registro; los citan la ficha y el cuaderno</td></tr></tbody></table></div>
+      <div class="card"><h3>Cómo se guarda según lo que pueda hacer tu asistente</h3>
+<p><b>Compruébalo una vez:</b> pídele que añada una línea de prueba al final del cuaderno y mira si el archivo cambia de verdad. No lo des por hecho: depende de tu cuenta, tu aplicación y sus permisos.</p>
+<ul><li><b>Si edita el archivo:</b> añade la entrada nueva al final y regenera el índice y las decisiones vigentes. Revisa que lo ha hecho.</li>
+<li><b>Si solo puede crear un archivo nuevo:</b> te da el cuaderno completo con una comprobación («tenía 12 entradas y ahora tiene 13»). Si el número no cuadra, se ha perdido algo. Sustituye el archivo en la base de conocimiento (descargar o «añadir a la fuente») y borra el anterior.</li>
+<li><b>Si solo puede darte texto:</b> te da la entrada nueva para pegarla al final de tu cuaderno; si el cuaderno es muy largo, te sugiere archivar lo antiguo.</li></ul>
+<p class="nota">En los entornos manuales el cuaderno no se guarda solo: hay que guardarlo al cerrar cada sesión. Conviene comprobar la capacidad real de tu entorno antes de darla por hecha.</p></div>
       <div class="card"><h3>Leerlo sin Markdown</h3><p>Al cerrar la sesión, pide «una versión para consultar»: un Word con buen formato si tu asistente puede crear archivos. O abre cualquier archivo <code>.md</code> en el visor de esta guía: se ve con formato, se puede imprimir o guardar como PDF y <b>no se envía nada a ningún sitio</b>.</p><div class="enlaces"><a class="btn small" href="cuaderno.html">Abrir el visor del cuaderno</a>${enlacePlantilla("cuaderno")} ${enlacePlantilla("entrada-cuaderno")}</div></div>
       <div class="card"><h3>El ciclo de cada sesión</h3><div class="flujo-ficha"><span>Retomas con la ficha</span><i>→</i><span>Trabajas</span><i>→</i><span>CoraLEAN propone cambios</span><i>→</i><span>Confirmas</span><i>→</i><span>Guardas ficha y cuaderno</span></div>
         <div class="enlaces" style="margin-top:12px"><a class="chip skill" href="#paso-donde-estamos">Retoma el proyecto</a><a class="chip skill" href="#paso-cerrar-sesion">Cierra la sesión</a></div></div>
@@ -425,7 +488,7 @@
     let cuerpo = "";
     if (tab === "chatgpt" || tab === "claude") {
       const ruta = tab === "claude" ? "Personalizar → Skills → subir cada archivo .zip (si te lo pide, activa la ejecución de código en los ajustes)." : "Plugins → Skills → subir cada archivo .zip.";
-      cuerpo = `<div class="card"><h3>Opción A · Instalar las skills (recomendada, en cuentas de pago)</h3><ol class="pasos-num"><li>Descarga los archivos de las skills:${zips}</li><li>${esc(ruta)}</li><li>Abre una conversación nueva y escribe: «Me han encargado [proyecto]. Te cuento lo que tengo.» Debería ordenarlo en una ficha de contexto y decirte qué falta.</li></ol></div>${bloqueProject(tab)}${primer}`;
+      cuerpo = `<div class="card"><h3>Opción A · Instalar las skills (si tu cuenta permite subirlas)</h3><ol class="pasos-num"><li>Descarga los archivos de las skills:${zips}</li><li>${esc(ruta)}</li><li>Abre una conversación nueva y escribe: «Me han encargado [proyecto]. Te cuento lo que tengo.» Debería ordenarlo en una ficha de contexto y decirte qué falta.</li></ol></div>${bloqueProject(tab)}${primer}`;
     } else if (tab === "opencode") {
       cuerpo = `<div class="card"><h3>OpenCode (terminal o escritorio)</h3><ol class="pasos-num"><li>Descarga y descomprime las skills en una carpeta, por ejemplo <code>~/coralean/skills</code>:${zips}</li><li>Añade la carpeta a tu configuración <code>~/.config/opencode/opencode.json</code>:<pre class="bloque" id="oc">"skills": ["~/coralean/skills"]</pre><div class="enlaces"><button class="btn small" data-copiar="oc">Copiar</button><span class="ok-copiado"></span></div></li><li>Invoca una skill escribiendo <code>@nombre-de-la-skill</code>, o deja que la elija sola por lo que pides.</li><li>Guarda la ficha del proyecto como archivo en la carpeta de trabajo.</li></ol><p class="nota">Recomendado solo si te manejas con herramientas técnicas. Cuidado con los modelos gratuitos: algunos pueden usar tus conversaciones.</p></div>${primer}`;
     } else if (tab === "copilot") {
@@ -433,17 +496,61 @@
     } else {
       cuerpo = `<div class="card"><h3>Versiones gratuitas: en estudio</h3><p>Las cuentas gratuitas de ChatGPT y Claude tienen límites que cambian con frecuencia (proyectos, archivos, skills, número de mensajes). Estamos comprobando con cuentas reales qué funciona en cada una antes de recomendar nada.</p><p><b>Mientras tanto:</b> prueba la opción B (proyecto con instrucciones). Si tu cuenta no permite proyectos, pega las instrucciones al inicio de cada conversación y adjunta la ficha. Funcionará peor que con las skills: la conversación será más larga y conviene cerrar la sesión con frecuencia.</p><div class="enlaces"><a class="btn small" href="recursos/proyecto/INSTRUCCIONES.md" download>Descargar instrucciones</a><a class="btn small" href="recursos/proyecto/coralean-completo.md" download>Descargar coralean-completo.md</a></div></div>${primer}`;
     }
+    const activar = (id) => {
+      estado.tab = id;
+      if ((id === "chatgpt" || id === "claude" || id === "opencode") && !(estado.plataforma === "proyecto" && (id === "chatgpt" || id === "claude"))) ponerPlataforma(id);
+      vistaInstalar();
+      const b = document.getElementById(`tab-${id}`);
+      if (b) b.focus();
+    };
     app.innerHTML = `<div class="ancho">
-      <div class="intro"><div class="etq">Empezar</div><h1>Configura tu asistente</h1><p>Se hace una vez. Elige dónde vas a usar CoraLEAN y sigue los pasos. Las skills son lo recomendado; el proyecto con instrucciones es el plan B.</p></div>
-      <div class="pestanas" role="tablist">${TABS.map((t) => `<button role="tab" aria-selected="${t.id === tab}" data-tab="${t.id}">${esc(t.n)}</button>`).join("")}</div>
-      ${cuerpo}</div>`;
-    app.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => { estado.tab = b.dataset.tab; vistaInstalar(); }));
+      <div class="intro"><div class="etq">Empezar</div><h1>Configura tu asistente</h1><p>Se hace una vez. Elige dónde vas a usar CoraLEAN y sigue los pasos. Si tu cuenta permite subir skills, es la opción más completa; si no, usa el proyecto con instrucciones. También puedes empezar sin configurar nada: los mensajes funcionan igual, aunque peor.</p></div>
+      <div class="pestanas" role="tablist">${TABS.map((t) => `<button role="tab" id="tab-${t.id}" aria-controls="panel-instalar" aria-selected="${t.id === tab}" tabindex="${t.id === tab ? "0" : "-1"}" data-tab="${t.id}">${esc(t.n)}</button>`).join("")}</div>
+      <div role="tabpanel" id="panel-instalar" aria-labelledby="tab-${tab}">${cuerpo}</div></div>`;
+    app.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => activar(b.dataset.tab)));
+    document.querySelector(".pestanas").addEventListener("keydown", (e) => {
+      const i = TABS.findIndex((t) => t.id === estado.tab);
+      let j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % TABS.length;
+      else if (e.key === "ArrowLeft") j = (i - 1 + TABS.length) % TABS.length;
+      else if (e.key === "Home") j = 0;
+      else if (e.key === "End") j = TABS.length - 1;
+      if (j === null) return;
+      e.preventDefault();
+      activar(TABS[j].id);
+    });
     const instr = document.getElementById("instr");
     if (instr) fetch("recursos/proyecto/INSTRUCCIONES.md").then((r) => r.ok ? r.text() : Promise.reject()).then((t) => { instr.textContent = t; }).catch(() => { instr.textContent = "No se ha podido cargar. Descárgalo desde el enlace «Descargar instrucciones» de la pestaña Copilot."; });
     app.querySelectorAll("[data-copiar]").forEach((b) => b.addEventListener("click", () => { const n = document.getElementById(b.dataset.copiar); copiar(n.textContent, b.parentElement.querySelector(".ok-copiado"), n); }));
   }
 
+  function vistaEmpezar() {
+    const plats = [["chatgpt", "ChatGPT"], ["claude", "Claude"], ["opencode", "OpenCode"], ["proyecto", "Proyecto con instrucciones"]];
+    const situaciones = [
+      ["Me han encargado una mejora", "paso-recoger-contexto", "Cuenta lo que sabes y CoraLEAN lo ordena y te dice qué falta."],
+      ["Es la primera reunión del grupo", "paso-preparar-lanzamiento", "Prepara el guion, las preguntas y la convocatoria."],
+      ["Tengo una reunión pronto", "paso-preparar-sesion", "Guion minuto a minuto para cualquier sesión de trabajo."],
+      ["Tengo notas o la grabación de una reunión", "paso-procesar-sesion", "Saca el acta, el correo para el grupo y lo que hay que guardar."],
+      ["Sabemos el problema, pero no sus causas", "momento-porque", "Separa hipótesis de causas comprobadas antes de proponer cambios."],
+      ["Tengo varias ideas y no sé cuál probar", "momento-eligiendo", "Compara las ideas con criterios y elige una prueba pequeña."],
+      ["Vuelvo a un proyecto que ya empecé", "paso-donde-estamos", "Retoma desde la ficha sin volver a contarlo todo."],
+      ["No sé por dónde seguir", "paso-donde-estamos", "CoraLEAN revisa contigo dónde estáis y qué toca."]
+    ];
+    app.innerHTML = `<div class="ancho">
+      <div class="intro"><div class="etq">Empezar</div><h1>¿Qué necesitas hacer ahora?</h1><p>Elige tu situación. Si es la primera vez, prepara antes tu asistente: son unos minutos.</p></div>
+      <div class="rej-2">
+        <div class="card"><h3>Es la primera vez</h3><p>Prepara tu asistente de IA para que trabaje como CoraLEAN. Si prefieres, puedes empezar sin configurar nada: funciona, aunque peor.</p><div class="enlaces"><a class="btn prim" href="#instalar">Configurar mi asistente</a><a class="btn" href="#paso-recoger-contexto">Empezar sin configurar</a></div></div>
+        <div class="card"><h3>Ya tengo mi asistente preparado</h3><p>Dime cuál usas y los mensajes se adaptan:</p><div class="enlaces">${plats.map(([id, n]) => `<button class="btn" data-plat="${id}" aria-pressed="${estado.plataforma === id}">${esc(n)}</button>`).join("")}</div></div>
+      </div>
+      <h2 style="font-size:22px">Elige tu situación</h2>
+      <div class="lista-pasos">${situaciones.map(([t, d, x]) => `<a class="paso-fila" href="#${d}"><b>${esc(t)}</b><span>${esc(x)}</span></a>`).join("")}</div>
+      <p><a href="ver.html#ejemplos/cerrar-sesion--ejemplo-cuaderno">Ver un proyecto de ejemplo de principio a fin →</a></p>
+    </div>`;
+    app.querySelectorAll("[data-plat]").forEach((b) => b.addEventListener("click", () => { ponerPlataforma(b.dataset.plat); vistaEmpezar(); }));
+  }
+
   // ---------- Router ----------
+  let primeraVez = true;
   function render() {
     const h = location.hash.replace(/^#/, "") || "inicio";
     let actual = h, momentoActual = null;
@@ -456,10 +563,13 @@
     else if (h === "convenciones") vistaConvenciones();
     else if (h === "bibliografia") vistaBibliografia();
     else if (h === "ficha") vistaFicha();
+    else if (h === "empezar") vistaEmpezar();
     else if (h === "instalar") vistaInstalar();
     else { actual = "inicio"; vistaInicio(); }
     pintarNav(actual, momentoActual);
     if (actual !== "inicio") { estado.ultima = actual; guardar(); }
+    if (!primeraVez) app.focus({ preventScroll: true });
+    primeraVez = false;
     window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", render);

@@ -153,3 +153,17 @@ No «¿te gusta?», sino:
 |---|---|
 | C4 | Ampliado: memoria en tres capas (ficha, cuaderno del proyecto, documentos). Plantillas del cuaderno y de cada entrada; `cerrar-sesion` añade la entrada con tres modos según el entorno (edita archivos / manual con cuaderno corto, con comprobación del nº de entradas / manual con cuaderno largo, solo la entrada); `donde-estamos` lee ficha, índice y decisiones vigentes; ejemplo con tres entradas |
 | Nuevo | Versión para consultar (Word) al cerrar la sesión y visor local de Markdown en la guía (`cuaderno.html`), sin enviar datos |
+
+## Estado de implementación — v0.6 (auditoría UX)
+
+| ID | Estado |
+|---|---|
+| UX-01 | Plataforma «sin configurar» por defecto; pantalla «¿Qué necesitas hacer ahora?» con primera vez / ya preparado y situaciones |
+| UX-02 | Selector de asistente y pestañas de configuración sincronizados en ambos sentidos |
+| UX-03, UX-04 | Acciones de portada antes de los pilares; generador antes de las explicaciones (plegables en móvil); alternativa «¿No encaja?» |
+| UX-05, UX-06 | Menú con grupos plegables («Para trabajar»); nombres técnicos de skill fuera de cabeceras |
+| UX-07 | Mapa de las siete preguntas en lista vertical en móvil |
+| MEM-01, MEM-02 | Cuaderno: historia inmutable y vistas derivadas regenerables; automatización solo si se comprueba la capacidad del entorno |
+| MET-01 | Mensaje de orientación en los momentos sin actividades específicas |
+| ACC-01 | Etiquetas asociadas, menú móvil inert y Escape, pestañas con teclado, foco al cambiar de vista, diagramas con descripción |
+| Pendiente | MEM-03 (prueba real de cerrar y retomar en dos sesiones) y Plan B (skills de causas, priorización y prueba) |

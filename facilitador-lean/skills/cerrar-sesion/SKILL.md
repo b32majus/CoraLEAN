@@ -39,11 +39,11 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
    - «Próximo paso» actualizado.
 
 5. **Cuaderno del proyecto.** Genera la **entrada de esta sesión** con `comun/plantilla-entrada-cuaderno.md` (qué se trabajó, decisiones, hallazgos y datos con fuente, hipótesis, acciones, parking de ideas, documentos, qué cambió en la ficha y por qué). Solo lo trabajado y confirmado. Después, según el entorno (reglas en `comun/registro-proyecto.md`):
-   - **Si puedes editar archivos** (Work, Cowork, OpenCode, agentes de Copilot): añade la entrada al **final** del cuaderno, actualiza la cabecera (fecha y número de entradas), el índice y «Decisiones vigentes», y dilo. No toques lo anterior.
+   - **Si has comprobado que puedes editar el archivo:** añade la entrada al **final** del cuaderno, regenera las vistas derivadas (cabecera con fecha y número de entradas, índice, decisiones vigentes) y dilo. No modifiques las entradas anteriores. Si no sabes si puedes editarlo, no lo supongas: usa uno de los modos siguientes.
    - **Entorno manual, cuaderno corto** (hasta unas 15 páginas): entrega el cuaderno completo con la entrada añadida y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, avísalo: se ha perdido algo.
    - **Entorno manual, cuaderno largo:** entrega **solo la entrada nueva** y dónde pegarla, y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo.
    - **Si todavía no hay cuaderno,** créalo con `comun/plantilla-cuaderno.md` y la primera entrada.
-   - **Nunca resumas ni reescribas el historial.**
+   - **Nunca resumas ni modifiques las entradas anteriores:** si algo cambió, se registra en una entrada nueva.
 
 6. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
 
@@ -57,7 +57,7 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La me
 
 9. **Dónde guardarlo**, según el entorno:
    - **Project de ChatGPT o Claude:** sustituye en los archivos del proyecto la ficha **y** el cuaderno por sus versiones nuevas (descargando el archivo o con «añadir a la fuente») y borra las anteriores para que no haya dos.
-   - **OpenCode, Work, Cowork:** se guardan en la carpeta del proyecto; el cuaderno se actualiza solo.
+   - **Entornos con carpeta del proyecto** (OpenCode y, si lo has comprobado, Work o Cowork): se guardan en la carpeta; si el asistente edita archivos, comprueba que el cuaderno ha cambiado.
    - **Conversación suelta:** guárdalos en documentos propios y pégalos o adjúntalos al empezar.
 
 ## Entrega

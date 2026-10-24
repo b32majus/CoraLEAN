@@ -44,7 +44,7 @@
 |---|---|---|---|---|
 | 0–10 | Apertura | — | "Hemos hablado con [n] personas de [niveles]. Hoy no venimos a buscar soluciones: venimos a comprobar si lo que hemos entendido es la realidad. Al terminar tendremos una foto de partida que todos reconozcamos." Consentimiento de grabación. | Todos saben a qué vienen |
 | 10–20 | Recorrido rápido | Exposición breve | Presentar el mapa del proceso en 5 minutos. "¿Hay algún paso que falte o que sobre?" | Mapa corregido |
-| 20–55 | Validar afirmaciones | Semáforo | "Afirmación 1: … ¿Verde, ámbar o rojo?". Solo se debaten ámbar y rojo: "¿Qué parte no es así? ¿Puedes contarnos la última vez que…?" | Cada afirmación: validada, corregida o "a comprobar con datos" |
+| 20–55 | Validar afirmaciones | Semáforo | "Afirmación 1: … ¿Verde, ámbar o rojo?". Se debate sobre todo lo ámbar y lo rojo: "¿Qué parte no es así? ¿Puedes contarnos la última vez que…?" | Cada afirmación: validada, corregida o "a comprobar con datos" |
 | 55–70 | Contradicciones | Ronda | "En las entrevistas hemos oído dos versiones sobre… Desde vuestra parte del proceso, ¿cuál se parece más a lo que veis?" | Contradicciones resueltas o con plan para obtener el dato |
 | 70–80 | Problema y alcance | Puño a cinco | Leer el problema y el alcance provisionales (de la ficha). "¿Os representa? Del 0 al 5." Si hay 0–2: "¿Qué cambiarías?" | Problema y alcance validados o reformulados |
 | 80–90 | Cierre | Cierre con responsables + ronda | "Hemos validado… Queda por comprobar… ¿Quién consigue el dato de…? ¿Para cuándo?" "Próxima sesión: …" "En una palabra, ¿cómo os vais?" | Acuerdos con responsable y fecha |

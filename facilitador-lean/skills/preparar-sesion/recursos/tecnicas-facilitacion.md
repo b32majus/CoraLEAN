@@ -23,7 +23,7 @@ Cada técnica: para qué sirve, cómo se hace y cuándo no usarla.
 
 **4. Semáforo de validación**
 - *Para qué:* validar rápido una situación de partida o un borrador.
-- *Cómo:* se lee cada afirmación y cada persona levanta verde (es así), ámbar (en parte) o rojo (no es así). Solo se debate lo ámbar y lo rojo.
+- *Cómo:* se lee cada afirmación y cada persona levanta verde (es así), ámbar (en parte) o rojo (no es así). Se debate sobre todo lo ámbar y lo rojo; lo verde se da por bueno salvo que aparezca información nueva.
 - *Ejemplo:* "Afirmación 3: 'El informe de alta llega a primaria en menos de 48 horas'. ¿Verde, ámbar o rojo?"
 
 **5. Votación por puntos**

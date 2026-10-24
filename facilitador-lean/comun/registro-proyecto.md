@@ -5,20 +5,20 @@ La memoria del proyecto tiene **tres capas**:
 | Capa | Qué es | Tamaño | Se actualiza |
 |---|---|---|---|
 | **Ficha del proyecto** | La foto de hoy: lo decidido, lo pendiente y lo que se sabe ahora | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
-| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | Solo se **añade al final**. Nunca se resume ni se reescribe el historial |
+| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | La **historia** (entradas) no se modifica ni se resume: se añaden entradas nuevas. La cabecera, el índice y las decisiones vigentes son **vistas derivadas** que se regeneran a partir de las entradas |
 | **Documentos de trabajo** | Actas, fichas de entrevista, mapas, datos, entregables | Muchos archivos | Se **guardan**; el cuaderno y la ficha los citan |
 
 La ficha se lee siempre primero. El cuaderno se consulta por la parte necesaria (su índice y la tabla de «Decisiones vigentes») y es la fuente principal para reconstruir el proyecto o preparar un informe. La ficha y el cuaderno citan los documentos en «Fuentes y documentos», para volver al original.
 
 ## Cómo se actualiza el cuaderno
 
-El cuaderno nunca se reescribe: solo se añade una entrada al final. Cómo se hace depende del entorno:
+La historia no se reescribe: cada sesión añade una entrada al final. Las vistas derivadas (cabecera, índice, decisiones vigentes) se regeneran a partir de las entradas. Cómo se hace depende de lo que **pueda hacer de verdad** tu asistente. Compruébalo una vez: pide que añada una línea de prueba al final del cuaderno y mira si el archivo cambia.
 
-| Situación | Qué hace CoraLEAN |
+| Lo que puede hacer el asistente | Qué hace CoraLEAN |
 |---|---|
-| **El entorno edita archivos** (Work, Cowork, OpenCode, agentes de Copilot) | Añade la entrada al final del cuaderno y lo dice. No toca lo anterior |
-| **Entorno manual y cuaderno corto** (hasta unas 15 páginas) | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. Recuerda sustituirlo en la base de conocimiento (descargar o «añadir a la fuente») y borrar la versión anterior |
-| **Entorno manual y cuaderno largo** | Entrega **solo la entrada nueva**, indica dónde pegarla y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`), dejando un resumen en el cuaderno vivo |
+| **Edita el archivo** (comprobado) | Añade la entrada al final, regenera las vistas derivadas y lo dice. No toca las entradas anteriores |
+| **Crea un archivo nuevo, pero no sustituye el existente** | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. El usuario lo sustituye en la base de conocimiento (descargar o «añadir a la fuente») y borra la versión anterior |
+| **Solo da texto** (o el cuaderno es muy largo) | Entrega **solo la entrada nueva**, indica dónde pegarla y, si el cuaderno es largo, sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo |
 
 ## Versión para consultar
 
@@ -54,7 +54,7 @@ La fecha delante hace que se ordenen solos. El tipo y el detalle permiten encont
 | Entorno | Ficha y cuaderno | Documentos de trabajo |
 |---|---|---|
 | Project de ChatGPT o Claude | Archivos del proyecto: la última ficha y el cuaderno. Al cerrar, sustituye cada uno por su versión nueva y borra la anterior | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
-| OpenCode, Work, Cowork | Archivos en la carpeta del proyecto; el cuaderno se actualiza solo | La propia carpeta del proyecto con la estructura de arriba |
+| Entornos que trabajan con carpetas (OpenCode y, si lo has comprobado, Work o Cowork) | Archivos en la carpeta del proyecto; el asistente puede actualizar el cuaderno si edita archivos (compruébalo) | La propia carpeta del proyecto con la estructura de arriba |
 | Conversación suelta | Documentos propios que pegas o adjuntas | Carpeta propia |
 
 Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los documentos de trabajo. Aun así, **la ficha es lo primero que se lee**. Con límite de archivos, el cuaderno es lo más útil después de la ficha: un solo archivo con todo el recorrido.

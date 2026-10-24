@@ -1,4 +1,4 @@
-# CoraLEAN — skills y guía (v0.5)
+# CoraLEAN — skills y guía (v0.6, experimental en validación)
 
 CoraLEAN acompaña a profesionales sanitarios que lideran proyectos de mejora: les ayuda a pensar el problema, preparar y conducir reuniones, entrevistar, procesar lo que pasa en cada sesión, elegir herramientas Lean y no perder el hilo del proyecto. No sustituye a quien lidera: le enseña a hacerlo mientras lo hace.
 
