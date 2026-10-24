@@ -3,12 +3,12 @@
   const app = document.getElementById("app");
   const CLAVE = "coralean-guia-v1";
 
-  // Solo se guarda la plataforma, la última vista y el nombre del proyecto.
+  // Solo se guarda la plataforma, la última vista, el nombre del proyecto y las casillas orientativas.
   const guardado = (() => { try { return JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { return {}; } })();
   const TAB_DE = { chatgpt: "chatgpt", claude: "claude", opencode: "opencode", proyecto: "chatgpt" };
-  const estado = { plataforma: guardado.plataforma || "sinconfig", ultima: guardado.ultima || "", proyecto: guardado.proyecto || "", valores: {}, filtro: "todas", tab: "chatgpt", navAbierto: {} };
+  const estado = { plataforma: guardado.plataforma || "sinconfig", ultima: guardado.ultima || "", proyecto: guardado.proyecto || "", valores: {}, filtro: "todas", tab: "chatgpt", navAbierto: {}, checks: guardado.checks || {} };
   estado.tab = TAB_DE[estado.plataforma] || "chatgpt";
-  const guardar = () => { try { localStorage.setItem(CLAVE, JSON.stringify({ plataforma: estado.plataforma, ultima: estado.ultima, proyecto: estado.proyecto })); } catch (e) { /* sin almacenamiento */ } };
+  const guardar = () => { try { localStorage.setItem(CLAVE, JSON.stringify({ plataforma: estado.plataforma, ultima: estado.ultima, proyecto: estado.proyecto, checks: estado.checks })); } catch (e) { /* sin almacenamiento */ } };
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const paso = (id) => G.pasos.find((p) => p.id === id);
@@ -218,6 +218,43 @@
     }
   }
 
+  const enlaceRecurso = (r) => {
+    if (r.tipo === "plantilla") return enlacePlantilla(r.id);
+    if (r.tipo === "ejemplo") return enlaceEjemplo(r.id);
+    if (r.tipo === "herramienta") { const h = herr(r.id); return h ? `<a class="chip" href="#herramienta-${r.id}">${esc(h.nombre)}</a>` : ""; }
+    if (r.tipo === "imprimible") return `<a class="chip" href="imprimir.html#${r.id}" target="_blank" rel="noopener">${esc(G.imprimibles[r.id] || r.id)} · imprimir</a>`;
+    if (r.tipo === "paso") { const p = paso(r.id); return p ? `<a class="chip" href="#paso-${r.id}">${esc(p.titulo)}</a>` : ""; }
+    return "";
+  };
+
+  // Bloque «Hazlo paso a paso» (nivel 1: sin IA). Solo lo tienen los pasos del piloto.
+  function bloqueManual(p) {
+    const M = p.manual;
+    const clave = (i) => `${p.id}:${i}`;
+    return `<section class="manual" aria-label="Hazlo paso a paso">
+      <div class="manual-head"><b>Hazlo paso a paso</b><span>Con el equipo, sin instalar nada</span></div>
+      <div class="manual-body">
+        <div class="manual-antes">
+          <h3>Antes de empezar <span class="nota">— orientativo: si falta algo, sigue y anótalo como pendiente</span></h3>
+          <ul class="checklist">${M.antes.map((x, i) => `<li><label><input type="checkbox" data-check="${esc(clave(i))}" ${estado.checks[clave(i)] ? "checked" : ""}> <span>${esc(x)}</span></label></li>`).join("")}</ul>
+        </div>
+        <div>
+          <h3>Paso a paso con el equipo</h3>
+          <ol class="manual-pasos">${M.pasos.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>
+          <div class="enlaces">${(M.recursos || []).map(enlaceRecurso).join(" ")}</div>
+        </div>
+        <div class="rej-2">
+          <div class="card bien"><h3>Cómo es un buen resultado</h3><p>${esc(M.bienHecho)}</p></div>
+          <div class="card contra"><h3>Error típico (caso ficticio)</h3><p>${esc(M.contraejemplo)}</p></div>
+        </div>
+        <div class="rej-2">
+          <div class="card"><h3>Cuándo pasar al siguiente paso</h3><ul>${M.avanzar.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+          <div class="card"><h3>Qué guardar y dónde</h3><p>${esc(M.guardar)}</p></div>
+        </div>
+      </div>
+    </section>`;
+  }
+
   function componer(p) {
     const vals = estado.valores[p.id] || {};
     let txt = p.plantilla, html = esc(p.plantilla);
@@ -228,6 +265,7 @@
       html = html.split(`{${c.id}}`).join(v ? esc(v) : `<span class="hueco">${esc(marca)}</span>`);
     });
     if (p.ficha) { const f = "\n\n(Usa la ficha del proyecto: está en los archivos del proyecto o te la adjunto.)"; txt += f; html += esc(f); }
+    if (estado.plataforma === "sinconfig") { const m = G.textoMetodo(p); txt += m; html += esc(m); }
     const pre = plat().prefijo(p.skill);
     return { txt: pre + txt, html: esc(pre) + html };
   }
@@ -253,8 +291,9 @@
       <div class="miga"><a href="#inicio">Inicio</a><span>·</span>${m ? `<a href="#momento-${m.id}">${esc(m.nombre)}</a>` : "<span>Para trabajar</span>"}</div>
       <h1>${esc(p.titulo)}</h1>
       <p class="resumen">${esc(p.resumen)}</p>
+      ${p.manual ? bloqueManual(p) : ""}
       <section class="gen" aria-label="Mensaje para tu asistente">
-        <div class="gen-head"><b>Empieza con este mensaje</b><span>${estado.plataforma === "sinconfig" ? `Sin configurar · <a href="#instalar" style="color:inherit">Configura tu asistente</a> para mejores resultados` : `${esc(plat().nombre)} · ${esc(plat().nota)} <a href="#instalar" style="color:inherit">¿Aún no lo tienes?</a>`}</span></div>
+        <div class="gen-head"><b>${p.manual ? "Con ayuda de IA (opcional)" : "Empieza con este mensaje"}</b><span>${estado.plataforma === "sinconfig" ? `Sin configurar · <a href="#instalar" style="color:inherit">Configura tu asistente</a> para mejores resultados` : `${esc(plat().nombre)} · ${esc(plat().nota)} <a href="#instalar" style="color:inherit">¿Aún no lo tienes?</a>`}</span></div>
         <div class="gen-body">
           <div class="gen-campos">${campos || '<p class="nota">Este paso no necesita datos: copia el mensaje tal cual.</p>'}
             ${despues.length ? `<div><div class="sec-t">Después de pegarlo</div><ul class="despues">${despues.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}</div>
@@ -299,6 +338,10 @@
       };
       el.addEventListener("input", upd); el.addEventListener("change", upd);
     });
+    app.querySelectorAll("[data-check]").forEach((el) => el.addEventListener("change", () => {
+      if (el.checked) estado.checks[el.dataset.check] = true; else delete estado.checks[el.dataset.check];
+      guardar();
+    }));
     document.getElementById("copiar").addEventListener("click", () => copiar(componer(p).txt, document.getElementById("aviso"), pre));
   }
 

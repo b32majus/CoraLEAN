@@ -126,6 +126,87 @@ const ok = (cond, msg) => { if (!cond) f.push(msg); };
     await ctx.close();
   }
 
+  // 6. Plan C: «Hazlo paso a paso» antes de «Con ayuda de IA (opcional)» y mensaje con método.
+  {
+    const ctx = await b.newContext({ viewport: { width: 1440, height: 950 } }); const p = await ctx.newPage();
+    p.on("pageerror", (e) => f.push("Plan C pageerror " + e.message));
+    await p.goto(base + "index.html#inicio"); await p.waitForTimeout(300);
+    for (const sid of ["analizar-causas", "priorizar-soluciones", "planificar-prueba"]) {
+      await p.evaluate((x) => { location.hash = "paso-" + x; }, sid); await p.waitForTimeout(180);
+      const r = await p.evaluate(() => {
+        const man = document.querySelector(".manual"), gen = document.querySelector(".gen");
+        return {
+          hayManual: !!man, hayGen: !!gen,
+          orden: !!(man && gen && (man.compareDocumentPosition(gen) & Node.DOCUMENT_POSITION_FOLLOWING)),
+          tituloManual: man ? man.querySelector(".manual-head b").textContent : "",
+          tituloGen: gen ? gen.querySelector(".gen-head b").textContent : "",
+          checks: document.querySelectorAll(".manual .checklist input[type=checkbox]").length,
+          deshabilitados: [...document.querySelectorAll(".manual input, .manual button, #copiar")].filter((x) => x.disabled).length,
+          calc: [...document.querySelectorAll(".manual .checklist input")].every((x) => getComputedStyle(x).display !== "none"),
+          bloques: ["Antes de empezar", "Paso a paso con el equipo", "Cómo es un buen resultado", "Cuándo pasar al siguiente paso", "Qué guardar y dónde"].filter((t) => !man || !man.textContent.includes(t))
+        };
+      });
+      ok(r.hayManual, `Plan C: ${sid} no muestra «Hazlo paso a paso»`);
+      ok(r.hayGen, `Plan C: ${sid} no muestra el generador de mensaje`);
+      ok(r.orden, `Plan C: en ${sid} el generador aparece antes del bloque manual`);
+      ok(/Hazlo paso a paso/i.test(r.tituloManual), `Plan C: ${sid} no titula el bloque «Hazlo paso a paso»`);
+      ok(/Con ayuda de IA \(opcional\)/i.test(r.tituloGen), `Plan C: ${sid} no titula el generador «Con ayuda de IA (opcional)»`);
+      ok(r.checks >= 3 && r.checks <= 5, `Plan C: ${sid} tiene ${r.checks} comprobaciones (deben ser 3–5)`);
+      ok(r.deshabilitados === 0, `Plan C: ${sid} deshabilita controles hasta marcar las comprobaciones`);
+      ok(r.calc, `Plan C: ${sid} oculta las casillas de «Antes de empezar»`);
+      ok(r.bloques.length === 0, `Plan C: ${sid} pierde bloques del manual: ${r.bloques.join(", ")}`);
+      // Copiar funciona con las casillas sin marcar.
+      await p.click("#copiar"); await p.waitForTimeout(150);
+      const copia = await p.evaluate(() => ({ aviso: document.getElementById("aviso").textContent, prev: document.getElementById("preview").textContent }));
+      ok(/Copiado|Selecciónalo/.test(copia.aviso), `Plan C: ${sid} no permite copiar con las comprobaciones sin marcar`);
+      ok(copia.prev.includes("Método de esta actividad"), `Plan C: ${sid} (sinconfig) no incluye el método en el mensaje`);
+      ok(copia.prev.length <= 2500, `Plan C: ${sid} supera 2500 caracteres (${copia.prev.length})`);
+      // Marcar y desmarcar no bloquea ni rompe el mensaje.
+      await p.check(".manual .checklist input"); await p.uncheck(".manual .checklist input"); await p.waitForTimeout(120);
+      await p.click("#copiar"); await p.waitForTimeout(120);
+      ok((await p.textContent("#preview")).length > 200, `Plan C: ${sid} el mensaje desaparece al usar las casillas`);
+    }
+    // Los pasos fuera del piloto siguen como hoy.
+    await p.evaluate(() => { location.hash = "paso-recoger-contexto"; }); await p.waitForTimeout(150);
+    const fuera = await p.evaluate(() => {
+      const gen = document.querySelector(".gen"), res = document.querySelector(".resumen");
+      return { manual: !!document.querySelector(".manual"), titulo: gen ? gen.querySelector(".gen-head b").textContent : "", orden: !!(gen && res && (res.compareDocumentPosition(gen) & Node.DOCUMENT_POSITION_FOLLOWING)) };
+    });
+    ok(!fuera.manual, "Plan C: un paso fuera del piloto muestra el bloque manual");
+    ok(/Empieza con este mensaje/i.test(fuera.titulo), "Plan C: un paso fuera del piloto cambia el título del generador");
+    ok(fuera.orden, "Plan C: un paso fuera del piloto cambia el orden de la página");
+    // Con una plataforma configurada el mensaje es el de hoy (sin método).
+    await p.selectOption("#plataforma", "chatgpt"); await p.waitForTimeout(150);
+    await p.evaluate(() => { location.hash = "paso-analizar-causas"; }); await p.waitForTimeout(150);
+    const conf = await p.textContent("#preview");
+    ok(!conf.includes("Método de esta actividad"), "Plan C: con ChatGPT el mensaje incluye el método de nivel 2");
+    ok(/^Usa la skill/.test(conf.trim()), "Plan C: con ChatGPT el mensaje no empieza como antes");
+    // Impresión: el manual se imprime y el generador opcional no.
+    await p.emulateMedia({ media: "print" }); await p.waitForTimeout(100);
+    const imp = await p.evaluate(() => ({ man: getComputedStyle(document.querySelector(".manual")).display, gen: getComputedStyle(document.querySelector(".gen")).display }));
+    ok(imp.man !== "none", "Plan C: el bloque manual no sale al imprimir");
+    ok(imp.gen === "none", "Plan C: el generador sigue saliendo al imprimir");
+    await ctx.close();
+  }
+
+  // 7. Plan C: 400 px de ancho y localStorage bloqueado.
+  {
+    const ctx = await b.newContext({ viewport: { width: 400, height: 900 } });
+    await ctx.addInitScript(() => { Object.defineProperty(window, "localStorage", { configurable: true, get() { throw new Error("bloqueado"); } }); });
+    const p = await ctx.newPage();
+    p.on("pageerror", (e) => f.push("Plan C sin localStorage pageerror " + e.message));
+    p.on("console", (m) => { if (m.type() === "error" && !/fonts\.g/.test(m.text())) f.push("Plan C sin localStorage console " + m.text()); });
+    await p.goto(base + "index.html#paso-planificar-prueba"); await p.waitForTimeout(400);
+    const r = await p.evaluate(() => ({ ov: document.documentElement.scrollWidth - document.documentElement.clientWidth, manual: !!document.querySelector(".manual"), checks: document.querySelectorAll(".manual .checklist input").length, metodo: document.getElementById("preview").textContent.includes("Método de esta actividad") }));
+    ok(r.ov <= 0, `Plan C: desbordamiento a 400 px con localStorage bloqueado (${r.ov}px)`);
+    ok(r.manual && r.checks >= 3, "Plan C: a 400 px no se ve el bloque manual");
+    ok(r.metodo, "Plan C: con localStorage bloqueado no se prepara el mensaje");
+    await p.check(".manual .checklist input"); await p.waitForTimeout(100);
+    await p.click("#copiar"); await p.waitForTimeout(150);
+    ok((await p.textContent("#aviso")).length > 0, "Plan C: con localStorage bloqueado no se puede copiar");
+    await ctx.close();
+  }
+
   await b.close();
   f.forEach((x) => console.log("FALLO", x));
   console.log(f.length ? `${f.length} fallos` : "sin errores");

@@ -40,6 +40,52 @@ Object.entries(planB).forEach(([mid, sid]) => {
   if (!m.pasos.includes(sid)) f.push("momento " + mid + " sin " + sid);
   if (/Mientras preparamos/.test(m.orientacion.texto + m.orientacion.mensaje)) f.push("orientación sin actualizar " + mid);
 });
+// Plan C: piloto «sin IA» y «IA generalista» en tres actividades.
+const PILOTO = {
+  "analizar-causas": ["hipótesis", "hecho", "supuesto", "opinión", "evidencia", "dato", "validación", "causa comprobada", "proceso", "parking"],
+  "priorizar-soluciones": ["causa comprobada", "causa", "criterios", "pesos", "impacto", "esfuerzo", "puntuar", "prometedora", "opinión", "dato", "condici", "parking"],
+  "planificar-prueba": ["predicción", "alcance", "resultado", "proceso", "equilibrio", "adoptar", "adaptar", "abandonar", "probar no es adoptar", "dato de partida", "condici"]
+};
+const textoManual = (p) => [p.manual.bienHecho, p.manual.contraejemplo, p.manual.guardar, ...p.manual.antes, ...p.manual.pasos, ...p.manual.avanzar, ...p.metodo].join(" ").toLowerCase();
+Object.entries(PILOTO).forEach(([sid, claves]) => {
+  const p = P(sid);
+  if (!p) { f.push("falta paso del piloto " + sid); return; }
+  const m = p.manual, skill = fs.readFileSync(path.join(raiz, "skills", sid, "SKILL.md"), "utf8").toLowerCase();
+  if (!m) { f.push("piloto sin manual: " + sid); return; }
+  if (!Array.isArray(m.antes) || m.antes.length < 3 || m.antes.length > 5) f.push(`antes de ${sid} fuera de 3–5 comprobaciones`);
+  if (!Array.isArray(m.pasos) || m.pasos.length < 3) f.push(`pasos de ${sid} insuficientes`);
+  if (!Array.isArray(m.avanzar) || m.avanzar.length < 2) f.push(`avanzar de ${sid} insuficiente`);
+  if (!m.bienHecho || !m.contraejemplo) f.push(`bienHecho/contraejemplo incompletos en ${sid}`);
+  if (!/Área de Salud del Valle/.test(m.contraejemplo || "")) f.push(`contraejemplo de ${sid} sin el caso ficticio`);
+  if (!m.guardar) f.push(`falta guardar en ${sid}`);
+  if (!Array.isArray(p.metodo) || p.metodo.length < 6 || p.metodo.length > 10) f.push(`metodo de ${sid} fuera de 6–10 puntos`);
+  const t = textoManual(p);
+  claves.forEach((k) => {
+    if (!skill.includes(k)) f.push(`clave «${k}» ausente en skills/${sid}/SKILL.md`);
+    if (!t.includes(k)) f.push(`clave «${k}» ausente en el manual de ${sid}`);
+  });
+  [...p.metodo, ...m.avanzar].forEach((pt) => {
+    if (!claves.some((k) => pt.toLowerCase().includes(k))) f.push(`punto sin anclaje metodológico en ${sid}: ${pt.slice(0, 45)}…`);
+  });
+  (m.recursos || []).forEach((r) => {
+    if (r.tipo === "plantilla") ex(`recursos/plantillas/${r.id}.md`) || f.push(`recurso plantilla ${r.id} de ${sid}`);
+    else if (r.tipo === "ejemplo") ex(`recursos/ejemplos/${r.id}.md`) || f.push(`recurso ejemplo ${r.id} de ${sid}`);
+    else if (r.tipo === "herramienta") G.herramientas.find((x) => x.id === r.id) || f.push(`recurso herramienta ${r.id} de ${sid}`);
+    else if (r.tipo === "imprimible") G.imprimibles[r.id] || f.push(`recurso imprimible ${r.id} de ${sid}`);
+    else if (r.tipo === "paso") P(r.id) || f.push(`recurso paso ${r.id} de ${sid}`);
+    else f.push(`tipo de recurso desconocido en ${sid}: ${r.tipo}`);
+  });
+  const pre = G.plataformas.find((x) => x.id === "sinconfig").prefijo(p.skill);
+  let msg = p.plantilla;
+  (p.campos || []).forEach((c) => { msg = msg.split(`{${c.id}}`).join(`[${c.etiqueta.toLowerCase()}]`); });
+  if (p.ficha) msg += "\n\n(Usa la ficha del proyecto: está en los archivos del proyecto o te la adjunto.)";
+  msg = pre + msg + G.textoMetodo(p);
+  if (msg.length > 2500) f.push(`mensaje sin configurar de ${sid}: ${msg.length} caracteres`);
+});
+G.pasos.filter((p) => !PILOTO[p.id]).forEach((p) => {
+  if (p.manual) f.push("manual fuera del piloto: " + p.id);
+  if (p.metodo) f.push("metodo fuera del piloto: " + p.id);
+});
 // Frases prohibidas en las fuentes (no en dist/ ni guia/recursos/).
 const prohibidas = ["se actualiza solo", "añaden la entrada solos", "Solo se debate", "Solo se debaten", "no lo reabras", "nunca se resume ni se reescribe lo anterior", "En cada sesión"];
 const fuentes = [];
