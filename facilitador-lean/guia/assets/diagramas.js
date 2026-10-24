@@ -79,7 +79,7 @@
   };
 
   D.ishikawa = () => {
-    let b = defs + line(20, 90, 262, 90, "d-thick") + box(262, 70, 54, 40, "d-acc-soft") + t(289, 94, "Problema", "d-tb");
+    let b = defs + line(20, 90, 262, 90, "d-thick") + box(258, 70, 58, 40, "d-acc-soft") + t(287, 94, "Problema", "d-t");
     const fam = [["Personas", 60, 1], ["Métodos", 140, 1], ["Medicación", 220, 1], ["Sistemas", 60, -1], ["Entorno", 140, -1], ["Organización", 220, -1]];
     fam.forEach(([n, x, d]) => { const y = d > 0 ? 22 : 158; b += line(x, y, x + 34, 90) + t(x, d > 0 ? 16 : 172, n, "d-ts"); });
     return svg(b);
@@ -188,6 +188,116 @@
     [["d-ok", "Verde", "Es así"], ["d-warn", "Ámbar", "En parte"], ["d-bad", "Rojo", "No es así"]].map(([c, n, s], i) =>
       `<circle cx="${60 + i * 100}" cy="72" r="30" class="${c}"/>` + t(60 + i * 100, 128, n, "d-tb") + t(60 + i * 100, 146, s, "d-ts")).join("") +
     t(160, 172, "Solo se debate lo ámbar y lo rojo", "d-ts"));
+
+
+  D.histograma = () => {
+    const v = [2, 5, 9, 12, 8, 5, 3, 2, 1]; let b = line(24, 156, 310, 156) + line(24, 156, 24, 14);
+    v.forEach((x, i) => { b += box(30 + i * 30, 156 - x * 11, 26, x * 11, i === 3 ? "d-acc-fill" : "d-soft-fill", 1); });
+    b += line(138, 20, 138, 156, "d-median") + t(142, 28, "mediana", "d-ts", "start");
+    return svg(b + t(165, 174, "Días (intervalos) →", "d-ts"));
+  };
+
+  D.dispersion = () => {
+    const p = [[40, 140], [55, 128], [70, 132], [85, 118], [100, 112], [115, 116], [130, 100], [145, 96], [160, 90], [175, 84], [190, 88], [205, 72], [220, 66], [235, 62], [250, 54], [265, 50], [280, 44]];
+    let b = line(28, 156, 310, 156) + line(28, 156, 28, 14) + `<line x1="34" y1="146" x2="296" y2="38" class="d-line-dash"/>`;
+    b += p.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="4" class="d-acc"/>`).join("");
+    return svg(b + t(168, 174, "Variable que crees que influye →", "d-ts") + `<text x="14" y="86" class="d-ts" text-anchor="middle" transform="rotate(-90 14 86)">Resultado →</text>`);
+  };
+
+  D.control = () => {
+    const ys = [92, 84, 98, 88, 94, 80, 90, 100, 86, 92, 40, 88, 96, 84];
+    let b = line(20, 160, 310, 160) + line(20, 160, 20, 14) + line(20, 54, 310, 54, "d-line-dash") + line(20, 90, 310, 90, "d-median") + line(20, 126, 310, 126, "d-line-dash");
+    b += t(306, 50, "límite superior", "d-ts", "end") + t(306, 86, "media", "d-ts", "end") + t(306, 140, "límite inferior", "d-ts", "end");
+    b += `<polyline points="${ys.map((y, i) => `${28 + i * 20},${y}`).join(" ")}" class="d-acc-line" fill="none"/>` + ys.map((y, i) => `<circle cx="${28 + i * 20}" cy="${y}" r="3.5" class="${y < 54 ? "d-bad" : "d-acc"}"/>`).join("");
+    return svg(b + t(228, 36, "señal: fuera de límites", "d-tbad"));
+  };
+
+  D.journey = () => {
+    const et = ["Alta", "Casa", "Días 1–3", "Visita AP", "Empeora"], cara = [70, 120, 130, 80, 135];
+    let b = et.map((e, i) => box(8 + i * 62, 10, 58, 24, "d-acc-soft") + t(37 + i * 62, 26, e, "d-ts")).join("");
+    b += t(10, 52, "Cómo se siente", "d-ts", "start") + `<polyline points="${cara.map((y, i) => `${37 + i * 62},${y}`).join(" ")}" class="d-acc-line" fill="none"/>`;
+    b += cara.map((y, i) => `<circle cx="${37 + i * 62}" cy="${y}" r="7" class="${y > 110 ? "d-bad" : "d-ok"}"/>`).join("");
+    b += line(8, 100, 312, 100, "d-grid") + t(312, 96, "bien", "d-ts", "end") + t(312, 150, "mal", "d-ts", "end");
+    return svg(b + t(160, 172, "Puntos de dolor: dónde la curva cae", "d-ts"));
+  };
+
+  D.experiencia = () => {
+    const it = [["Me explicaron qué hacer", 45, 78], ["Sabía a quién llamar", 30, 72], ["No tuve que repetir", 40, 65]];
+    let b = t(160, 16, "% de acuerdo · antes / después", "d-ts");
+    it.forEach(([n, a, d], j) => { const y = 34 + j * 46; b += t(8, y, n, "d-t", "start") + box(8, y + 6, a * 2.6, 12, "d-soft-fill", 2) + t(14 + a * 2.6, y + 16, a + " %", "d-ts", "start") + box(8, y + 20, d * 2.6, 12, "d-acc-fill", 2) + t(14 + d * 2.6, y + 30, d + " %", "d-tacc", "start"); });
+    return svg(b, 180);
+  };
+
+  /* ---- Ejemplos visuales con el caso ficticio (IC) ---- */
+  D["ej-ishikawa"] = () => {
+    const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
+    let b = `<line x1="16" y1="120" x2="380" y2="120" class="d-thick"/><rect x="380" y="92" width="92" height="56" rx="4" class="d-acc-soft"/>` + tt(426, 116, "Reingreso", "d-tb") + tt(426, 132, "a 30 días");
+    const fam = [["Personas", 60, 1, ["Cuidadora sin", "formación"]], ["Circuitos", 180, 1, ["Sin aviso", "a primaria"]], ["Medicación", 300, 1, ["Cambios no", "explicados"]], ["Sistemas", 60, -1, ["Sin alerta", "de alta"]], ["Entorno", 180, -1, ["Altas en fin", "de semana"]], ["Organización", 300, -1, ["Agenda de AP", "a 9 días"]]];
+    fam.forEach(([n, x, d, c]) => {
+      const y = d > 0 ? 30 : 210;
+      b += `<line x1="${x}" y1="${y}" x2="${x + 56}" y2="120" class="d-line"/>` + tt(x, d > 0 ? 20 : 228, n, "d-tb");
+      const cy = d > 0 ? 66 : 168;
+      b += `<rect x="${x + 22}" y="${cy - 13}" width="76" height="30" rx="3" class="d-bad-soft"/>` + tt(x + 60, cy, c[0]) + tt(x + 60, cy + 12, c[1]);
+    });
+    return `<svg viewBox="0 0 480 240" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+  };
+
+  D["ej-pareto"] = () => {
+    const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const v = [[["Sin revisión", "precoz"], 14], [["Medicación"], 9], [["Autocuidado"], 6], [["Infección"], 3], [["Otros"], 2]]; let acc = 0, tot = 34; const pts = [];
+    let b = `<line x1="24" y1="150" x2="410" y2="150" class="d-line"/><line x1="24" y1="150" x2="24" y2="14" class="d-line"/>`;
+    v.forEach(([n, x], i) => { const h = x * 8, xx = 40 + i * 74; acc += x; b += `<rect x="${xx}" y="${150 - h}" width="56" height="${h}" rx="1" class="${i < 2 ? "d-acc-fill" : "d-soft-fill"}"/>` + tt(xx + 28, 145 - h, String(x)) + n.map((l, k) => tt(xx + 28, 164 + k * 12, l)).join(""); pts.push(`${xx + 28},${150 - (acc / tot) * 130}`); });
+    b += `<polyline points="${pts.join(" ")}" class="d-line" fill="none"/>` + pts.map((p) => `<circle cx="${p.split(",")[0]}" cy="${p.split(",")[1]}" r="3" class="d-dot"/>`).join("");
+    return sv(420, 200, b + tt(210, 196, "Motivo principal de 34 reingresos revisados (ficticio)"));
+  };
+
+  D["ej-histograma"] = () => {
+    const v = [1, 3, 4, 6, 7, 5, 3, 2, 2, 1]; let b = line(24, 150, 310, 150) + line(24, 150, 24, 14);
+    v.forEach((x, i) => { b += box(30 + i * 27, 150 - x * 17, 23, x * 17, i < 3 ? "d-acc-fill" : "d-soft-fill", 1) + t(41 + i * 27, 164, String(2 + i * 2), "d-ts"); });
+    b += line(98, 16, 98, 150, "d-median") + t(102, 24, "objetivo: 7 días", "d-tacc", "start");
+    return svg(b + t(165, 182, "Días del alta a la primera visita en AP (34 altas, ficticio)", "d-ts"), 190);
+  };
+  D["ej-dispersion"] = () => {
+    const p = [[3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 1], [9, 0], [10, 1], [11, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1], [18, 1], [20, 1], [6, 1], [9, 0], [12, 0], [17, 1]];
+    let b = line(28, 150, 310, 150) + line(28, 150, 28, 14) + t(22, 44, "Sí", "d-ts", "end") + t(22, 124, "No", "d-ts", "end");
+    b += p.map(([d, r], i) => `<circle cx="${30 + d * 14}" cy="${r ? 40 + (i % 3) * 6 : 120 + (i % 3) * 6}" r="5" class="${r ? "d-bad" : "d-acc"}"/>`).join("");
+    return svg(b + t(168, 168, "Días hasta la primera visita →", "d-ts") + t(168, 184, "¿Reingresó? (ficticio): más días, más reingresos", "d-ts"), 190);
+  };
+  D["ej-control"] = () => {
+    const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    const ys = [70, 76, 66, 74, 68, 78, 72, 112, 118, 116, 122, 120, 124, 118];
+    let b = `<line x1="24" y1="160" x2="400" y2="160" class="d-line"/><line x1="24" y1="160" x2="24" y2="14" class="d-line"/>`;
+    b += `<line x1="24" y1="44" x2="214" y2="44" class="d-line-dash"/><line x1="24" y1="72" x2="214" y2="72" class="d-median"/><line x1="24" y1="100" x2="214" y2="100" class="d-line-dash"/>`;
+    b += tt(28, 40, "límite superior", "d-ts", "start") + tt(28, 96, "límite inferior", "d-ts", "start") + tt(210, 68, "media", "d-ts", "end");
+    b += `<line x1="222" y1="14" x2="222" y2="160" class="d-line-dash"/>` + tt(228, 26, "cambio", "d-tacc", "start");
+    b += `<polyline points="${ys.map((y, i) => `${36 + i * 26},${y}`).join(" ")}" class="d-acc-line" fill="none"/>` + ys.map((y, i) => `<circle cx="${36 + i * 26}" cy="${y}" r="4" class="d-acc"/>`).join("");
+    b += tt(310, 146, "7 semanas seguidas bajo los límites", "d-tok") + tt(310, 92, "menos altas sin visita", "d-ts");
+    return sv(420, 186, b + tt(210, 180, "% de altas sin visita en 7 días, por semana (ficticio) · más abajo = mejor"));
+  };
+
+  D["ej-matriz"] = () => {
+    const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    let b = `<line x1="40" y1="200" x2="410" y2="200" class="d-line"/><line x1="40" y1="200" x2="40" y2="12" class="d-line"/>`;
+    b += `<rect x="44" y="16" width="180" height="88" class="d-ok-soft"/><rect x="226" y="16" width="180" height="88" class="d-acc-soft"/><rect x="44" y="106" width="180" height="90" class="d-soft"/><rect x="226" y="106" width="180" height="90" class="d-bad-soft"/>`;
+    b += tt(52, 32, "Hacer ya", "d-tb", "start") + tt(234, 32, "Proyecto", "d-tb", "start") + tt(52, 190, "Si sobra tiempo", "d-ts", "start") + tt(234, 190, "Descartar", "d-ts", "start");
+    [["Huecos de revisión", 70, 56, "d-ok"], ["Hoja de medicación", 70, 76, "d-ok"], ["Teléfono de referencia", 70, 96, "d-ok"], ["Alerta en urgencias", 252, 64, "d-warn"], ["Nueva consulta de IC", 252, 150, "d-bad"]].forEach(([n, x, y, c]) => { b += `<circle cx="${x}" cy="${y - 4}" r="6" class="${c}"/>` + tt(x + 10, y, n, "d-t", "start"); });
+    return sv(420, 230, b + tt(225, 222, "Esfuerzo →") + `<text x="20" y="106" class="d-ts" text-anchor="middle" transform="rotate(-90 20 106)">Impacto →</text>`);
+  };
+
+  D["ej-impulsores"] = () => {
+    const tt = (x, y, s, c = "d-ts", an = "middle") => `<text x="${x}" y="${y}" class="${c}" text-anchor="${an}">${s}</text>`;
+    const sv = (w, h, b) => `<svg viewBox="0 0 ${w} ${h}" role="img" class="diagrama" xmlns="http://www.w3.org/2000/svg">${defs}${b}</svg>`;
+    let b = `<rect x="6" y="80" width="96" height="56" rx="4" class="d-acc-soft"/>` + tt(54, 104, "Reingresos", "d-tb") + tt(54, 122, "23 % → 15 %");
+    [[38, "Continuidad al alta", ["Aviso a primaria", "Huecos en 7 días"]], [108, "Autocuidado en casa", ["Hoja de medicación", "Educación con cuidadora"]], [178, "Detección precoz", ["Teléfono de referencia", "Alerta en urgencias"]]].forEach(([y, n, ideas]) => {
+      b += `<rect x="140" y="${y - 16}" width="140" height="32" rx="4" class="d-box"/>` + tt(210, y + 4, n, "d-t") + `<line x1="140" y1="${y}" x2="102" y2="108" class="d-line" marker-end="url(#fl)"/>`;
+      ideas.forEach((s, k) => { const yy = y + (k ? 12 : -12); b += `<rect x="318" y="${yy - 10}" width="150" height="20" rx="3" class="d-ok-soft"/>` + tt(393, yy + 4, s, "d-ts") + `<line x1="318" y1="${yy}" x2="280" y2="${y}" class="d-line" marker-end="url(#fl)"/>`; });
+    });
+    return sv(476, 216, b + tt(54, 30, "Objetivo", "d-tacc") + tt(210, 14, "Impulsores", "d-tacc") + tt(393, 14, "Ideas de cambio", "d-tacc"));
+  };
+
 
   window.DIAGRAMAS = D;
 })();

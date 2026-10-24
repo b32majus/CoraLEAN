@@ -13,7 +13,7 @@ Que nada de valor de una reunión se pierda y que el proyecto avance sin tener q
 
 | Tipo de reunión | Para el grupo | Para el líder | Para la ficha |
 |---|---|---|---|
-| **Sesión de grupo** | **Acta de seguimiento** (compartible) | **Documento de trabajo** (completo) | Cambios propuestos |
+| **Sesión de grupo** | **Acta de seguimiento** y **correo con el acta**, listo para enviar | **Documento de trabajo** (completo) | Cambios propuestos |
 | **Entrevista individual** | — (es confidencial) | **Ficha de entrevista** | Cambios propuestos |
 
 ## Entrada
@@ -49,19 +49,21 @@ Pide lo que falte de esta lista:
 5. **Compara con el guion** (si lo hay): qué objetivos se cubrieron y cuáles no.
 
 6. **Genera los documentos** con las plantillas:
-   - Sesión de grupo: `plantillas/acta-seguimiento.md` y `plantillas/documento-lider.md`.
+   - Sesión de grupo: `plantillas/acta-seguimiento.md`, `plantillas/correo-acta.md` y `plantillas/documento-lider.md`.
    - Entrevista: `plantillas/ficha-entrevista.md`.
 
 7. **Propón los cambios a la ficha** (añadir, modificar, cerrar), cada uno con su origen (cita o minuto). Pide al líder que confirme. Cuando confirme, entrega la ficha completa con la versión nueva.
 
-8. **Comprueba antes de entregar:**
+8. **Registro.** Indica dónde guardar cada documento en el registro del proyecto (`comun/registro-proyecto.md`): acta y documento del líder en `03_sesiones/`, ficha de entrevista en `02_entrevistas/`.
+
+9. **Comprueba antes de entregar:**
    - cada decisión tiene una cita que la respalda;
    - no hay ningún responsable ni fecha inventados;
    - todo lo dudoso está marcado;
    - el acta no atribuye opiniones a personas;
    - no quedan datos de pacientes.
 
-9. **Si el líder hizo el paso 2**, añade al documento del líder una breve comparación: en qué coincidís, qué encontraste que no mencionó, y qué mencionó que no aparece en la transcripción.
+10. **Si el líder hizo el paso 2**, añade al documento del líder una breve comparación: en qué coincidís, qué encontraste que no mencionó, y qué mencionó que no aparece en la transcripción.
 
 ## El acta de seguimiento (para el grupo)
 
@@ -69,6 +71,17 @@ Pide lo que falte de esta lista:
 - Decisiones, acuerdos con responsable y fecha, pendientes, dudas abiertas, próxima reunión.
 - **No atribuye opiniones a personas.** Solo se nombran los responsables de las acciones (por el nombre que el líder indique, o por rol).
 - Las cosas dudosas aparecen como "Pendiente de confirmar" para que el grupo las aclare.
+
+## El correo con el acta
+
+Es lo que el líder envía al grupo después de la reunión. Sigue `plantillas/correo-acta.md`:
+- asunto claro con proyecto, sesión y fecha;
+- quién participó (por rol o por el nombre que indique el líder), qué se trabajó, qué se decidió y los compromisos con responsable y fecha;
+- lo pendiente de confirmar, con una petición explícita de corrección y plazo;
+- si el proyecto tiene presentación de seguimiento, una línea con **qué cambia en la presentación** («añadido el mapa validado; actualizadas las acciones»);
+- tono cordial y breve: se lee en el móvil.
+
+No incluye opiniones atribuidas a personas ni nada que no esté en el acta.
 
 ## El documento de trabajo (para el líder)
 
@@ -82,7 +95,8 @@ Todo el contenido de valor, más:
 
 - `recursos/reglas-de-extraccion.md`
 - `plantillas/acta-seguimiento.md`
+- `plantillas/correo-acta.md`
 - `plantillas/documento-lider.md`
 - `plantillas/ficha-entrevista.md`
-- `ejemplos/ejemplo-sesion-transcripcion.md` → `ejemplos/ejemplo-sesion-acta.md` y `ejemplos/ejemplo-sesion-documento-lider.md`
+- `ejemplos/ejemplo-sesion-transcripcion.md` → `ejemplos/ejemplo-sesion-acta.md`, `ejemplos/ejemplo-sesion-correo.md` y `ejemplos/ejemplo-sesion-documento-lider.md`
 - `ejemplos/ejemplo-entrevista-transcripcion.md` → `ejemplos/ejemplo-entrevista-ficha.md`

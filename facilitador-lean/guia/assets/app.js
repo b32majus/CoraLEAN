@@ -47,7 +47,7 @@
       if (m.id === momentoActual && m.pasos.length) h += `<div class="nav-sub">${m.pasos.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("")}</div>`;
     });
     h += `<div class="nav-g">En cada sesión</div>` + G.cadaSesion.map((pid) => it(`paso-${pid}`, paso(pid).titulo, actual === `paso-${pid}`)).join("");
-    h += `<div class="nav-g">Biblioteca</div>` + it("herramientas", "Herramientas Lean", actual.startsWith("herramienta")) + it("tecnicas", "Técnicas de facilitación", actual === "tecnicas") + it("plantillas", "Plantillas", actual === "plantillas") + it("bibliografia", "Bibliografía y fuentes", actual === "bibliografia");
+    h += `<div class="nav-g">Biblioteca</div>` + it("herramientas", "Herramientas Lean", actual.startsWith("herramienta")) + it("tecnicas", "Técnicas de facilitación", actual === "tecnicas") + it("convenciones", "Convenciones gráficas", actual === "convenciones") + it("plantillas", "Plantillas", actual === "plantillas") + it("bibliografia", "Bibliografía y fuentes", actual === "bibliografia");
     h += `<div class="nav-g">Tu proyecto</div>` + it("ficha", "La ficha del proyecto", actual === "ficha") + it("instalar", "Configura tu asistente", actual === "instalar");
     document.getElementById("nav").innerHTML = h;
   }
@@ -273,6 +273,8 @@
           <div class="callout tip"><span class="ico">✓</span><div><b>Consejo práctico</b>${esc(h.consejo)}</div></div>
         </div>
       </div>
+      ${h.ejemplo ? `<div class="card"><h3>Ejemplo (caso ficticio)</h3><div class="ejemplo-v"><div class="diag">${diag(h.ejemplo.diag)}</div><p>${esc(h.ejemplo.texto)}</p></div></div>` : ""}
+      ${h.colores ? `<p class="nota">Símbolos para dibujarlo: <a href="#convenciones">convenciones gráficas</a>.</p>` : ""}
       ${h.colores ? `<div><div class="sec-t">Código de colores en la pared</div>${leyenda()}<p class="nota" style="margin-top:8px">Pega en un lateral una leyenda con un pósit de cada color y su significado. <a href="imprimir.html#leyenda" target="_blank" rel="noopener">Imprimir la leyenda</a></p></div>` : ""}
       <div><div class="sec-t">Recursos</div><div class="enlaces">
         ${ps ? `<a class="chip skill" href="#paso-${ps.id}">Con CoraLEAN: ${esc(ps.titulo)}</a>` : `<a class="chip skill" href="#paso-elegir-herramienta">Con CoraLEAN: elige y prepara la sesión</a>`}
@@ -290,6 +292,44 @@
       <div class="tec-grid">${G.tecnicas.map((t) => `<article class="card tec ${t.id === "parking" ? "dest" : ""}" id="t-${t.id}"><h2>${esc(t.nombre)}</h2><p><b>Para qué:</b> ${esc(t.para)}</p><p><b>Cómo:</b> ${esc(t.como)}</p><div class="frase">«${esc(t.frase)}»</div></article>`).join("")}</div>
       <h2 style="font-size:22px">Situaciones difíciles</h2>
       <div class="card tabla-w"><table><thead><tr><th>Situación</th><th>Qué hacer</th></tr></thead><tbody>${G.dificiles.map(([s, q]) => `<tr><td><b>${esc(s)}</b></td><td>${esc(q)}</td></tr>`).join("")}</tbody></table></div>
+    </div>`;
+  }
+
+  function simbolo(tipo) {
+    const s = (b) => `<svg viewBox="0 0 120 64" class="diagrama" style="max-width:150px" aria-hidden="true"><defs><marker id="fc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker></defs>${b}</svg>`;
+    const S = {
+      inicio: '<rect x="14" y="16" width="92" height="32" rx="16" class="d-acc-soft"/>',
+      actividad: '<rect x="14" y="14" width="92" height="36" rx="3" class="d-box"/>',
+      decision: '<path d="M60 6 L104 32 L60 58 L16 32 Z" class="d-box"/>',
+      espera: '<path d="M60 8 L94 56 L26 56 Z" class="d-box"/><text x="60" y="48" text-anchor="middle" class="d-tb">E</text>',
+      documento: '<path d="M22 12 H98 V48 Q79 58 60 48 T22 48 Z" class="d-box"/>',
+      sistema: '<ellipse cx="60" cy="16" rx="30" ry="8" class="d-box"/><path d="M30 16 V48 A30 8 0 0 0 90 48 V16" class="d-box"/>',
+      flujo: '<line x1="12" y1="32" x2="106" y2="32" class="d-line" marker-end="url(#fc)"/>',
+      info: '<line x1="12" y1="32" x2="106" y2="32" class="d-line-dash" marker-end="url(#fc)"/>',
+      carril: '<rect x="4" y="12" width="112" height="40" class="d-lane"/><text x="10" y="36" class="d-ts">Atención primaria</text>',
+      problema: '<path d="M60 6 L68 24 L88 22 L74 36 L84 54 L60 44 L36 54 L46 36 L32 22 L52 24 Z" class="d-bad-soft"/>',
+      demanda: '<rect x="20" y="10" width="80" height="44" class="d-box"/><text x="60" y="30" text-anchor="middle" class="d-ts">Demanda</text><text x="60" y="44" text-anchor="middle" class="d-ts">20 altas/sem</text>',
+      paso: '<rect x="24" y="4" width="72" height="24" class="d-box"/><text x="60" y="20" text-anchor="middle" class="d-ts">Paso</text><rect x="24" y="30" width="72" height="30" class="d-soft"/><text x="30" y="42" class="d-ts">TP: 20 min</text><text x="30" y="55" class="d-ts">Personas: 2</text>',
+      empujar: '<rect x="12" y="24" width="84" height="16" class="d-soft"/><path d="M20 24 L28 40 M36 24 L44 40 M52 24 L60 40 M68 24 L76 40 M84 24 L92 40" class="d-line"/><path d="M96 18 L110 32 L96 46 Z" class="d-head"/>',
+      tirar: '<path d="M90 40 A28 20 0 1 0 34 40" class="d-acc-line" fill="none" marker-end="url(#fc)"/>',
+      manual: '<line x1="12" y1="32" x2="106" y2="32" class="d-line" marker-end="url(#fc)"/><text x="60" y="24" text-anchor="middle" class="d-ts">llamada / papel</text>',
+      electronica: '<path d="M12 40 L46 40 L60 22 L74 40 L106 40" class="d-line" fill="none" marker-end="url(#fc)"/>',
+      tiempo: '<polyline points="8,20 34,20 34,46 52,46 52,20 78,20 78,46 96,46 96,20 114,20" class="d-line"/>',
+      mejora: '<path d="M60 4 L66 20 L84 12 L76 28 L96 32 L76 38 L84 54 L66 44 L60 60 L54 44 L36 54 L44 38 L24 32 L44 28 L36 12 L54 20 Z" class="d-ok-soft"/>'
+    };
+    return s(S[tipo] || "");
+  }
+
+  function vistaConvenciones() {
+    const fila = ([tipo, nombre, sig]) => `<tr><td style="width:170px">${simbolo(tipo)}</td><td><b>${esc(nombre)}</b></td><td>${esc(sig)}</td></tr>`;
+    const proceso = [["inicio", "Inicio / fin", "Dónde empieza y termina el proceso que mapeamos"], ["actividad", "Actividad", "Un paso: verbo + objeto («elaborar informe de alta»)"], ["decision", "Decisión", "Una pregunta con varias salidas («¿paciente complejo?»)"], ["espera", "Espera", "El paciente, un documento o una muestra esperan; anota el tiempo"], ["documento", "Documento", "Un papel o informe que se genera o se pasa"], ["sistema", "Sistema de información", "Donde se registra o se consulta algo"], ["flujo", "Flujo del paciente", "El paciente pasa al paso siguiente"], ["info", "Flujo de información", "La información va de un sitio a otro (interconsulta, informe)"], ["carril", "Carril", "Quién hace los pasos: servicio o nivel asistencial"], ["problema", "Problema", "Dónde falla o se atasca (o pósit rosa)"]];
+    const vsm = [["demanda", "Demanda", "Cuántos pacientes llegan, cuándo y de qué tipos"], ["paso", "Paso con su tabla de datos", "Tiempo de proceso, personas que intervienen, % que sale bien a la primera"], ["espera", "Espera o cola", "Dónde se acumulan pacientes o tareas, con el tiempo o el número"], ["empujar", "Empujar", "El paso anterior envía al siguiente esté o no preparado"], ["tirar", "Tirar", "El paso siguiente pide cuando está listo"], ["manual", "Información manual", "Llamada, papel, conversación"], ["electronica", "Información electrónica", "Sistema, correo, alerta"], ["tiempo", "Línea de tiempo", "Arriba, tiempos de proceso; abajo, esperas. Al final, tiempo total y tiempo de valor"], ["mejora", "Oportunidad de mejora", "Dónde el grupo ve una mejora posible (al parking hasta que toque)"]];
+    app.innerHTML = `<div class="ancho">
+      <div class="intro"><div class="etq">Biblioteca</div><h1>Convenciones gráficas</h1><p>Usar siempre los mismos símbolos permite que cualquiera lea un mapa sin explicaciones. En la pared se pueden imitar con pósits de distinta forma o a mano; lo importante es ponerlos en la leyenda, junto al código de colores.</p></div>
+      <div class="card"><h3>Código de colores</h3>${leyenda()}</div>
+      <div class="card tabla-w"><h3>Mapa de proceso</h3><table><tbody>${proceso.map(fila).join("")}</tbody></table></div>
+      <div class="card tabla-w"><h3>VSM (mapa de flujo de valor)</h3><table><tbody>${vsm.map(fila).join("")}</tbody></table></div>
+      <div class="enlaces"><a class="chip" href="#herramienta-carriles">Mapa de proceso por carriles</a><a class="chip" href="#herramienta-vsm">VSM</a><a class="chip" href="imprimir.html#leyenda" target="_blank" rel="noopener">Imprimir la leyenda de colores</a></div>
     </div>`;
   }
 
@@ -323,7 +363,18 @@
       <div class="card"><h3>El ciclo de cada sesión</h3><div class="flujo-ficha"><span>Retomas con la ficha</span><i>→</i><span>Trabajas</span><i>→</i><span>CoraLEAN propone cambios</span><i>→</i><span>Confirmas</span><i>→</i><span>Guardas la versión nueva</span></div>
         <div class="enlaces" style="margin-top:12px"><a class="chip skill" href="#paso-donde-estamos">Retoma el proyecto</a><a class="chip skill" href="#paso-cerrar-sesion">Cierra la sesión</a></div></div>
       <div class="rej-2">
-        <div class="card"><h3>Dos niveles de memoria</h3><p><b>La ficha</b> (1–3 páginas): el estado actual del proyecto. Siempre la última versión, con su fecha.</p><p><b>El registro del proyecto</b>: una carpeta donde guardas las actas, las fichas de entrevista, los mapas y los datos. La ficha los cita en «Fuentes y documentos» para poder volver al original.</p></div>
+        <div class="card"><h3>Dos niveles de memoria</h3><p><b>La ficha</b> (1–3 páginas): el estado actual del proyecto. Se sustituye por la versión nueva en cada sesión.</p><p><b>El registro del proyecto</b>: la carpeta con todos los documentos de trabajo. Se añade; nunca se borra. La ficha los cita en «Fuentes y documentos» para volver al original.</p>
+          <pre class="bloque">[proyecto]/
+├── 00_ficha/          solo la última versión
+├── 01_contexto/       encargo, PAI, boceto
+├── 02_entrevistas/    fichas por rol (sin nombres)
+├── 03_sesiones/       guiones, actas, documentos del líder
+├── 04_analisis/       mapas, brechas, causas
+├── 05_datos/          hojas de recogida, indicadores
+├── 06_entregables/    presentaciones e informes
+└── indice-registro.md</pre>
+          <p class="nota">Nombres de archivo: <code>AAAA-MM-DD_tipo_detalle.md</code>, por ejemplo <code>2026-11-03_acta_sesion-2.md</code>. CoraLEAN te dice en cada caso dónde guardarlo.</p>
+          <div class="enlaces">${enlacePlantilla("indice-registro")}</div></div>
         <div class="card"><h3>Dónde guardarla</h3><ul>
           <li><b>Project de ChatGPT o Claude:</b> súbela como archivo del proyecto y sustitúyela en cada versión (borra la anterior).</li>
           <li><b>OpenCode:</b> en la carpeta del proyecto.</li>
@@ -395,6 +446,7 @@
     else if (h === "herramientas") vistaHerramientas();
     else if (h === "tecnicas") vistaTecnicas();
     else if (h === "plantillas") vistaPlantillas();
+    else if (h === "convenciones") vistaConvenciones();
     else if (h === "bibliografia") vistaBibliografia();
     else if (h === "ficha") vistaFicha();
     else if (h === "instalar") vistaInstalar();

@@ -51,6 +51,7 @@ En todos los modos, el mapa resultante es un **borrador** hasta que lo valida el
 
 ## Entrega
 
+- `recursos/convenciones-graficas.md`
 - `plantillas/tabla-proceso.md` rellena.
 - Un **diagrama Mermaid** (flowchart con un subgrafo por nivel asistencial). Si la plataforma no lo dibuja, el líder puede pegarlo en mermaid.live o pedir un esquema en texto.
 - Métricas del VSM (si aplica).
@@ -65,6 +66,7 @@ En todos los modos, el mapa resultante es un **borrador** hasta que lo valida el
 - Incluye las excepciones frecuentes (fines de semana, altas de tarde, pacientes que viven solos).
 - No mezcles soluciones en el mapa. Si aparecen, van al parking de ideas (pósits verdes).
 - Si el grupo va a hacer el mapa en la pared, recomienda el código de colores y la leyenda en un lateral, y el lienzo imprimible de la guía.
+- Usa los símbolos de `recursos/convenciones-graficas.md` y añade siempre una leyenda al diagrama.
 
 ## Recursos
 

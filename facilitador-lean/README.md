@@ -1,4 +1,4 @@
-# CoraLEAN — skills y guía (v0.3)
+# CoraLEAN — skills y guía (v0.4)
 
 CoraLEAN acompaña a profesionales sanitarios que lideran proyectos de mejora: les ayuda a pensar el problema, preparar y conducir reuniones, entrevistar, procesar lo que pasa en cada sesión, elegir herramientas Lean y no perder el hilo del proyecto. No sustituye a quien lidera: le enseña a hacerlo mientras lo hace.
 
@@ -24,10 +24,13 @@ Funciona como **skills** (formato abierto `SKILL.md`) para ChatGPT, Claude y Ope
 | `procesar-reunion` | De la grabación o las notas: acta, documento del líder (o ficha de entrevista) y cambios a la ficha |
 | `sintetizar-entrevistas` | Situación de partida para validar en grupo |
 | `preparar-sesion` | Guion minuto a minuto (lanzamiento, validación, mapeo, seguimiento…) y convocatoria |
-| `elegir-herramienta` | Una herramienta, por qué ahora, cuándo no y cómo empezar (24 herramientas) |
+| `elegir-herramienta` | Una herramienta, por qué ahora, cuándo no y cómo empezar (29 herramientas) |
 | `mapear-proceso` | Mapa por niveles asistenciales o VSM, con diagrama y hoja de recogida de tiempos |
 | `comparar-con-estandar` | Brechas frente al PAI o protocolo y borrador de adaptación local |
 | `cerrar-sesion` | Terminar sin perder nada: ficha actualizada y mensaje para retomar |
+| `preparar-entregable` | Presentación de seguimiento que evoluciona e informe de continuidad, solo con lo trabajado y confirmado |
+| `experiencia-paciente` | Modalidades de participación de pacientes (pros y contras), entrevistas, grupos y mapa de experiencia |
+| `evaluar-experiencia` | PREMs validados y encuesta a profesionales, antes y después del cambio |
 
 Los ejemplos usan un caso **ficticio**: adaptación del PAI de insuficiencia cardiaca en el "Área de Salud del Valle".
 
@@ -40,7 +43,7 @@ Los ejemplos usan un caso **ficticio**: adaptación del PAI de insuficiencia car
 
 ```
 facilitador-lean/
-├── comun/                 reglas comunes, privacidad y grabaciones, plantilla de la ficha
+├── comun/                 reglas comunes, privacidad y grabaciones, ficha y registro del proyecto
 ├── skills/<skill>/        SKILL.md + plantillas/ + recursos/ + ejemplos/
 ├── proyecto/              INSTRUCCIONES.md del plan B
 ├── guia/                  guía web estática (se publica en la rama gh-pages)
@@ -54,4 +57,4 @@ Ejecuta `./empaquetar.sh`. Genera en `dist/`: un `.zip` por skill, `dist/skills/
 
 ## Pendiente
 
-Ver `REGISTRO_MEJORAS.md` (prioridad 2: entregables de continuidad, experiencia de pacientes y profesionales, modos Copilot y planes gratuitos tras verificarlos, fichas ampliadas).
+Ver `REGISTRO_MEJORAS.md` (modos Copilot y planes gratuitos tras verificarlos, imágenes propias de la experta, revisión de entornos con gestión de archivos, prioridad 3).

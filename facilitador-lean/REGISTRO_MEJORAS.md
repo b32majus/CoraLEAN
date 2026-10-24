@@ -132,3 +132,17 @@ No «¿te gusta?», sino:
 | C1, C2, C3 | Implementado: fecha de última actualización y «Fuentes y documentos» en la ficha; skill `cerrar-sesion`; reanudación en `donde-estamos` |
 | F1, F2 | Implementado: configuración paso a paso por entorno (ChatGPT, Claude, OpenCode; Copilot y versiones gratuitas marcados como «en estudio») y primer mensaje |
 | Resto de prioridad 2 y 3 | Pendiente |
+
+## Estado de implementación — v0.4 (24/10/2026)
+
+| ID | Estado en v0.4 |
+|---|---|
+| C4 | Implementado: registro del proyecto (estructura de carpetas, nombres de archivo, índice) en `comun/registro-proyecto.md`; las skills indican dónde guardar cada documento |
+| D1 | Implementado: `procesar-reunion` genera también el correo con el acta, con «qué cambia en la presentación» |
+| D2, D3 | Implementado: skill `preparar-entregable` (presentación de seguimiento con estructura estable y novedades marcadas; informe de continuidad); solo ordena lo trabajado y confirmado; .pptx/.docx si el entorno puede crearlos |
+| E1, E2, E3 | Implementado: skill `experiencia-paciente` (modalidades con pros y contras, guion con pacientes, grupo de discusión, mapa de experiencia integrado con el mapa del proceso; comprobar antes qué permite la organización) |
+| E4, E5 | Implementado: skill `evaluar-experiencia` (PREMs validados como IEXPAC, con referencia verificada; encuesta breve a profesionales; Forms; privacidad) |
+| B8 | Implementado: convenciones gráficas de mapas de proceso y VSM (skill y página de la guía con símbolos dibujados) |
+| B9 | Ampliado: ejemplos visuales con el caso ficticio en 11 herramientas |
+| B10 | Ampliado: histograma, diagrama de dispersión, gráfico de control, mapa de experiencia y medición de la experiencia |
+| Pendiente | Imágenes propias de la experta para las fichas; C5 (comportamiento de entornos con gestión de archivos); F3–F6; prioridad 3 |

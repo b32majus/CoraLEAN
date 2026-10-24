@@ -2,6 +2,9 @@
 
 Cada ficha: qué es, cómo se hace, un ejemplo sanitario y los errores típicos. Para profundizar, recomienda las fuentes de referencia que aparecen al final de `tabla-herramientas.md`.
 
+## Convenciones gráficas
+Para dibujar mapas de proceso y VSM con símbolos que todo el mundo entienda, ver `mapear-proceso/recursos/convenciones-graficas.md` (si no tienes acceso, pide al líder que use la página «Convenciones gráficas» de la guía).
+
 ## Código de colores de los pósits (para cualquier mapa en la pared)
 - **Amarillo:** pasos o actividades del proceso (verbo + objeto).
 - **Rosa o rojo:** problemas, incidencias, cosas que fallan.
@@ -85,6 +88,34 @@ Cada ficha: qué es, cómo se hace, un ejemplo sanitario y los errores típicos.
 - **Regla práctica:** seis o más puntos seguidos por encima o por debajo de la mediana suelen indicar un cambio real.
 - **Gráfico de control:** versión más avanzada que añade límites estadísticos; útil cuando hay muchos datos y alguien con experiencia para interpretarlo.
 - **Errores:** sacar conclusiones con pocos puntos; reaccionar a cada subida o bajada.
+
+## Histograma
+- **Qué es:** un gráfico de barras que muestra cómo se reparten los valores de una medida (por ejemplo, los días entre el alta y la primera visita): dónde se concentran, cuánto varían y si hay casos extremos.
+- **Cómo:** 1) recoge al menos 30 datos; 2) divide el rango en 6–10 intervalos iguales; 3) cuenta cuántos caen en cada uno; 4) dibuja una barra por intervalo; 5) marca la mediana y, si existe, el objetivo.
+- **Cómo leerlo:** una sola montaña centrada es un proceso bastante regular; dos montañas suelen indicar dos procesos mezclados (por ejemplo, altas de lunes a viernes frente a altas de fin de semana); una cola larga indica casos que se escapan.
+- **Errores:** pocos datos; mezclar grupos distintos sin darse cuenta; usarlo para ver la evolución en el tiempo (para eso, el gráfico de evolución).
+
+## Diagrama de dispersión
+- **Qué es:** un gráfico de puntos que enfrenta dos variables medidas en los mismos casos (por ejemplo, días hasta la primera visita y reingreso, o edad y tiempo de estancia) para ver si se mueven juntas.
+- **Cómo:** 1) 20–30 pares de datos; 2) la variable que crees que influye en el eje horizontal; 3) un punto por caso; 4) observa si los puntos forman una tendencia.
+- **Cuidado:** que dos variables se muevan juntas no demuestra que una cause la otra; puede haber una tercera detrás. Sirve para apoyar o descartar una hipótesis, no para probarla.
+- **Errores:** sacar conclusiones con pocos puntos; confundir relación con causa.
+
+## Gráfico de control
+- **Qué es:** un gráfico de evolución con dos límites calculados a partir de los propios datos, que marcan la variación esperable del proceso. Ayuda a distinguir la **variación normal** (no conviene reaccionar a cada subida) de las **señales** de que algo ha cambiado de verdad.
+- **Señales habituales:** un punto fuera de los límites; varios puntos seguidos al mismo lado de la línea central; tendencias sostenidas.
+- **Cuándo:** cuando hay muchos datos (por ejemplo, semanales durante meses) y alguien con experiencia para calcularlo e interpretarlo. Con pocos datos, mejor el gráfico de evolución.
+- **Errores:** confundir los límites de control con los objetivos; recalcular los límites cada vez que cambia algo.
+
+## Mapa de experiencia del paciente
+- **Qué es:** el recorrido contado desde el paciente: por cada etapa, qué hace, con quién se encuentra, qué piensa, cómo se siente, sus puntos de dolor y los momentos que más le importan.
+- **Cómo:** ver la skill `experiencia-paciente`.
+- **Errores:** construirlo con lo que los profesionales creen que siente el paciente, sin escucharle.
+
+## Medición de la experiencia (PREMs y encuesta a profesionales)
+- **Qué es:** medir antes y después de un cambio cómo lo viven los pacientes (con un cuestionario validado si existe) y los profesionales (normalmente con una encuesta breve propia).
+- **Cómo:** ver la skill `evaluar-experiencia`.
+- **Errores:** medir solo después; preguntar por satisfacción en lugar de por experiencias concretas; decir que una encuesta propia está validada.
 
 ## 5 porqués
 - **Qué es:** preguntar «¿por qué?» sucesivamente hasta llegar a una causa del proceso sobre la que se pueda actuar. No siempre son cinco.

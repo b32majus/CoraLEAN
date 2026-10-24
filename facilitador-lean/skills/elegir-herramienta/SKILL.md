@@ -1,6 +1,6 @@
 ---
 name: elegir-herramienta
-description: Recomienda la herramienta Lean o de mejora de la calidad adecuada para el momento del proyecto sanitario (gemba, mapa de proceso, VSM, tipos de desperdicio, spaghetti, comparación con el PAI, recogida de datos, gráfico de evolución, 5 porqués, Ishikawa, Pareto, AMFE, diagrama de impulsores, matriz impacto-esfuerzo, matriz de decisión ponderada, PDCA, A3, 5S, trabajo estándar, gestión visual) - una sola herramienta, por qué ahora, cuándo no usarla y cómo empezar. Úsala cuando el líder no sabe qué herramienta usar o duda entre varias.
+description: Recomienda la herramienta Lean o de mejora de la calidad adecuada para el momento del proyecto sanitario (gemba, mapa de proceso, VSM, tipos de desperdicio, spaghetti, comparación con el PAI, mapa de experiencia del paciente, recogida de datos, histograma, diagrama de dispersión, gráfico de evolución, gráfico de control, medición de la experiencia, 5 porqués, Ishikawa, Pareto, AMFE, diagrama de impulsores, matriz impacto-esfuerzo, matriz de decisión ponderada, PDCA, A3, 5S, trabajo estándar, gestión visual) - una sola herramienta, por qué ahora, cuándo no usarla y cómo empezar. Úsala cuando el líder no sabe qué herramienta usar o duda entre varias.
 ---
 
 # Elegir herramienta

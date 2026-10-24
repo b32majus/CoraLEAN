@@ -38,7 +38,7 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
    - fila nueva en el historial de versiones con qué cambió;
    - «Próximo paso» actualizado.
 
-5. **Si el proyecto lleva registro del proyecto** (actas y documentos acumulados), indica qué documentos de hoy conviene guardar en él y con qué nombre (por ejemplo, `2026-11-03_acta-sesion-2.md`).
+5. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
 
 6. **Mensaje para retomar.** Entrega un bloque listo para copiar en la próxima conversación:
    ```
@@ -63,3 +63,4 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
 - Si en la conversación no ha cambiado nada del proyecto, dilo y no generes una versión nueva.
 - Nunca resumas tanto que se pierda una decisión, un responsable o una fecha.
 - La ficha debe seguir siendo manejable (1–3 páginas). El detalle (actas, transcripciones procesadas) va al registro del proyecto y la ficha solo lo referencia en «Fuentes y documentos».
+- Si en la sesión se ha generado un entregable (informe o presentación), regístralo en `06_entregables/` y anota en la ficha su versión y fecha.

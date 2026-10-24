@@ -70,6 +70,9 @@ Y el cierre estándar.
 | Entender cómo funciona hoy el proceso | `mapear-proceso` |
 | Comparar con el PAI o el protocolo | `comparar-con-estandar` |
 | Terminar la sesión sin perder nada | `cerrar-sesion` |
+| Presentación de seguimiento o informe de continuidad | `preparar-entregable` |
+| Incorporar la experiencia de pacientes y cuidadores | `experiencia-paciente` |
+| Medir cómo viven el cambio pacientes y profesionales | `evaluar-experiencia` |
 
 Para analizar causas, priorizar soluciones y planificar pruebas todavía no hay skill específica. Usa `elegir-herramienta` y `preparar-sesion`.
 
