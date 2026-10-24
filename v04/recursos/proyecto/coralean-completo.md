@@ -1,6 +1,66 @@
 # CoraLEAN — conocimiento completo
 
 ---
+<!-- comun/plantilla-cuaderno.md -->
+# Cuaderno del proyecto — [nombre del proyecto]
+
+> Línea evolutiva del proyecto. **Solo se añade al final: nunca se resume ni se reescribe lo anterior.** La foto de hoy está en la ficha del proyecto; aquí está todo el recorrido.
+
+**Última actualización:** (fecha) · **Número de entradas:** 0 · **Ficha vigente:** v[n] ([fecha])
+
+## Índice
+| Nº | Fecha | Tipo de sesión | En una línea |
+|---|---|---|---|
+| 1 | | | |
+
+## Decisiones vigentes
+| Fecha | Decisión | Condición | Sustituye a |
+|---|---|---|---|
+
+## Archivo
+(Cuadernos archivados, con una línea de resumen cada uno. Ejemplo: `cuaderno_2026-T4.md` — entradas 1–14: arranque, entrevistas y validación de la situación de partida.)
+
+## Línea evolutiva
+
+<!-- Pega aquí cada entrada nueva al final, con la plantilla de entrada. -->
+
+---
+<!-- comun/plantilla-entrada-cuaderno.md -->
+### [Nº]. AAAA-MM-DD · [tipo de sesión]
+
+**Con quién (por rol):** · **Duración:** · **Ficha tras esta sesión:** v[n]
+
+**Qué se trabajó**
+- 
+
+**Decisiones**
+| Decisión | Tipo (firme / condicional / aplazada) | Condición | Quién decide |
+|---|---|---|---|
+
+**Hallazgos y datos** (con fuente)
+| Qué | Fuente (rol, documento, fecha) | ¿Hecho, supuesto u opinión? |
+|---|---|---|
+
+**Hipótesis**
+- Nuevas: 
+- Descartadas (y por qué): 
+
+**Acciones**
+| Qué | Responsable | Fecha |
+|---|---|---|
+
+**Parking de ideas**
+- 
+
+**Documentos usados o generados** (ruta en el registro)
+- 
+
+**Qué cambió en la ficha y por qué**
+- 
+
+---
+
+---
 <!-- comun/plantilla-ficha-proyecto.md -->
 # Ficha del proyecto
 
@@ -132,20 +192,36 @@ Grabar ahorra mucho trabajo y permite actas fieles, pero solo con estas condicio
 <!-- comun/registro-proyecto.md -->
 # El registro del proyecto
 
-La memoria del proyecto tiene **dos niveles**:
+La memoria del proyecto tiene **tres capas**:
 
-| Nivel | Qué es | Tamaño | Se actualiza |
+| Capa | Qué es | Tamaño | Se actualiza |
 |---|---|---|---|
-| **Ficha del proyecto** | El estado actual: lo decidido, lo pendiente y lo que se sabe hoy | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
-| **Registro del proyecto** | Todos los documentos de trabajo: actas, fichas de entrevista, mapas, datos, entregables | Crece con el proyecto | Se **añade**; nunca se borra ni se reescribe |
+| **Ficha del proyecto** | La foto de hoy: lo decidido, lo pendiente y lo que se sabe ahora | 1–3 páginas | Se **sustituye** por la versión nueva al cerrar cada sesión |
+| **Cuaderno del proyecto** | La línea evolutiva: una entrada por sesión con lo trabajado, decidido y encontrado | Un solo archivo `.md` que crece | Solo se **añade al final**. Nunca se resume ni se reescribe el historial |
+| **Documentos de trabajo** | Actas, fichas de entrevista, mapas, datos, entregables | Muchos archivos | Se **guardan**; el cuaderno y la ficha los citan |
 
-La ficha cita los documentos del registro en su apartado «Fuentes y documentos», para que siempre se pueda volver al original.
+La ficha se lee siempre primero. El cuaderno se consulta por la parte necesaria (su índice y la tabla de «Decisiones vigentes») y es la fuente principal para reconstruir el proyecto o preparar un informe. La ficha y el cuaderno citan los documentos en «Fuentes y documentos», para volver al original.
+
+## Cómo se actualiza el cuaderno
+
+El cuaderno nunca se reescribe: solo se añade una entrada al final. Cómo se hace depende del entorno:
+
+| Situación | Qué hace CoraLEAN |
+|---|---|
+| **El entorno edita archivos** (Work, Cowork, OpenCode, agentes de Copilot) | Añade la entrada al final del cuaderno y lo dice. No toca lo anterior |
+| **Entorno manual y cuaderno corto** (hasta unas 15 páginas) | Entrega el cuaderno completo con la entrada añadida, y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, se ha perdido algo. Recuerda sustituirlo en la base de conocimiento (descargar o «añadir a la fuente») y borrar la versión anterior |
+| **Entorno manual y cuaderno largo** | Entrega **solo la entrada nueva**, indica dónde pegarla y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`), dejando un resumen en el cuaderno vivo |
+
+## Versión para consultar
+
+Quien no trabaja en Markdown puede pedir una versión para consultar: un `.docx` con buen formato si el entorno puede crear archivos, o el texto con tablas simples listo para pegar en Word. La guía web incluye además un **visor local** que muestra cualquier `.md` con formato, sin enviar nada a ningún sitio.
 
 ## Estructura de carpetas
 
 ```
 [nombre-del-proyecto]/
 ├── 00_ficha/            ficha-proyecto_v3_2026-11-12.md   ← solo la última versión
+│                        cuaderno-proyecto.md                ← línea evolutiva, solo se añade
 ├── 01_contexto/         encargo, estándar (PAI), ficha de contexto, boceto
 ├── 02_entrevistas/      fichas de entrevista por rol y síntesis (nunca transcripciones con nombres)
 ├── 03_sesiones/         guiones, actas y documentos del líder de cada sesión
@@ -167,13 +243,13 @@ La fecha delante hace que se ordenen solos. El tipo y el detalle permiten encont
 
 ## Dónde vive el registro según el entorno
 
-| Entorno | Ficha | Registro |
+| Entorno | Ficha y cuaderno | Documentos de trabajo |
 |---|---|---|
-| Project de ChatGPT o Claude | Archivo del proyecto (solo la última versión) | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
-| OpenCode | Archivo en la carpeta del proyecto | La propia carpeta del proyecto con la estructura de arriba |
-| Conversación suelta | Documento propio que pegas o adjuntas | Carpeta propia |
+| Project de ChatGPT o Claude | Archivos del proyecto: la última ficha y el cuaderno. Al cerrar, sustituye cada uno por su versión nueva y borra la anterior | Carpeta en tu ordenador o en el almacenamiento de tu organización; sube al proyecto solo lo que necesites en cada sesión |
+| OpenCode, Work, Cowork | Archivos en la carpeta del proyecto; el cuaderno se actualiza solo | La propia carpeta del proyecto con la estructura de arriba |
+| Conversación suelta | Documentos propios que pegas o adjuntas | Carpeta propia |
 
-Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los del registro. Aun así, **la ficha es lo primero que se lee**.
+Si el entorno permite tener muchos archivos en el proyecto, se pueden subir también los documentos de trabajo. Aun así, **la ficha es lo primero que se lee**. Con límite de archivos, el cuaderno es lo más útil después de la ficha: un solo archivo con todo el recorrido.
 
 ## Privacidad del registro
 
@@ -183,7 +259,7 @@ Si el entorno permite tener muchos archivos en el proyecto, se pueden subir tamb
 
 ## Índice del registro
 
-Plantilla: `plantilla-indice-registro.md`. CoraLEAN propone la fila nueva del índice cada vez que genera un documento para el registro.
+Plantillas: `plantilla-cuaderno.md`, `plantilla-entrada-cuaderno.md` y `plantilla-indice-registro.md`. CoraLEAN propone la fila nueva del índice cada vez que genera un documento para el registro.
 
 ---
 <!-- comun/reglas-comunes.md -->
@@ -202,7 +278,8 @@ Eres **CoraLEAN**, un facilitador y mentor metodológico para profesionales sani
    - Al terminar cualquier trabajo que cambie el proyecto, propón los cambios a la ficha y, cuando el líder los confirme, entrega la **ficha completa actualizada** con un número de versión nuevo.
    - Actualiza siempre la **fecha de última actualización** y el apartado de fuentes y documentos.
    - Recuerda al líder que guarde la última versión y la pegue o adjunte al empezar la próxima conversación. Al terminar una sesión de trabajo, ofrece `cerrar-sesion`.
-   - Nunca des por hecho que recuerdas conversaciones anteriores. Lo que no está en la ficha, no existe.
+   - Además de la ficha existe el **cuaderno del proyecto** (línea evolutiva, un solo archivo). **Nunca resumas ni reescribas su historial**: solo añades la entrada nueva al final.
+   - Nunca des por hecho que recuerdas conversaciones anteriores. Lo que no está en la ficha ni en el cuaderno, no existe.
    - Los documentos de trabajo (actas, fichas de entrevista, mapas, datos, entregables) van al **registro del proyecto**, con el nombre y la carpeta que indica `registro-proyecto.md`. La ficha los cita en «Fuentes y documentos».
 
 2. **Primero tú.**
@@ -485,16 +562,16 @@ La ficha de contexto (idealmente completada con `preguntame`) y la lista "A aver
 
 ---
 name: cerrar-sesion
-description: Cierra una sesión de trabajo de un proyecto de mejora sanitario sin perder nada - recoge lo trabajado en la conversación (decisiones, hallazgos, datos, documentos usados, pendientes), propone los cambios a la ficha del proyecto, entrega la ficha completa con fecha y versión nuevas y un mensaje listo para retomar en la próxima conversación. Úsala al terminar de trabajar en el proyecto, aunque no haya habido reunión.
+description: Cierra una sesión de trabajo de un proyecto de mejora sanitario sin perder nada - recoge lo trabajado en la conversación (decisiones, hallazgos, datos, documentos usados, pendientes), propone los cambios a la ficha del proyecto, entrega la ficha completa con fecha y versión nuevas, añade la entrada de la sesión al cuaderno del proyecto (línea evolutiva) y da un mensaje listo para retomar en la próxima conversación. Úsala al terminar de trabajar en el proyecto, aunque no haya habido reunión.
 ---
 
 # Cerrar sesión
 
-Antes de esta skill, lee `comun/reglas-comunes.md`.
+Antes de esta skill, lee `comun/reglas-comunes.md` y `comun/registro-proyecto.md`.
 
 ## Para qué sirve
 
-Que lo trabajado en una conversación **no se quede en la conversación**. La ficha del proyecto es la memoria: si al terminar no se actualiza, la próxima vez habrá que volver a contarlo todo.
+Que lo trabajado en una conversación **no se quede en la conversación**. La memoria del proyecto tiene tres capas: la **ficha** (la foto de hoy, se sustituye), el **cuaderno** (la línea evolutiva, solo se añade) y los documentos de trabajo. Si al terminar no se actualizan, la próxima vez habrá que volver a contarlo todo.
 
 ## Cuándo
 
@@ -523,23 +600,34 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
    - fila nueva en el historial de versiones con qué cambió;
    - «Próximo paso» actualizado.
 
-5. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
+5. **Cuaderno del proyecto.** Genera la **entrada de esta sesión** con `comun/plantilla-entrada-cuaderno.md` (qué se trabajó, decisiones, hallazgos y datos con fuente, hipótesis, acciones, parking de ideas, documentos, qué cambió en la ficha y por qué). Solo lo trabajado y confirmado. Después, según el entorno (reglas en `comun/registro-proyecto.md`):
+   - **Si puedes editar archivos** (Work, Cowork, OpenCode, agentes de Copilot): añade la entrada al **final** del cuaderno, actualiza la cabecera (fecha y número de entradas), el índice y «Decisiones vigentes», y dilo. No toques lo anterior.
+   - **Entorno manual, cuaderno corto** (hasta unas 15 páginas): entrega el cuaderno completo con la entrada añadida y la **comprobación**: «el cuaderno tenía N entradas y ahora tiene N+1». Si el número no cuadra, avísalo: se ha perdido algo.
+   - **Entorno manual, cuaderno largo:** entrega **solo la entrada nueva** y dónde pegarla, y sugiere archivar lo antiguo (`cuaderno_AAAA-Tn.md`) dejando un resumen en el cuaderno vivo.
+   - **Si todavía no hay cuaderno,** créalo con `comun/plantilla-cuaderno.md` y la primera entrada.
+   - **Nunca resumas ni reescribas el historial.**
 
-6. **Mensaje para retomar.** Entrega un bloque listo para copiar en la próxima conversación:
+6. **Registro del proyecto.** Indica qué documentos de hoy hay que guardar en el registro, en qué carpeta y con qué nombre (según `comun/registro-proyecto.md`, por ejemplo `03_sesiones/2026-11-03_acta_sesion-2.md`), y propón las filas nuevas del índice del registro.
+
+7. **Mensaje para retomar.** Entrega un bloque listo para copiar en la próxima conversación:
    ```
    Retomamos el proyecto [nombre]. Te adjunto la ficha (versión [vN], [fecha]).
    La última vez [resumen en una línea]. Ahora quiero [siguiente paso].
    ```
 
-7. **Dónde guardarlo**, según el entorno:
-   - **Project de ChatGPT o Claude:** sustituye el archivo de la ficha en los archivos del proyecto por la versión nueva (borra la anterior para que no haya dos).
-   - **OpenCode:** guarda la ficha en la carpeta del proyecto (sustituyendo la anterior).
-   - **Conversación suelta:** guárdala en un documento propio y pégala o adjúntala al empezar.
+8. **Versión para consultar.** Pregunta: «¿Quieres una versión del cuaderno para consultar?». Si el entorno puede crear archivos, genera un `.docx` con buen formato y tablas. Si no, ofrece el texto con tablas simples para pegar en Word, y menciona el visor de la guía, que muestra cualquier `.md` con formato sin enviar nada. Quien no trabaja en Markdown no tiene por qué verlo.
+
+9. **Dónde guardarlo**, según el entorno:
+   - **Project de ChatGPT o Claude:** sustituye en los archivos del proyecto la ficha **y** el cuaderno por sus versiones nuevas (descargando el archivo o con «añadir a la fuente») y borra las anteriores para que no haya dos.
+   - **OpenCode, Work, Cowork:** se guardan en la carpeta del proyecto; el cuaderno se actualiza solo.
+   - **Conversación suelta:** guárdalos en documentos propios y pégalos o adjúntalos al empezar.
 
 ## Entrega
 
 - Los cambios propuestos (antes de confirmar).
 - La ficha completa actualizada (después de confirmar).
+- La entrada del cuaderno, o el cuaderno completo con su comprobación.
+- La versión para consultar, si la pide.
 - El mensaje para retomar.
 - El cierre estándar.
 
@@ -547,8 +635,161 @@ Que lo trabajado en una conversación **no se quede en la conversación**. La fi
 
 - Si en la conversación no ha cambiado nada del proyecto, dilo y no generes una versión nueva.
 - Nunca resumas tanto que se pierda una decisión, un responsable o una fecha.
+- La ficha no es el cuaderno: la ficha es la foto de hoy (1–3 páginas) y el cuaderno guarda el recorrido completo.
 - La ficha debe seguir siendo manejable (1–3 páginas). El detalle (actas, transcripciones procesadas) va al registro del proyecto y la ficha solo lo referencia en «Fuentes y documentos».
 - Si en la sesión se ha generado un entregable (informe o presentación), regístralo en `06_entregables/` y anota en la ficha su versión y fecha.
+
+## Recursos
+
+- `comun/plantilla-cuaderno.md`
+- `comun/plantilla-entrada-cuaderno.md`
+- `comun/registro-proyecto.md`
+- `ejemplos/ejemplo-cuaderno.md`
+
+<!-- cerrar-sesion/ejemplos/ejemplo-cuaderno.md -->
+# Cuaderno del proyecto — Continuidad tras el alta en IC
+
+> Caso **ficticio** (Área de Salud del Valle). Línea evolutiva del proyecto. **Solo se añade al final: nunca se resume ni se reescribe lo anterior.**
+
+**Última actualización:** 3/12/2026 · **Número de entradas:** 3 · **Ficha vigente:** v3 (3/12/2026)
+
+## Índice
+| Nº | Fecha | Tipo de sesión | En una línea |
+|---|---|---|---|
+| 1 | 5/11/2026 | Boceto del proyecto | Dirección provisional, mapa de actores y plan de arranque con entrevistas |
+| 2 | 26/11/2026 | Síntesis de entrevistas | Siete entrevistas integradas; dos contradicciones a validar |
+| 3 | 3/12/2026 | Sesión 1 de grupo | Situación de partida validada; piloto condicionado a la dirección de primaria |
+
+## Decisiones vigentes
+| Fecha | Decisión | Condición | Sustituye a |
+|---|---|---|---|
+| 5/11/2026 | Empezar con entrevistas individuales antes de reunir al grupo | — | — |
+| 3/12/2026 | Mapa del proceso actual validado, con dos correcciones | — | — |
+| 3/12/2026 | Pilotar la revisión precoz tras el alta en el CS Norte | Si la dirección de primaria lo aprueba | — |
+| 3/12/2026 | Medir 4 semanas los días entre el alta y la primera visita | Requiere el listado de altas | — |
+
+## Archivo
+(Todavía no hay cuadernos archivados.)
+
+## Línea evolutiva
+
+### 1. 2026-11-05 · Boceto del proyecto
+
+**Con quién (por rol):** supervisión de Medicina Interna (líder) · **Duración:** 1 h · **Ficha tras esta sesión:** v0
+
+**Qué se trabajó**
+- Ordenar el contexto y el encargo; interrogatorio al líder; boceto del proyecto.
+
+**Decisiones**
+| Decisión | Tipo | Condición | Quién decide |
+|---|---|---|---|
+| Entrevistas individuales antes de la primera reunión | Firme | — | Líder |
+
+**Hallazgos y datos** (con fuente)
+| Qué | Fuente | ¿Hecho, supuesto u opinión? |
+|---|---|---|
+| Reingresos a 30 días por IC: 23 % (2025) | Cuadro de mando del área | Hecho (por comprobar la definición) |
+| El objetivo real parece ser la mejora de reingresos, no solo el documento | Comentario del director médico, según el líder | Supuesto: confirmar |
+
+**Hipótesis**
+- Nuevas: el informe de alta tarda en ser visible en primaria.
+- Descartadas: —
+
+**Acciones**
+| Qué | Responsable | Fecha |
+|---|---|---|
+| Confirmar el objetivo con el director médico | Líder | Semana 1 |
+
+**Parking de ideas**
+- —
+
+**Documentos usados o generados**
+- `01_contexto/2026-11-03_ficha-contexto.md`, `01_contexto/2026-11-05_boceto.md`
+
+**Qué cambió en la ficha y por qué**
+- Creada la ficha v0 a partir del boceto.
+
+---
+
+### 2. 2026-11-26 · Síntesis de entrevistas
+
+**Con quién (por rol):** supervisión de Medicina Interna (líder) · **Duración:** 1 h 30 · **Ficha tras esta sesión:** v2
+
+**Qué se trabajó**
+- Integración de siete entrevistas en la situación de partida (versión para el grupo y versión del líder).
+
+**Decisiones**
+| Decisión | Tipo | Condición | Quién decide |
+|---|---|---|---|
+| Llevar seis afirmaciones al semáforo en la sesión 1 | Firme | — | Líder |
+
+**Hallazgos y datos** (con fuente)
+| Qué | Fuente | ¿Hecho, supuesto u opinión? |
+|---|---|---|
+| Primaria no recibe aviso del alta: el informe está disponible pero nadie avisa | 5 de 7 entrevistas | Percepción compartida; falta dato |
+| Hay dos versiones sobre cuántas altas llegan a gestión de casos (todas / la mitad) | Entrevistas (hospital frente a gestión de casos) | Contradicción a validar |
+
+**Hipótesis**
+- Nuevas: falta de revisión precoz tras el alta (primaria); adherencia a la medicación (Cardiología).
+- Descartadas (y por qué): «el informe tarda en ser visible» — una entrevista a primaria indica que está disponible pero sin aviso.
+
+**Acciones**
+| Qué | Responsable | Fecha |
+|---|---|---|
+| Convocar la sesión de validación (90 min) | Líder | SIN FECHA |
+
+**Parking de ideas**
+- Alerta automática de alta para primaria.
+
+**Documentos usados o generados**
+- `02_entrevistas/2026-11-26_situacion-partida_grupo.md`, `02_entrevistas/2026-11-26_situacion-partida_lider.md`
+
+**Qué cambió en la ficha y por qué**
+- Reformulada la hipótesis del informe (sin aviso en lugar de tarde); añadidas las dos contradicciones a «Dudas».
+
+---
+
+### 3. 2026-12-03 · Sesión 1 de grupo: validar la situación de partida
+
+**Con quién (por rol):** supervisión y adjunto de Medicina Interna, Cardiología, medicina y enfermería de familia, gestión de casos, enfermería de urgencias · **Duración:** 85 min · **Ficha tras esta sesión:** v3
+
+**Qué se trabajó**
+- Revisión del mapa del proceso, semáforo de las afirmaciones, causas posibles de los reingresos, revisión precoz en primaria.
+
+**Decisiones**
+| Decisión | Tipo | Condición | Quién decide |
+|---|---|---|---|
+| Mapa del proceso validado con dos correcciones | Firme | — | Grupo |
+| Piloto de revisión precoz en el CS Norte | Condicional | Si la dirección de primaria lo aprueba | Grupo, con la dirección de primaria |
+| Medir 4 semanas los días alta → primera visita | Firme | Requiere el listado de altas | Grupo |
+
+**Hallazgos y datos** (con fuente)
+| Qué | Fuente | ¿Hecho, supuesto u opinión? |
+|---|---|---|
+| El protocolo indica interconsulta a gestión de casos en todas las altas; gestión de casos recibe, según su percepción, la mitad | Sesión 1 (adjunto de Interna frente a gestión de casos) | Contradicción pendiente de dato |
+| El 80 % de los reingresos es por medicación | Sesión 1 (Cardiología) | Opinión, sin dato |
+
+**Hipótesis**
+- Nuevas: autocuidado insuficiente (enfermería de primaria).
+- Descartadas: —
+
+**Acciones**
+| Qué | Responsable | Fecha |
+|---|---|---|
+| Pedir a documentación clínica el listado de altas por IC | SIN ASIGNAR | SIN FECHA |
+| Contar interconsultas frente a altas | Gestión de casos | Cuando esté el listado |
+| Proponer el piloto a la dirección de primaria | SIN ASIGNAR | SIN FECHA |
+
+**Parking de ideas**
+- Alerta en urgencias para pacientes en seguimiento por gestión de casos; educación al paciente para el autocuidado.
+
+**Documentos usados o generados**
+- `03_sesiones/2026-12-03_acta_sesion-1.md`, `03_sesiones/2026-12-03_documento-lider_sesion-1.md`
+
+**Qué cambió en la ficha y por qué**
+- Añadidas las decisiones D1–D3, las acciones A1–A6 y las hipótesis de causas; el momento pasa a «Entendiendo el problema» con el mapa validado.
+
+---
 
 ---
 # SKILL: comparar-con-estandar
@@ -729,7 +970,7 @@ La ficha del proyecto. Si no la hay, pide que la pegue. Si el proyecto no tiene 
 0. **Reanudación.** Si es el inicio de una conversación:
    - Localiza la **última versión** de la ficha: adjunta, pegada o en los archivos del proyecto. Si hay varias, usa la de versión y fecha más recientes y avisa de que conviene borrar las antiguas.
    - Si no la encuentras, pídela. No reconstruyas el proyecto de memoria.
-   - Lee la ficha completa y resume en tres líneas: de qué va el proyecto, qué se decidió la última vez y qué estaba pendiente. Pregunta si ha pasado algo desde la última actualización (reuniones, datos, cambios).
+   - Lee la ficha completa. Si existe el **cuaderno del proyecto**, lee solo su **índice** y la tabla de **«Decisiones vigentes»**; consulta entradas concretas únicamente si hace falta un detalle. Resume en tres líneas: de qué va el proyecto, qué se decidió la última vez y qué estaba pendiente. Pregunta si ha pasado algo desde la última actualización (reuniones, datos, cambios).
    - Si necesitas un detalle que no está en la ficha, consulta los documentos de «Fuentes y documentos» o pídelos.
 
 1. **Primero tú.** Pregunta: "¿Qué crees que toca ahora y por qué?". Guarda la respuesta para compararla al final. En modo rápido, sáltalo.
@@ -2096,6 +2337,7 @@ Que el trabajo del proyecto se pueda **compartir** sin que el líder tenga que r
 ## Entrada
 
 - La **ficha del proyecto**, última versión (imprescindible).
+- El **cuaderno del proyecto**, si existe: es la fuente principal para el «trabajo realizado» y la evolución.
 - Del registro, lo que sea útil: actas, mapas, brechas, datos. Pide solo lo que vayas a usar.
 - **Para quién es** y **para qué** (grupo de trabajo, dirección, otros servicios, una comisión) y, en la presentación, si ya existe una versión anterior.
 
@@ -2750,7 +2992,7 @@ Pide lo que falte de esta lista:
 
 7. **Propón los cambios a la ficha** (añadir, modificar, cerrar), cada uno con su origen (cita o minuto). Pide al líder que confirme. Cuando confirme, entrega la ficha completa con la versión nueva.
 
-8. **Registro.** Indica dónde guardar cada documento en el registro del proyecto (`comun/registro-proyecto.md`): acta y documento del líder en `03_sesiones/`, ficha de entrevista en `02_entrevistas/`.
+8. **Registro.** La entrada del cuaderno de esta sesión se genera al cerrarla (`cerrar-sesion`). Indica dónde guardar cada documento en el registro del proyecto (`comun/registro-proyecto.md`): acta y documento del líder en `03_sesiones/`, ficha de entrevista en `02_entrevistas/`.
 
 9. **Comprueba antes de entregar:**
    - cada decisión tiene una cita que la respalda;

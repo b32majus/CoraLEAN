@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CoraLEAN · Visor del cuaderno</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/estilo.css">
+  <style>
+    .doc-barra { position: sticky; top: 0; z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
+    .doc-barra div { max-width: 900px; margin: 0 auto; padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .doc { max-width: 900px; margin: 24px auto 64px; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+    .zona { border: 2px dashed var(--line); border-radius: 12px; padding: 28px 18px; text-align: center; background: var(--panel); }
+    .zona.sobre { border-color: var(--acc); background: var(--acc-soft); }
+    .zona p { margin: 6px 0; } .zona .nota { color: var(--ink-2); font-size: 14px; }
+    .doc-papel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(18px, 4vw, 40px); box-shadow: var(--shadow); }
+    .doc-papel h1 { font-size: clamp(24px, 3vw, 30px); margin: 0 0 16px; }
+    .doc-papel h2 { font-size: 20px; margin: 26px 0 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .doc-papel h3 { font-size: 17px; margin: 18px 0 8px; }
+    .doc-papel p, .doc-papel li { max-width: 75ch; }
+    .doc-papel blockquote { margin: 12px 0; padding: 10px 14px; background: var(--acc-soft); border-radius: 8px; }
+    .doc-papel blockquote p { margin: 0; }
+    .doc-papel table { margin: 10px 0 16px; font-size: 14.5px; }
+    .doc-papel td:empty::after { content: "\00a0"; }
+    .doc-papel pre { background: var(--code); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    .doc-papel code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+    .doc-papel pre code { background: none; padding: 0; }
+    .doc-papel hr { border: 0; border-top: 1px solid var(--line); margin: 20px 0; }
+    @media print { .doc-barra, .zona, .aviso { display: none !important; } .doc { margin: 0; max-width: none; } .doc-papel { border: 0; box-shadow: none; padding: 0; } }
+  </style>
+</head>
+<body>
+  <div class="doc-barra"><div><a class="btn small" href="index.html#ficha">← Volver a la guía</a><label class="btn small" for="archivo">Elegir otro archivo</label><input type="file" id="archivo" accept=".md,.markdown,.txt,text/markdown,text/plain" hidden><button class="btn small" id="imprimir" disabled>Imprimir o guardar como PDF</button><button class="btn small" id="copiar" disabled>Copiar texto</button><span class="ok-copiado" id="aviso" aria-live="polite"></span></div></div>
+  <main class="doc">
+    <section class="zona" id="zona"><p><b>Arrastra aquí tu archivo .md</b> (el cuaderno o la ficha del proyecto) o <label for="archivo" style="color:var(--acc);text-decoration:underline;cursor:pointer">elígelo desde tu ordenador</label>.</p><p class="nota">Se muestra con formato en tu navegador. <b>No se envía ni se guarda nada en ningún sitio</b>: el archivo no sale de tu ordenador.</p></section>
+    <article class="doc-papel" id="doc" hidden></article>
+  </main>
+  <script src="assets/md.js"></script>
+  <script>
+  (function () {
+    const zona = document.getElementById("zona"), doc = document.getElementById("doc"), aviso = document.getElementById("aviso");
+    const btnImp = document.getElementById("imprimir"), btnCop = document.getElementById("copiar"), inp = document.getElementById("archivo");
+    let texto = "";
+    function mostrar(nombre, t) {
+      texto = t; doc.innerHTML = window.MD.md(t); doc.hidden = false; zona.hidden = true; btnImp.disabled = false; btnCop.disabled = false;
+      const h1 = doc.querySelector("h1"); document.title = "CoraLEAN · " + (h1 ? h1.textContent : nombre);
+      window.scrollTo(0, 0);
+    }
+    function leer(f) { if (!f) return; const r = new FileReader(); r.onload = () => mostrar(f.name, String(r.result)); r.onerror = () => { aviso.textContent = "No se pudo leer el archivo"; }; r.readAsText(f, "utf-8"); }
+    inp.addEventListener("change", () => leer(inp.files[0]));
+    ["dragenter", "dragover"].forEach((e) => document.addEventListener(e, (ev) => { ev.preventDefault(); zona.classList.add("sobre"); }));
+    ["dragleave", "drop"].forEach((e) => document.addEventListener(e, (ev) => { ev.preventDefault(); zona.classList.remove("sobre"); }));
+    document.addEventListener("drop", (ev) => leer(ev.dataTransfer && ev.dataTransfer.files[0]));
+    btnImp.addEventListener("click", () => window.print());
+    btnCop.addEventListener("click", () => { if (navigator.clipboard) navigator.clipboard.writeText(texto).then(() => { aviso.textContent = "Copiado"; setTimeout(() => (aviso.textContent = ""), 2000); }, () => { aviso.textContent = "No se pudo copiar"; }); });
+  })();
+  </script>
+</body>
+</html>
