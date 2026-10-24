@@ -500,7 +500,7 @@ window.GUIA = {
     { id: "ultima", nombre: "«La última vez que…»", para: "Bajar de lo general a lo real.", como: "Cuando alguien dice «normalmente», pide el último caso paso a paso.", frase: "Cuéntanos la última vez que pasó (sin datos del paciente)." },
     { id: "gemba", nombre: "Ir a ver (gemba)", para: "Ver el proceso donde ocurre.", como: "Recorrer el lugar de trabajo con quien lo hace: observar primero, preguntar después, no corregir.", frase: "¿Me enseñas cómo lo haces?" },
     { id: "tiempo", nombre: "Tiempo visible", para: "Respetar los bloques.", como: "Alguien controla el tiempo y avisa 2 minutos antes del final de cada bloque.", frase: "Nos quedan dos minutos para este bloque." },
-    { id: "cierre", nombre: "Cierre con responsables", para: "Que la sesión produzca acción.", como: "Últimos 10 minutos: cada acuerdo en voz alta con quién y para cuándo; repaso del parking de ideas.", frase: "¿Quién se encarga? ¿Para cuándo?" }
+    { id: "cierre", nombre: "Cierre con responsables", para: "Que la sesión produzca acción.", como: "Últimos 10 minutos: cada acuerdo en voz alta con quién y para cuándo, apuntado en la hoja de compromisos a la vista de todos; repaso del parking de ideas. Una foto de la hoja es la base del acta.", frase: "¿Quién se encarga? ¿Para cuándo?" }
   ],
 
   dificiles: [
@@ -525,7 +525,7 @@ window.GUIA = {
     "encuesta-profesionales": "Encuesta breve a profesionales"
   },
 
-  imprimibles: { leyenda: "Leyenda de colores", parking: "Parking de ideas", actores: "Mapa de actores", carriles: "Mapa por carriles", spaghetti: "Plano para spaghetti", recogida: "Hoja de recogida", ishikawa: "Espina de pescado", matriz: "Matriz impacto-esfuerzo", semaforo: "Tarjetas del semáforo", journey: "Mapa de experiencia del paciente" },
+  imprimibles: { compromisos: "Compromisos de la sesión", leyenda: "Leyenda de colores", parking: "Parking de ideas", actores: "Mapa de actores", carriles: "Mapa por carriles", spaghetti: "Plano para spaghetti", recogida: "Hoja de recogida", ishikawa: "Espina de pescado", matriz: "Matriz impacto-esfuerzo", semaforo: "Tarjetas del semáforo", journey: "Mapa de experiencia del paciente" },
 
   fuentes: {
     seca: { corto: "Manual de Bolsillo Lean Healthcare (SECA)", url: "https://calidadasistencial.es/manual-de-bolsillo-lean-healthcare/" },
